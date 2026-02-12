@@ -3,23 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Altivon Holdings – Website Development & Digital Strategy Services</title>
-  <meta name="description" content="Full‑service digital agency: e‑commerce, real estate, education, construction websites. SEO‑optimized, custom development.">
+  <title>Website Development & E-Commerce Solutions | Altivon Holdings</title>
+  <meta name="description" content="Full‑service digital agency: e‑commerce, real estate, education, construction websites. SEO‑optimized, custom development. View our portfolio.">
   <meta name="keywords" content="Website Development Company, E-Commerce Website Development, Business Website Design, Digital Solutions Company, SEO Optimized Websites">
-  <meta property="og:title" content="Services – Altivon Holdings">
+  <link rel="canonical" href="https://anshuman365.github.io/services.html">
+  <meta property="og:title" content="Website Development & E-Commerce Solutions | Altivon Holdings">
+  <meta property="og:description" content="Custom website development, e‑commerce, real estate, education, construction – built with SEO and scalability in mind.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://anshuman365.github.io/services.html">
   <meta property="og:image" content="https://anshuman365.github.io/assets/images/logo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Website Development & E-Commerce Solutions | Altivon Holdings">
+  <meta name="twitter:description" content="Custom website development, e‑commerce, real estate, education, construction – built with SEO and scalability in mind.">
+  <meta name="twitter:image" content="https://anshuman365.github.io/assets/images/logo.jpg">
   <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- JSON-LD (Service) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Altivon Holdings",
-    "url": "https://anshuman365.github.io",
-    "email": "altivonholdings@gmail.com"
+    "@type": "Service",
+    "serviceType": "Website Development",
+    "provider": {
+      "@type": "Organization",
+      "name": "Altivon Holdings",
+      "url": "https://anshuman365.github.io"
+    },
+    "areaServed": "IN",
+    "description": "Custom website development, e‑commerce solutions, and digital strategy."
   }
   </script>
 </head>
@@ -33,12 +50,16 @@
           <span class="logo-sub">HOLDINGS</span>
         </a>
       </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav class="main-nav">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html" class="active">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="privacy.html">Privacy</a></li>
         </ul>
       </nav>
@@ -53,65 +74,153 @@
       </div>
     </section>
 
-    <!-- Detailed service blocks with internal links -->
+    <!-- Website Development -->
     <section class="service-detail" id="webdev">
       <div class="container service-block">
-        <div class="service-text">
+        <div class="service-text reveal-left">
           <h2>Website Development</h2>
           <p>Custom, responsive websites built with semantic HTML5, modern CSS, and lightweight JavaScript. We focus on core web vitals, SEO architecture, and conversion‑centric design. Whether you need a <strong>corporate business website</strong> or a complex web application, our full‑stack expertise (Python, SQL) delivers.</p>
           <a href="contact.html" class="btn btn-primary">Discuss your project</a>
         </div>
-        <div class="service-icon-large"><i class="fas fa-laptop-code"></i></div>
+        <div class="service-icon-large reveal-right">
+          <i class="fas fa-laptop-code"></i>
+        </div>
       </div>
     </section>
 
+    <!-- E-Commerce Solutions -->
     <section class="service-detail bg-light" id="ecommerce">
       <div class="container service-block reverse">
-        <div class="service-text">
+        <div class="service-text reveal-right">
           <h2>E‑Commerce Solutions</h2>
           <p>Scalable <strong>e‑commerce website development</strong> with secure payment gateways, inventory sync, and mobile‑optimized checkout. We build on reliable stacks (Shopify, WooCommerce, or headless) tailored to your product volume. SEO‑friendly product schemas and fast catalog browsing included.</p>
           <a href="contact.html" class="btn btn-primary">Start selling online</a>
         </div>
-        <div class="service-icon-large"><i class="fas fa-cart-shopping"></i></div>
+        <div class="service-icon-large reveal-left">
+          <i class="fas fa-cart-shopping"></i>
+        </div>
       </div>
     </section>
 
+    <!-- Business & Digital Strategy -->
     <section class="service-detail" id="strategy">
       <div class="container service-block">
-        <div class="service-text">
+        <div class="service-text reveal-left">
           <h2>Business & Digital Strategy</h2>
           <p>We align technology with business goals. From MVP planning to digital transformation, we help startups and enterprises define their online roadmap. Our <strong>digital solutions company</strong> approach combines UX research, competitor analysis, and conversion funnel optimization.</p>
           <a href="contact.html" class="btn btn-primary">Build your strategy</a>
         </div>
-        <div class="service-icon-large"><i class="fas fa-chart-pie"></i></div>
+        <div class="service-icon-large reveal-right">
+          <i class="fas fa-chart-pie"></i>
+        </div>
       </div>
     </section>
 
+    <!-- Industry‑Specific Website Design -->
     <section class="service-detail bg-light" id="industry">
       <div class="container service-block reverse">
-        <div class="service-text">
+        <div class="service-text reveal-right">
           <h2>Industry‑Specific Website Design</h2>
           <p>Ready‑to‑scale solutions for <strong>real estate, construction, education, logistics, and rental</strong>. Each industry vertical includes tailored features: property filters, project galleries, LMS integration, fleet management dashboards. Fully responsive and branded.</p>
           <a href="contact.html" class="btn btn-primary">Explore industry solutions</a>
         </div>
-        <div class="service-icon-large"><i class="fas fa-hard-hat"></i></div>
+        <div class="service-icon-large reveal-left">
+          <i class="fas fa-hard-hat"></i>
+        </div>
       </div>
     </section>
 
+    <!-- Website Maintenance & Optimization -->
     <section class="service-detail" id="maintenance">
       <div class="container service-block">
-        <div class="service-text">
+        <div class="service-text reveal-left">
           <h2>Website Maintenance & Optimization</h2>
           <p>Ongoing security patches, performance audits, SEO updates, and content refreshes. We keep your digital asset fast, secure, and up‑to‑date. Monthly reports and 24/7 monitoring available.</p>
           <a href="contact.html" class="btn btn-primary">Maintenance plans</a>
         </div>
-        <div class="service-icon-large"><i class="fas fa-gears"></i></div>
+        <div class="service-icon-large reveal-right">
+          <i class="fas fa-gears"></i>
+        </div>
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- ===== PORTFOLIO SHOWCASE (Filterable Grid) ===== -->
+    <section class="portfolio-showcase bg-light">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <h2>Recent Projects</h2>
+          <p>Explore our handcrafted websites – each built with precision.</p>
+        </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="corporate">Corporate</button>
+          <button class="filter-btn" data-filter="ecommerce">E‑commerce</button>
+          <button class="filter-btn" data-filter="realestate">Real Estate</button>
+          <button class="filter-btn" data-filter="education">Education</button>
+          <button class="filter-btn" data-filter="construction">Construction</button>
+        </div>
+        <div class="portfolio-grid">
+          <!-- Corporate -->
+          <div class="portfolio-item corporate reveal-up">
+            <img src="assets/images/web_designs/corporate_web_design.jpg" alt="Corporate website for BuildCorp">
+            <div class="portfolio-overlay">
+              <h3>BuildCorp</h3>
+              <p>Corporate website with investor portal</p>
+              <a href="#" class="btn-small">View Details</a>
+            </div>
+          </div>
+          <!-- E-commerce -->
+          <div class="portfolio-item ecommerce reveal-up">
+            <img src="assets/images/web_designs/ecommerce_web_design.jpg" alt="E-commerce for UrbanCart">
+            <div class="portfolio-overlay">
+              <h3>UrbanCart</h3>
+              <p>Scalable e‑commerce platform</p>
+              <a href="#" class="btn-small">View Details</a>
+            </div>
+          </div>
+          <!-- Real Estate -->
+          <div class="portfolio-item realestate reveal-up">
+            <img src="assets/images/web_designs/real-estate_web_design.jpg" alt="Real estate for EstateIn">
+            <div class="portfolio-overlay">
+              <h3>EstateIn</h3>
+              <p>Property listing with virtual tours</p>
+              <a href="#" class="btn-small">View Details</a>
+            </div>
+          </div>
+          <!-- Education -->
+          <div class="portfolio-item education reveal-up">
+            <img src="assets/images/web_designs/educational_institute_web_design.jpg" alt="Education for EduFirst">
+            <div class="portfolio-overlay">
+              <h3>EduFirst</h3>
+              <p>LMS & course catalog</p>
+              <a href="#" class="btn-small">View Details</a>
+            </div>
+          </div>
+          <!-- Construction -->
+          <div class="portfolio-item construction reveal-up">
+            <img src="assets/images/web_designs/construction_web_design.jpg" alt="Construction for BuildCorp Construction">
+            <div class="portfolio-overlay">
+              <h3>BuildCorp Construction</h3>
+              <p>Project showcase & timeline</p>
+              <a href="#" class="btn-small">View Details</a>
+            </div>
+          </div>
+          <!-- Digital Agency (Corporate) -->
+          <div class="portfolio-item corporate reveal-up">
+            <img src="assets/images/web_designs/digital_marketing_web_design.jpg" alt="Digital agency for CreativeAce">
+            <div class="portfolio-overlay">
+              <h3>CreativeAce</h3>
+              <p>Digital agency website</p>
+              <a href="#" class="btn-small">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA --><br>
     <section class="cta-section">
-      <div class="container cta-content">
+      <div class="container cta-content reveal-up">
         <h2>Need a custom combination?</h2>
         <p>We also build hybrid solutions – contact our team.</p>
         <a href="contact.html" class="btn btn-primary btn-large">Get a quote</a>
@@ -119,16 +228,16 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <!-- same footer as index.html -->
     <div class="container footer-grid">
       <div class="footer-about">
         <h3>Altivon Holdings</h3>
-        <p>Digital solutions for modern enterprises.</p>
+        <p>Empowering Businesses Through Scalable Digital Solutions.</p>
         <div class="social-placeholder">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
       </div>
       <div class="footer-links">
@@ -138,13 +247,14 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
       <div class="footer-services">
         <h4>Services</h4>
         <ul>
-          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html#webdev">Web Development</a></li>
           <li><a href="services.html#ecommerce">E‑Commerce</a></li>
           <li><a href="services.html#strategy">Digital Strategy</a></li>
           <li><a href="services.html#maintenance">Maintenance</a></li>
@@ -158,19 +268,19 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="container"><p>© 2026 Altivon Holdings. All rights reserved.</p></div>
+      <div class="container">
+        <p>© 2026 Altivon Holdings. All rights reserved.</p>
+        <p class="footer-tagline">Empowering Businesses Through Scalable Digital Solutions.</p>
+      </div>
     </div>
   </footer>
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e){
-        const href=this.getAttribute('href');
-        if(href!=='#'&&href.startsWith('#')){
-          e.preventDefault();
-          document.querySelector(href)?.scrollIntoView({behavior:'smooth'});
-        }
-      });
-    });
-  </script>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 </html>

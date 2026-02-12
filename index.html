@@ -3,18 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Altivon Holdings – Website Development Company & Digital Solutions</title>
-  <meta name="description" content="Altivon Holdings: expert website development, e‑commerce, and digital strategy. SEO‑optimized, responsive websites for startups and enterprises.">
+  <title>Altivon Holdings | Professional Website Development & Digital Solutions Company</title>
+  <meta name="description" content="Altivon Holdings: expert website development, e‑commerce, and digital strategy. SEO‑optimized, responsive websites for startups and enterprises. 50+ projects delivered.">
   <meta name="keywords" content="Website Development Company, E-Commerce Website Development, Business Website Design, Digital Solutions Company, SEO Optimized Websites">
-  <meta property="og:title" content="Altivon Holdings – Digital & Business Solutions">
-  <meta property="og:description" content="Modern web development, e‑commerce, and scalable digital strategy.">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://anshuman365.github.io/">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Altivon Holdings | Professional Website Development & Digital Solutions Company">
+  <meta property="og:description" content="Modern web development, e‑commerce, and scalable digital strategy. 50+ projects delivered.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://anshuman365.github.io">
+  <meta property="og:url" content="https://anshuman365.github.io/">
   <meta property="og:image" content="https://anshuman365.github.io/assets/images/logo.jpg">
   <meta property="og:site_name" content="Altivon Holdings">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Altivon Holdings | Professional Website Development & Digital Solutions Company">
+  <meta name="twitter:description" content="Modern web development, e‑commerce, and scalable digital strategy.">
+  <meta name="twitter:image" content="https://anshuman365.github.io/assets/images/logo.jpg">
+  <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- CSS Multi-Architecture -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -23,7 +39,8 @@
     "url": "https://anshuman365.github.io",
     "logo": "https://anshuman365.github.io/assets/images/logo.jpg",
     "email": "altivonholdings@gmail.com",
-    "description": "Website development, e‑commerce, digital strategy – modern solutions for growth."
+    "description": "Website development, e‑commerce, digital strategy – modern solutions for growth.",
+    "sameAs": ["https://anshuman365.github.io"]
   }
   </script>
 </head>
@@ -38,12 +55,16 @@
           <span class="logo-sub">HOLDINGS</span>
         </a>
       </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav class="main-nav">
         <ul class="nav-list">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="privacy.html">Privacy</a></li>
         </ul>
       </nav>
@@ -54,7 +75,7 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-content">
+        <div class="hero-content reveal-left">
           <h1>Building Digital & Business Solutions for Modern Growth</h1>
           <p class="hero-sub">Website development, digital strategy, and scalable business services — engineered for performance and ROI.</p>
           <div class="hero-buttons">
@@ -62,7 +83,7 @@
             <a href="contact.html" class="btn btn-secondary">Contact Us</a>
           </div>
         </div>
-        <div class="hero-visual">
+        <div class="hero-visual reveal-right">
           <div class="hero-icon-grid">
             <i class="fas fa-code"></i>
             <i class="fas fa-cart-shopping"></i>
@@ -73,16 +94,16 @@
       </div>
     </section>
 
-    <!-- Services Preview (with real images 1:1.5) -->
+    <!-- Services Preview (cards with real images) -->
     <section class="services-preview">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal-fade">
           <h2>Our expertise, tailored for your industry</h2>
           <p>SEO‑optimized architecture • future‑ready tech</p>
         </div>
         <div class="card-grid">
           <!-- E-Commerce -->
-          <div class="service-card">
+          <div class="service-card reveal-up">
             <img src="assets/images/web_designs/ecommerce_web_design.jpg" alt="E-Commerce Website thumbnail" class="card-img" loading="lazy">
             <div class="card-content">
               <h3>E-Commerce Website Development</h3>
@@ -90,8 +111,8 @@
               <a href="services.html#ecommerce" class="card-link">Learn More <i class="fas fa-chevron-right"></i></a>
             </div>
           </div>
-          <!-- Corporate Business -->
-          <div class="service-card">
+          <!-- Corporate -->
+          <div class="service-card reveal-up">
             <img src="assets/images/web_designs/corporate_web_design.jpg" alt="Corporate Business Website thumbnail" class="card-img" loading="lazy">
             <div class="card-content">
               <h3>Corporate Business Website</h3>
@@ -100,7 +121,7 @@
             </div>
           </div>
           <!-- Real Estate -->
-          <div class="service-card">
+          <div class="service-card reveal-up">
             <img src="assets/images/web_designs/real-estate_web_design.jpg" alt="Real Estate Website Solutions thumbnail" class="card-img" loading="lazy">
             <div class="card-content">
               <h3>Real Estate Website Solutions</h3>
@@ -108,8 +129,8 @@
               <a href="services.html#realestate" class="card-link">Learn More <i class="fas fa-chevron-right"></i></a>
             </div>
           </div>
-          <!-- Construction Business -->
-          <div class="service-card">
+          <!-- Construction -->
+          <div class="service-card reveal-up">
             <img src="assets/images/web_designs/construction_web_design.jpg" alt="Construction Business Website thumbnail" class="card-img" loading="lazy">
             <div class="card-content">
               <h3>Construction Business Website</h3>
@@ -117,8 +138,8 @@
               <a href="services.html#construction" class="card-link">Learn More <i class="fas fa-chevron-right"></i></a>
             </div>
           </div>
-          <!-- Educational Institute -->
-          <div class="service-card">
+          <!-- Educational -->
+          <div class="service-card reveal-up">
             <img src="assets/images/web_designs/educational_institute_web_design.jpg" alt="Educational Institute Website thumbnail" class="card-img" loading="lazy">
             <div class="card-content">
               <h3>Educational Institute Website</h3>
@@ -127,7 +148,7 @@
             </div>
           </div>
           <!-- Digital Agency -->
-          <div class="service-card">
+          <div class="service-card reveal-up">
             <img src="assets/images/web_designs/digital_marketing_web_design.jpg" alt="Digital Agency Website thumbnail" class="card-img" loading="lazy">
             <div class="card-content">
               <h3>Digital Agency Website</h3>
@@ -139,27 +160,123 @@
       </div>
     </section>
 
+    <!-- STATS COUNTER -->
+    <section class="stats-counter bg-light">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal-up">
+            <h3 class="stat-number" data-target="50" data-suffix="+">0+</h3>
+            <p>Projects Delivered</p>
+          </div>
+          <div class="stat-item reveal-up">
+            <h3 class="stat-number" data-target="5" data-suffix="+">0+</h3>
+            <p>Industries Served</p>
+          </div>
+          <div class="stat-item reveal-up">
+            <h3 class="stat-number" data-target="100" data-suffix="%">0%</h3>
+            <p>Responsive Design</p>
+          </div>
+          <div class="stat-item reveal-up">
+            <h3 class="stat-number" data-target="12" data-suffix="d">0d</h3>
+            <p>Avg. Turnaround</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <h2>Our Development Process</h2>
+          <p>From concept to launch – transparent, collaborative, efficient.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-step reveal-up">
+            <span class="step-number">1</span>
+            <h3>Requirement Analysis</h3>
+            <p>We dive deep into your goals, audience, and technical needs.</p>
+          </div>
+          <div class="process-step reveal-up">
+            <span class="step-number">2</span>
+            <h3>Wireframe & Planning</h3>
+            <p>Structure, UX flow, and visual direction approved before coding.</p>
+          </div>
+          <div class="process-step reveal-up">
+            <span class="step-number">3</span>
+            <h3>Development</h3>
+            <p>Semantic HTML, modern CSS, clean JavaScript – fully responsive.</p>
+          </div>
+          <div class="process-step reveal-up">
+            <span class="step-number">4</span>
+            <h3>Testing & Optimization</h3>
+            <p>Cross‑browser, performance, SEO audit, and fine‑tuning.</p>
+          </div>
+          <div class="process-step reveal-up">
+            <span class="step-number">5</span>
+            <h3>Launch & Support</h3>
+            <p>Deployment, training, and ongoing maintenance.</p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <img src="assets/images/process_workflow.jpg" alt="Altivon 5-step development workflow" style="max-width: 100%; border-radius: 16px; box-shadow: var(--shadow);">
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" style="background-image: url('assets/images/testimonial_bg.jpg'); background-size: cover; background-position: center; position: relative;">
+      <div style="background: rgba(245,247,250,0.92); padding: 5rem 0;">
+        <div class="container">
+          <div class="section-header reveal-fade">
+            <h2>What our clients say</h2>
+            <p>Trusted by startups, agencies, and enterprises.</p>
+          </div>
+          <div class="testimonial-grid">
+            <div class="testimonial-card reveal-up">
+              <i class="fas fa-quote-left"></i>
+              <p>Altivon delivered our corporate website ahead of schedule. The code is clean, SEO is top‑notch, and the design perfectly matches our brand.</p>
+              <h4>Ravi Sharma</h4>
+              <span>CEO, BuildCorp</span>
+            </div>
+            <div class="testimonial-card reveal-up">
+              <i class="fas fa-quote-left"></i>
+              <p>We needed an e‑commerce platform that could scale. Altivon built a fast, secure solution – our conversions increased by 40%.</p>
+              <h4>Priya Mehta</h4>
+              <span>Founder, UrbanCart</span>
+            </div>
+            <div class="testimonial-card reveal-up">
+              <i class="fas fa-quote-left"></i>
+              <p>Their technical expertise (Python, SQL) helped us integrate complex backend features. A true development partner.</p>
+              <h4>Anand Iyer</h4>
+              <span>CTO, EduFirst</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Why Choose Us -->
     <section class="why-choose">
       <div class="container">
-        <h2>Why choose Altivon Holdings</h2>
+        <h2 class="reveal-fade">Why choose Altivon Holdings</h2>
         <div class="features-grid">
-          <div class="feature-item">
+          <div class="feature-item reveal-up">
             <i class="fas fa-cubes"></i>
             <h3>Custom Development</h3>
             <p>No templates — tailor‑made solutions aligned with your business logic.</p>
           </div>
-          <div class="feature-item">
+          <div class="feature-item reveal-up">
             <i class="fas fa-magnifying-glass-chart"></i>
             <h3>SEO‑Optimized Architecture</h3>
             <p>Semantic HTML, fast rendering, schema‑ready — built for rankings.</p>
           </div>
-          <div class="feature-item">
+          <div class="feature-item reveal-up">
             <i class="fas fa-mobile-screen"></i>
             <h3>Mobile Responsive Design</h3>
             <p>Flawless experience across all devices, from mobile to 4K.</p>
           </div>
-          <div class="feature-item">
+          <div class="feature-item reveal-up">
             <i class="fas fa-shield"></i>
             <h3>Secure & Scalable</h3>
             <p>Enterprise‑grade security, cloud‑ready, ready for high traffic.</p>
@@ -170,7 +287,7 @@
 
     <!-- CTA -->
     <section class="cta-section">
-      <div class="container cta-content">
+      <div class="container cta-content reveal-up">
         <h2>Ready to accelerate your digital presence?</h2>
         <p>Let’s build something that scales.</p>
         <a href="contact.html" class="btn btn-primary btn-large">Start Your Project Today</a>
@@ -183,7 +300,7 @@
     <div class="container footer-grid">
       <div class="footer-about">
         <h3>Altivon Holdings</h3>
-        <p>Digital solutions for modern enterprises. We build websites, e‑commerce, and digital strategies that drive growth.</p>
+        <p>Empowering Businesses Through Scalable Digital Solutions.</p>
         <div class="social-placeholder">
           <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
           <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -197,13 +314,14 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
       <div class="footer-services">
         <h4>Services</h4>
         <ul>
-          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html#webdev">Web Development</a></li>
           <li><a href="services.html#ecommerce">E‑Commerce</a></li>
           <li><a href="services.html#strategy">Digital Strategy</a></li>
           <li><a href="services.html#maintenance">Maintenance</a></li>
@@ -219,21 +337,17 @@
     <div class="footer-bottom">
       <div class="container">
         <p>© 2026 Altivon Holdings. All rights reserved.</p>
+        <p class="footer-tagline">Empowering Businesses Through Scalable Digital Solutions.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Smooth scroll (minimal) -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== "#" && href.startsWith("#")) {
-          e.preventDefault();
-          document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 </html>

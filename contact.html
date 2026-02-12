@@ -3,12 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Altivon Holdings – Start your project</title>
-  <meta name="description" content="Contact Altivon Holdings for website development, e‑commerce, and digital strategy. Use our Formspree contact form or email directly.">
-  <meta property="og:title" content="Contact – Altivon Holdings">
+  <title>Contact Altivon Holdings | Start Your Website Project Today</title>
+  <meta name="description" content="Contact Altivon Holdings for website development, e‑commerce, and digital strategy. Use our Formspree contact form or email directly. Free quote within 24h.">
+  <link rel="canonical" href="https://anshuman365.github.io/contact.html">
+  <meta property="og:title" content="Contact Altivon Holdings | Start Your Website Project Today">
+  <meta property="og:description" content="Get in touch with our team for custom web development, e‑commerce, and digital strategy. Fast response, no sales pressure.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anshuman365.github.io/contact.html">
+  <meta property="og:image" content="https://anshuman365.github.io/assets/images/logo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Altivon Holdings | Start Your Website Project Today">
+  <meta name="twitter:description" content="Get in touch with our team for custom web development, e‑commerce, and digital strategy.">
+  <meta name="twitter:image" content="https://anshuman365.github.io/assets/images/logo.jpg">
   <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- JSON-LD (ContactPoint) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -19,7 +34,8 @@
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "altivonholdings@gmail.com",
-      "contactType": "customer service"
+      "contactType": "customer service",
+      "responseTime": "PT24H"
     }
   }
   </script>
@@ -34,12 +50,16 @@
           <span class="logo-sub">HOLDINGS</span>
         </a>
       </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav class="main-nav">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="privacy.html">Privacy</a></li>
         </ul>
       </nav>
@@ -56,10 +76,11 @@
 
     <section class="contact-section">
       <div class="container contact-grid">
-        <!-- Contact Form (Formspree) -->
-        <div class="contact-form-container">
+        <!-- LEFT: CONTACT FORM -->
+        <div class="contact-form-container reveal-left">
           <h2>Send us a message</h2>
           <form id="contact-form" action="https://formspree.io/f/mvzbzpyo" method="POST">
+            <!-- honeypot spam protection -->
             <input type="text" name="_gotcha" style="display:none">
             <div class="form-group">
               <label for="name">Full name *</label>
@@ -98,24 +119,32 @@
             <p><i class="fas fa-envelope"></i> Or email directly: <strong>altivonholdings@gmail.com</strong></p>
           </div>
         </div>
-        <!-- Contact Info -->
-        <div class="contact-info">
+
+        <!-- RIGHT: CONTACT INFO + WHY CONTACT US + MAP -->
+        <div class="contact-info reveal-right">
           <div class="info-card">
-            <h3>Altivon Holdings</h3>
+            <h3>Why contact us?</h3>
+            <p><i class="fas fa-check-circle"></i> Get a free quote and timeline estimate</p>
+            <p><i class="fas fa-check-circle"></i> Discuss your project with a developer (not a salesperson)</p>
+            <p><i class="fas fa-check-circle"></i> Learn how we can improve your SEO & conversion</p>
+            <hr>
             <p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p>
             <p><i class="fas fa-globe"></i> <a href="https://anshuman365.github.io" target="_blank">anshuman365.github.io</a></p>
             <p><i class="fas fa-clock"></i> Response within 24h (business days)</p>
-            <hr>
-            <p><i class="fas fa-briefcase"></i> Startups, SMBs, Enterprises</p>
+          </div>
+          <!-- Google Map Placeholder (Delhi, India) -->
+          <div class="map-placeholder">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224182.5100744575!2d77.08102119874875!3d28.645775193836703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1645623456789!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" title="Altivon Holdings location map"></iframe>
           </div>
         </div>
       </div>
     </section>
 
     <script>
+      // Formspree inline thank-you
       const form = document.getElementById('contact-form');
       const thankYou = document.getElementById('thankyou-message');
-      thankYou.style.display = 'none'; // hidden initially
+      thankYou.style.display = 'none';
       if (form) {
         form.addEventListener('submit', async function(e) {
           e.preventDefault();
@@ -140,15 +169,59 @@
     </script>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <!-- same footer -->
     <div class="container footer-grid">
-      <div class="footer-about"><h3>Altivon Holdings</h3><p>Digital solutions for modern enterprises.</p><div class="social-placeholder"><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-github"></i></a></div></div>
-      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
-      <div class="footer-services"><h4>Services</h4><ul><li><a href="services.html">Web Development</a></li><li><a href="services.html#ecommerce">E‑Commerce</a></li><li><a href="services.html#strategy">Digital Strategy</a></li><li><a href="services.html#maintenance">Maintenance</a></li></ul></div>
-      <div class="footer-contact"><h4>Contact</h4><p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p><p><i class="fas fa-globe"></i> <a href="https://anshuman365.github.io" target="_blank">anshuman365.github.io</a></p><p><i class="fas fa-map-pin"></i> Remote / India</p></div>
+      <div class="footer-about">
+        <h3>Altivon Holdings</h3>
+        <p>Empowering Businesses Through Scalable Digital Solutions.</p>
+        <div class="social-placeholder">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#webdev">Web Development</a></li>
+          <li><a href="services.html#ecommerce">E‑Commerce</a></li>
+          <li><a href="services.html#strategy">Digital Strategy</a></li>
+          <li><a href="services.html#maintenance">Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p>
+        <p><i class="fas fa-globe"></i> <a href="https://anshuman365.github.io" target="_blank">anshuman365.github.io</a></p>
+        <p><i class="fas fa-map-pin"></i> Remote / India</p>
+      </div>
     </div>
-    <div class="footer-bottom"><div class="container"><p>© 2026 Altivon Holdings. All rights reserved.</p></div></div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Altivon Holdings. All rights reserved.</p>
+        <p class="footer-tagline">Empowering Businesses Through Scalable Digital Solutions.</p>
+      </div>
+    </div>
   </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 </html>
