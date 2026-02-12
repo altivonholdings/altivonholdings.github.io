@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Altivon Holdings – Start your project</title>
+  <meta name="description" content="Contact Altivon Holdings for website development, e‑commerce, and digital strategy. Use our Formspree contact form or email directly.">
+  <meta property="og:title" content="Contact – Altivon Holdings">
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Altivon Holdings",
+    "email": "altivonholdings@gmail.com",
+    "url": "https://anshuman365.github.io",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "altivonholdings@gmail.com",
+      "contactType": "customer service"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/logo.jpg" alt="Altivon Holdings Logo" class="logo-img">
+          <span class="logo-text">ALTIVON</span>
+          <span class="logo-sub">HOLDINGS</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Start a conversation</h1>
+        <p>Tell us about your project, or just say hello.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-grid">
+        <!-- Contact Form (Formspree) -->
+        <div class="contact-form-container">
+          <h2>Send us a message</h2>
+          <form id="contact-form" action="https://formspree.io/f/mvzbzpyo" method="POST">
+            <input type="text" name="_gotcha" style="display:none">
+            <div class="form-group">
+              <label for="name">Full name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="service">Service interested in</label>
+              <select id="service" name="service">
+                <option value="">-- select --</option>
+                <option value="E-Commerce Development">E-Commerce Development</option>
+                <option value="Corporate Website">Corporate Website</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Construction">Construction</option>
+                <option value="Education">Education</option>
+                <option value="Digital Agency">Digital Agency</option>
+                <option value="Maintenance">Maintenance / Optimization</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send message</button>
+            <p id="thankyou-message">✓ Thank you! We'll reply within 24h.</p>
+          </form>
+          <div class="direct-email">
+            <p><i class="fas fa-envelope"></i> Or email directly: <strong>altivonholdings@gmail.com</strong></p>
+          </div>
+        </div>
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="info-card">
+            <h3>Altivon Holdings</h3>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p>
+            <p><i class="fas fa-globe"></i> <a href="https://anshuman365.github.io" target="_blank">anshuman365.github.io</a></p>
+            <p><i class="fas fa-clock"></i> Response within 24h (business days)</p>
+            <hr>
+            <p><i class="fas fa-briefcase"></i> Startups, SMBs, Enterprises</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const form = document.getElementById('contact-form');
+      const thankYou = document.getElementById('thankyou-message');
+      thankYou.style.display = 'none'; // hidden initially
+      if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          try {
+            const response = await fetch(form.action, {
+              method: 'POST',
+              body: formData,
+              headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+              thankYou.style.display = 'block';
+              form.reset();
+            } else {
+              alert('Oops – something went wrong. Please email us directly.');
+            }
+          } catch (error) {
+            alert('Submission error. Please use email altivonholdings@gmail.com');
+          }
+        });
+      }
+    </script>
+  </main>
+
+  <footer class="site-footer">
+    <!-- same footer -->
+    <div class="container footer-grid">
+      <div class="footer-about"><h3>Altivon Holdings</h3><p>Digital solutions for modern enterprises.</p><div class="social-placeholder"><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-github"></i></a></div></div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-services"><h4>Services</h4><ul><li><a href="services.html">Web Development</a></li><li><a href="services.html#ecommerce">E‑Commerce</a></li><li><a href="services.html#strategy">Digital Strategy</a></li><li><a href="services.html#maintenance">Maintenance</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p><p><i class="fas fa-globe"></i> <a href="https://anshuman365.github.io" target="_blank">anshuman365.github.io</a></p><p><i class="fas fa-map-pin"></i> Remote / India</p></div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>© 2026 Altivon Holdings. All rights reserved.</p></div></div>
+  </footer>
+</body>
+</html>
