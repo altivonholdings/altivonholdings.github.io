@@ -6,17 +6,393 @@
   <title>Search – Altivon Holdings</title>
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://altivonholdings.github.io/search.html">
-  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/pages.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Fuse.js for fuzzy search -->
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <!-- Font Awesome (optional, for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- RESET / FULL ISOLATION ---------- */
+    /* No external CSS – everything is self-contained and !important */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: #f5f7fa !important;
+      color: #1e1e1e !important;
+      line-height: 1.6;
+    }
+
+    /* ---------- HEADER (matching your brand, but forced dark) ---------- */
+    .site-header {
+      background: #0a1f44 !important;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none !important;
+    }
+
+    .logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+    }
+
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: white !important;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8) !important;
+      margin-left: 4px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white !important;
+      font-size: 1.8rem;
+    }
+
+    .main-nav .nav-list {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .main-nav a {
+      color: rgba(255,255,255,0.9) !important;
+      text-decoration: none !important;
+      font-weight: 500;
+      padding-bottom: 4px;
+    }
+
+    .main-nav a.active,
+    .main-nav a:hover {
+      color: white !important;
+      border-bottom: 2px solid #00b4b4;
+    }
+
+    /* ---------- PAGE HEADER (with search box) ---------- */
+    .page-header {
+      background: white !important;
+      padding: 2rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .page-header h1 {
+      color: #0a1f44 !important;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Search form */
+    .search-form {
+      display: flex;
+      gap: 12px;
+      max-width: 600px;
+      margin-top: 1.5rem;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 14px 20px;
+      border: 2px solid #e2e8f0;
+      border-radius: 40px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s;
+      color: #1e1e1e !important;
+      background: white !important;
+    }
+
+    .search-input:focus {
+      border-color: #0a1f44;
+      box-shadow: 0 0 0 3px rgba(10,31,68,0.1);
+    }
+
+    .search-button {
+      background: #0a1f44 !important;
+      color: white !important;
+      border: none;
+      padding: 0 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .search-button:hover {
+      background: #0c2a5e !important;
+      transform: scale(1.02);
+    }
+
+    #search-query-display {
+      color: #2d3a4b !important;
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* ---------- SEARCH RESULTS SECTION (fully isolated) ---------- */
+    .search-results-section {
+      background: #f5f7fa !important;
+      padding: 3rem 0;
+    }
+
+    .search-results-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .search-result-item {
+      background: white !important;
+      color: #1e1e1e !important;
+      border-radius: 24px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #edf2f7;
+      transition: 0.2s;
+    }
+
+    .search-result-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.04);
+    }
+
+    .search-result-item h3 {
+      margin: 0 0 0.6rem 0 !important;
+      font-size: 1.6rem !important;
+      font-weight: 700 !important;
+    }
+
+    .search-result-item h3 a {
+      color: #0a1f44 !important;
+      text-decoration: none !important;
+    }
+
+    .search-result-item h3 a:hover {
+      text-decoration: underline !important;
+    }
+
+    .result-url {
+      color: #2563eb !important;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      word-break: break-all;
+    }
+
+    .result-excerpt {
+      color: #2d3a4b !important;
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .read-more {
+      color: #0a1f44 !important;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .read-more i {
+      transition: transform 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .read-more:hover i {
+      transform: translateX(6px);
+    }
+
+    .result-count {
+      text-align: right;
+      color: #4b5563 !important;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .no-results,
+    .error-message {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: white !important;
+      border-radius: 24px;
+      color: #1e1e1e !important;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* ---------- FOOTER (copied from your site, forced dark text on light) ---------- */
+    .site-footer {
+      background: white !important;
+      border-top: 1px solid #e2e8f0;
+      padding: 3rem 0 1.5rem;
+      color: #1e1e1e !important;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-about h3,
+    .footer-links h4,
+    .footer-services h4,
+    .footer-contact h4 {
+      color: #0a1f44 !important;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-about p,
+    .footer-contact p {
+      color: #2d3a4b !important;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links ul,
+    .footer-services ul {
+      list-style: none;
+    }
+
+    .footer-links li,
+    .footer-services li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a,
+    .footer-services a,
+    .footer-contact a {
+      color: #2563eb !important;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover,
+    .footer-services a:hover,
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .social-placeholder a {
+      color: #0a1f44 !important;
+      font-size: 1.4rem;
+      margin-right: 1rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #e2e8f0;
+      color: #4b5563 !important;
+    }
+
+    .footer-tagline {
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    /* ---------- BACK TO TOP ---------- */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #0a1f44 !important;
+      color: white !important;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: 0.2s;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0a1f44;
+        padding: 1rem 0;
+      }
+      .main-nav.active {
+        display: block;
+      }
+      .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .search-form {
+        flex-direction: column;
+      }
+      .search-button {
+        justify-content: center;
+        padding: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- ========== HEADER (copy of your original, but with forced colors) ========== -->
   <header class="site-header">
     <div class="container nav-container">
       <div class="logo">
@@ -26,7 +402,7 @@
           <span class="logo-sub">HOLDINGS</span>
         </a>
       </div>
-      <button class="nav-toggle" aria-label="Toggle menu">
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.main-nav').classList.toggle('active')">
         <i class="fas fa-bars"></i>
       </button>
       <nav class="main-nav">
@@ -43,13 +419,22 @@
   </header>
 
   <main>
+    <!-- ========== PAGE HEADER with SEARCH BOX ========== -->
     <section class="page-header">
       <div class="container">
-        <h1>Search results</h1>
+        <h1>Search</h1>
+        <!-- Search form – manual query entry -->
+        <form id="searchForm" class="search-form" method="get" action="search.html">
+          <input type="text" name="q" id="searchInput" class="search-input" placeholder="e.g. ecommerce, python, accessibility..." value="">
+          <button type="submit" class="search-button">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </form>
         <p id="search-query-display"></p>
       </div>
     </section>
 
+    <!-- ========== RESULTS SECTION ========== -->
     <section class="search-results-section">
       <div class="container">
         <div id="search-results" class="search-results-grid">
@@ -61,8 +446,8 @@
     </section>
   </main>
 
+  <!-- ========== FOOTER (same as your site, but with forced dark text) ========== -->
   <footer class="site-footer">
-    <!-- footer unchanged – same as index.html -->
     <div class="container footer-grid">
       <div class="footer-about">
         <h3>Altivon Holdings</h3>
@@ -108,29 +493,41 @@
     </div>
   </footer>
 
-  <button class="back-to-top" aria-label="Back to top">
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <script src="js/main.js"></script>
   <script>
-    // ----- Search implementation (unchanged, works perfectly) -----
+    // ----- Back to top visibility -----
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('backToTop');
+      if (window.scrollY > 300) btn.classList.add('show');
+      else btn.classList.remove('show');
+    });
+
+    // ----- Main search logic (fully isolated) -----
     (function() {
       const urlParams = new URLSearchParams(window.location.search);
-      const query = urlParams.get('q');
+      const query = urlParams.get('q') || '';
       const displayEl = document.getElementById('search-query-display');
       const resultsEl = document.getElementById('search-results');
+      const searchInput = document.getElementById('searchInput');
+
+      // Pre-fill search box with current query
+      if (searchInput) searchInput.value = query;
 
       if (!query) {
-        displayEl.innerHTML = 'Please enter a search term.';
-        resultsEl.innerHTML = '<p style="text-align:center;">Type something in the search box (not yet implemented – use ?q=...).</p>';
+        displayEl.innerHTML = 'Enter a keyword above to search the site.';
+        resultsEl.innerHTML = '<p style="text-align:center; color:#2d3a4b;">Please type your search term and click Search.</p>';
         return;
       }
 
-      displayEl.innerHTML = `Showing results for: <strong>${escapeHTML(query)}</strong>`;
+      displayEl.innerHTML = `Showing results for: <strong style="color:#0a1f44;">${escapeHTML(query)}</strong>`;
       resultsEl.innerHTML = '<div style="text-align: center; padding: 3rem;"><i class="fas fa-spinner fa-spin"></i> Searching...</div>';
 
-      fetch('/js/search-index.json')
+      // Fetch search index (relative path)
+      fetch('js/search-index.json')
         .then(res => {
           if (!res.ok) throw new Error('Search index not found. Run build_search_index.py');
           return res.json();
@@ -147,8 +544,8 @@
             resultsEl.innerHTML = `
               <div class="no-results">
                 <i class="fas fa-search" style="font-size: 3rem; opacity: 0.3; margin-bottom: 1rem;"></i>
-                <h3>No results found for "${escapeHTML(query)}"</h3>
-                <p>Try different keywords or browse our <a href="services.html">services</a> or <a href="blog.html">blog</a>.</p>
+                <h3 style="color:#0a1f44;">No results found for "${escapeHTML(query)}"</h3>
+                <p>Try different keywords or browse our <a href="services.html" style="color:#2563eb;">services</a> or <a href="blog.html" style="color:#2563eb;">blog</a>.</p>
               </div>
             `;
             return;
@@ -158,7 +555,7 @@
           results.forEach(r => {
             const item = r.item;
             html += `
-              <article class="search-result-item reveal-up">
+              <article class="search-result-item">
                 <h3><a href="${item.url}">${escapeHTML(item.title)}</a></h3>
                 <p class="result-url">${item.url.replace(/^https?:\/\/[^\/]+/, '')}</p>
                 <p class="result-excerpt">${escapeHTML(item.excerpt || 'No description available.')}</p>
@@ -171,15 +568,17 @@
         .catch(err => {
           resultsEl.innerHTML = `
             <div class="error-message">
-              <i class="fas fa-exclamation-triangle"></i>
-              <p>Could not load search index. Please ensure <code>js/search-index.json</code> exists.</p>
-              <p style="font-size:0.9rem;">${err.message}</p>
+              <i class="fas fa-exclamation-triangle" style="color:#dc2626;"></i>
+              <p style="color:#1e1e1e;">Could not load search index.</p>
+              <p style="font-size:0.9rem; color:#4b5563;">${err.message}</p>
+              <p style="margin-top:1rem;">Please run <code style="background:#e2e8f0; padding:2px 6px; border-radius:4px;">python build_search_index.py</code></p>
             </div>
           `;
         });
 
+      // HTML escape helper
       function escapeHTML(str) {
-        return str.replace(/[&<>"]/g, function(c) {
+        return String(str).replace(/[&<>"]/g, function(c) {
           if (c === '&') return '&amp;';
           if (c === '<') return '&lt;';
           if (c === '>') return '&gt;';
@@ -189,123 +588,5 @@
       }
     })();
   </script>
-
-  <!-- ========== FIXED VISIBILITY STYLES ========== -->
-  <style>
-    /* Force high contrast – text will never disappear again */
-    .search-results-section {
-      background: #f5f7fa;  /* light grey background – separates results */
-      padding: 2rem 0;
-    }
-
-    .search-results-grid {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .search-result-item {
-      background: #ffffff;        /* pure white card */
-      color: #1e1e1e;           /* very dark grey text – perfect contrast */
-      border-radius: 20px;
-      padding: 1.75rem;
-      margin-bottom: 1.75rem;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 1px solid #eaeef2;
-    }
-
-    .search-result-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 28px rgba(0,0,0,0.08);
-    }
-
-    .search-result-item h3 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    .search-result-item h3 a {
-      color: #0a1f44;           /* deep navy – matches site primary */
-      text-decoration: none;
-    }
-
-    .search-result-item h3 a:hover {
-      text-decoration: underline;
-    }
-
-    .result-url {
-      color: #2563eb;           /* bright, visible blue */
-      font-size: 0.9rem;
-      word-break: break-all;
-      margin-bottom: 0.75rem;
-      font-weight: 500;
-    }
-
-    .result-excerpt {
-      color: #2d3a4b;           /* dark slate – easy to read */
-      margin-bottom: 1.25rem;
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-
-    .read-more {
-      color: #0a1f44;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .read-more i {
-      transition: transform 0.2s;
-      font-size: 0.9rem;
-    }
-
-    .read-more:hover i {
-      transform: translateX(5px);
-    }
-
-    .no-results, 
-    .error-message {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: white;
-      border-radius: 24px;
-      color: #1e1e1e;
-      border: 1px solid #e2e8f0;
-    }
-
-    .result-count {
-      text-align: right;
-      color: #4b5563;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 0.75rem;
-    }
-
-    /* Override any stray white-on-white from site theme */
-    .search-result-item,
-    .search-result-item * {
-      color: inherit;           /* force our colours, not inherited light-on-dark */
-    }
-
-    .search-result-item a:not(.read-more) {
-      color: #0a1f44;          /* ensure links are dark, not white */
-    }
-
-    /* Small screens */
-    @media (max-width: 640px) {
-      .search-result-item {
-        padding: 1.25rem;
-      }
-      .search-result-item h3 {
-        font-size: 1.3rem;
-      }
-    }
-  </style>
 </body>
 </html>
