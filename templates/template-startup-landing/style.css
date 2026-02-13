@@ -1,0 +1,478 @@
+/* Startup Landing – Modern SaaS Template */
+:root {
+  --purple: #6b46c1;
+  --purple-light: #9f7aea;
+  --white: #ffffff;
+  --grey-light: #f7fafc;
+  --grey: #edf2f7;
+  --text-dark: #2d3748;
+  --text-grey: #718096;
+  --shadow: 0 10px 30px -5px rgba(107, 70, 193, 0.2);
+  --border-radius: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  background: var(--white);
+}
+
+.watermark {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(107, 70, 193, 0.9);
+  backdrop-filter: blur(4px);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 40px;
+  font-size: 13px;
+  z-index: 9999;
+}
+
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--purple);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--purple);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--purple-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.btn-outline {
+  border: 2px solid var(--purple);
+  color: var(--purple);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--purple);
+  color: white;
+}
+
+.btn-small {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.btn-large {
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-bottom: 1px solid var(--grey);
+  padding: 0.8rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+.logo span {
+  color: var(--purple);
+}
+
+.nav ul {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--purple);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+/* Hero */
+.hero {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--grey-light), white);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.highlight {
+  color: var(--purple);
+}
+
+.signup-form {
+  display: flex;
+  margin: 2rem 0 1rem;
+  max-width: 450px;
+}
+
+.signup-form input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--grey);
+  border-radius: 50px 0 0 50px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.signup-form button {
+  background: var(--purple);
+  color: white;
+  border: none;
+  padding: 0 2rem;
+  border-radius: 0 50px 50px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.signup-form button:hover {
+  background: var(--purple-light);
+}
+
+.small {
+  font-size: 0.85rem;
+  color: var(--text-grey);
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+/* Features */
+.features {
+  padding: 5rem 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  color: var(--purple);
+  margin-bottom: 1rem;
+}
+
+/* Pricing */
+.pricing {
+  padding: 5rem 0;
+  background: var(--grey-light);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 30px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  position: relative;
+  transition: transform 0.3s;
+  border: 1px solid var(--grey);
+}
+
+.pricing-card.popular {
+  transform: scale(1.05);
+  border: 2px solid var(--purple);
+  box-shadow: var(--shadow);
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+}
+
+.popular .badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--purple);
+  color: white;
+  padding: 0.3rem 1.2rem;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--purple);
+  margin: 1rem 0;
+}
+
+.price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-grey);
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin: 1.5rem 0;
+}
+
+.pricing-card li {
+  margin-bottom: 0.8rem;
+  color: var(--text-grey);
+}
+
+.pricing-card i {
+  color: var(--purple);
+  margin-right: 0.5rem;
+}
+
+/* Testimonial */
+.testimonial {
+  padding: 5rem 0;
+}
+
+.testimonial-box {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background: white;
+  padding: 3rem;
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.testimonial-box i {
+  font-size: 3rem;
+  color: var(--purple);
+  opacity: 0.2;
+  margin-bottom: 1rem;
+}
+
+.testimonial-box p {
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.author img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author h4 {
+  margin-bottom: 0.2rem;
+}
+
+.author span {
+  color: var(--text-grey);
+  font-size: 0.9rem;
+}
+
+/* CTA */
+.cta {
+  padding: 4rem 0;
+}
+
+.cta-box {
+  background: var(--purple);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+  border-radius: 40px;
+}
+
+.cta-box h2 {
+  color: white;
+}
+
+.cta-box p {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2rem;
+}
+
+.cta-box .btn-primary {
+  background: white;
+  color: var(--purple);
+}
+
+.cta-box .btn-primary:hover {
+  background: var(--grey-light);
+}
+
+/* Footer */
+.footer {
+  background: #1a202c;
+  color: #a0aec0;
+  padding: 2rem 0;
+  border-top: 1px solid #2d3748;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social a {
+  color: #a0aec0;
+  font-size: 1.3rem;
+  transition: color 0.2s;
+}
+
+.social a:hover {
+  color: var(--purple);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+  }
+  .nav.active {
+    max-height: 300px;
+  }
+  .nav ul {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .pricing-card.popular {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-form {
+    flex-direction: column;
+  }
+  .signup-form input,
+  .signup-form button {
+    border-radius: 50px;
+    width: 100%;
+  }
+  .footer .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

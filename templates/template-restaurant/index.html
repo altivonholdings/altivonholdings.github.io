@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant | La Belle Table</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts (Playfair Display + Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="watermark">🍽️ Template by Altivon Holdings</div>
+
+  <!-- Header with reservation CTA -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">La Belle <span>Table</span></a>
+      <nav class="nav">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#reservation" class="btn btn-primary">Reserve a table</a>
+      <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero with background image and overlay -->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="hero-pre">Since 1985</span>
+        <h1>Experience the <span class="highlight">art of fine dining</span></h1>
+        <p>Authentic French cuisine prepared with passion and the freshest ingredients.</p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">View menu</a>
+          <a href="#reservation" class="btn btn-outline-light">Make a reservation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chef's specials / featured dishes -->
+    <section class="specials">
+      <div class="container">
+        <h2 class="section-title">Chef's specials</h2>
+        <div class="specials-grid">
+          <div class="special-card">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&auto=format" alt="Dish">
+            <div class="special-content">
+              <h3>Coq au Vin</h3>
+              <p>Red wine braised chicken with mushrooms, lardons, and pearl onions.</p>
+              <span class="price">$32</span>
+            </div>
+          </div>
+          <div class="special-card">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format" alt="Dish">
+            <div class="special-content">
+              <h3>Filet Mignon</h3>
+              <p>Grass‑fed beef tenderloin, pommes purée, red wine reduction.</p>
+              <span class="price">$48</span>
+            </div>
+          </div>
+          <div class="special-card">
+            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&auto=format" alt="Dish">
+            <div class="special-content">
+              <h3>Lobster Bisque</h3>
+              <p>Creamy lobster soup with brandy and crème fraîche.</p>
+              <span class="price">$18</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu preview (categorized) -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <h2 class="section-title">Our menu</h2>
+        <div class="menu-tabs">
+          <button class="tab-btn active" data-category="starters">Starters</button>
+          <button class="tab-btn" data-category="mains">Mains</button>
+          <button class="tab-btn" data-category="desserts">Desserts</button>
+          <button class="tab-btn" data-category="wines">Wines</button>
+        </div>
+        <div class="menu-items" id="menu-items">
+          <!-- Starters (active by default) -->
+          <div class="menu-category active" id="starters">
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Escargots de Bourgogne</h3>
+                <p>Six snails baked in garlic herb butter</p>
+              </div>
+              <span class="item-price">$14</span>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>French Onion Soup</h3>
+                <p>Caramelized onions, beef broth, gruyère crouton</p>
+              </div>
+              <span class="item-price">$12</span>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Pâté en Croûte</h3>
+                <p>Country terrine wrapped in pastry, cornichons</p>
+              </div>
+              <span class="item-price">$16</span>
+            </div>
+          </div>
+          <div class="menu-category" id="mains">
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Duck Confit</h3>
+                <p>Slow‑cooked duck leg, garlic potatoes, orange gastrique</p>
+              </div>
+              <span class="item-price">$34</span>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Grilled Sea Bass</h3>
+                <p>Fennel purée, heirloom tomatoes, lemon beurre blanc</p>
+              </div>
+              <span class="item-price">$36</span>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Vegetable Risotto</h3>
+                <p>Arborio rice, seasonal vegetables, parmesan foam</p>
+              </div>
+              <span class="item-price">$22</span>
+            </div>
+          </div>
+          <div class="menu-category" id="desserts">
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Crème Brûlée</h3>
+                <p>Vanilla bean custard with caramelized sugar</p>
+              </div>
+              <span class="item-price">$10</span>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Tarte Tatin</h3>
+                <p>Upside‑down caramelized apple tart, crème fraîche</p>
+              </div>
+              <span class="item-price">$11</span>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Chocolate Soufflé</h3>
+                <p>Warm chocolate soufflé, vanilla ice cream</p>
+              </div>
+              <span class="item-price">$13</span>
+            </div>
+          </div>
+          <div class="menu-category" id="wines">
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Château Margaux 2015</h3>
+                <p>Bordeaux, France – full‑bodied red</p>
+              </div>
+              <span class="item-price">$120</span>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Sancerre "Les Monts Damnés" 2022</h3>
+                <p>Loire Valley – crisp Sauvignon Blanc</p>
+              </div>
+              <span class="item-price">$65</span>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Champagne Bollinger</h3>
+                <p>Brut, NV</p>
+              </div>
+              <span class="item-price">$90</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / story -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1552566624-52f8b3c3a9b9?w=800&auto=format" alt="Chef at work">
+        </div>
+        <div class="about-text">
+          <h2>Our story</h2>
+          <p>Founded in 1985 by Chef Jean‑Pierre Dubois, La Belle Table has been a cornerstone of French culinary tradition. With a philosophy rooted in seasonal, locally‑sourced ingredients, we create dishes that honor classic techniques while embracing modern creativity.</p>
+          <p>Today, our kitchen is led by Chef Marie Laurent, a Michelin‑starred alumna who continues to push boundaries while respecting the essence of French cuisine.</p>
+          <div class="signature">
+            <img src="https://placehold.co/200x80/beige/8B4513?text=Jean-Pierre+Dubois" alt="Signature">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <h2 class="section-title">Moments from our kitchen</h2>
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&auto=format" alt="Dish">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&auto=format" alt="Dish">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&auto=format" alt="Dish">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&auto=format" alt="Dish">
+          <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400&auto=format" alt="Dish">
+          <img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=400&auto=format" alt="Dish">
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation form -->
+    <section class="reservation" id="reservation">
+      <div class="container">
+        <div class="reservation-box">
+          <h2>Reserve your table</h2>
+          <form class="reservation-form" onsubmit="event.preventDefault(); alert('Reservation requested (demo)');">
+            <div class="form-row">
+              <input type="text" placeholder="Your name" required>
+              <input type="email" placeholder="Email address" required>
+            </div>
+            <div class="form-row">
+              <input type="tel" placeholder="Phone number">
+              <input type="date" required>
+            </div>
+            <div class="form-row">
+              <select>
+                <option>2 guests</option>
+                <option>3 guests</option>
+                <option>4 guests</option>
+                <option>5+ guests</option>
+              </select>
+              <select>
+                <option>7:00 PM</option>
+                <option>7:30 PM</option>
+                <option>8:00 PM</option>
+                <option>8:30 PM</option>
+              </select>
+            </div>
+            <textarea rows="3" placeholder="Special requests (optional)"></textarea>
+            <button type="submit" class="btn btn-primary btn-large">Find a table</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location map placeholder -->
+    <section class="location" id="contact">
+      <div class="container">
+        <div class="map-placeholder">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a3169c8b4c7%3A0x7f2b7a7c3b0f3a3!2sFrench%20Restaurant!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus" width="100%" height="400" style="border:0; border-radius: 30px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="contact-info">
+          <p><i class="fas fa-map-pin"></i> 123 Rue de la Paix, New York, NY 10002</p>
+          <p><i class="fas fa-phone"></i> (212) 555‑1234</p>
+          <p><i class="fas fa-envelope"></i> reservations@labelletable.com</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>La Belle <span>Table</span></h3>
+          <p>Authentic French cuisine since 1985.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <p>Mon–Thu: 5pm – 10pm</p>
+          <p>Fri–Sat: 5pm – 11pm</p>
+          <p>Sun: Closed</p>
+        </div>
+        <div class="footer-col">
+          <h4>Follow us</h4>
+          <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-tripadvisor"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 La Belle Table. Template by Altivon Holdings.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

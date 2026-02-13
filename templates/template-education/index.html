@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education | Learning Platform Template</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts (Inter + Poppins) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="watermark">📚 Template by Altivon Holdings</div>
+
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">Edu<span>verse</span></a>
+      <nav class="nav">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#instructors">Instructors</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-buttons">
+        <a href="#" class="btn btn-outline">Log in</a>
+        <a href="#" class="btn btn-primary">Sign up</a>
+      </div>
+      <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero with search and illustration -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>Unlock your potential with <span class="highlight">online learning</span></h1>
+          <p>Join over 500,000 students and learn from industry experts. Courses in tech, business, design, and more.</p>
+          <form class="search-form" onsubmit="event.preventDefault(); alert('Search demo');">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="What do you want to learn?">
+            <button type="submit">Search</button>
+          </form>
+          <div class="trust-badges">
+            <span><i class="fas fa-star"></i> 4.8 rating</span>
+            <span><i class="fas fa-users"></i> 500k+ students</span>
+            <span><i class="fas fa-certificate"></i> Certificates</span>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&auto=format" alt="Students learning">
+          <div class="hero-shape"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured categories -->
+    <section class="categories">
+      <div class="container">
+        <h2 class="section-title">Explore top categories</h2>
+        <div class="category-grid">
+          <div class="category-card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Development</h3>
+            <p>Python, JavaScript, React</p>
+          </div>
+          <div class="category-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Business</h3>
+            <p>Marketing, Finance, Entrepreneurship</p>
+          </div>
+          <div class="category-card">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Design</h3>
+            <p>UI/UX, Graphic Design, Figma</p>
+          </div>
+          <div class="category-card">
+            <i class="fas fa-database"></i>
+            <h3>Data Science</h3>
+            <p>AI, Machine Learning, SQL</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular courses -->
+    <section class="courses" id="courses">
+      <div class="container">
+        <h2 class="section-title">Popular courses</h2>
+        <div class="course-grid">
+          <div class="course-card">
+            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&auto=format" alt="Course">
+            <div class="course-content">
+              <span class="badge">Bestseller</span>
+              <h3>Complete Web Development Bootcamp</h3>
+              <p class="instructor">Dr. Angela Yu</p>
+              <div class="rating">★★★★★ <span>(12,345)</span></div>
+              <p class="price">$89.99 <span class="old-price">$199.99</span></p>
+            </div>
+          </div>
+          <div class="course-card">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format" alt="Course">
+            <div class="course-content">
+              <h3>Python for Data Science</h3>
+              <p class="instructor">Jose Portilla</p>
+              <div class="rating">★★★★☆ <span>(8,234)</span></div>
+              <p class="price">$74.99</p>
+            </div>
+          </div>
+          <div class="course-card">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format" alt="Course">
+            <div class="course-content">
+              <h3>UI/UX Design Masterclass</h3>
+              <p class="instructor">Kristin Ullrich</p>
+              <div class="rating">★★★★★ <span>(5,678)</span></div>
+              <p class="price">$64.99</p>
+            </div>
+          </div>
+          <div class="course-card">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&auto=format" alt="Course">
+            <div class="course-content">
+              <h3>Digital Marketing Strategy</h3>
+              <p class="instructor">Phil Ebiner</p>
+              <div class="rating">★★★★☆ <span>(3,456)</span></div>
+              <p class="price">$54.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="view-all">
+          <a href="#" class="btn btn-outline">Browse all courses →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instructors -->
+    <section class="instructors" id="instructors">
+      <div class="container">
+        <h2 class="section-title">Learn from the best</h2>
+        <div class="instructor-grid">
+          <div class="instructor-card">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format" alt="Instructor">
+            <h3>Dr. Angela Yu</h3>
+            <p>Web development expert</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="instructor-card">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&auto=format" alt="Instructor">
+            <h3>Sarah Johnson</h3>
+            <p>Data scientist</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="instructor-card">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format" alt="Instructor">
+            <h3>Michael Chen</h3>
+            <p>UI/UX designer</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-dribbble"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video / promo section -->
+    <section class="promo">
+      <div class="container promo-grid">
+        <div class="promo-content">
+          <h2>Learn anywhere, anytime</h2>
+          <p>Access our courses on mobile, tablet, or desktop. Download videos for offline learning.</p>
+          <ul class="promo-list">
+            <li><i class="fas fa-check-circle"></i> Lifetime access</li>
+            <li><i class="fas fa-check-circle"></i> Certificate of completion</li>
+            <li><i class="fas fa-check-circle"></i> 30‑day money‑back guarantee</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Start learning today</a>
+        </div>
+        <div class="promo-video">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format" alt="Students">
+          <a href="#" class="play-button"><i class="fas fa-play"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-box">
+          <h2>Subscribe for updates</h2>
+          <p>Get new course alerts and exclusive discounts.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed (demo)');">
+            <input type="email" placeholder="Your email address">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Edu<span>verse</span></h3>
+          <p>Empowering learners worldwide.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p><i class="fas fa-envelope"></i> hello@eduverse.com</p>
+          <p><i class="fas fa-phone"></i> +1 (888) 555‑1234</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Eduverse. Template by Altivon Holdings.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
