@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Accessibility: Why It Matters and How to Implement It | Altivon Holdings</title>
+  <meta name="description" content="Making your site accessible isn't just ethical – it's good business. Learn WCAG basics, ARIA labels, and tools to audit your site.">
+  <link rel="canonical" href="https://anshuman365.github.io/blogs/website-accessibility-guide.html">
+  <meta property="og:title" content="Website Accessibility: Why It Matters and How to Implement It | Altivon Holdings">
+  <meta property="og:description" content="Making your site accessible isn't just ethical – it's good business. Learn WCAG basics, ARIA labels, and tools to audit your site.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://anshuman365.github.io/blogs/website-accessibility-guide.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80">
+  <meta property="og:site_name" content="Altivon Holdings">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Website Accessibility: Why It Matters and How to Implement It | Altivon Holdings">
+  <meta name="twitter:description" content="Making your site accessible isn't just ethical – it's good business. Learn WCAG basics, ARIA labels, and tools to audit your site.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80">
+  <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Website Accessibility: Why It Matters and How to Implement It",
+    "description": "Making your site accessible isn't just ethical – it's good business. Learn WCAG basics, ARIA labels, and tools to audit your site.",
+    "image": "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+    "datePublished": "2026-01-30",
+    "author": {
+      "@type": "Organization",
+      "name": "Altivon Holdings",
+      "url": "https://anshuman365.github.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Altivon Holdings",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://anshuman365.github.io/assets/images/logo.jpg"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">... (navigation) ...</header>
+  <main>
+    <article>
+      <header class="blog-post-header">
+        <div class="container">
+          <p class="blog-post-meta">January 30, 2026 • 6 min read</p>
+          <h1 class="blog-post-title">Website Accessibility: Why It Matters and How to Implement It</h1>
+        </div>
+      </header>
+      <div class="container">
+        <img class="blog-post-image" 
+             src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+             alt="Person using laptop with accessibility features">
+        <div class="blog-post-content">
+          <p>Web accessibility (a11y) means designing and developing websites so that people with disabilities can use them. That includes visual, auditory, motor, and cognitive impairments. Beyond being a legal requirement in many countries, accessibility improves user experience for everyone and expands your audience.</p>
+          
+          <h2>Why Accessibility Matters</h2>
+          <ul>
+            <li><strong>Legal compliance:</strong> The Americans with Disabilities Act (ADA) and the European Accessibility Act mandate certain accessibility standards.</li>
+            <li><strong>Market reach:</strong> Over 1 billion people worldwide live with some form of disability.</li>
+            <li><strong>SEO benefits:</strong> Many accessibility practices (alt text, semantic HTML, proper heading structure) also help search engines understand your content.</li>
+            <li><strong>Brand reputation:</strong> Inclusive design shows you care about all users.</li>
+          </ul>
+          
+          <h2>WCAG 2.1 at a Glance</h2>
+          <p>The Web Content Accessibility Guidelines (WCAG) are organised under four principles: Perceivable, Operable, Understandable, Robust. Key checkpoints include:</p>
+          <ul>
+            <li><strong>Perceivable:</strong> Provide text alternatives for non‑text content (alt text), captions for videos, and sufficient colour contrast.</li>
+            <li><strong>Operable:</strong> Ensure all functionality is available from a keyboard, give users enough time to read content, and avoid seizure‑triggering animations.</li>
+            <li><strong>Understandable:</strong> Make text readable, predict navigation, and help users avoid and correct mistakes.</li>
+            <li><strong>Robust:</strong> Maximise compatibility with current and future user tools (valid HTML, ARIA).</li>
+          </ul>
+          
+          <h2>Quick Wins to Improve Accessibility</h2>
+          <ol>
+            <li><strong>Add alt text to images.</strong> Describe the image's purpose, not just its appearance.</li>
+            <li><strong>Use semantic HTML.</strong> <code>&lt;button&gt;</code> instead of <code>&lt;div onclick&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, heading levels in order.</li>
+            <li><strong>Check colour contrast.</strong> Tools like WebAIM Contrast Checker help you meet WCAG AA standards.</li>
+            <li><strong>Label form inputs clearly.</strong> Use <code>&lt;label&gt;</code> elements with <code>for</code> attributes.</li>
+            <li><strong>Test with a keyboard.</strong> Can you navigate your site using only Tab, Shift+Tab, and Enter?</li>
+          </ol>
+          
+          <h2>Automated Accessibility Tools</h2>
+          <p>Lighthouse (built into Chrome DevTools), axe, and WAVE are excellent automated checkers. They don't catch everything, but they provide a solid starting point.</p>
+          
+          <h2>Conclusion</h2>
+          <p>Accessibility is not a one‑time fix; it's an ongoing commitment. At Altivon Holdings, we bake accessibility into every project from the start. <a href="../contact.html">Contact us</a> for an accessibility audit of your site.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer">[footer]</footer>
+  <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+  <script src="../js/main.js"></script>
+</body>
+</html>
