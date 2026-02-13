@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search – Altivon Holdings</title>
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://altivonholdings.github.io/search.html">
+  <link rel="canonical" href="https://altivonholdings.github.io/search/">
   <!-- Fuse.js for fuzzy search -->
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
-  <!-- Font Awesome (optional, for icons) -->
+  <!-- Font Awesome (icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* ---------- RESET / FULL ISOLATION ---------- */
-    /* No external CSS – everything is self-contained and !important */
     * {
       margin: 0;
       padding: 0;
@@ -26,7 +25,7 @@
       line-height: 1.6;
     }
 
-    /* ---------- HEADER (matching your brand, but forced dark) ---------- */
+    /* ---------- HEADER ---------- */
     .site-header {
       background: #0a1f44 !important;
       padding: 1rem 0;
@@ -114,7 +113,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Search form */
     .search-form {
       display: flex;
       gap: 12px;
@@ -165,7 +163,7 @@
       font-size: 1.1rem;
     }
 
-    /* ---------- SEARCH RESULTS SECTION (fully isolated) ---------- */
+    /* ---------- SEARCH RESULTS SECTION ---------- */
     .search-results-section {
       background: #f5f7fa !important;
       padding: 3rem 0;
@@ -259,7 +257,7 @@
       border: 1px solid #e2e8f0;
     }
 
-    /* ---------- FOOTER (copied from your site, forced dark text on light) ---------- */
+    /* ---------- FOOTER ---------- */
     .site-footer {
       background: white !important;
       border-top: 1px solid #e2e8f0;
@@ -392,12 +390,12 @@
   </style>
 </head>
 <body>
-  <!-- ========== HEADER (copy of your original, but with forced colors) ========== -->
+  <!-- ========== HEADER – ABSOLUTE PATHS ========== -->
   <header class="site-header">
     <div class="container nav-container">
       <div class="logo">
-        <a href="index.html">
-          <img src="assets/images/logo.jpg" alt="Altivon Holdings Logo" class="logo-img" width="48" height="48">
+        <a href="/">
+          <img src="/assets/images/logo.jpg" alt="Altivon Holdings Logo" class="logo-img" width="48" height="48">
           <span class="logo-text">ALTIVON</span>
           <span class="logo-sub">HOLDINGS</span>
         </a>
@@ -407,24 +405,23 @@
       </button>
       <nav class="main-nav">
         <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- ========== PAGE HEADER with SEARCH BOX ========== -->
+    <!-- ========== PAGE HEADER WITH SEARCH BOX ========== -->
     <section class="page-header">
       <div class="container">
         <h1>Search</h1>
-        <!-- Search form – manual query entry -->
-        <form id="searchForm" class="search-form" method="get" action="search.html">
+        <form id="searchForm" class="search-form" method="get" action="/search/">
           <input type="text" name="q" id="searchInput" class="search-input" placeholder="e.g. ecommerce, python, accessibility..." value="">
           <button type="submit" class="search-button">
             <i class="fas fa-search"></i> Search
@@ -446,7 +443,7 @@
     </section>
   </main>
 
-  <!-- ========== FOOTER (same as your site, but with forced dark text) ========== -->
+  <!-- ========== FOOTER – ABSOLUTE PATHS ========== -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-about">
@@ -461,21 +458,21 @@
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
       <div class="footer-services">
         <h4>Services</h4>
         <ul>
-          <li><a href="services.html#webdev">Web Development</a></li>
-          <li><a href="services.html#ecommerce">E‑Commerce</a></li>
-          <li><a href="services.html#strategy">Digital Strategy</a></li>
-          <li><a href="services.html#maintenance">Maintenance</a></li>
+          <li><a href="/services.html#webdev">Web Development</a></li>
+          <li><a href="/services.html#ecommerce">E‑Commerce</a></li>
+          <li><a href="/services.html#strategy">Digital Strategy</a></li>
+          <li><a href="/services.html#maintenance">Maintenance</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -506,7 +503,7 @@
       else btn.classList.remove('show');
     });
 
-    // ----- Main search logic (fully isolated) -----
+    // ----- Main search logic (absolute path for index) -----
     (function() {
       const urlParams = new URLSearchParams(window.location.search);
       const query = urlParams.get('q') || '';
@@ -514,7 +511,7 @@
       const resultsEl = document.getElementById('search-results');
       const searchInput = document.getElementById('searchInput');
 
-      // Pre-fill search box with current query
+      // Pre-fill search box
       if (searchInput) searchInput.value = query;
 
       if (!query) {
@@ -526,8 +523,8 @@
       displayEl.innerHTML = `Showing results for: <strong style="color:#0a1f44;">${escapeHTML(query)}</strong>`;
       resultsEl.innerHTML = '<div style="text-align: center; padding: 3rem;"><i class="fas fa-spinner fa-spin"></i> Searching...</div>';
 
-      // Fetch search index (relative path)
-      fetch('js/search-index.json')
+      // ABSOLUTE PATH – works from any folder
+      fetch('/js/search-index.json')
         .then(res => {
           if (!res.ok) throw new Error('Search index not found. Run build_search_index.py');
           return res.json();
@@ -545,7 +542,7 @@
               <div class="no-results">
                 <i class="fas fa-search" style="font-size: 3rem; opacity: 0.3; margin-bottom: 1rem;"></i>
                 <h3 style="color:#0a1f44;">No results found for "${escapeHTML(query)}"</h3>
-                <p>Try different keywords or browse our <a href="services.html" style="color:#2563eb;">services</a> or <a href="blog.html" style="color:#2563eb;">blog</a>.</p>
+                <p>Try different keywords or browse our <a href="/services.html" style="color:#2563eb;">services</a> or <a href="/blog.html" style="color:#2563eb;">blog</a>.</p>
               </div>
             `;
             return;
