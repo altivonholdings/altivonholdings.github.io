@@ -1,73 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
     <loc>https://altivonholdings.github.io/</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>1.0</priority>
   </url>
+
+  <!-- Main Pages -->
   <url>
     <loc>https://altivonholdings.github.io/services.html</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://altivonholdings.github.io/about.html</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://altivonholdings.github.io/contact.html</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://altivonholdings.github.io/blog.html</loc>
-    <lastmod>2026-02-13</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-02-14</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://altivonholdings.github.io/privacy.html</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.5</priority>
   </url>
+
+  <!-- Blog Posts (8 pages) -->
   <url>
     <loc>https://altivonholdings.github.io/blogs/why-every-business-needs-website.html</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://altivonholdings.github.io/blogs/seo-basics-local-businesses.html</loc>
-    <lastmod>2026-01-28</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://altivonholdings.github.io/blogs/how-ecommerce-boosts-sales.html</loc>
-    <lastmod>2026-01-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://altivonholdings.github.io/blogs/mobile-first-design-2026.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://altivonholdings.github.io/blogs/choose-right-tech-stack-startup.html</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://altivonholdings.github.io/blogs/website-accessibility-guide.html</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://altivonholdings.github.io/blogs/future-web-development-trends.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://altivonholdings.github.io/blogs/custom-cms-vs-wordpress.html</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Portfolio / Case Study Pages (6 pages) -->
+  <url>
+    <loc>https://altivonholdings.github.io/portfolio/buildcorp-construction.html</loc>
+    <lastmod>2026-02-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://altivonholdings.github.io/portfolio/buildcorp.html</loc>
+    <lastmod>2026-02-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://altivonholdings.github.io/portfolio/creativeace.html</loc>
+    <lastmod>2026-02-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://altivonholdings.github.io/portfolio/edufirst.html</loc>
+    <lastmod>2026-02-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://altivonholdings.github.io/portfolio/estatein.html</loc>
+    <lastmod>2026-02-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://altivonholdings.github.io/portfolio/urbancart.html</loc>
+    <lastmod>2026-02-14</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>
