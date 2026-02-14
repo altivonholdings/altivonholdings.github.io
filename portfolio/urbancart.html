@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>UrbanCart E‑Commerce Platform | Altivon Holdings Portfolio</title>
+  <meta name="description" content="Case study: Scalable e‑commerce platform for UrbanCart, a grocery startup. Processed 5000+ orders in first month. Django + Vue.js + Stripe.">
+  <meta name="keywords" content="E-commerce development, grocery website, Django, Vue.js, Stripe integration, headless commerce">
+  <meta name="author" content="Altivon Holdings">
+  <link rel="canonical" href="https://altivonholdings.github.io/portfolio/urbancart.html">
+  <meta property="og:title" content="UrbanCart E‑Commerce Platform | Altivon Holdings">
+  <meta property="og:description" content="Headless e‑commerce with Django and Vue.js, Stripe payments. 5000+ orders in first month.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Interactive Styles (custom for this page) -->
+  <style>
+    .process-timeline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 3rem 0;
+      position: relative;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--navy) 100%);
+      z-index: 1;
+    }
+    .timeline-step {
+      background: white;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 2;
+      border: 3px solid var(--teal);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .timeline-step:hover {
+      transform: scale(1.1);
+      border-color: var(--navy);
+    }
+    .timeline-step span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .timeline-step small {
+      font-size: 0.7rem;
+      color: var(--text-grey);
+    }
+    .step-description {
+      flex: 0 0 100%;
+      margin-top: 2rem;
+      padding: 2rem;
+      background: var(--grey-light);
+      border-radius: 20px;
+      display: none;
+    }
+    .step-description.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tech-tabs {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .tab-btn {
+      padding: 0.8rem 2rem;
+      background: white;
+      border: 1px solid var(--grey-mid);
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+    .tech-content {
+      display: none;
+      padding: 2rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      margin-top: 1rem;
+    }
+    .tech-content.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    .tech-content ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      color: var(--text-grey);
+    }
+    .tech-content li {
+      margin-bottom: 0.5rem;
+    }
+    .stat-highlight {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      background: var(--navy);
+      color: white;
+      padding: 2rem;
+      border-radius: 30px;
+      margin: 3rem 0;
+    }
+    .stat-highlight .stat-item {
+      text-align: center;
+    }
+    .stat-highlight .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+    }
+    .stat-highlight .stat-label {
+      font-size: 1rem;
+      color: var(--silver);
+    }
+    @media (max-width: 768px) {
+      .process-timeline::before { display: none; }
+      .timeline-step { margin-bottom: 1rem; }
+    }
+    /* Additional e-commerce specific */
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card i {
+      font-size: 3rem;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "UrbanCart E‑Commerce Platform",
+    "creator": { "@type": "Organization", "name": "Altivon Holdings" },
+    "description": "Scalable e‑commerce platform with real‑time inventory and secure payments.",
+    "url": "https://altivonholdings.github.io/portfolio/urbancart.html",
+    "image": "https://images.unsplash.com/photo-1472851294608-062f824d29cc"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header"> <!-- same as before, include full code -->
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../assets/images/logo.jpg" alt="Altivon Holdings Logo" class="logo-img" width="48" height="48">
+          <span class="logo-text">ALTIVON</span>
+          <span class="logo-sub">HOLDINGS</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../templates/index.html">Templates & Design</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header" style="background: linear-gradient(135deg, #1e7e7e 0%, #0A1F44 100%); color: white;">
+      <div class="container">
+        <h1 style="color: white;">UrbanCart E‑Commerce Platform</h1>
+        <p style="color: var(--silver);">Helping a grocery startup scale from zero to 5,000+ orders</p>
+      </div>
+    </section>
+
+    <div class="container" style="margin-top: 2rem; position: relative;">
+      <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200" alt="UrbanCart online grocery" style="width: 100%; border-radius: 24px; box-shadow: var(--shadow);" loading="lazy">
+      <div class="stat-highlight" style="position: relative; margin-top: -3rem; background: rgba(30,126,126,0.95);">
+        <div class="stat-item">
+          <div class="stat-number" data-target="5000" data-suffix="+">0+</div>
+          <div class="stat-label">Orders in first month</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="99.9" data-suffix="%">0%</div>
+          <div class="stat-label">Uptime</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="1.2" data-suffix="s">0s</div>
+          <div class="stat-label">Avg. page load</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overview with interactive tabs for features -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">Project Overview</h2>
+        <div class="service-block">
+          <div class="service-text reveal-left">
+            <p><strong>Client:</strong> UrbanCart, a fast‑growing online grocery startup aiming to disrupt local delivery.</p>
+            <p><strong>Challenge:</strong> They needed a platform that could handle real‑time inventory, secure payments, and a smooth user experience across devices—all while scaling rapidly.</p>
+            <p><strong>Solution:</strong> We built a headless e‑commerce solution with a Django backend (REST API) and a Vue.js frontend. The system integrates with Stripe for payments, and inventory syncs automatically with their warehouse database. The result: a fast, reliable shopping experience.</p>
+          </div>
+          <div class="service-icon-large reveal-right">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400" alt="Shopping cart" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Feature Tabs -->
+        <div style="margin-top: 3rem;">
+          <div class="tech-tabs">
+            <button class="tab-btn active" data-tab="tab1">🛒 Real‑time Inventory</button>
+            <button class="tab-btn" data-tab="tab2">💳 Secure Payments</button>
+            <button class="tab-btn" data-tab="tab3">⚡ Performance</button>
+          </div>
+          <div id="tab1" class="tech-content active">
+            <h3>Real‑time Inventory Management</h3>
+            <p>We implemented WebSocket connections and database triggers to update stock levels instantly as orders are placed. Customers see live availability, and out‑of‑stock items are automatically hidden.</p>
+          </div>
+          <div id="tab2" class="tech-content">
+            <h3>Secure Payment Gateway</h3>
+            <p>Stripe integration with support for credit cards, UPI, and digital wallets. Webhooks ensure order confirmation even if the user closes the browser. PCI‑DSS compliant.</p>
+          </div>
+          <div id="tab3" class="tech-content">
+            <h3>Optimized Performance</h3>
+            <p>We used Redis caching, database indexing, and a CDN for images. The site loads in under 1.2 seconds on average, even during peak traffic.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Process Timeline (similar to BuildCorp) -->
+    <section class="bg-light" style="padding: 4rem 0;">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">How We Built It</h2>
+        <div class="process-timeline">
+          <div class="timeline-step" data-step="1"><span>1</span><small>MVP Planning</small></div>
+          <div class="timeline-step" data-step="2"><span>2</span><small>Design</small></div>
+          <div class="timeline-step" data-step="3"><span>3</span><small>Development</small></div>
+          <div class="timeline-step" data-step="4"><span>4</span><small>Testing</small></div>
+          <div class="timeline-step" data-step="5"><span>5</span><small>Launch</small></div>
+        </div>
+        <div id="step1" class="step-description active">
+          <h3>MVP Planning</h3>
+          <p>We identified core features: product catalog, cart, checkout, user accounts, and admin panel. Defined user stories and created a sprint plan.</p>
+        </div>
+        <div id="step2" class="step-description">
+          <h3>UI/UX Design</h3>
+          <p>Clean, intuitive design with high‑contrast buttons, easy navigation, and mobile‑first approach. We created interactive prototypes in Figma.</p>
+        </div>
+        <div id="step3" class="step-description">
+          <h3>Agile Development</h3>
+          <p>We built the Django REST API first, then developed Vue.js components. Integrated Stripe and set up WebSocket for live inventory.</p>
+        </div>
+        <div id="step4" class="step-description">
+          <h3>Load Testing & QA</h3>
+          <p>Simulated 200 concurrent users, tested payment flows, and fixed edge cases. Ensured mobile responsiveness across devices.</p>
+        </div>
+        <div id="step5" class="step-description">
+          <h3>Deployment & Monitoring</h3>
+          <p>Deployed on AWS with auto‑scaling. Set up error tracking (Sentry) and performance monitoring (New Relic).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Cards -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">Technologies Used</h2>
+        <div class="features-grid" style="grid-template-columns: repeat(4,1fr);">
+          <div class="feature-item"><i class="fab fa-python"></i><h3>Django</h3><p>Backend & REST API</p></div>
+          <div class="feature-item"><i class="fab fa-vuejs"></i><h3>Vue.js</h3><p>Frontend</p></div>
+          <div class="feature-item"><i class="fas fa-database"></i><h3>PostgreSQL</h3><p>Database</p></div>
+          <div class="feature-item"><i class="fab fa-stripe"></i><h3>Stripe</h3><p>Payments</p></div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem;">Plus Redis, AWS EC2, WebSocket, Docker</p>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonials" style="background-image: url('https://images.unsplash.com/photo-1556740714-a8395b3bf30f?w=1200');">
+      <div style="background: rgba(30,126,126,0.9); padding: 5rem 0;">
+        <div class="container">
+          <div class="testimonial-card" style="max-width:800px; margin:0 auto;">
+            <i class="fas fa-quote-left"></i>
+            <p>"Altivon delivered a platform that exceeded our expectations. We processed over 5,000 orders in the first month, and the system handled it flawlessly. Their technical expertise and agile approach were key to our success."</p>
+            <h4>Priya Mehta</h4><span>Founder, UrbanCart</span>
+            <div><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Projects -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">More Projects</h2>
+        <div class="card-grid" style="grid-template-columns: repeat(3,1fr);">
+          <div class="service-card"><img src="../assets/images/web_designs/corporate_web_design.jpg" alt="BuildCorp"><div class="card-content"><h3>BuildCorp</h3><p>Corporate website</p><a href="buildcorp.html" class="card-link">View <i class="fas fa-chevron-right"></i></a></div></div>
+          <div class="service-card"><img src="../assets/images/web_designs/real-estate_web_design.jpg" alt="EstateIn"><div class="card-content"><h3>EstateIn</h3><p>Real estate platform</p><a href="estatein.html" class="card-link">View <i class="fas fa-chevron-right"></i></a></div></div>
+          <div class="service-card"><img src="../assets/images/web_designs/educational_institute_web_design.jpg" alt="EduFirst"><div class="card-content"><h3>EduFirst</h3><p>LMS platform</p><a href="edufirst.html" class="card-link">View <i class="fas fa-chevron-right"></i></a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-content"><h2>Ready to launch your e‑commerce store?</h2><p>Let's build a platform that scales with you.</p><a href="../contact.html" class="btn btn-primary btn-large">Get a Quote</a></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <h3>Altivon Holdings</h3>
+        <p>Empowering Businesses Through Scalable Digital Solutions.</p>
+        <div class="social-placeholder">
+          <a href="https://www.linkedin.com/company/altivon-holding/" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.github.com/altivonholdings" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services.html#webdev">Web Development</a></li>
+          <li><a href="../services.html#ecommerce">E‑Commerce</a></li>
+          <li><a href="../services.html#strategy">Digital Strategy</a></li>
+          <li><a href="../services.html#maintenance">Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p>
+        <p><i class="fas fa-globe"></i> <a href="https://altivonholdings.github.io" target="_blank" rel="noopener noreferrer">altivonholdings.github.io</a></p>
+        <p><i class="fas fa-map-pin"></i> Remote / India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Altivon Holdings. All rights reserved.</p>
+        <p class="footer-tagline">Empowering Businesses Through Scalable Digital Solutions.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+  <script src="../js/main.js"></script>
+  <script>
+    // Same interactive JS as BuildCorp (timeline, tabs, stats)
+    (function() {
+      const steps = document.querySelectorAll('.timeline-step');
+      const descriptions = document.querySelectorAll('.step-description');
+      steps.forEach(step => {
+        step.addEventListener('click', function() {
+          const stepNum = this.getAttribute('data-step');
+          descriptions.forEach(desc => desc.classList.remove('active'));
+          document.getElementById('step' + stepNum).classList.add('active');
+        });
+      });
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tech-content');
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const tabId = this.getAttribute('data-tab');
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+      const statNumbers = document.querySelectorAll('.stat-highlight .stat-number');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const suffix = el.getAttribute('data-suffix') || '';
+            let count = 0;
+            const update = () => {
+              if (count < target) {
+                count += Math.ceil(target / 50);
+                el.innerText = count + suffix;
+                requestAnimationFrame(update);
+              } else {
+                el.innerText = target + suffix;
+              }
+            };
+            update();
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      statNumbers.forEach(num => observer.observe(num));
+    })();
+  </script>
+</body>
+</html>

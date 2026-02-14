@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>BuildCorp Construction Website | Altivon Holdings Portfolio</title>
+  <meta name="description" content="Case study: Dedicated construction website for BuildCorp with project showcase, equipment list, and quote form. 20% increase in project inquiries. WordPress + custom PHP.">
+  <meta name="keywords" content="Construction website, project showcase, WordPress development, custom PHP, quote form">
+  <meta name="author" content="Altivon Holdings">
+  <link rel="canonical" href="https://altivonholdings.github.io/portfolio/buildcorp-construction.html">
+  <meta property="og:title" content="BuildCorp Construction Website | Altivon Holdings Portfolio">
+  <meta property="og:description" content="Construction project showcase with timeline, equipment list, and quote form. 20% increase in inquiries.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Reusable interactive styles (same as before) */
+    .process-timeline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 3rem 0;
+      position: relative;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #e67e22 0%, #0A1F44 100%);
+      z-index: 1;
+    }
+    .timeline-step {
+      background: white;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 2;
+      border: 3px solid #e67e22;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .timeline-step:hover {
+      transform: scale(1.1);
+      border-color: var(--navy);
+    }
+    .timeline-step span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .timeline-step small {
+      font-size: 0.7rem;
+      color: var(--text-grey);
+    }
+    .step-description {
+      flex: 0 0 100%;
+      margin-top: 2rem;
+      padding: 2rem;
+      background: var(--grey-light);
+      border-radius: 20px;
+      display: none;
+    }
+    .step-description.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tech-tabs {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 0.8rem 2rem;
+      background: white;
+      border: 1px solid var(--grey-mid);
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: #e67e22;
+      color: white;
+      border-color: #e67e22;
+    }
+    .tech-content {
+      display: none;
+      padding: 2rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      margin-top: 1rem;
+    }
+    .tech-content.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    .tech-content ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      color: var(--text-grey);
+    }
+    .stat-highlight {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      background: #e67e22;
+      color: white;
+      padding: 2rem;
+      border-radius: 30px;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+    .stat-highlight .stat-item {
+      text-align: center;
+    }
+    .stat-highlight .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+    }
+    .stat-highlight .stat-label {
+      font-size: 1rem;
+      color: #ffe5d0;
+    }
+    /* Construction specific */
+    .project-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project-info {
+      padding: 1.5rem;
+    }
+    .equipment-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .equipment-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid var(--grey-mid);
+    }
+    .equipment-item i {
+      font-size: 2rem;
+      color: #e67e22;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "BuildCorp Construction Website",
+    "creator": { "@type": "Organization", "name": "Altivon Holdings" },
+    "description": "Construction project showcase with timeline, equipment list, and quote form.",
+    "url": "https://altivonholdings.github.io/portfolio/buildcorp-construction.html",
+    "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../assets/images/logo.jpg" alt="Altivon Holdings Logo" class="logo-img" width="48" height="48">
+          <span class="logo-text">ALTIVON</span>
+          <span class="logo-sub">HOLDINGS</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../templates/index.html">Templates & Design</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header" style="background: linear-gradient(135deg, #e67e22 0%, #0A1F44 100%); color: white;">
+      <div class="container">
+        <h1 style="color: white;">BuildCorp Construction Website</h1>
+        <p style="color: #ffe5d0;">Showcasing heavy‑duty projects with style and functionality</p>
+      </div>
+    </section>
+
+    <div class="container" style="margin-top: 2rem; position: relative;">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200" alt="Construction site" style="width: 100%; border-radius: 24px; box-shadow: var(--shadow);" loading="lazy">
+      <div class="stat-highlight" style="position: relative; margin-top: -3rem; background: #e67e22;">
+        <div class="stat-item">
+          <div class="stat-number" data-target="20" data-suffix="%">0%</div>
+          <div class="stat-label">Increase in inquiries</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="15" data-suffix="+">0+</div>
+          <div class="stat-label">Projects showcased</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="4.9" data-suffix="/5">0/5</div>
+          <div class="stat-label">Client rating</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">Project Overview</h2>
+        <div class="service-block">
+          <div class="service-text reveal-left">
+            <p><strong>Client:</strong> BuildCorp Construction, a sister company of BuildCorp, specializing in large‑scale infrastructure and commercial projects.</p>
+            <p><strong>Challenge:</strong> They needed a dedicated website to showcase their construction projects, list equipment, and allow potential clients to request quotes. The site had to convey trust, safety standards, and technical expertise.</p>
+            <p><strong>Solution:</strong> We built a custom WordPress theme with an orange and grey colour scheme to reflect their brand. The site features a project gallery with timeline integration, an equipment inventory, and a quote request form that emails the sales team.</p>
+          </div>
+          <div class="service-icon-large reveal-right">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400" alt="Construction workers" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Feature Tabs -->
+        <div style="margin-top: 3rem;">
+          <div class="tech-tabs">
+            <button class="tab-btn active" data-tab="tab1">🏗️ Project Showcase</button>
+            <button class="tab-btn" data-tab="tab2">🛠️ Equipment List</button>
+            <button class="tab-btn" data-tab="tab3">📝 Quote Form</button>
+          </div>
+          <div id="tab1" class="tech-content active">
+            <h3>Project Showcase with Timeline</h3>
+            <p>Each project has its own page with high‑res images, project timeline (start/end dates), budget, and key milestones. Visitors can filter projects by type (residential, commercial, industrial) or location.</p>
+          </div>
+          <div id="tab2" class="tech-content">
+            <h3>Equipment Inventory</h3>
+            <p>A searchable database of all machinery and equipment available for projects. Includes specs, photos, and availability status. This builds trust and helps clients understand our capabilities.</p>
+          </div>
+          <div id="tab3" class="tech-content">
+            <h3>Intelligent Quote Form</h3>
+            <p>The quote form asks for project details, timeline, and budget. Submissions go to the sales team and are also logged in the CRM. We added conditional fields to make the form smarter (e.g., show relevant questions based on project type).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Process Timeline -->
+    <section class="bg-light" style="padding: 4rem 0;">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">Our Development Process</h2>
+        <div class="process-timeline">
+          <div class="timeline-step" data-step="1"><span>1</span><small>Discovery</small></div>
+          <div class="timeline-step" data-step="2"><span>2</span><small>Design</small></div>
+          <div class="timeline-step" data-step="3"><span>3</span><small>Development</small></div>
+          <div class="timeline-step" data-step="4"><span>4</span><small>Testing</small></div>
+          <div class="timeline-step" data-step="5"><span>5</span><small>Launch</small></div>
+        </div>
+        <div id="step1" class="step-description active">
+          <h3>Discovery & Requirements</h3>
+          <p>We interviewed the project managers and sales team to understand what information clients need. Key requirements: project photos, equipment specs, and an easy way to request quotes.</p>
+        </div>
+        <div id="step2" class="step-description">
+          <h3>Design (Orange & Grey Theme)</h3>
+          <p>We created a bold, industrial design with orange accents and dark greys. The layout emphasizes large project images and clear calls‑to‑action. We designed custom icons for equipment categories.</p>
+        </div>
+        <div id="step3" class="step-description">
+          <h3>Custom WordPress Development</h3>
+          <p>We built a custom WordPress theme from scratch, with custom post types for Projects and Equipment. The quote form was built with Gravity Forms and integrated with email and CRM.</p>
+        </div>
+        <div id="step4" class="step-description">
+          <h3>Content Population & Testing</h3>
+          <p>We helped the client upload 15 initial projects and 50+ equipment items. We tested the form thoroughly and ensured mobile responsiveness.</p>
+        </div>
+        <div id="step5" class="step-description">
+          <h3>Launch & SEO Optimization</h3>
+          <p>After launch, we optimized the site for local SEO (e.g., "construction company in [city]") and set up Google Analytics. Within 2 months, inquiries increased by 20%.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">Technologies Used</h2>
+        <div class="features-grid" style="grid-template-columns: repeat(4,1fr);">
+          <div class="feature-item"><i class="fab fa-wordpress"></i><h3>WordPress</h3><p>CMS</p></div>
+          <div class="feature-item"><i class="fab fa-php"></i><h3>Custom PHP</h3><p>Theme development</p></div>
+          <div class="feature-item"><i class="fas fa-database"></i><h3>MySQL</h3><p>Database</p></div>
+          <div class="feature-item"><i class="fas fa-envelope"></i><h3>Gravity Forms</h3><p>Quote form</p></div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem;">Plus Advanced Custom Fields, Yoast SEO, and custom post types</p>
+      </div>
+    </section>
+
+    <!-- Equipment Showcase -->
+    <section class="container" style="margin: 4rem auto;">
+      <h2 class="reveal-fade" style="text-align: center;">Equipment Highlights</h2>
+      <div class="equipment-list">
+        <div class="equipment-item">
+          <i class="fas fa-tractor"></i>
+          <h4>Excavators</h4>
+          <p>8 units available</p>
+        </div>
+        <div class="equipment-item">
+          <i class="fas fa-truck"></i>
+          <h4>Dump Trucks</h4>
+          <p>12 units</p>
+        </div>
+        <div class="equipment-item">
+          <i class="fas fa-crane"></i>
+          <h4>Cranes</h4>
+          <p>5 units</p>
+        </div>
+        <div class="equipment-item">
+          <i class="fas fa-hard-hat"></i>
+          <h4>Safety Gear</h4>
+          <p>Full inventory</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonials" style="background-image: url('https://images.unsplash.com/photo-1590642916589-592bca10dfbf?w=1200');">
+      <div style="background: rgba(230,126,34,0.9); padding: 5rem 0;">
+        <div class="container">
+          <div class="testimonial-card" style="max-width:800px; margin:0 auto; background: white;">
+            <i class="fas fa-quote-left" style="color: #e67e22;"></i>
+            <p>"The new website perfectly represents our brand – strong, reliable, and professional. The equipment list and project gallery have impressed many potential clients. We're seeing 20% more inquiries, and the quote form saves us time."</p>
+            <h4>Vikram Singh</h4><span>Project Director, BuildCorp Construction</span>
+            <div><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Projects -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">More Projects</h2>
+        <div class="card-grid" style="grid-template-columns: repeat(3,1fr);">
+          <div class="service-card"><img src="../assets/images/web_designs/corporate_web_design.jpg" alt="BuildCorp"><div class="card-content"><h3>BuildCorp</h3><p>Corporate website</p><a href="buildcorp.html" class="card-link">View <i class="fas fa-chevron-right"></i></a></div></div>
+          <div class="service-card"><img src="../assets/images/web_designs/ecommerce_web_design.jpg" alt="UrbanCart"><div class="card-content"><h3>UrbanCart</h3><p>E‑commerce platform</p><a href="urbancart.html" class="card-link">View <i class="fas fa-chevron-right"></i></a></div></div>
+          <div class="service-card"><img src="../assets/images/web_designs/real-estate_web_design.jpg" alt="EstateIn"><div class="card-content"><h3>EstateIn</h3><p>Real estate platform</p><a href="estatein.html" class="card-link">View <i class="fas fa-chevron-right"></i></a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" style="background: #e67e22;">
+      <div class="container cta-content"><h2>Ready to build your construction website?</h2><p>Let's showcase your projects and attract more clients.</p><a href="../contact.html" class="btn btn-primary btn-large" style="background: white; color: #e67e22;">Get a Quote</a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <h3>Altivon Holdings</h3>
+        <p>Empowering Businesses Through Scalable Digital Solutions.</p>
+        <div class="social-placeholder">
+          <a href="https://www.linkedin.com/company/altivon-holding/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.github.com/altivonholdings" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services.html#webdev">Web Development</a></li>
+          <li><a href="../services.html#ecommerce">E‑Commerce</a></li>
+          <li><a href="../services.html#strategy">Digital Strategy</a></li>
+          <li><a href="../services.html#maintenance">Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p>
+        <p><i class="fas fa-globe"></i> <a href="https://altivonholdings.github.io">altivonholdings.github.io</a></p>
+        <p><i class="fas fa-map-pin"></i> Remote / India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Altivon Holdings. All rights reserved.</p>
+        <p class="footer-tagline">Empowering Businesses Through Scalable Digital Solutions.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+  <script src="../js/main.js"></script>
+  <script>
+    (function() {
+      // Timeline steps
+      const steps = document.querySelectorAll('.timeline-step');
+      const descriptions = document.querySelectorAll('.step-description');
+      steps.forEach(step => {
+        step.addEventListener('click', function() {
+          const stepNum = this.getAttribute('data-step');
+          descriptions.forEach(desc => desc.classList.remove('active'));
+          document.getElementById('step' + stepNum).classList.add('active');
+        });
+      });
+      // Tabs
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tech-content');
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const tabId = this.getAttribute('data-tab');
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+      // Stats animation
+      const statNumbers = document.querySelectorAll('.stat-highlight .stat-number');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const suffix = el.getAttribute('data-suffix') || '';
+            let count = 0;
+            const update = () => {
+              if (count < target) {
+                count += Math.ceil(target / 50);
+                el.innerText = count + suffix;
+                requestAnimationFrame(update);
+              } else {
+                el.innerText = target + suffix;
+              }
+            };
+            update();
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      statNumbers.forEach(num => observer.observe(num));
+    })();
+  </script>
+</body>
+</html>
