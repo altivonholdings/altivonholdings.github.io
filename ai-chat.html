@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics (same as other pages) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4X0M6RM0F6', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altivon AI – Your Web Development Assistant</title>
+  <meta name="description" content="Chat with Altivon AI, your personal assistant for website development, e-commerce, digital strategy, and more.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Link to your existing CSS (for header/footer consistency) -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- Additional inline styles for the chat page -->
+  <style>
+    /* Main chat container */
+    .chat-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 32px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 200px);
+      min-height: 600px;
+    }
+
+    /* Chat header */
+    .chat-header {
+      background: #0a1f44;
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .chat-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .chat-header p {
+      margin: 0.2rem 0 0;
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+    .chat-header i {
+      font-size: 2.5rem;
+    }
+
+    /* Messages area */
+    .chat-messages {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+      background: #f5f7fa;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Message bubbles */
+    .message {
+      display: flex;
+      max-width: 80%;
+    }
+    .message.user {
+      align-self: flex-end;
+    }
+    .message.assistant {
+      align-self: flex-start;
+    }
+    .message .bubble {
+      padding: 1rem 1.5rem;
+      border-radius: 24px;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+    .message.user .bubble {
+      background: #0a1f44;
+      color: white;
+      border-bottom-right-radius: 4px;
+    }
+    .message.assistant .bubble {
+      background: white;
+      color: #1e1e1e;
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .message .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin-right: 12px;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #0a1f44;
+    }
+    .message.user .avatar {
+      order: 2;
+      margin-left: 12px;
+      margin-right: 0;
+      background: #0a1f44;
+      color: white;
+    }
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      padding: 0.5rem 1rem;
+      background: white;
+      border-radius: 40px;
+      width: fit-content;
+    }
+    .typing-indicator span {
+      width: 8px;
+      height: 8px;
+      background: #94a3b8;
+      border-radius: 50%;
+      animation: bounce 1.4s infinite ease-in-out;
+    }
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes bounce {
+      0%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-6px); }
+    }
+
+    /* Input area */
+    .chat-input-area {
+      display: flex;
+      gap: 12px;
+      padding: 1.5rem 2rem;
+      background: white;
+      border-top: 1px solid #e2e8f0;
+    }
+    #chat-input {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 40px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s;
+    }
+    #chat-input:focus {
+      border-color: #0a1f44;
+      box-shadow: 0 0 0 3px rgba(10,31,68,0.1);
+    }
+    #send-button {
+      background: #0a1f44;
+      color: white;
+      border: none;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+    #send-button:hover {
+      background: #0c2a5e;
+      transform: scale(1.05);
+    }
+    #send-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* New chat button */
+    .new-chat-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      margin-left: auto;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.2s;
+    }
+    .new-chat-btn:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Footer adjustment */
+    .site-footer {
+      margin-top: 2rem;
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .chat-container {
+        height: calc(100vh - 160px);
+        margin: 1rem;
+        border-radius: 24px;
+      }
+      .chat-header {
+        padding: 1rem;
+      }
+      .chat-messages, .chat-input-area {
+        padding: 1rem;
+      }
+      .message {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="/">
+          <img src="assets/images/logo.jpg" alt="Altivon Holdings Logo" class="logo-img" width="48" height="48">
+          <span class="logo-text">ALTIVON</span>
+          <span class="logo-sub">HOLDINGS</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.main-nav').classList.toggle('active')">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/ai-chat.html" class="active">Altivon AI</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Main chat container -->
+    <div class="container">
+      <div class="chat-container">
+        <div class="chat-header">
+          <i class="fas fa-robot"></i>
+          <div>
+            <h2>Altivon AI</h2>
+            <p>Your personal web development assistant</p>
+          </div>
+          <button class="new-chat-btn" id="new-chat-btn">
+            <i class="fas fa-plus-circle"></i> New chat
+          </button>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+          <!-- Messages will appear here -->
+          <div class="message assistant">
+            <div class="avatar"><i class="fas fa-robot"></i></div>
+            <div class="bubble">👋 Hi! I'm Altivon AI. How can I help you with website development, e-commerce, or digital strategy today?</div>
+          </div>
+        </div>
+
+        <div class="chat-input-area">
+          <input type="text" id="chat-input" placeholder="Ask me anything about our services..." autofocus>
+          <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <h3>Altivon Holdings</h3>
+        <p>Empowering Businesses Through Scalable Digital Solutions.</p>
+        <div class="social-placeholder">
+          <a href="https://www.linkedin.com/company/altivon-holding/" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.github.com/altivonholdings" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services.html#webdev">Web Development</a></li>
+          <li><a href="/services.html#ecommerce">E‑Commerce</a></li>
+          <li><a href="/services.html#strategy">Digital Strategy</a></li>
+          <li><a href="/services.html#maintenance">Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p>
+        <p><i class="fas fa-globe"></i> <a href="https://altivonholdings.github.io" target="_blank" rel="noopener noreferrer">altivonholdings.github.io</a></p>
+        <p><i class="fas fa-map-pin"></i> Remote / India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Altivon Holdings. All rights reserved.</p>
+        <p class="footer-tagline">Empowering Businesses Through Scalable Digital Solutions.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for chat logic -->
+  <script>
+    (function() {
+      // Configuration
+      const ASSETS_PATH = 'assets/chat/';  // relative to root
+      const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
+      const MODEL = 'openai/gpt-3.5-turbo'; // you can change this
+
+      let apiKey = '';
+      let systemPrompt = '';
+
+      // DOM elements
+      const messagesContainer = document.getElementById('chat-messages');
+      const userInput = document.getElementById('chat-input');
+      const sendButton = document.getElementById('send-button');
+      const newChatBtn = document.getElementById('new-chat-btn');
+
+      // Conversation history (including system prompt)
+      let messages = [];
+
+      // Initialize: fetch credentials and set up event listeners
+      async function initChat() {
+        try {
+          const [keyRes, promptRes] = await Promise.all([
+            fetch(ASSETS_PATH + 'api_key.txt'),
+            fetch(ASSETS_PATH + 'system-prompt-adv.txt')
+          ]);
+          if (!keyRes.ok || !promptRes.ok) throw new Error('Failed to load chat assets');
+          apiKey = (await keyRes.text()).trim();
+          systemPrompt = (await promptRes.text()).trim();
+
+          // Reset conversation (system prompt + welcome)
+          resetConversation();
+
+          // Event listeners
+          sendButton.addEventListener('click', sendMessage);
+          userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+          });
+          newChatBtn.addEventListener('click', resetConversation);
+        } catch (error) {
+          console.error('Chat init error:', error);
+          // Show error in chat
+          addMessage('assistant', '⚠️ Failed to initialize chat. Please refresh or contact support.', false);
+        }
+      }
+
+      // Reset conversation (clear everything except system prompt)
+      function resetConversation() {
+        messages = [{ role: 'system', content: systemPrompt }];
+        // Clear messages container
+        messagesContainer.innerHTML = '';
+        // Add welcome message
+        addMessage('assistant', '👋 Hi! I\'m Altivon AI. How can I help you with website development, e-commerce, or digital strategy today?', false);
+        userInput.disabled = false;
+        sendButton.disabled = false;
+        userInput.focus();
+      }
+
+      // Add a message to the UI (and optionally to history)
+      function addMessage(role, content, addToHistory = true) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${role}`;
+
+        const avatar = document.createElement('div');
+        avatar.className = 'avatar';
+        if (role === 'assistant') {
+          avatar.innerHTML = '<i class="fas fa-robot"></i>';
+        } else {
+          avatar.innerHTML = '<i class="fas fa-user"></i>';
+        }
+
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        bubble.textContent = content;
+
+        if (role === 'user') {
+          messageDiv.appendChild(bubble);
+          messageDiv.appendChild(avatar);
+        } else {
+          messageDiv.appendChild(avatar);
+          messageDiv.appendChild(bubble);
+        }
+
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+        if (addToHistory) {
+          messages.push({ role, content });
+        }
+      }
+
+      // Show typing indicator
+      function showTypingIndicator() {
+        const indicator = document.createElement('div');
+        indicator.className = 'message assistant';
+        indicator.id = 'typing-indicator';
+        indicator.innerHTML = `
+          <div class="avatar"><i class="fas fa-robot"></i></div>
+          <div class="typing-indicator">
+            <span></span><span></span><span></span>
+          </div>
+        `;
+        messagesContainer.appendChild(indicator);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+
+      function removeTypingIndicator() {
+        const indicator = document.getElementById('typing-indicator');
+        if (indicator) indicator.remove();
+      }
+
+      // Send message to OpenRouter
+      async function sendMessage() {
+        const text = userInput.value.trim();
+        if (!text) return;
+
+        // Disable input while waiting
+        userInput.disabled = true;
+        sendButton.disabled = true;
+
+        // Add user message to UI and history
+        addMessage('user', text);
+
+        // Clear input
+        userInput.value = '';
+
+        // Show typing indicator
+        showTypingIndicator();
+
+        try {
+          const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${apiKey}`,
+              'HTTP-Referer': window.location.origin,
+              'X-Title': 'Altivon AI Chat'
+            },
+            body: JSON.stringify({
+              model: MODEL,
+              messages: messages
+            })
+          });
+
+          if (!response.ok) {
+            if (response.status === 402) {
+              throw new Error('Insufficient credits. Please contact the site owner.');
+            }
+            throw new Error(`API error: ${response.status}`);
+          }
+
+          const data = await response.json();
+          const reply = data.choices[0].message.content;
+
+          // Remove typing indicator
+          removeTypingIndicator();
+
+          // Add assistant reply
+          addMessage('assistant', reply);
+        } catch (error) {
+          removeTypingIndicator();
+          addMessage('assistant', `Sorry, I encountered an error: ${error.message}`, false);
+          console.error(error);
+        } finally {
+          userInput.disabled = false;
+          sendButton.disabled = false;
+          userInput.focus();
+        }
+      }
+
+      // Start chat when DOM ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initChat);
+      } else {
+        initChat();
+      }
+    })();
+  </script>
+
+  <!-- Back to Top (optional, same as other pages) -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <script>
+    // Back to top visibility (same as main.js)
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('backToTop');
+      if (window.scrollY > 300) btn.classList.add('show');
+      else btn.classList.remove('show');
+    });
+  </script>
+</body>
+</html>
