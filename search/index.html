@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Enhanced Google Analytics -->
+  <!-- Google Analytics (same as other pages) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,129 +12,112 @@
       page_location: window.location.href
     });
   </script>
-  
-  <!-- AdSense Setup -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search – Altivon Holdings</title>
-  <meta name="robots" content="noindex, follow">
+  <!-- <meta name="robots" content="noindex, follow"> -->
   <link rel="canonical" href="https://altivonholdings.github.io/search/">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
+  
   <!-- Fuse.js for fuzzy search -->
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
-  <!-- Font Awesome (icons) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <style>
-    /* ---------- RESET / FULL ISOLATION ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* ---------- RESET / BASE ---------- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background: #f5f7fa !important;
-      color: #1e1e1e !important;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f5f7fa;
+      color: #1e1e1e;
       line-height: 1.6;
     }
-
-    /* ---------- HEADER ---------- */
-    .site-header {
-      background: #0a1f44 !important;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    }
-
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
+    /* ---------- HEADER (same as main site) ---------- */
+    .site-header {
+      background: #0a1f44;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
     .logo a {
       display: flex;
       align-items: center;
       gap: 10px;
-      text-decoration: none !important;
+      text-decoration: none;
     }
-
     .logo-img {
       width: 48px;
       height: 48px;
       border-radius: 8px;
     }
-
     .logo-text {
       font-size: 1.6rem;
       font-weight: 700;
-      color: white !important;
+      color: white;
       letter-spacing: 1px;
     }
-
     .logo-sub {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.8) !important;
+      color: rgba(255,255,255,0.8);
       margin-left: 4px;
     }
-
     .nav-toggle {
       display: none;
       background: none;
       border: none;
-      color: white !important;
+      color: white;
       font-size: 1.8rem;
+      cursor: pointer;
     }
-
     .main-nav .nav-list {
       display: flex;
       gap: 2rem;
       list-style: none;
     }
-
     .main-nav a {
-      color: rgba(255,255,255,0.9) !important;
-      text-decoration: none !important;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
       font-weight: 500;
       padding-bottom: 4px;
     }
-
     .main-nav a.active,
     .main-nav a:hover {
-      color: white !important;
+      color: white;
       border-bottom: 2px solid #00b4b4;
     }
 
-    /* ---------- PAGE HEADER (with search box) ---------- */
+    /* ---------- PAGE HEADER + SEARCH BOX ---------- */
     .page-header {
-      background: white !important;
+      background: white;
       padding: 2rem 0;
       border-bottom: 1px solid #e2e8f0;
     }
-
     .page-header h1 {
-      color: #0a1f44 !important;
+      color: #0a1f44;
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-
     .search-form {
       display: flex;
       gap: 12px;
       max-width: 600px;
       margin-top: 1.5rem;
     }
-
     .search-input {
       flex: 1;
       padding: 14px 20px;
@@ -143,18 +126,15 @@
       font-size: 1rem;
       outline: none;
       transition: 0.2s;
-      color: #1e1e1e !important;
-      background: white !important;
+      background: white;
     }
-
     .search-input:focus {
       border-color: #0a1f44;
       box-shadow: 0 0 0 3px rgba(10,31,68,0.1);
     }
-
     .search-button {
-      background: #0a1f44 !important;
-      color: white !important;
+      background: #0a1f44;
+      color: white;
       border: none;
       padding: 0 32px;
       border-radius: 40px;
@@ -166,178 +146,208 @@
       align-items: center;
       gap: 8px;
     }
-
     .search-button:hover {
-      background: #0c2a5e !important;
+      background: #0c2a5e;
       transform: scale(1.02);
     }
-
     #search-query-display {
-      color: #2d3a4b !important;
+      color: #2d3a4b;
       margin-top: 0.5rem;
       font-size: 1.1rem;
     }
 
-    /* ---------- SEARCH RESULTS SECTION ---------- */
-    .search-results-section {
-      background: #f5f7fa !important;
-      padding: 3rem 0;
+    /* ---------- FILTER BUTTONS ---------- */
+    .filter-section {
+      background: white;
+      padding: 1rem 0 0;
     }
-
-    .search-results-grid {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .search-result-item {
-      background: white !important;
-      color: #1e1e1e !important;
-      border-radius: 24px;
-      padding: 2rem;
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-bottom: 2rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-      border: 1px solid #edf2f7;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid #cbd5e0;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #2d3a4b;
+      cursor: pointer;
       transition: 0.2s;
     }
-
-    .search-result-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 30px rgba(0,0,0,0.04);
+    .filter-btn.active {
+      background: #0a1f44;
+      border-color: #0a1f44;
+      color: white;
+    }
+    .filter-btn:hover {
+      background: #e2e8f0;
     }
 
-    .search-result-item h3 {
-      margin: 0 0 0.6rem 0 !important;
-      font-size: 1.6rem !important;
-      font-weight: 700 !important;
+    /* ---------- SEARCH RESULTS ---------- */
+    .search-results-section {
+      background: #f5f7fa;
+      padding: 2rem 0 4rem;
     }
-
-    .search-result-item h3 a {
-      color: #0a1f44 !important;
-      text-decoration: none !important;
-    }
-
-    .search-result-item h3 a:hover {
-      text-decoration: underline !important;
-    }
-
-    .result-url {
-      color: #2563eb !important;
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 0.75rem;
-      word-break: break-all;
-    }
-
-    .result-excerpt {
-      color: #2d3a4b !important;
-      margin-bottom: 1.25rem;
-      line-height: 1.7;
-      font-size: 1rem;
-    }
-
-    .read-more {
-      color: #0a1f44 !important;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .read-more i {
-      transition: transform 0.2s;
-      font-size: 0.9rem;
-    }
-
-    .read-more:hover i {
-      transform: translateX(6px);
-    }
-
     .result-count {
       text-align: right;
-      color: #4b5563 !important;
+      color: #4b5563;
       font-size: 0.95rem;
       margin-bottom: 1.5rem;
       padding-bottom: 0.75rem;
       border-bottom: 1px solid #e2e8f0;
     }
 
-    .no-results,
-    .error-message {
+    /* Result card with image */
+    .search-result-item {
+      display: flex;
+      gap: 1.5rem;
+      background: white;
+      border-radius: 24px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #edf2f7;
+      transition: 0.2s;
+    }
+    .search-result-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.04);
+    }
+
+    .result-image {
+      flex: 0 0 140px;
+      height: 140px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f1f5f9;
+    }
+    .result-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .result-content {
+      flex: 1;
+    }
+    .result-content h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .result-content h3 a {
+      color: #0a1f44;
+      text-decoration: none;
+    }
+    .result-content h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .result-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .result-url {
+      color: #2563eb;
+      font-size: 0.9rem;
+      font-weight: 500;
+      word-break: break-all;
+    }
+    .type-badge {
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .result-excerpt {
+      color: #2d3a4b;
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+    .read-more {
+      color: #0a1f44;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .read-more i {
+      transition: transform 0.2s;
+      font-size: 0.9rem;
+    }
+    .read-more:hover i {
+      transform: translateX(6px);
+    }
+
+    .no-results, .error-message {
       text-align: center;
       padding: 4rem 2rem;
-      background: white !important;
+      background: white;
       border-radius: 24px;
-      color: #1e1e1e !important;
+      color: #1e1e1e;
       border: 1px solid #e2e8f0;
     }
 
-    /* ---------- FOOTER ---------- */
+    /* ---------- FOOTER (same as main site) ---------- */
     .site-footer {
-      background: white !important;
+      background: white;
       border-top: 1px solid #e2e8f0;
       padding: 3rem 0 1.5rem;
-      color: #1e1e1e !important;
+      color: #1e1e1e;
     }
-
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       margin-bottom: 2rem;
     }
-
-    .footer-about h3,
-    .footer-links h4,
-    .footer-services h4,
-    .footer-contact h4 {
-      color: #0a1f44 !important;
+    .footer-about h3, .footer-links h4, .footer-services h4, .footer-contact h4 {
+      color: #0a1f44;
       margin-bottom: 1rem;
       font-size: 1.2rem;
     }
-
-    .footer-about p,
-    .footer-contact p {
-      color: #2d3a4b !important;
+    .footer-about p, .footer-contact p {
+      color: #2d3a4b;
       margin-bottom: 0.5rem;
     }
-
-    .footer-links ul,
-    .footer-services ul {
+    .footer-links ul, .footer-services ul {
       list-style: none;
     }
-
-    .footer-links li,
-    .footer-services li {
+    .footer-links li, .footer-services li {
       margin-bottom: 0.5rem;
     }
-
-    .footer-links a,
-    .footer-services a,
-    .footer-contact a {
-      color: #2563eb !important;
+    .footer-links a, .footer-services a, .footer-contact a {
+      color: #2563eb;
       text-decoration: none;
     }
-
-    .footer-links a:hover,
-    .footer-services a:hover,
-    .footer-contact a:hover {
+    .footer-links a:hover, .footer-services a:hover, .footer-contact a:hover {
       text-decoration: underline;
     }
-
     .social-placeholder a {
-      color: #0a1f44 !important;
+      color: #0a1f44;
       font-size: 1.4rem;
       margin-right: 1rem;
     }
-
     .footer-bottom {
       text-align: center;
       padding-top: 2rem;
       border-top: 1px solid #e2e8f0;
-      color: #4b5563 !important;
+      color: #4b5563;
     }
-
     .footer-tagline {
       font-style: italic;
       margin-top: 0.5rem;
@@ -348,8 +358,8 @@
       position: fixed;
       bottom: 30px;
       right: 30px;
-      background: #0a1f44 !important;
-      color: white !important;
+      background: #0a1f44;
+      color: white;
       border: none;
       width: 50px;
       height: 50px;
@@ -364,7 +374,6 @@
       transition: 0.2s;
       border: 1px solid rgba(255,255,255,0.2);
     }
-
     .back-to-top.show {
       opacity: 1;
     }
@@ -401,11 +410,19 @@
         justify-content: center;
         padding: 14px;
       }
+      .search-result-item {
+        flex-direction: column;
+      }
+      .result-image {
+        width: 100%;
+        height: 200px;
+        flex: auto;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- ========== HEADER – ABSOLUTE PATHS ========== -->
+  <!-- ========== HEADER ========== -->
   <header class="site-header">
     <div class="container nav-container">
       <div class="logo">
@@ -432,12 +449,12 @@
   </header>
 
   <main>
-    <!-- ========== PAGE HEADER WITH SEARCH BOX ========== -->
+    <!-- PAGE HEADER WITH SEARCH -->
     <section class="page-header">
       <div class="container">
         <h1>Search</h1>
         <form id="searchForm" class="search-form" method="get" action="/search/">
-          <input type="text" name="q" id="searchInput" class="search-input" placeholder="e.g. ecommerce, python, accessibility..." value="">
+          <input type="text" name="q" id="searchInput" class="search-input" placeholder="e.g. ecommerce, python, accessibility..." value="" autofocus>
           <button type="submit" class="search-button">
             <i class="fas fa-search"></i> Search
           </button>
@@ -446,7 +463,21 @@
       </div>
     </section>
 
-    <!-- ========== RESULTS SECTION ========== -->
+    <!-- FILTER SECTION -->
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-buttons" id="filterButtons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="blog">Blog</button>
+          <button class="filter-btn" data-filter="portfolio">Portfolio</button>
+          <button class="filter-btn" data-filter="template">Templates</button>
+          <button class="filter-btn" data-filter="services">Services</button>
+          <button class="filter-btn" data-filter="page">Other Pages</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
     <section class="search-results-section">
       <div class="container">
         <div id="search-results" class="search-results-grid">
@@ -458,7 +489,7 @@
     </section>
   </main>
 
-  <!-- ========== FOOTER – ABSOLUTE PATHS ========== -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-about">
@@ -511,71 +542,61 @@
   </button>
 
   <script>
-    // ----- Back to top visibility -----
+    // Back to top visibility
     window.addEventListener('scroll', function() {
       const btn = document.getElementById('backToTop');
       if (window.scrollY > 300) btn.classList.add('show');
       else btn.classList.remove('show');
     });
 
-    // ----- Main search logic (absolute path for index) -----
+    // ---------- SEARCH LOGIC ----------
     (function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const query = urlParams.get('q') || '';
-      const displayEl = document.getElementById('search-query-display');
-      const resultsEl = document.getElementById('search-results');
+      // DOM elements
       const searchInput = document.getElementById('searchInput');
+      const searchForm = document.getElementById('searchForm');
+      const queryDisplay = document.getElementById('search-query-display');
+      const resultsEl = document.getElementById('search-results');
+      const filterButtons = document.querySelectorAll('.filter-btn');
 
-      // Pre-fill search box
-      if (searchInput) searchInput.value = query;
+      // Get query from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      let currentQuery = urlParams.get('q') || '';
+      let currentFilter = 'all';
 
-      if (!query) {
-        displayEl.innerHTML = 'Enter a keyword above to search the site.';
-        resultsEl.innerHTML = '<p style="text-align:center; color:#2d3a4b;">Please type your search term and click Search.</p>';
-        return;
+      // Set search input value
+      if (searchInput) searchInput.value = currentQuery;
+
+      // Display query if any
+      if (currentQuery) {
+        queryDisplay.innerHTML = `Showing results for: <strong style="color:#0a1f44;">${escapeHTML(currentQuery)}</strong>`;
+      } else {
+        queryDisplay.innerHTML = 'Enter a keyword above to search the site.';
       }
 
-      displayEl.innerHTML = `Showing results for: <strong style="color:#0a1f44;">${escapeHTML(query)}</strong>`;
-      resultsEl.innerHTML = '<div style="text-align: center; padding: 3rem;"><i class="fas fa-spinner fa-spin"></i> Searching...</div>';
+      // Load search index
+      let fuse = null;
+      let allResults = []; // store raw results for filtering
 
-      // ABSOLUTE PATH – works from any folder
       fetch('/js/search-index.json')
         .then(res => {
           if (!res.ok) throw new Error('Search index not found. Run build_search_index.py');
           return res.json();
         })
         .then(index => {
-          const fuse = new Fuse(index, {
+          // Initialize Fuse
+          fuse = new Fuse(index, {
             keys: ['title', 'excerpt', 'content'],
             threshold: 0.3,
             includeScore: true
           });
-          const results = fuse.search(query);
 
-          if (results.length === 0) {
-            resultsEl.innerHTML = `
-              <div class="no-results">
-                <i class="fas fa-search" style="font-size: 3rem; opacity: 0.3; margin-bottom: 1rem;"></i>
-                <h3 style="color:#0a1f44;">No results found for "${escapeHTML(query)}"</h3>
-                <p>Try different keywords or browse our <a href="/services.html" style="color:#2563eb;">services</a> or <a href="/blog.html" style="color:#2563eb;">blog</a>.</p>
-              </div>
-            `;
-            return;
+          // If there's a query, perform search
+          if (currentQuery) {
+            performSearch(currentQuery);
+          } else {
+            // Show empty state
+            resultsEl.innerHTML = '<p style="text-align:center; color:#2d3a4b;">Please type your search term and click Search.</p>';
           }
-
-          let html = `<p class="result-count">${results.length} result${results.length > 1 ? 's' : ''}</p>`;
-          results.forEach(r => {
-            const item = r.item;
-            html += `
-              <article class="search-result-item">
-                <h3><a href="${item.url}">${escapeHTML(item.title)}</a></h3>
-                <p class="result-url">${item.url.replace(/^https?:\/\/[^\/]+/, '')}</p>
-                <p class="result-excerpt">${escapeHTML(item.excerpt || 'No description available.')}</p>
-                <a href="${item.url}" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
-              </article>
-            `;
-          });
-          resultsEl.innerHTML = html;
         })
         .catch(err => {
           resultsEl.innerHTML = `
@@ -588,8 +609,117 @@
           `;
         });
 
-      // HTML escape helper
+      // Perform search with current query and filter
+      function performSearch(query) {
+        if (!fuse) return;
+        const results = fuse.search(query);
+        allResults = results.map(r => r.item);
+        applyFilter(currentFilter);
+      }
+
+      // Apply selected filter and render
+      function applyFilter(filter) {
+        let filtered = allResults;
+        if (filter !== 'all') {
+          filtered = allResults.filter(item => item.type === filter);
+        }
+        renderResults(filtered, currentQuery);
+      }
+
+      // Render results to DOM
+      function renderResults(results, query) {
+        if (results.length === 0) {
+          resultsEl.innerHTML = `
+            <div class="no-results">
+              <i class="fas fa-search" style="font-size: 3rem; opacity: 0.3; margin-bottom: 1rem;"></i>
+              <h3 style="color:#0a1f44;">No results found for "${escapeHTML(query)}"</h3>
+              <p>Try different keywords or browse our <a href="/services.html" style="color:#2563eb;">services</a> or <a href="/blog.html" style="color:#2563eb;">blog</a>.</p>
+            </div>
+          `;
+          return;
+        }
+
+        let html = `<p class="result-count">${results.length} result${results.length > 1 ? 's' : ''}</p>`;
+        results.forEach(item => {
+          const typeDisplay = item.type ? item.type.charAt(0).toUpperCase() + item.type.slice(1) : 'Page';
+          html += `
+            <article class="search-result-item">
+              <div class="result-image">
+                <img src="${item.image || '/assets/images/logo.jpg'}" alt="${escapeHTML(item.title)}" loading="lazy">
+              </div>
+              <div class="result-content">
+                <h3><a href="${item.url}">${escapeHTML(item.title)}</a></h3>
+                <div class="result-meta">
+                  <span class="result-url">${item.url.replace(/^https?:\/\/[^\/]+/, '')}</span>
+                  <span class="type-badge">${typeDisplay}</span>
+                </div>
+                <p class="result-excerpt">${escapeHTML(item.excerpt || 'No description available.')}</p>
+                <a href="${item.url}" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </article>
+          `;
+        });
+        resultsEl.innerHTML = html;
+      }
+
+      // Handle form submit (manual search)
+      searchForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const query = searchInput.value.trim();
+        if (!query) return;
+        // Update URL without reload
+        const url = new URL(window.location);
+        url.searchParams.set('q', query);
+        window.history.pushState({}, '', url);
+        currentQuery = query;
+        queryDisplay.innerHTML = `Showing results for: <strong style="color:#0a1f44;">${escapeHTML(query)}</strong>`;
+        performSearch(query);
+      });
+
+      // Handle filter button clicks
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          currentFilter = this.dataset.filter;
+          if (allResults.length > 0) {
+            applyFilter(currentFilter);
+          }
+        });
+      });
+
+      // Live search with debounce (optional)
+      let debounceTimer;
+      searchInput.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          const query = searchInput.value.trim();
+          if (query === currentQuery) return;
+          if (query === '') {
+            // If query empty, clear results
+            resultsEl.innerHTML = '<p style="text-align:center; color:#2d3a4b;">Please type your search term and click Search.</p>';
+            queryDisplay.innerHTML = '';
+            // Update URL
+            const url = new URL(window.location);
+            url.searchParams.delete('q');
+            window.history.pushState({}, '', url);
+            currentQuery = '';
+            allResults = [];
+            return;
+          }
+          // Update URL
+          const url = new URL(window.location);
+          url.searchParams.set('q', query);
+          window.history.pushState({}, '', url);
+          currentQuery = query;
+          queryDisplay.innerHTML = `Showing results for: <strong style="color:#0a1f44;">${escapeHTML(query)}</strong>`;
+          performSearch(query);
+        }, 300);
+      });
+
+      // Escape HTML helper
       function escapeHTML(str) {
+        if (!str) return '';
         return String(str).replace(/[&<>"]/g, function(c) {
           if (c === '&') return '&amp;';
           if (c === '<') return '&lt;';
@@ -598,6 +728,22 @@
           return c;
         });
       }
+
+      // Handle back/forward navigation
+      window.addEventListener('popstate', function() {
+        const params = new URLSearchParams(window.location.search);
+        const q = params.get('q') || '';
+        searchInput.value = q;
+        currentQuery = q;
+        if (q) {
+          queryDisplay.innerHTML = `Showing results for: <strong style="color:#0a1f44;">${escapeHTML(q)}</strong>`;
+          performSearch(q);
+        } else {
+          queryDisplay.innerHTML = 'Enter a keyword above to search the site.';
+          resultsEl.innerHTML = '<p style="text-align:center; color:#2d3a4b;">Please type your search term and click Search.</p>';
+          allResults = [];
+        }
+      });
     })();
   </script>
 </body>
