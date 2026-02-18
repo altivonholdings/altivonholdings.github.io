@@ -17,22 +17,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Inject API key and prepare deployment files
+      - name: Inject API key
         run: |
-          # Create a fresh directory to deploy
-          mkdir -p deploy
-          # Copy everything to the deploy directory
-          cp -r . deploy/
-          # Replace placeholder in the copied file
-          sed -i "s/__OPENROUTER_API_KEY__/${{ secrets.OPENROUTER_API_KEY }}/g" deploy/assets/chat/api_key.txt
-          # Verify the replacement (optional but helpful)
-          echo "After replacement, api_key.txt contains:"
-          head -n 1 deploy/assets/chat/api_key.txt
+          # Replace the placeholder with the actual secret
+          sed -i "s/__OPENROUTER_API_KEY__/${{ secrets.OPENROUTER_API_KEY }}/g" assets/chat/api_key.txt
+          # Verify the replacement (first 20 characters)
+          echo "After replacement, api_key.txt starts with:"
+          head -c 20 assets/chat/api_key.txt
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./deploy
-          # Optional: force orphan commit to keep only latest
-          force_orphan: true
+          publish_dir: .            # deploy the entire repository root
+          force_orphan: true         # keep only the latest commit on gh-pages
