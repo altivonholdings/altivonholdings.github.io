@@ -2,7 +2,7 @@
 
 (function() {
   // Configuration
-  const ASSETS_PATH = 'assets/chat/';
+  const ASSETS_PATH = 'https://altivonholdings.github.io/assets/chat/';
   const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
   const MODEL = 'openai/gpt-3.5-turbo'; // or any model you prefer
 
