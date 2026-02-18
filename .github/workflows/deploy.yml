@@ -1,0 +1,29 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main   # or your default branch
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Inject API key
+        run: |
+          # Replace placeholder in api_key.txt
+          sed -i "s/__OPENROUTER_API_KEY__/${{ secrets.OPENROUTER_API_KEY }}/g" assets/chat/api_key.txt
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .   # publish entire repository root
