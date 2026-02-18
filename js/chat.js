@@ -1,12 +1,11 @@
-// js/chat.js – AI Chatbot for Altivon Holdings using OpenRouter
+// js/chat.js � AI Chatbot for Altivon Holdings using Netlify Function proxy
 
 (function() {
   // Configuration
-  const ASSETS_PATH = 'https://altivonholdings.github.io/assets/chat/';
-  const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
-  const MODEL = 'openai/gpt-3.5-turbo'; // or any model you prefer
+  const SYSTEM_PROMPT_URL = 'https://altivonholdings.github.io/assets/chat/system-prompt.txt'; // public file
+  const API_URL = 'https://altivon.netlify.app/.netlify/functions/chat'; // Netlify function
+  const MODEL = 'openai/gpt-3.5-turbo'; // still used for reference, but server may override
 
-  let apiKey = '';
   let systemPrompt = '';
 
   // DOM elements
@@ -15,16 +14,11 @@
   // Conversation history
   let messages = [];
 
-  // Initialize: fetch credentials and create UI
+  // Initialize: fetch system prompt and create UI
   async function initChat() {
     try {
-      // Fetch API key and system prompt in parallel
-      const [keyRes, promptRes] = await Promise.all([
-        fetch(ASSETS_PATH + 'api_key.txt'),
-        fetch(ASSETS_PATH + 'system-prompt.txt')
-      ]);
-      if (!keyRes.ok || !promptRes.ok) throw new Error('Failed to load chat assets');
-      apiKey = (await keyRes.text()).trim();
+      const promptRes = await fetch(SYSTEM_PROMPT_URL);
+      if (!promptRes.ok) throw new Error('Failed to load system prompt');
       systemPrompt = (await promptRes.text()).trim();
 
       // Set initial system message
@@ -75,7 +69,7 @@
     });
 
     // Add a welcome message
-    addMessage('assistant', '👋 Hi! How can I help you with Altivon Holdings?');
+    addMessage('assistant', ' Hi! How can I help you with Altivon Holdings?');
   }
 
   function toggleChat() {
@@ -114,17 +108,14 @@
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
     try {
+      // Call Netlify function (no API key here)
       const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
-          'HTTP-Referer': window.location.origin, // required by OpenRouter
-          'X-Title': 'Altivon Holdings Chat'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          model: MODEL,
-          messages: messages
+          messages: messages   // Netlify function will add model and key
         })
       });
 
