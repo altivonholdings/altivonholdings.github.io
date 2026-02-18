@@ -22,14 +22,91 @@
   <!-- Font Awesome (icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <!-- Link to your existing CSS (for header/footer consistency) -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-
-  <!-- Additional inline styles for the chat page -->
+  <!-- No external CSS – everything is inline below -->
   <style>
-    /* Main chat container */
+    /* ===== RESET / BASE (consistent with your site) ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f7fa;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== HEADER (copied from your site to keep consistency) ===== */
+    .site-header {
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: 0.3s;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    .logo a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #0a1f44;
+      letter-spacing: 1px;
+    }
+    .logo-sub {
+      font-weight: 300;
+      font-size: 1rem;
+      color: #4a5568;
+      margin-left: 4px;
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #0a1f44;
+      cursor: pointer;
+    }
+    .main-nav .nav-list {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-list a {
+      text-decoration: none;
+      color: #2d3748;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .nav-list a:hover,
+    .nav-list a.active {
+      color: #0a1f44;
+      border-bottom: 2px solid #0a1f44;
+    }
+
+    /* ===== MAIN CHAT INTERFACE ===== */
     .chat-container {
       max-width: 1000px;
       margin: 2rem auto;
@@ -43,14 +120,17 @@
       min-height: 600px;
     }
 
-    /* Chat header */
+    /* chat header */
     .chat-header {
-      background: #0a1f44;
+      background: linear-gradient(135deg, #0a1f44 0%, #1e3a6f 100%);
       color: white;
       padding: 1.5rem 2rem;
       display: flex;
       align-items: center;
       gap: 1rem;
+    }
+    .chat-header i {
+      font-size: 2.5rem;
     }
     .chat-header h2 {
       margin: 0;
@@ -62,11 +142,53 @@
       opacity: 0.9;
       font-size: 0.9rem;
     }
-    .chat-header i {
-      font-size: 2.5rem;
+    .new-chat-btn {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      margin-left: auto;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .new-chat-btn:hover {
+      background: rgba(255,255,255,0.25);
+      transform: scale(1.02);
     }
 
-    /* Messages area */
+    /* suggested questions */
+    .suggested-questions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .suggested-chip {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 40px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .suggested-chip:hover {
+      background: #0a1f44;
+      color: white;
+      border-color: #0a1f44;
+      transform: translateY(-2px);
+    }
+
+    /* messages area */
     .chat-messages {
       flex: 1;
       padding: 2rem;
@@ -74,13 +196,14 @@
       background: #f5f7fa;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
-    /* Message bubbles */
+    /* message bubbles */
     .message {
       display: flex;
       max-width: 80%;
+      animation: fadeIn 0.3s ease;
     }
     .message.user {
       align-self: flex-end;
@@ -88,11 +211,30 @@
     .message.assistant {
       align-self: flex-start;
     }
-    .message .bubble {
+    .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #0a1f44;
+      flex-shrink: 0;
+    }
+    .message.user .avatar {
+      background: #0a1f44;
+      color: white;
+      order: 2;
+      margin-left: 12px;
+    }
+    .bubble {
       padding: 1rem 1.5rem;
       border-radius: 24px;
       line-height: 1.5;
       word-wrap: break-word;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
     .message.user .bubble {
       background: #0a1f44;
@@ -103,31 +245,13 @@
       background: white;
       color: #1e1e1e;
       border-bottom-left-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
-    .message .avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      margin-right: 12px;
-      background: #e2e8f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: #0a1f44;
-    }
-    .message.user .avatar {
-      order: 2;
-      margin-left: 12px;
-      margin-right: 0;
-      background: #0a1f44;
-      color: white;
-    }
+
+    /* typing indicator */
     .typing-indicator {
       display: flex;
       gap: 4px;
-      padding: 0.5rem 1rem;
+      padding: 1rem 1.5rem;
       background: white;
       border-radius: 40px;
       width: fit-content;
@@ -145,8 +269,12 @@
       0%, 80%, 100% { transform: translateY(0); }
       40% { transform: translateY(-6px); }
     }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-    /* Input area */
+    /* input area */
     .chat-input-area {
       display: flex;
       gap: 12px;
@@ -181,8 +309,8 @@
       justify-content: center;
       transition: 0.2s;
     }
-    #send-button:hover {
-      background: #0c2a5e;
+    #send-button:hover:not(:disabled) {
+      background: #1e3a6f;
       transform: scale(1.05);
     }
     #send-button:disabled {
@@ -190,51 +318,132 @@
       cursor: not-allowed;
     }
 
-    /* New chat button */
-    .new-chat-btn {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.3);
+    /* footer (copied from your site) */
+    .site-footer {
+      background: #0a1f44;
       color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 40px;
-      margin-left: auto;
-      cursor: pointer;
+      padding: 3rem 0 1rem;
+      margin-top: 3rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer-about h3,
+    .footer-links h4,
+    .footer-services h4,
+    .footer-contact h4 {
+      margin-bottom: 1rem;
+      color: white;
+    }
+    .footer-about p,
+    .footer-contact p {
+      color: #cbd5e0;
       font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    }
+    .footer-links ul,
+    .footer-services ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-links li,
+    .footer-services li {
+      margin-bottom: 0.5rem;
+    }
+    .footer-links a,
+    .footer-services a {
+      color: #cbd5e0;
+      text-decoration: none;
       transition: 0.2s;
     }
-    .new-chat-btn:hover {
-      background: rgba(255,255,255,0.1);
+    .footer-links a:hover,
+    .footer-services a:hover {
+      color: white;
+    }
+    .social-placeholder {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .social-placeholder a {
+      color: #cbd5e0;
+      font-size: 1.2rem;
+      transition: 0.2s;
+    }
+    .social-placeholder a:hover {
+      color: white;
+    }
+    .footer-bottom {
+      border-top: 1px solid #1e3a6f;
+      padding-top: 1.5rem;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.9rem;
     }
 
-    /* Footer adjustment */
-    .site-footer {
-      margin-top: 2rem;
+    /* back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #0a1f44;
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 99;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
     }
 
-    /* Mobile */
-    @media (max-width: 640px) {
+    /* mobile responsiveness */
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        display: none;
+      }
+      .main-nav.active { display: block; }
+      .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
       .chat-container {
         height: calc(100vh - 160px);
         margin: 1rem;
         border-radius: 24px;
       }
-      .chat-header {
-        padding: 1rem;
-      }
-      .chat-messages, .chat-input-area {
-        padding: 1rem;
-      }
-      .message {
-        max-width: 90%;
-      }
+      .chat-header { padding: 1rem; }
+      .chat-messages,
+      .chat-input-area,
+      .suggested-questions { padding: 1rem; }
+      .message { max-width: 90%; }
     }
   </style>
 </head>
 <body>
-  <!-- ========== HEADER ========== -->
+  <!-- ========== HEADER (copied from your site) ========== -->
   <header class="site-header">
     <div class="container nav-container">
       <div class="logo">
@@ -261,30 +470,37 @@
   </header>
 
   <main>
-    <!-- Main chat container -->
     <div class="container">
       <div class="chat-container">
+        <!-- header -->
         <div class="chat-header">
           <i class="fas fa-robot"></i>
           <div>
             <h2>Altivon AI</h2>
-            <p>Your personal web development assistant</p>
+            <p>Your web development assistant</p>
           </div>
           <button class="new-chat-btn" id="new-chat-btn">
             <i class="fas fa-plus-circle"></i> New chat
           </button>
         </div>
 
-        <div class="chat-messages" id="chat-messages">
-          <!-- Messages will appear here -->
-          <div class="message assistant">
-            <div class="avatar"><i class="fas fa-robot"></i></div>
-            <div class="bubble">👋 Hi! I'm Altivon AI. How can I help you with website development, e-commerce, or digital strategy today?</div>
-          </div>
+        <!-- suggested questions -->
+        <div class="suggested-questions" id="suggested-questions">
+          <span class="suggested-chip">What services do you offer?</span>
+          <span class="suggested-chip">How much does a website cost?</span>
+          <span class="suggested-chip">Do you build e‑commerce sites?</span>
+          <span class="suggested-chip">What technologies do you use?</span>
+          <span class="suggested-chip">How long does a project take?</span>
         </div>
 
+        <!-- messages container -->
+        <div class="chat-messages" id="chat-messages">
+          <!-- initial welcome message will be injected by JS -->
+        </div>
+
+        <!-- input area -->
         <div class="chat-input-area">
-          <input type="text" id="chat-input" placeholder="Ask me anything about our services..." autofocus>
+          <input type="text" id="chat-input" placeholder="Ask me anything..." autofocus>
           <button id="send-button"><i class="fas fa-paper-plane"></i></button>
         </div>
       </div>
@@ -338,81 +554,43 @@
     </div>
   </footer>
 
-  <!-- JavaScript for chat logic -->
+  <!-- Back to Top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ========== CHAT SCRIPT (inline) ========== -->
   <script>
     (function() {
-      // Configuration
-      const ASSETS_PATH = 'assets/chat/';  // relative to root
+      // --- Configuration ---
+      const ASSETS_PATH = 'assets/chat/';
       const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
-      const MODEL = 'openai/gpt-3.5-turbo'; // you can change this
-
-      let apiKey = '';
-      let systemPrompt = '';
+      const MODEL = 'openai/gpt-3.5-turbo';  // you can change this
 
       // DOM elements
       const messagesContainer = document.getElementById('chat-messages');
       const userInput = document.getElementById('chat-input');
       const sendButton = document.getElementById('send-button');
       const newChatBtn = document.getElementById('new-chat-btn');
+      const suggestedChips = document.querySelectorAll('.suggested-chip');
 
-      // Conversation history (including system prompt)
-      let messages = [];
+      // State
+      let apiKey = '';
+      let systemPrompt = '';
+      let messages = [];               // conversation history (including system)
 
-      // Initialize: fetch credentials and set up event listeners
-      async function initChat() {
-        try {
-          const [keyRes, promptRes] = await Promise.all([
-            fetch(ASSETS_PATH + 'api_key.txt'),
-            fetch(ASSETS_PATH + 'system-prompt-adv.txt')
-          ]);
-          if (!keyRes.ok || !promptRes.ok) throw new Error('Failed to load chat assets');
-          apiKey = (await keyRes.text()).trim();
-          systemPrompt = (await promptRes.text()).trim();
-
-          // Reset conversation (system prompt + welcome)
-          resetConversation();
-
-          // Event listeners
-          sendButton.addEventListener('click', sendMessage);
-          userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendMessage();
-          });
-          newChatBtn.addEventListener('click', resetConversation);
-        } catch (error) {
-          console.error('Chat init error:', error);
-          // Show error in chat
-          addMessage('assistant', '⚠️ Failed to initialize chat. Please refresh or contact support.', false);
-        }
-      }
-
-      // Reset conversation (clear everything except system prompt)
-      function resetConversation() {
-        messages = [{ role: 'system', content: systemPrompt }];
-        // Clear messages container
-        messagesContainer.innerHTML = '';
-        // Add welcome message
-        addMessage('assistant', '👋 Hi! I\'m Altivon AI. How can I help you with website development, e-commerce, or digital strategy today?', false);
-        userInput.disabled = false;
-        sendButton.disabled = false;
-        userInput.focus();
-      }
-
-      // Add a message to the UI (and optionally to history)
+      // --- Helper: Add a message to UI ---
       function addMessage(role, content, addToHistory = true) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${role}`;
 
         const avatar = document.createElement('div');
         avatar.className = 'avatar';
-        if (role === 'assistant') {
-          avatar.innerHTML = '<i class="fas fa-robot"></i>';
-        } else {
-          avatar.innerHTML = '<i class="fas fa-user"></i>';
-        }
+        avatar.innerHTML = role === 'assistant' ? '<i class="fas fa-robot"></i>' : '<i class="fas fa-user"></i>';
 
         const bubble = document.createElement('div');
         bubble.className = 'bubble';
-        bubble.textContent = content;
+        bubble.textContent = content;   // simple text (you could use innerHTML for markdown later)
 
         if (role === 'user') {
           messageDiv.appendChild(bubble);
@@ -430,7 +608,7 @@
         }
       }
 
-      // Show typing indicator
+      // --- Typing indicator ---
       function showTypingIndicator() {
         const indicator = document.createElement('div');
         indicator.className = 'message assistant';
@@ -446,26 +624,34 @@
       }
 
       function removeTypingIndicator() {
-        const indicator = document.getElementById('typing-indicator');
-        if (indicator) indicator.remove();
+        const el = document.getElementById('typing-indicator');
+        if (el) el.remove();
       }
 
-      // Send message to OpenRouter
-      async function sendMessage() {
+      // --- Reset conversation ---
+      function resetConversation() {
+        messages = [{ role: 'system', content: systemPrompt }];
+        messagesContainer.innerHTML = '';
+        addMessage('assistant', '👋 Hi! I\'m Altivon AI. How can I help you with website development, e-commerce, or digital strategy today?', false);
+        userInput.disabled = false;
+        sendButton.disabled = false;
+        userInput.focus();
+      }
+
+      // --- Send message to OpenRouter ---
+      async function sendUserMessage() {
         const text = userInput.value.trim();
         if (!text) return;
 
-        // Disable input while waiting
+        // disable input
         userInput.disabled = true;
         sendButton.disabled = true;
 
-        // Add user message to UI and history
+        // add user message
         addMessage('user', text);
-
-        // Clear input
         userInput.value = '';
 
-        // Show typing indicator
+        // show typing
         showTypingIndicator();
 
         try {
@@ -484,23 +670,19 @@
           });
 
           if (!response.ok) {
-            if (response.status === 402) {
-              throw new Error('Insufficient credits. Please contact the site owner.');
-            }
-            throw new Error(`API error: ${response.status}`);
+            let errorMsg = `API error: ${response.status}`;
+            if (response.status === 402) errorMsg = 'Insufficient credits. Please contact the site owner.';
+            throw new Error(errorMsg);
           }
 
           const data = await response.json();
           const reply = data.choices[0].message.content;
 
-          // Remove typing indicator
           removeTypingIndicator();
-
-          // Add assistant reply
           addMessage('assistant', reply);
         } catch (error) {
           removeTypingIndicator();
-          addMessage('assistant', `Sorry, I encountered an error: ${error.message}`, false);
+          addMessage('assistant', `❌ Sorry, an error occurred: ${error.message}`, false);
           console.error(error);
         } finally {
           userInput.disabled = false;
@@ -509,26 +691,55 @@
         }
       }
 
-      // Start chat when DOM ready
+      // --- Initialise: fetch credentials and setup ---
+      async function initChat() {
+        try {
+          const [keyRes, promptRes] = await Promise.all([
+            fetch(ASSETS_PATH + 'api_key.txt'),
+            fetch(ASSETS_PATH + 'system-prompt-adv.txt')
+          ]);
+          if (!keyRes.ok || !promptRes.ok) throw new Error('Failed to load chat assets');
+          apiKey = (await keyRes.text()).trim();
+          systemPrompt = (await promptRes.text()).trim();
+
+          // Set system message and welcome
+          resetConversation();
+
+          // Event listeners
+          sendButton.addEventListener('click', sendUserMessage);
+          userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendUserMessage();
+          });
+          newChatBtn.addEventListener('click', resetConversation);
+
+          // Suggested chips
+          suggestedChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+              userInput.value = chip.innerText;
+              sendUserMessage();
+            });
+          });
+
+          // Back to top visibility
+          window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backToTop');
+            if (window.scrollY > 300) btn.classList.add('show');
+            else btn.classList.remove('show');
+          });
+
+        } catch (error) {
+          console.error('Chat init error:', error);
+          messagesContainer.innerHTML = `<div class="message assistant"><div class="avatar"><i class="fas fa-robot"></i></div><div class="bubble">⚠️ Failed to initialize chat. Please refresh or contact support.</div></div>`;
+        }
+      }
+
+      // Start when DOM ready
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initChat);
       } else {
         initChat();
       }
     })();
-  </script>
-
-  <!-- Back to Top (optional, same as other pages) -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-  <script>
-    // Back to top visibility (same as main.js)
-    window.addEventListener('scroll', function() {
-      const btn = document.getElementById('backToTop');
-      if (window.scrollY > 300) btn.classList.add('show');
-      else btn.classList.remove('show');
-    });
   </script>
 </body>
 </html>
