@@ -1,43 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Enhanced Google Analytics -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-4X0M6RM0F6', {
-      page_title: document.title,
-      page_location: window.location.href
-    });
+    gtag('config', 'G-4X0M6RM0F6');
   </script>
-  
-  <!-- AdSense Setup -->
+  <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Altivon Holdings | Start Your Website Project Today</title>
-  <meta name="description" content="Contact Altivon Holdings for website development, e‑commerce, and digital strategy. Use our Formspree contact form or email directly. Free quote within 24h.">
-  <meta name="keywords" content="Contact Web Developer India, Web Design Inquiry, E-commerce Project Quote, Digital Strategy Consultation">
-  <meta name="author" content="Altivon Holdings">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://altivonholdings.github.io/contact.html">
-  <meta property="og:title" content="Contact Altivon Holdings | Start Your Website Project Today">
-  <meta property="og:description" content="Get in touch with our team for custom web development, e‑commerce, and digital strategy. Fast response, no sales pressure.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://altivonholdings.github.io/contact.html">
-  <meta property="og:image" content="https://altivonholdings.github.io/assets/images/logo.jpg">
-  <meta property="og:site_name" content="Altivon Holdings">
-  <meta property="og:locale" content="en_IN">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contact Altivon Holdings | Start Your Website Project Today">
-  <meta name="twitter:description" content="Get in touch with our team for custom web development, e‑commerce, and digital strategy.">
-  <meta name="twitter:image" content="https://altivonholdings.github.io/assets/images/logo.jpg">
-  <meta name="twitter:site" content="@AltivonH">
+  <meta name="description" content="Contact Altivon Holdings for website development, e‑commerce, and digital strategy. Use our contact form or email directly. Free quote within 24h.">
   <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
-  <link rel="apple-touch-icon" href="assets/images/logo.jpg">
   <!-- CSS -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -45,7 +23,7 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/pages.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- JSON-LD (ContactPoint) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,6 +41,42 @@
     }
   }
   </script>
+  <style>
+    .erp-summary {
+      background: #f0f9ff;
+      border-left: 5px solid #1e7e7e;
+      padding: 1.5rem;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    .erp-summary h4 {
+      margin-bottom: 1rem;
+      color: #0A1F44;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .erp-summary ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 1rem 0;
+    }
+    .erp-summary li {
+      padding: 0.4rem 0;
+      border-bottom: 1px dashed #d1e0f0;
+      display: flex;
+      justify-content: space-between;
+    }
+    .erp-summary .total-row {
+      font-weight: 700;
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 2px solid #0A1F44;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -91,7 +105,6 @@
   </header>
 
   <main>
-    <!-- Page Header with Background Image -->
     <section class="page-header contact-header">
       <div class="container">
         <h1>Start a conversation</h1>
@@ -104,9 +117,14 @@
         <!-- LEFT: CONTACT FORM -->
         <div class="contact-form-container reveal-left">
           <h2>Send us a message</h2>
+          
+          <!-- ERP summary will appear here if data exists -->
+          <div id="erpSummary" class="erp-summary" style="display: none;"></div>
+
           <form id="contact-form" action="https://formspree.io/f/mvzbzpyo" method="POST">
-            <!-- honeypot spam protection -->
             <input type="text" name="_gotcha" style="display:none">
+            <input type="hidden" name="erp_data" id="erpDataField" value="">
+
             <div class="form-group">
               <label for="name">Full name *</label>
               <input type="text" id="name" name="name" required>
@@ -130,16 +148,18 @@
                 <option value="Education">Education</option>
                 <option value="Digital Agency">Digital Agency</option>
                 <option value="Maintenance">Maintenance / Optimization</option>
+                <option value="School ERP">School ERP (Custom)</option>
                 <option value="Other">Other</option>
               </select>
             </div>
             <div class="form-group">
               <label for="message">Message *</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+              <textarea id="message" name="message" rows="6" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-full">Send message</button>
-            <p id="thankyou-message">✓ Thank you! We'll reply within 24h.</p>
+            <p id="thankyou-message" style="display: none; color: #166534; background: #dcfce7; padding: 1rem; border-radius: 8px; margin-top: 1rem;">✓ Thank you! We'll reply within 24h.</p>
           </form>
+
           <div class="direct-email">
             <p>
               <span class="support-icon">
@@ -150,9 +170,8 @@
           </div>
         </div>
 
-        <!-- RIGHT: CONTACT INFO + ILLUSTRATION + MAP -->
+        <!-- RIGHT: CONTACT INFO (unchanged) -->
         <div class="contact-info reveal-right">
-          <!-- Illustration above the info card -->
           <div class="contact-illustration">
             <img src="assets/images/contact-illustration.jpg" alt="Contact illustration – message and email concept" loading="lazy" width="400" height="200">
           </div>
@@ -166,7 +185,7 @@
             <p><i class="fas fa-globe"></i> <a href="https://altivonholdings.github.io" target="_blank" rel="noopener noreferrer">altivonholdings.github.io</a></p>
             <p><i class="fas fa-clock"></i> Response within 24h (business days)</p>
           </div>
-          <!-- Google Map Placeholder (Delhi, India) -->
+          <!-- Google Map -->
           <div class="map-placeholder">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d225.9712305281081!2d83.12527050958637!3d25.015752625575203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e45bb38c2c489%3A0xdf1b4aeeffb0d4d2!2sAltivon%20Holdings!5e0!3m2!1sen!2sin!4v1770901472139!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" title="Altivon Holdings location map" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
@@ -175,37 +194,81 @@
     </section>
 
     <script>
-      // Formspree inline thank-you
-      const form = document.getElementById('contact-form');
-      const thankYou = document.getElementById('thankyou-message');
-      thankYou.style.display = 'none';
-      if (form) {
-        form.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          const formData = new FormData(form);
-          try {
-            const response = await fetch(form.action, {
-              method: 'POST',
-              body: formData,
-              headers: { 'Accept': 'application/json' }
-            });
-            if (response.ok) {
-              thankYou.style.display = 'block';
-              form.reset();
-            } else {
-              alert('Oops – something went wrong. Please email us directly.');
+      (function() {
+        // Form submission handling
+        const form = document.getElementById('contact-form');
+        const thankYou = document.getElementById('thankyou-message');
+        if (form) {
+          form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            try {
+              const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+              });
+              if (response.ok) {
+                thankYou.style.display = 'block';
+                form.reset();
+                // Clear ERP data after submission
+                localStorage.removeItem('erpQuoteFeatures');
+                localStorage.removeItem('erpQuoteTotalPrice');
+                localStorage.removeItem('erpQuoteTotalTime');
+                document.getElementById('erpSummary').style.display = 'none';
+                document.getElementById('erpDataField').value = '';
+              } else {
+                alert('Oops – something went wrong. Please email us directly.');
+              }
+            } catch (error) {
+              alert('Submission error. Please use email altivonholdings@gmail.com');
             }
-          } catch (error) {
-            alert('Submission error. Please use email altivonholdings@gmail.com');
+          });
+        }
+
+        // --- ERP Data Prefill ---
+        const urlParams = new URLSearchParams(window.location.search);
+        const fromERP = urlParams.get('source') === 'erp' || localStorage.getItem('erpQuoteFeatures');
+
+        if (fromERP) {
+          const features = JSON.parse(localStorage.getItem('erpQuoteFeatures') || '[]');
+          const totalPrice = parseInt(localStorage.getItem('erpQuoteTotalPrice') || '0');
+          const totalTime = parseInt(localStorage.getItem('erpQuoteTotalTime') || '0');
+
+          if (features.length > 0) {
+            // Build summary HTML
+            const summaryDiv = document.getElementById('erpSummary');
+            let summaryHTML = '<h4><i class="fas fa-school"></i> Your ERP Selections</h4><ul>';
+            features.forEach(f => {
+              summaryHTML += `<li><span>${f.module}: ${f.feature}</span> <span>₹${f.price.toLocaleString()} (${f.time} days)</span></li>`;
+            });
+            summaryHTML += `</ul><div class="total-row"><span>Total (excl. GST)</span> <span>₹${totalPrice.toLocaleString()}</span></div>`;
+            summaryHTML += `<div class="total-row"><span>Estimated time</span> <span>${totalTime} days</span></div>`;
+            summaryDiv.innerHTML = summaryHTML;
+            summaryDiv.style.display = 'block';
+
+            // Pre-fill the message field
+            const messageField = document.getElementById('message');
+            let messageText = "I am interested in the following School ERP features:\n\n";
+            features.forEach(f => {
+              messageText += `• ${f.module} – ${f.feature} (₹${f.price.toLocaleString()}, ${f.time} days)\n`;
+            });
+            messageText += `\nTotal estimated investment: ₹${totalPrice.toLocaleString()} + 5% GST, implementation time: ${totalTime} days.\n\nPlease provide a detailed quote and next steps.`;
+            messageField.value = messageText;
+
+            // Set service dropdown
+            document.getElementById('service').value = 'School ERP';
+
+            // Store features in hidden field as JSON
+            document.getElementById('erpDataField').value = JSON.stringify(features);
           }
-        });
-      }
+        }
+      })();
     </script>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (unchanged) -->
   <footer class="site-footer">
-    <!-- same footer as index.html -->
     <div class="container footer-grid">
       <div class="footer-about">
         <h3>Altivon Holdings</h3>
@@ -234,6 +297,7 @@
           <li><a href="services.html#ecommerce">E‑Commerce</a></li>
           <li><a href="services.html#strategy">Digital Strategy</a></li>
           <li><a href="services.html#maintenance">Maintenance</a></li>
+          <li><a href="custom/erp/index.html">School ERP</a></li>
         </ul>
       </div>
       <div class="footer-contact">
