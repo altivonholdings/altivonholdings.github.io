@@ -13,8 +13,8 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School ERP Demo – Altivon Holdings</title>
-  <meta name="description" content="Interactive School Management System pricing. Select features, see instant cost & timeline – custom ERP for educational institutes.">
+  <title>Custom CRM Demo – Altivon Holdings</title>
+  <meta name="description" content="Interactive CRM pricing. Select features, see instant cost & timeline – custom CRM for your business.">
   <link rel="icon" type="image/jpeg" href="/assets/images/logo.jpg">
   <!-- Main CSS -->
   <link rel="stylesheet" href="/css/base.css">
@@ -333,16 +333,16 @@
     <div class="demo-header">
       <div class="container">
         <div class="header-content">
-          <h1> School ERP <br>Build Your Perfect System</h1>
-          <p>Click features to add. See instant pricing and timeline. Tailored for your institute.</p>
+          <h1> Custom CRM <br>Build Your Perfect Sales System</h1>
+          <p>Click features to add. See instant pricing and timeline. Tailored for your business.</p>
           <div class="trust-badges">
             <span class="badge"><i class="fas fa-shield-alt"></i> ISO 27001 Ready</span>
             <span class="badge"><i class="fas fa-lock"></i> 256bit Encryption</span>
-            <span class="badge"><i class="fas fa-school"></i> 50+ Schools Trust</span>
+            <span class="badge"><i class="fas fa-users"></i> 100+ Sales Teams Trust</span>
           </div>
         </div>
         <div class="header-illustration">
-          <i class="fas fa-user-graduate"></i>
+          <i class="fas fa-user-plus"></i>
           <i class="fas fa-chart-line"></i>
           <i class="fas fa-mobile-alt"></i>
           <i class="fas fa-cloud-upload-alt"></i>
@@ -372,7 +372,7 @@
 
       <div class="disclaimer" style="display: flex; gap: 2rem; flex-wrap: wrap; color: #475569;">
         <span><i class="fas fa-check-circle" style="color: #22c55e;"></i> Indicative pricing – final quote after consultation</span>
-        <span><i class="fas fa-clock"></i> Typical delivery: 4–12 weeks</span>
+        <span><i class="fas fa-clock"></i> Typical delivery: 6–16 weeks</span>
         <span><i class="fas fa-file-signature"></i> No obligation proposal</span>
       </div>
     </div>
@@ -413,6 +413,7 @@
           <li><a href="/services.html#strategy">Digital Strategy</a></li>
           <li><a href="/services.html#maintenance">Maintenance</a></li>
           <li><a href="/custom/erp/index.html">School ERP</a></li>
+          <li><a href="/custom/crm/index.html">Custom CRM</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -439,79 +440,60 @@
   <script src="/js/main.js"></script>
   <script src="/js/chat.js"></script>
 
-  <!-- ERP Calculator Script (full functionality preserved) -->
+  <!-- CRM Calculator Script (full functionality preserved) -->
   <script>
     (function() {
-      // Enhanced modules with detailed descriptions (30-40 words)
+      // CRM Modules with detailed descriptions
       const modules = [
-        { name: "Student Management", icon: "fa-user-graduate", features: [
-          { name: "Online Admission & Enrollment", price: 12000, time: 5, desc: "Complete online admission workflow with customizable forms, document upload (photos, birth certificates, etc.), automated merit list generation, and email/SMS notifications to parents. Reduces manual data entry by 80%." },
-          { name: "Student Profile & History", price: 8000, time: 3, desc: "Centralized digital profiles storing personal details, parent/guardian information, medical records, previous academic history, and co-curricular achievements. Accessible to teachers and admin with role-based permissions." },
-          { name: "ID Card Generation", price: 4000, time: 2, desc: "Bulk ID card printing with QR codes, student photo, and barcode. Customizable templates, automatic data merging, and easy reprinting. Enhances security and simplifies identification." }
+        { name: "Lead Management", icon: "fa-user-plus", features: [
+          { name: "Lead Capture & Scoring", price: 15000, time: 6, desc: "Capture leads from web forms, emails, and manual entry. Automatically score leads based on activity and demographics. Track lead source and conversion probability." },
+          { name: "Lead Assignment & Routing", price: 10000, time: 4, desc: "Automatically assign leads to sales reps based on rules (territory, product, load balancing). Round-robin or custom assignment." },
+          { name: "Lead Status Tracking", price: 8000, time: 3, desc: "Visual pipeline of lead stages (new, contacted, qualified, proposal, won/lost). Drag-and-drop status updates. Stage transition history." }
         ]},
-        { name: "Academic Structure", icon: "fa-layer-group", features: [
-          { name: "Multi-Campus & Sessions", price: 10000, time: 4, desc: "Manage multiple branches or campuses under one login. Create separate academic sessions (2025-26, 2026-27) with independent data. Ideal for educational groups and franchises." },
-          { name: "Classes, Sections & Subjects", price: 7000, time: 3, desc: "Define unlimited classes, sections, and subjects. Assign class teachers and subject teachers. Supports complex subject combinations and credit systems for higher education." },
-          { name: "Timetable Builder", price: 15000, time: 6, desc: "Drag-and-drop interface to create timetables. Automatic teacher conflict detection, room allocation, and period management. Generates individual teacher and class schedules instantly." }
+        { name: "Contact Management", icon: "fa-address-book", features: [
+          { name: "Centralized Contact Database", price: 12000, time: 5, desc: "Unified view of all contacts with details: name, company, role, email, phone, social profiles. Deduplication and merge tools." },
+          { name: "Communication History", price: 9000, time: 4, desc: "Log every interaction: calls, emails, meetings. Timeline view with notes, attachments, and follow-up tasks." },
+          { name: "Contact Segmentation", price: 7000, time: 3, desc: "Create dynamic segments based on tags, industry, location, or activity. Use for targeted campaigns." }
         ]},
-        { name: "Attendance Management", icon: "fa-calendar-check", features: [
-          { name: "Daily Attendance (Class/Subject wise)", price: 10000, time: 4, desc: "Mark attendance quickly via roll numbers or student names. Track present, absent, leave, and holiday. Supports subject-wise attendance for semester systems. Real-time updates to parents." },
-          { name: "Biometric / Face Recognition Integration", price: 18000, time: 7, desc: "Integrate with biometric devices or face recognition systems. Automatic attendance marking, reduced proxy, and seamless hardware connectivity. Works with popular devices." },
-          { name: "Attendance Reports & Alerts", price: 5000, time: 2, desc: "Generate monthly attendance reports, identify students with less than 75% attendance, and send automated alerts to parents via SMS/email. Helps improve student accountability." }
+        { name: "Sales Pipeline", icon: "fa-chart-line", features: [
+          { name: "Visual Pipeline Management", price: 14000, time: 5, desc: "Kanban-style view of deals. Customizable stages (qualify, demo, negotiate, closed). Drag deals between stages." },
+          { name: "Forecasting & Probability", price: 11000, time: 4, desc: "Predict revenue based on deal stage probability. Weighted pipeline reports. Forecast by rep or team." },
+          { name: "Quotes & Proposals", price: 13000, time: 5, desc: "Create professional quotes and proposals within the CRM. Send to customer, track views, and convert to deal." }
         ]},
-        { name: "Exam & Results", icon: "fa-pen", features: [
-          { name: "Exam Scheduling & Admit Cards", price: 12000, time: 5, desc: "Plan exam timetables, allocate rooms and invigilators. Generate admit cards with QR codes and student details. Prevents scheduling conflicts and streamlines exam management." },
-          { name: "Online Marks Entry & Grading", price: 14000, time: 5, desc: "Teachers can enter marks online with validation rules. Supports grade calculation (A+, B, etc.), best of five, and compartment handling. Real-time result processing." },
-          { name: "Report Card & Merit List", price: 10000, time: 4, desc: "Generate professional PDF report cards with subject-wise marks, grades, and teacher comments. Create merit lists and result analytics by class or subject. Fully customizable templates." }
+        { name: "Task & Activity Tracking", icon: "fa-tasks", features: [
+          { name: "Task Management", price: 8000, time: 3, desc: "Create tasks for yourself or team. Set due dates, priorities, and reminders. Sync with calendar." },
+          { name: "Activity Feed", price: 6000, time: 2, desc: "Real-time feed of all team activities: new leads, deal updates, completed tasks. Filter by user or type." },
+          { name: "Email Reminders & Notifications", price: 5000, time: 2, desc: "Automated email reminders for follow-ups, overdue tasks, and upcoming meetings. Customizable templates." }
         ]},
-        { name: "Fees & Accounts", icon: "fa-coins", features: [
-          { name: "Fee Structure & Concessions", price: 15000, time: 6, desc: "Define multiple fee heads (tuition, library, transport, etc.) and assign them to classes. Set up concessions for siblings, staff wards, or scholarships. Handles RTE reimbursements." },
-          { name: "Online Payment Gateway", price: 20000, time: 8, desc: "Integrate Razorpay, Paytm, or other gateways for online fee collection. Parents can pay via credit card, UPI, net banking. Automatic receipt generation and reconciliation." },
-          { name: "Dues Tracking & Reminders", price: 8000, time: 3, desc: "Track defaulters with real-time due calculations. Send automated SMS/email reminders before and after due dates. Generate defaulters list for follow-up." }
+        { name: "Email Integration", icon: "fa-envelope", features: [
+          { name: "Email Sync (Gmail/Outlook)", price: 12000, time: 5, desc: "Two-way sync of emails with contacts. Log all email conversations automatically. Send emails directly from CRM." },
+          { name: "Email Templates & Campaigns", price: 10000, time: 4, desc: "Create reusable email templates. Send bulk emails to segments. Track opens, clicks, and replies." },
+          { name: "Mail Merge", price: 7000, time: 3, desc: "Personalized mass emails using contact data. Attachments and follow-up scheduling." }
         ]},
-        { name: "HR & Payroll", icon: "fa-users", features: [
-          { name: "Staff Profile & Documents", price: 8000, time: 4, desc: "Maintain digital profiles for teaching and non-teaching staff. Store personal details, bank accounts, contracts, and documents (appointment letters, ID proofs)." },
-          { name: "Staff Attendance & Leave", price: 7000, time: 3, desc: "Track staff attendance via biometric or manual entry. Manage leave applications, leave balance, and duty rosters. Notify admin when substitutes are needed." },
-          { name: "Payroll & Salary Slips", price: 20000, time: 8, desc: "Automatic salary calculation based on attendance and deductions (PF, ESI, TDS). Generate salary slips and payroll reports. Supports Excel export for bank uploads." }
+        { name: "Reporting & Analytics", icon: "fa-chart-pie", features: [
+          { name: "Custom Dashboards", price: 15000, time: 6, desc: "Build role-based dashboards with charts: lead sources, conversion rates, sales forecasts, team performance." },
+          { name: "Sales Reports", price: 12000, time: 5, desc: "Pre-built reports: pipeline analysis, win/loss reasons, activity reports. Export to PDF/Excel." },
+          { name: "Data Exports & Integrations", price: 9000, time: 4, desc: "Export data to CSV/Excel. Connect with BI tools (Power BI, Tableau) via API." }
         ]},
-        { name: "Communication", icon: "fa-bell", features: [
-          { name: "Bulk SMS & Email", price: 12000, time: 4, desc: "Send notifications, circulars, and alerts to parents and staff via SMS and email. Pre-built templates and group selection (class-wise, bus route, etc.)." },
-          { name: "In-App Messaging", price: 6000, time: 3, desc: "Secure messaging between parents, teachers, and admin. Group chats for class, parent-teacher conferences, and one-on-one communication. Message history and read receipts." },
-          { name: "Notice Board", price: 5000, time: 2, desc: "Digital notice board for publishing announcements, homework, and events. Attach PDFs and images. Target specific audiences (e.g., only Class 10). Mobile app integration." }
+        { name: "Mobile Access", icon: "fa-mobile-alt", features: [
+          { name: "Mobile App (iOS/Android)", price: 25000, time: 10, desc: "White-label mobile app for sales reps on the go. View leads, update deals, log calls, receive notifications." },
+          { name: "Offline Mode", price: 12000, time: 5, desc: "Work offline – changes sync when back online. Critical for field sales teams." }
         ]},
-        { name: "Parent & Student Portal", icon: "fa-mobile-alt", features: [
-          { name: "Mobile App (Parent View)", price: 25000, time: 10, desc: "White-label mobile app for parents to view attendance, fees, exam results, homework, and notices. Push notifications for important updates. Available for iOS and Android." },
-          { name: "Online Homework & Submissions", price: 12000, time: 5, desc: "Teachers can post homework with due dates, attachments, and instructions. Students submit work online. Parents can track submissions and grades." },
-          { name: "Live Bus Tracking", price: 18000, time: 6, desc: "GPS integration for school buses. Parents can see live location of the bus, estimated arrival time, and route history. Enhances safety and reduces anxiety." }
-        ]},
-        { name: "Library Management", icon: "fa-book", features: [
-          { name: "Book Catalog & Barcode", price: 8000, time: 4, desc: "Catalog books with ISBN, title, author, publisher, and rack number. Generate barcode labels for easy check-in/out. Search books by any field." },
-          { name: "Issue/Return & Fines", price: 7000, time: 3, desc: "Quick issue and return using barcode scanner. Automatic fine calculation for late returns. Send reminders for due dates. Track book availability in real-time." },
-          { name: "Online Library Search", price: 5000, time: 3, desc: "Allow students and staff to search the library catalog online. View book availability, location, and reserve books. Accessible via student portal." }
-        ]},
-        { name: "Transport Management", icon: "fa-bus", features: [
-          { name: "Route & Stop Management", price: 8000, time: 4, desc: "Define bus routes, stops, and trip times. Assign students to specific stops. Generate route maps and student lists for drivers. Optimize routes for fuel efficiency." },
-          { name: "Vehicle & Driver Tracking", price: 10000, time: 5, desc: "Maintain vehicle records (registration, insurance, maintenance). Track driver details, licenses, and duty logs. Monitor fuel consumption and maintenance schedules." }
-        ]},
-        { name: "Inventory", icon: "fa-boxes", features: [
-          { name: "Stock In/Out", price: 7000, time: 3, desc: "Track stationery, sports equipment, furniture, and other assets. Record stock inward, outward, and current balance. Generate stock reports by category." },
-          { name: "Low Stock Alerts", price: 4000, time: 2, desc: "Set minimum stock levels and get alerts when stock falls below threshold. Helps in timely reordering and prevents shortages." }
-        ]},
-        { name: "Admin Dashboards & Reports", icon: "fa-chart-pie", features: [
-          { name: "Role-based Dashboards", price: 15000, time: 6, desc: "Custom dashboards for admin, principal, teachers, accountants, and clerks. Each role sees relevant data: fee collection graphs, attendance trends, exam performance." },
-          { name: "Analytics & Graphs", price: 12000, time: 5, desc: "Visual reports on fee collection, attendance percentages, gender ratio, class strength, and exam results. Drill-down capabilities for deeper insights." },
-          { name: "Custom Reports (TC, Birthdays etc.)", price: 8000, time: 4, desc: "Generate any custom report: Transfer Certificates, birthdate lists, staff directory, student strength report, etc. Export to PDF or Excel." }
+        { name: "Admin & Security", icon: "fa-shield-alt", features: [
+          { name: "Role-Based Access Control", price: 10000, time: 4, desc: "Define roles (admin, manager, rep) with granular permissions. Restrict data access by team or territory." },
+          { name: "Audit Logs", price: 7000, time: 3, desc: "Track all user actions: login, data changes, exports. Compliance-ready logs." },
+          { name: "Data Backup & Recovery", price: 6000, time: 2, desc: "Automated daily backups. Point-in-time recovery. Encrypted storage." }
         ]}
       ];
 
-      // Load selections from localStorage
+      // Load selections from localStorage (use different key to avoid conflict with ERP)
       function loadSelections() {
-        const saved = localStorage.getItem('erpSelectedFeatures');
+        const saved = localStorage.getItem('crmSelectedFeatures');
         return saved ? JSON.parse(saved) : {};
       }
 
       function saveSelections(selections) {
-        localStorage.setItem('erpSelectedFeatures', JSON.stringify(selections));
+        localStorage.setItem('crmSelectedFeatures', JSON.stringify(selections));
       }
 
       // Render all feature cards
@@ -525,7 +507,7 @@
           html += `<div class="module-title"><i class="fas ${module.icon}"></i> ${module.name}</div>`;
 
           module.features.forEach((feature, featIndex) => {
-            const featureId = `mod_${modIndex}_feat_${featIndex}`;
+            const featureId = `crm_mod_${modIndex}_feat_${featIndex}`;
             const isChecked = selections[featureId] || false;
             html += `
               <div class="feature-card ${isChecked ? 'selected' : ''}" data-feature-id="${featureId}">
@@ -547,20 +529,17 @@
 
         grid.innerHTML = html;
 
-        // Attach click event to each feature card (toggle checkbox and class)
+        // Attach click event to each feature card
         document.querySelectorAll('.feature-card').forEach(card => {
           card.addEventListener('click', function(e) {
             if (e.target.tagName === 'INPUT' && e.target.type === 'checkbox') return;
-
             const checkbox = this.querySelector('input[type="checkbox"]');
             checkbox.checked = !checkbox.checked;
             this.classList.toggle('selected', checkbox.checked);
-
             const featureId = checkbox.id;
             const selections = loadSelections();
             selections[featureId] = checkbox.checked;
             saveSelections(selections);
-
             updateTotals();
           });
         });
@@ -569,12 +548,10 @@
           cb.addEventListener('change', function(e) {
             const card = this.closest('.feature-card');
             card.classList.toggle('selected', this.checked);
-
             const featureId = this.id;
             const selections = loadSelections();
             selections[featureId] = this.checked;
             saveSelections(selections);
-
             updateTotals();
           });
         });
@@ -582,7 +559,6 @@
         updateTotals();
       }
 
-      // Update total price and time
       function updateTotals() {
         const selections = loadSelections();
         let totalPrice = 0;
@@ -590,7 +566,7 @@
 
         modules.forEach((module, modIndex) => {
           module.features.forEach((feature, featIndex) => {
-            const featureId = `mod_${modIndex}_feat_${featIndex}`;
+            const featureId = `crm_mod_${modIndex}_feat_${featIndex}`;
             if (selections[featureId]) {
               totalPrice += feature.price;
               totalTime += feature.time;
@@ -602,19 +578,17 @@
         document.getElementById('totalTime').innerHTML = `<i class="far fa-clock"></i> ${totalTime} days implementation`;
       }
 
-      // Reset selections
       document.getElementById('resetBtn').addEventListener('click', function() {
-        localStorage.removeItem('erpSelectedFeatures');
+        localStorage.removeItem('crmSelectedFeatures');
         renderFeatures();
       });
 
-      // Inquire: store data and redirect
       document.getElementById('inquireBtn').addEventListener('click', function() {
         const selections = loadSelections();
         const selectedFeatures = [];
         modules.forEach((module, modIndex) => {
           module.features.forEach((feature, featIndex) => {
-            const featureId = `mod_${modIndex}_feat_${featIndex}`;
+            const featureId = `crm_mod_${modIndex}_feat_${featIndex}`;
             if (selections[featureId]) {
               selectedFeatures.push({
                 module: module.name,
@@ -634,14 +608,13 @@
         const totalPrice = selectedFeatures.reduce((sum, f) => sum + f.price, 0);
         const totalTime = selectedFeatures.reduce((sum, f) => sum + f.time, 0);
 
-        localStorage.setItem('erpQuoteFeatures', JSON.stringify(selectedFeatures));
-        localStorage.setItem('erpQuoteTotalPrice', totalPrice);
-        localStorage.setItem('erpQuoteTotalTime', totalTime);
+        localStorage.setItem('crmQuoteFeatures', JSON.stringify(selectedFeatures));
+        localStorage.setItem('crmQuoteTotalPrice', totalPrice);
+        localStorage.setItem('crmQuoteTotalTime', totalTime);
 
-        window.location.href = '/contact.html?source=erp';
+        window.location.href = '/contact.html?source=crm';
       });
 
-      // Initial render
       renderFeatures();
     })();
   </script>

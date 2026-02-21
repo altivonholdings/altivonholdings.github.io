@@ -193,78 +193,122 @@
       </div>
     </section>
 
-    <script>
-      (function() {
-        // Form submission handling
-        const form = document.getElementById('contact-form');
-        const thankYou = document.getElementById('thankyou-message');
-        if (form) {
-          form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            try {
-              const response = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-              });
-              if (response.ok) {
-                thankYou.style.display = 'block';
-                form.reset();
-                // Clear ERP data after submission
-                localStorage.removeItem('erpQuoteFeatures');
-                localStorage.removeItem('erpQuoteTotalPrice');
-                localStorage.removeItem('erpQuoteTotalTime');
-                document.getElementById('erpSummary').style.display = 'none';
-                document.getElementById('erpDataField').value = '';
-              } else {
-                alert('Oops – something went wrong. Please email us directly.');
-              }
-            } catch (error) {
-              alert('Submission error. Please use email altivonholdings@gmail.com');
-            }
+<!-- Insert this updated script block in contact.html (replace the existing <script> that handles ERP) -->
+
+<script>
+  (function() {
+    // Form submission handling (unchanged)
+    const form = document.getElementById('contact-form');
+    const thankYou = document.getElementById('thankyou-message');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
           });
+          if (response.ok) {
+            thankYou.style.display = 'block';
+            form.reset();
+            // Clear all stored quote data after submission
+            localStorage.removeItem('erpQuoteFeatures');
+            localStorage.removeItem('crmQuoteFeatures');
+            localStorage.removeItem('waterparkQuoteFeatures');
+            document.getElementById('erpSummary').style.display = 'none';
+            document.getElementById('erpDataField').value = '';
+          } else {
+            alert('Oops – something went wrong. Please email us directly.');
+          }
+        } catch (error) {
+          alert('Submission error. Please use email altivonholdings@gmail.com');
         }
+      });
+    }
 
-        // --- ERP Data Prefill ---
-        const urlParams = new URLSearchParams(window.location.search);
-        const fromERP = urlParams.get('source') === 'erp' || localStorage.getItem('erpQuoteFeatures');
+    // --- Detect source and load appropriate quote data ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const source = urlParams.get('source'); // 'erp', 'crm', or 'waterpark'
 
-        if (fromERP) {
-          const features = JSON.parse(localStorage.getItem('erpQuoteFeatures') || '[]');
-          const totalPrice = parseInt(localStorage.getItem('erpQuoteTotalPrice') || '0');
-          const totalTime = parseInt(localStorage.getItem('erpQuoteTotalTime') || '0');
+    let features = [];
+    let totalPrice = 0;
+    let totalTime = 0;
+    let productName = '';
 
-          if (features.length > 0) {
-            // Build summary HTML
-            const summaryDiv = document.getElementById('erpSummary');
-            let summaryHTML = '<h4><i class="fas fa-school"></i> Your ERP Selections</h4><ul>';
-            features.forEach(f => {
-              summaryHTML += `<li><span>${f.module}: ${f.feature}</span> <span>₹${f.price.toLocaleString()} (${f.time} days)</span></li>`;
-            });
-            summaryHTML += `</ul><div class="total-row"><span>Total (excl. GST)</span> <span>₹${totalPrice.toLocaleString()}</span></div>`;
-            summaryHTML += `<div class="total-row"><span>Estimated time</span> <span>${totalTime} days</span></div>`;
-            summaryDiv.innerHTML = summaryHTML;
-            summaryDiv.style.display = 'block';
+    if (source === 'erp') {
+      features = JSON.parse(localStorage.getItem('erpQuoteFeatures') || '[]');
+      totalPrice = parseInt(localStorage.getItem('erpQuoteTotalPrice') || '0');
+      totalTime = parseInt(localStorage.getItem('erpQuoteTotalTime') || '0');
+      productName = 'School ERP';
+    } else if (source === 'crm') {
+      features = JSON.parse(localStorage.getItem('crmQuoteFeatures') || '[]');
+      totalPrice = parseInt(localStorage.getItem('crmQuoteTotalPrice') || '0');
+      totalTime = parseInt(localStorage.getItem('crmQuoteTotalTime') || '0');
+      productName = 'Custom CRM';
+    } else if (source === 'waterpark') {
+      features = JSON.parse(localStorage.getItem('waterparkQuoteFeatures') || '[]');
+      totalPrice = parseInt(localStorage.getItem('waterparkQuoteTotalPrice') || '0');
+      totalTime = parseInt(localStorage.getItem('waterparkQuoteTotalTime') || '0');
+      productName = 'Waterpark Management';
+    }
 
-            // Pre-fill the message field
-            const messageField = document.getElementById('message');
-            let messageText = "I am interested in the following School ERP features:\n\n";
-            features.forEach(f => {
-              messageText += `• ${f.module} – ${f.feature} (₹${f.price.toLocaleString()}, ${f.time} days)\n`;
-            });
-            messageText += `\nTotal estimated investment: ₹${totalPrice.toLocaleString()} + 5% GST, implementation time: ${totalTime} days.\n\nPlease provide a detailed quote and next steps.`;
-            messageField.value = messageText;
+    if (features.length > 0) {
+      // Build summary HTML
+      const summaryDiv = document.getElementById('erpSummary');
+      let icon = '';
+      if (source === 'erp') icon = 'fa-school';
+      else if (source === 'crm') icon = 'fa-chart-line';
+      else if (source === 'waterpark') icon = 'fa-water';
 
-            // Set service dropdown
-            document.getElementById('service').value = 'School ERP';
+      let summaryHTML = `<h4><i class="fas ${icon}"></i> Your ${productName} Selections</h4><ul>`;
+      features.forEach(f => {
+        summaryHTML += `<li><span>${f.module}: ${f.feature}</span> <span>₹${f.price.toLocaleString()} (${f.time} days)</span></li>`;
+      });
+      summaryHTML += `</ul><div class="total-row"><span>Total (excl. GST)</span> <span>₹${totalPrice.toLocaleString()}</span></div>`;
+      summaryHTML += `<div class="total-row"><span>Estimated time</span> <span>${totalTime} days</span></div>`;
+      summaryDiv.innerHTML = summaryHTML;
+      summaryDiv.style.display = 'block';
 
-            // Store features in hidden field as JSON
-            document.getElementById('erpDataField').value = JSON.stringify(features);
+      // Pre-fill the message field
+      const messageField = document.getElementById('message');
+      let messageText = `I am interested in the following ${productName} features:\n\n`;
+      features.forEach(f => {
+        messageText += `• ${f.module} – ${f.feature} (₹${f.price.toLocaleString()}, ${f.time} days)\n`;
+      });
+      messageText += `\nTotal estimated investment: ₹${totalPrice.toLocaleString()} + 5% GST, implementation time: ${totalTime} days.\n\nPlease provide a detailed quote and next steps.`;
+      messageField.value = messageText;
+
+      // Set service dropdown (assuming the option exists; if not, it will fallback)
+      const serviceSelect = document.getElementById('service');
+      if (serviceSelect) {
+        // Try to select matching option; if not present, add a custom one?
+        // For simplicity, we'll just set a generic "Other" or leave as is.
+        // You could also add a new option dynamically.
+        let found = false;
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          if (serviceSelect.options[i].text.includes(productName)) {
+            serviceSelect.selectedIndex = i;
+            found = true;
+            break;
           }
         }
-      })();
-    </script>
+        if (!found) {
+          // Add a new option
+          const opt = document.createElement('option');
+          opt.value = productName;
+          opt.text = productName;
+          opt.selected = true;
+          serviceSelect.appendChild(opt);
+        }
+      }
+
+      // Store features in hidden field as JSON (if you want to send via form)
+      document.getElementById('erpDataField').value = JSON.stringify(features);
+    }
+  })();
+</script>
   </main>
 
   <!-- Footer (unchanged) -->

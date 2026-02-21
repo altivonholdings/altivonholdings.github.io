@@ -72,6 +72,41 @@
     "url": "https://altivonholdings.github.io"
   }
   </script>
+<style>
+.service-card {
+  max-width: 250px; /* adjust width */
+  margin: 0.5rem; /* add some space between cards */
+}
+
+.card-img {
+  height: 120px; /* adjust image height */
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 0.5rem;
+}
+
+.card-content h3 {
+  font-size: 1rem; /* adjust heading size */
+}
+
+.card-content p {
+  font-size: 0.8rem; /* adjust paragraph size */
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    justify-items: center;
+  }
+}
+</style>
 </head>
 <body>
   <header class="site-header">
@@ -177,23 +212,50 @@
       </div>
     </section>
 
-    <!-- ===== CUSTOM SOFTWARE DEVELOPMENT SECTION ===== -->
-    <section class="service-detail" id="custom-software">
-      <div class="container service-block">
-        <div class="service-text reveal-left">
-          <h2>Custom Software Development</h2>
-          <p>Tailor‑made web applications, ERP systems, CRMs, and automation tools built for your unique business processes. We handle everything from requirement analysis to deployment and maintenance.</p>
-          <p><strong>Explore a live example:</strong> Our School Management System (ERP) lets you pick features and see instant pricing.</p>
-          <a href="custom/erp/index.html" class="btn btn-primary">Try School ERP Demo <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="service-icon-large reveal-right">
-          <!-- Replace with your generated image -->
-          <img src="assets/images/service-custom.jpg" alt="Custom Software Development – ERP illustration" width="200" height="200" loading="lazy">
+<!-- ===== CUSTOM SOFTWARE DEVELOPMENT SECTION ===== -->
+<section class="templates-showcase" id="custom-software">
+  <div class="container">
+    <div class="section-header reveal-fade">
+      <h2>Custom Software Development</h2>
+      <p>Tailor‑made web applications, ERP systems, CRMs, and automation tools built for your unique business processes. We handle everything from requirement analysis to deployment and maintenance.</p>
+    </div>
+    <div class="card-grid">
+      <!-- ERP Card -->
+      <div class="service-card reveal-up">
+        <img src="assets/images/service-custom.jpg" alt="School ERP Demo" class="card-img" loading="lazy" width="400" height="600">
+        <div class="card-content">
+          <h3>School Management System (ERP)</h3>
+          <p>Interactive demo – select features and see instant pricing. Perfect for educational institutes.</p>
+          <a href="custom/erp/index.html" class="card-link">Try School ERP Demo <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
-    </section>
+      <!-- CRM Card -->
+      <div class="service-card reveal-up">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format" alt="Custom CRM Demo" class="card-img" loading="lazy" width="400" height="600">
+        <div class="card-content">
+          <h3>Custom CRM System</h3>
+          <p>Build your perfect sales tool – lead management, pipeline tracking, and reporting.</p>
+          <a href="custom/crm/index.html" class="card-link">Try CRM Demo <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- Waterpark Management Card (New) -->
+      <div class="service-card reveal-up">
+        <img src="https://images.unsplash.com/photo-1596618810292-31973b6cce3a?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdhdGVyJTIwcGFya3xlbnwwfHwwfHx8MA%3D%3D?w=600&auto=format" alt="Waterpark Management Software" class="card-img" loading="lazy" width="400" height="600">
+        <div class="card-content">
+          <h3>Waterpark Management System</h3>
+          <p>Complete solution for ticketing, rentals, F&B, staff, and safety – all in one platform.</p>
+          <a href="custom/waterpark/index.html" class="card-link">Try WMS Demo <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+          <a href="custom/index.html" class="btn btn-primary">Browse All Custom Software <i class="fas fa-arrow-right"></i></a>
+        </div>
+    <p style="text-align:center; margin-top:1.5rem; color: #475569;"><i class="fas fa-cogs"></i> More custom solutions available – contact us for a consultation.</p>
+  </div>
+</section>
 
-    <!-- ===== NEW: Templates Section ===== -->
+    <!-- ===== TEMPLATES SECTION ===== -->
     <section class="templates-showcase">
       <div class="container">
         <div class="section-header reveal-fade">
@@ -261,115 +323,80 @@
         </div>
       </div>
     </section>
-<style>
-.service-card {
-  max-width: 250px; /* adjust width */
-  margin: 0.5rem; /* add some space between cards */
-}
 
-.card-img {
-  height: 120px; /* adjust image height */
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 0.5rem;
-}
-
-.card-content h3 {
-  font-size: 1rem; /* adjust heading size */
-}
-
-.card-content p {
-  font-size: 0.8rem; /* adjust paragraph size */
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-@media (max-width: 768px) {
-  .card-grid {
-    justify-items: center;
-  }
-}
-</style>
-
-<!-- ===== PORTFOLIO SHOWCASE (Filterable Grid) ===== -->
-<section class="portfolio-showcase bg-light">
-  <div class="container">
-    <div class="section-header reveal-fade">
-      <h2>Recent Projects</h2>
-      <p>Explore our handcrafted websites – each built with precision.</p>
-    </div>
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="corporate">Corporate</button>
-      <button class="filter-btn" data-filter="ecommerce">E‑commerce</button>
-      <button class="filter-btn" data-filter="realestate">Real Estate</button>
-      <button class="filter-btn" data-filter="education">Education</button>
-      <button class="filter-btn" data-filter="construction">Construction</button>
-    </div>
-    <div class="portfolio-grid">
-      <!-- Corporate: BuildCorp -->
-      <div class="portfolio-item corporate reveal-up">
-        <img src="assets/images/web_designs/corporate_web_design.jpg" alt="Corporate website for BuildCorp" loading="lazy" width="400" height="480">
-        <div class="portfolio-overlay">
-          <h3>BuildCorp</h3>
-          <p>Corporate website with investor portal</p>
-          <a href="portfolio/buildcorp.html" class="btn-small">View Details</a>
+    <!-- ===== PORTFOLIO SHOWCASE ===== -->
+    <section class="portfolio-showcase bg-light">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <h2>Recent Projects</h2>
+          <p>Explore our handcrafted websites – each built with precision.</p>
+        </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="corporate">Corporate</button>
+          <button class="filter-btn" data-filter="ecommerce">E‑commerce</button>
+          <button class="filter-btn" data-filter="realestate">Real Estate</button>
+          <button class="filter-btn" data-filter="education">Education</button>
+          <button class="filter-btn" data-filter="construction">Construction</button>
+        </div>
+        <div class="portfolio-grid">
+          <!-- Corporate: BuildCorp -->
+          <div class="portfolio-item corporate reveal-up">
+            <img src="assets/images/web_designs/corporate_web_design.jpg" alt="Corporate website for BuildCorp" loading="lazy" width="400" height="480">
+            <div class="portfolio-overlay">
+              <h3>BuildCorp</h3>
+              <p>Corporate website with investor portal</p>
+              <a href="portfolio/buildcorp.html" class="btn-small">View Details</a>
+            </div>
+          </div>
+          <!-- E-commerce: UrbanCart -->
+          <div class="portfolio-item ecommerce reveal-up">
+            <img src="assets/images/web_designs/ecommerce_web_design.jpg" alt="E-commerce for UrbanCart" loading="lazy" width="400" height="480">
+            <div class="portfolio-overlay">
+              <h3>UrbanCart</h3>
+              <p>Scalable e‑commerce platform</p>
+              <a href="portfolio/urbancart.html" class="btn-small">View Details</a>
+            </div>
+          </div>
+          <!-- Real Estate: EstateIn -->
+          <div class="portfolio-item realestate reveal-up">
+            <img src="assets/images/web_designs/real-estate_web_design.jpg" alt="Real estate for EstateIn" loading="lazy" width="400" height="480">
+            <div class="portfolio-overlay">
+              <h3>EstateIn</h3>
+              <p>Property listing with virtual tours</p>
+              <a href="portfolio/estatein.html" class="btn-small">View Details</a>
+            </div>
+          </div>
+          <!-- Education: EduFirst -->
+          <div class="portfolio-item education reveal-up">
+            <img src="assets/images/web_designs/educational_institute_web_design.jpg" alt="Education for EduFirst" loading="lazy" width="400" height="480">
+            <div class="portfolio-overlay">
+              <h3>EduFirst</h3>
+              <p>LMS & course catalog</p>
+              <a href="portfolio/edufirst.html" class="btn-small">View Details</a>
+            </div>
+          </div>
+          <!-- Construction: BuildCorp Construction -->
+          <div class="portfolio-item construction reveal-up">
+            <img src="assets/images/web_designs/construction_web_design.jpg" alt="Construction for BuildCorp Construction" loading="lazy" width="400" height="480">
+            <div class="portfolio-overlay">
+              <h3>BuildCorp Construction</h3>
+              <p>Project showcase & timeline</p>
+              <a href="portfolio/buildcorp-construction.html" class="btn-small">View Details</a>
+            </div>
+          </div>
+          <!-- Digital Agency (Corporate): CreativeAce -->
+          <div class="portfolio-item corporate reveal-up">
+            <img src="assets/images/web_designs/digital_marketing_web_design.jpg" alt="Digital agency for CreativeAce" loading="lazy" width="400" height="480">
+            <div class="portfolio-overlay">
+              <h3>CreativeAce</h3>
+              <p>Digital agency website</p>
+              <a href="portfolio/creativeace.html" class="btn-small">View Details</a>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- E-commerce: UrbanCart -->
-      <div class="portfolio-item ecommerce reveal-up">
-        <img src="assets/images/web_designs/ecommerce_web_design.jpg" alt="E-commerce for UrbanCart" loading="lazy" width="400" height="480">
-        <div class="portfolio-overlay">
-          <h3>UrbanCart</h3>
-          <p>Scalable e‑commerce platform</p>
-          <a href="portfolio/urbancart.html" class="btn-small">View Details</a>
-        </div>
-      </div>
-      <!-- Real Estate: EstateIn -->
-      <div class="portfolio-item realestate reveal-up">
-        <img src="assets/images/web_designs/real-estate_web_design.jpg" alt="Real estate for EstateIn" loading="lazy" width="400" height="480">
-        <div class="portfolio-overlay">
-          <h3>EstateIn</h3>
-          <p>Property listing with virtual tours</p>
-          <a href="portfolio/estatein.html" class="btn-small">View Details</a>
-        </div>
-      </div>
-      <!-- Education: EduFirst -->
-      <div class="portfolio-item education reveal-up">
-        <img src="assets/images/web_designs/educational_institute_web_design.jpg" alt="Education for EduFirst" loading="lazy" width="400" height="480">
-        <div class="portfolio-overlay">
-          <h3>EduFirst</h3>
-          <p>LMS & course catalog</p>
-          <a href="portfolio/edufirst.html" class="btn-small">View Details</a>
-        </div>
-      </div>
-      <!-- Construction: BuildCorp Construction -->
-      <div class="portfolio-item construction reveal-up">
-        <img src="assets/images/web_designs/construction_web_design.jpg" alt="Construction for BuildCorp Construction" loading="lazy" width="400" height="480">
-        <div class="portfolio-overlay">
-          <h3>BuildCorp Construction</h3>
-          <p>Project showcase & timeline</p>
-          <a href="portfolio/buildcorp-construction.html" class="btn-small">View Details</a>
-        </div>
-      </div>
-      <!-- Digital Agency (Corporate): CreativeAce -->
-      <div class="portfolio-item corporate reveal-up">
-        <img src="assets/images/web_designs/digital_marketing_web_design.jpg" alt="Digital agency for CreativeAce" loading="lazy" width="400" height="480">
-        <div class="portfolio-overlay">
-          <h3>CreativeAce</h3>
-          <p>Digital agency website</p>
-          <a href="portfolio/creativeace.html" class="btn-small">View Details</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- CTA -->
     <section class="cta-section">
@@ -402,7 +429,7 @@
           <li><a href="contact.html">Contact</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="templates/">Templates</a></li> <!-- Added -->
+          <li><a href="templates/">Templates</a></li>
         </ul>
       </div>
       <div class="footer-services">
@@ -412,6 +439,8 @@
           <li><a href="services.html#ecommerce">E‑Commerce</a></li>
           <li><a href="services.html#strategy">Digital Strategy</a></li>
           <li><a href="services.html#maintenance">Maintenance</a></li>
+          <li><a href="custom/erp/index.html">School ERP</a></li>
+          <li><a href="custom/crm/index.html">Custom CRM</a></li>
         </ul>
       </div>
       <div class="footer-contact">
