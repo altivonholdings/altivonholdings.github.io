@@ -1,0 +1,88 @@
+/* ===== BASE.CSS ===== */
+/* Reset, variables, typography, base container */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors – Corporate Navy & Teal */
+  --navy: #0A1F44;
+  --navy-light: #1a3363;
+  --white: #ffffff;
+  --grey-light: #F5F7FA;
+  --grey-mid: #eaeef3;
+  --teal: #1e7e7e;
+  --silver: #b0c4ce;
+  --text-dark: #1e2a41;
+  --text-grey: #4a5b6e;
+  --shadow: 0 12px 30px -10px rgba(10,31,68,0.08);
+  --shadow-hover: 0 25px 35px rgba(10,31,68,0.12);
+  --border-radius-card: 20px;
+  --border-radius-btn: 40px;
+  --transition: 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+h1 { font-size: 2.8rem; margin-bottom: 1.2rem; }
+h2 { font-size: 2.2rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+p { margin-bottom: 1rem; color: var(--text-grey); }
+
+a {
+  text-decoration: none;
+  color: var(--navy);
+  transition: var(--transition);
+}
+
+ul, ol { list-style: none; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Helper classes */
+.bg-light { background-color: var(--grey-light); }
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+section:not(.cta-section) {
+  margin: 20px 0;
+}
+.section-header p {
+  font-size: 1.2rem;
+  color: var(--text-grey);
+}

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4X0M6RM0F6');
+  </script>
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Software Solutions – Altivon Holdings</title>
+  <meta name="description" content="Explore our range of custom software: ERP, CRM, Waterpark, Hospital, Hotel, Inventory, Fleet, and POS systems. Tailored to your business needs.">
+  <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Custom styles for software showcase */
+    .software-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2.5rem;
+      padding: 3rem 0;
+    }
+    .software-card {
+      background: #ffffff;
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: 0 15px 30px -12px rgba(10,31,68,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #eef2f6;
+      display: flex;
+      flex-direction: column;
+    }
+    .software-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 40px -16px rgba(10,31,68,0.2);
+    }
+    .software-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid #eef2f6;
+    }
+    .software-content {
+      padding: 2rem 1.8rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .software-content h3 {
+      font-size: 1.8rem;
+      color: #0A1F44;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .software-content h3 i {
+      color: #2b9c9c;
+      font-size: 2rem;
+    }
+    .software-desc {
+      color: #4a5b6e;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.8rem 0;
+    }
+    .feature-list li {
+      padding: 0.4rem 0;
+      color: #334155;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .feature-list i {
+      color: #2b9c9c;
+      width: 18px;
+      text-align: center;
+    }
+    .software-footer {
+      margin-top: auto;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-software {
+      background: #0A1F44;
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      transition: 0.2s;
+      border: 2px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .btn-software:hover {
+      background: #1a3363;
+      transform: translateY(-2px);
+    }
+    .btn-software-outline {
+      background: transparent;
+      border: 2px solid #0A1F44;
+      color: #0A1F44;
+    }
+    .btn-software-outline:hover {
+      background: #0A1F44;
+      color: white;
+    }
+    .section-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 2rem auto 3rem;
+      color: #4a5b6e;
+      font-size: 1.2rem;
+    }
+    .page-header.custom-header {
+      background: linear-gradient(135deg, #0A1F44, #1e4a6f);
+      color: white;
+      padding: 4rem 0;
+      margin-bottom: 2rem;
+      border-radius: 0 0 3rem 3rem;
+    }
+    .page-header.custom-header h1,
+    .page-header.custom-header p {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header (same as main site) -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../assets/images/logo.jpg" alt="Altivon Holdings Logo" class="logo-img" width="48" height="48">
+          <span class="logo-text">ALTIVON</span>
+          <span class="logo-sub">HOLDINGS</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../templates/index.html">Templates</a></li>
+          <li><a href="index.html" class="active">Custom Software</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-header custom-header">
+      <div class="container">
+        <h1>Custom Software Solutions</h1>
+        <p>Tailored to your industry, built to scale. Explore our portfolio of specialised systems.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="section-intro">
+        <p>Each solution is fully customisable – click “Interactive Demo” to configure features and get an instant estimate, or “Learn More” to discuss your requirements.</p>
+      </div>
+
+      <div class="software-grid">
+        <!-- 1. School ERP (existing) -->
+        <div class="software-card">
+          <img class="software-img" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&auto=format" alt="School ERP" loading="lazy">
+          <div class="software-content">
+            <h3><i class="fas fa-school"></i> School ERP</h3>
+            <p class="software-desc">Complete management system for educational institutes: admissions, attendance, exams, fees, and parent communication.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Student & Staff Management</li>
+              <li><i class="fas fa-check"></i> Online Fee Collection</li>
+              <li><i class="fas fa-check"></i> Exam & Report Cards</li>
+            </ul>
+            <div class="software-footer">
+              <a href="/custom/erp/index.html" class="btn-software"><i class="fas fa-laptop"></i> Interactive Demo</a>
+              <a href="../contact.html?subject=School%20ERP" class="btn-software btn-software-outline">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Custom CRM (existing) -->
+        <div class="software-card">
+          <img class="software-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format" alt="CRM" loading="lazy">
+          <div class="software-content">
+            <h3><i class="fas fa-chart-line"></i> Custom CRM</h3>
+            <p class="software-desc">Sales pipeline, lead management, and customer engagement tools designed for your sales team.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Lead & Contact Management</li>
+              <li><i class="fas fa-check"></i> Sales Forecasting</li>
+              <li><i class="fas fa-check"></i> Email Integration</li>
+            </ul>
+            <div class="software-footer">
+              <a href="/custom/crm/index.html" class="btn-software"><i class="fas fa-laptop"></i> Interactive Demo</a>
+              <a href="../contact.html?subject=Custom%20CRM" class="btn-software btn-software-outline">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Waterpark Management (existing) -->
+        <div class="software-card">
+          <img class="software-img" src="https://images.unsplash.com/photo-1596618810292-31973b6cce3a?w=600&auto=format" alt="Waterpark" loading="lazy">
+          <div class="software-content">
+            <h3><i class="fas fa-water"></i> Waterpark Management</h3>
+            <p class="software-desc">All-in-one solution for ticketing, rentals, F&B, staff, and safety at aquatic centres.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Online Ticketing & POS</li>
+              <li><i class="fas fa-check"></i> Locker & Tube Rentals</li>
+              <li><i class="fas fa-check"></i> Ride Maintenance</li>
+            </ul>
+            <div class="software-footer">
+              <a href="/custom/wms/index.html" class="btn-software"><i class="fas fa-laptop"></i> Interactive Demo</a>
+              <a href="../contact.html?subject=Waterpark%20Management" class="btn-software btn-software-outline">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Hospital Management System -->
+        <div class="software-card">
+          <img class="software-img" src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&auto=format" alt="Hospital Management" loading="lazy">
+          <div class="software-content">
+            <h3><i class="fas fa-hospital"></i> Hospital Management</h3>
+            <p class="software-desc">Digitize patient records, appointments, billing, and pharmacy – compliant with healthcare standards.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Patient Registration & EHR</li>
+              <li><i class="fas fa-check"></i> Appointment Scheduling</li>
+              <li><i class="fas fa-check"></i> Pharmacy & Lab Integration</li>
+            </ul>
+            <div class="software-footer">
+              <a href="/custom/hospital/index.html" class="btn-software"><i class="fas fa-laptop"></i> Interactive Demo</a>
+              <a href="../contact.html?subject=Hospital%20Management" class="btn-software btn-software-outline">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Hotel Management System -->
+        <div class="software-card">
+          <img class="software-img" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format" alt="Hotel Management" loading="lazy">
+          <div class="software-content">
+            <h3><i class="fas fa-hotel"></i> Hotel Management</h3>
+            <p class="software-desc">Property management, booking engine, housekeeping, and billing for hotels and resorts.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Online Booking & Channel Manager</li>
+              <li><i class="fas fa-check"></i> Front Desk & Check-in</li>
+              <li><i class="fas fa-check"></i> Housekeeping & Maintenance</li>
+            </ul>
+            <div class="software-footer">
+              <a href="/custom/hotel/index.html" class="btn-software"><i class="fas fa-laptop"></i> Interactive Demo</a>
+              <a href="../contact.html?subject=Hotel%20Management" class="btn-software btn-software-outline">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Inventory & Warehouse Management -->
+        <div class="software-card">
+          <img class="software-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&auto=format" alt="Inventory Management" loading="lazy">
+          <div class="software-content">
+            <h3><i class="fas fa-boxes"></i> Inventory & Warehouse</h3>
+            <p class="software-desc">Real-time stock tracking, order management, barcode scanning, and warehouse optimization.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Multi‑warehouse Support</li>
+              <li><i class="fas fa-check"></i> Barcode / RFID Integration</li>
+              <li><i class="fas fa-check"></i> Low‑stock Alerts</li>
+            </ul>
+            <div class="software-footer">
+              <a href="/custom/inventory/index.html" class="btn-software"><i class="fas fa-laptop"></i> Interactive Demo</a>
+              <a href="../contact.html?subject=Inventory%20Management" class="btn-software btn-software-outline">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Fleet Management System -->
+        <div class="software-card">
+          <img class="software-img" src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&auto=format" alt="Fleet Management" loading="lazy">
+          <div class="software-content">
+            <h3><i class="fas fa-truck"></i> Fleet Management</h3>
+            <p class="software-desc">GPS tracking, maintenance scheduling, driver logs, and fuel efficiency monitoring.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Real‑time GPS Tracking</li>
+              <li><i class="fas fa-check"></i> Maintenance Alerts</li>
+              <li><i class="fas fa-check"></i> Driver Performance</li>
+            </ul>
+            <div class="software-footer">
+              <a href="/custom/fleet/index.html" class="btn-software"><i class="fas fa-laptop"></i> Interactive Demo</a>
+              <a href="../contact.html?subject=Fleet%20Management" class="btn-software btn-software-outline">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Point of Sale (POS) System -->
+        <div class="software-card">
+          <img class="software-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&auto=format" alt="POS System" loading="lazy">
+          <div class="software-content">
+            <h3><i class="fas fa-cash-register"></i> Point of Sale (POS)</h3>
+            <p class="software-desc">Modern POS for retail, restaurants, and services – offline mode, inventory sync, and analytics.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Touch‑screen Interface</li>
+              <li><i class="fas fa-check"></i> Offline Sales Mode</li>
+              <li><i class="fas fa-check"></i> Integrated Payments</li>
+            </ul>
+            <div class="software-footer">
+              <a href="/custom/pos/index.html" class="btn-software"><i class="fas fa-laptop"></i> Interactive Demo</a>
+              <a href="../contact.html?subject=POS%20System" class="btn-software btn-software-outline">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container cta-content reveal-up">
+        <h2>Need something else?</h2>
+        <p>We build tailor‑made software for any industry – describe your requirements and we’ll craft a solution.</p>
+        <a href="../contact.html" class="btn btn-primary btn-large">Start a Conversation</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (same as main site) -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <h3>Altivon Holdings</h3>
+        <p>Empowering Businesses Through Scalable Digital Solutions.</p>
+        <div class="social-placeholder">
+          <a href="https://www.linkedin.com/company/altivon-holding/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.github.com/altivonholdings" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../templates/index.html">Templates</a></li>
+          <li><a href="index.html">Custom Software</a></li>
+        </ul>
+      </div>
+      <div class="footer-services">
+        <h4>Our Software</h4>
+        <ul>
+          <li><a href="erp/index.html">School ERP</a></li>
+          <li><a href="crm/index.html">Custom CRM</a></li>
+          <li><a href="wms/index.html">Waterpark</a></li>
+          <li><a href="hospital/index.html">Hospital</a></li>
+          <li><a href="hotel/index.html">Hotel</a></li>
+          <li><a href="inventory/index.html">Inventory</a></li>
+          <li><a href="fleet/index.html">Fleet</a></li>
+          <li><a href="pos/index.html">POS</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p>
+        <p><i class="fas fa-globe"></i> <a href="https://altivonholdings.github.io">altivonholdings.github.io</a></p>
+        <p><i class="fas fa-map-pin"></i> Lucknow, Uttar Pradesh, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Altivon Holdings. All rights reserved. | Website Development Company in India</p>
+        <p class="footer-tagline">Empowering Businesses Through Scalable Digital Solutions.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/chat.js"></script>
+</body>
+</html>

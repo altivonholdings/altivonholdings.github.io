@@ -1,0 +1,213 @@
+/* ===== LAYOUT.CSS ===== */
+/* Navigation, footer, grid, responsive breakpoints */
+
+/* ---------- Header & Sticky Nav ---------- */
+.site-header {
+  background: var(--white);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--grey-mid);
+  transition: box-shadow 0.3s;
+}
+.site-header.scrolled {
+  box-shadow: 0 10px 30px rgba(10,31,68,0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.logo-img {
+  height: 48px;
+  width: auto;
+  border-radius: 8px;
+}
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+.logo-sub {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--text-grey);
+  display: block;
+}
+
+.main-nav .nav-list {
+  display: flex;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+.main-nav a {
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+.main-nav a:hover,
+.main-nav a.active {
+  border-bottom-color: var(--teal);
+  color: var(--navy);
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--navy);
+  color: #ddd;
+  padding-top: 4rem;
+  font-size: 0.95rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+.footer-about h3,
+.footer-links h4,
+.footer-services h4,
+.footer-contact h4 {
+  color: var(--white);
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+.footer-about p { color: #ccc; }
+.footer-links ul,
+.footer-services ul {
+  list-style: none;
+}
+.footer-links li,
+.footer-services li {
+  margin-bottom: 0.6rem;
+}
+.footer-links a,
+.footer-services a,
+.footer-contact a {
+  color: #ccc;
+  transition: var(--transition);
+}
+.footer-links a:hover,
+.footer-services a:hover {
+  color: var(--white);
+}
+.social-placeholder {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.social-placeholder a {
+  color: #ccc;
+  font-size: 1.5rem;
+}
+.social-placeholder a:hover {
+  color: var(--white);
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 1.8rem 0;
+  text-align: center;
+  color: #aaa;
+}
+.footer-tagline {
+  font-style: italic;
+  color: #bbb;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Page Header (inner pages) ---------- */
+.page-header {
+  padding: 3rem 0 2rem;
+  background: var(--grey-light);
+  text-align: center;
+}
+.page-header h1 {
+  margin-bottom: 0.5rem;
+}
+.page-header p {
+  font-size: 1.2rem;
+  color: var(--text-grey);
+}
+
+/* ---------- Responsive Breakpoints ---------- */
+@media (max-width: 992px) {
+  .nav-toggle {
+    display: block;
+  }
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+  .main-nav.active {
+    max-height: 400px;
+  }
+  .main-nav .nav-list {
+    flex-direction: column;
+    padding: 1.5rem 0;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container { width: 85%; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.3rem; }
+  
+  /* Hide hero visual (icon grid) on tablets & mobile */
+  .hero-visual { display: none; }
+  
+  /* Stack grids */
+  .hero-grid,
+  .about-grid,
+  .service-block,
+  .founder-card,
+  .contact-grid,
+  .process-grid,
+  .stats-grid,
+  .testimonial-grid,
+  .portfolio-grid,
+  .blog-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .container { width: 92%; }
+  h1 { font-size: 1.8rem; }
+  .hero-buttons .btn { width: 100%; }
+  .btn { padding: 0.8rem 1.5rem; }
+  .btn-large { padding: 0.9rem 1.8rem; }
+}

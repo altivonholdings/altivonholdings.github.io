@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Enhanced Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4X0M6RM0F6', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+  </script>
+  
+  <!-- AdSense Setup -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>EduFirst Learning Management System | Altivon Holdings Portfolio</title>
+  <meta name="description" content="Case study: Custom LMS for EduFirst with course catalog, student enrollment, and video hosting. Enrolled 2000+ students in first quarter. Django + AWS.">
+  <meta name="keywords" content="LMS development, education website, Django, AWS, online learning platform, course catalog">
+  <meta name="author" content="Altivon Holdings">
+  <link rel="canonical" href="https://altivonholdings.github.io/portfolio/edufirst.html">
+  <meta property="og:title" content="EduFirst Learning Management System | Altivon Holdings">
+  <meta property="og:description" content="Custom LMS with Django and AWS. Enrolled 2000+ students in first quarter.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Reusable interactive styles (same as before) */
+    .process-timeline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 3rem 0;
+      position: relative;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--navy) 100%);
+      z-index: 1;
+    }
+    .timeline-step {
+      background: white;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 2;
+      border: 3px solid var(--teal);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .timeline-step:hover {
+      transform: scale(1.1);
+      border-color: var(--navy);
+    }
+    .timeline-step span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      text-align: center;
+    }
+    .timeline-step small {
+      font-size: 0.7rem;
+      color: var(--text-grey);
+    }
+    .step-description {
+      flex: 0 0 100%;
+      margin-top: 2rem;
+      padding: 2rem;
+      background: var(--grey-light);
+      border-radius: 20px;
+      display: none;
+    }
+    .step-description.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tech-tabs {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 0.8rem 2rem;
+      background: white;
+      border: 1px solid var(--grey-mid);
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+    .tech-content {
+      display: none;
+      padding: 2rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      margin-top: 1rem;
+    }
+    .tech-content.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    .tech-content ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      color: var(--text-grey);
+    }
+    .stat-highlight {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      background: var(--navy);
+      color: white;
+      padding: 2rem;
+      border-radius: 30px;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+    .stat-highlight .stat-item {
+      text-align: center;
+    }
+    .stat-highlight .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+    }
+    .stat-highlight .stat-label {
+      font-size: 1rem;
+      color: var(--silver);
+    }
+    /* Real estate specific */
+    .property-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+    .property-card:hover {
+      transform: translateY(-5px);
+    }
+    .property-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .property-info {
+      padding: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .process-timeline::before { display: none; }
+      .timeline-step { margin-bottom: 1rem; }
+    }
+    /* Education specific */
+    .course-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+      text-align: center;
+      border: 1px solid var(--grey-mid);
+    }
+    .course-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--teal);
+    }
+    .course-icon {
+      font-size: 2.5rem;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .enrollment-badge {
+      background: var(--navy);
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "EduFirst Learning Management System",
+    "creator": { "@type": "Organization", "name": "Altivon Holdings" },
+    "description": "Custom LMS with course catalog, student enrollment, and video hosting.",
+    "url": "https://altivonholdings.github.io/portfolio/edufirst.html",
+    "image": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../assets/images/logo.jpg" alt="Altivon Holdings Logo" class="logo-img" width="48" height="48">
+          <span class="logo-text">ALTIVON</span>
+          <span class="logo-sub">HOLDINGS</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../templates/index.html">Templates & Design</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header" style="background: linear-gradient(135deg, #0A1F44 0%, #1e7e7e 100%); color: white;">
+      <div class="container">
+        <h1 style="color: white;">EduFirst Learning Management System</h1>
+        <p style="color: var(--silver);">Empowering online education with a scalable, feature‑rich platform</p>
+      </div>
+    </section>
+
+    <div class="container" style="margin-top: 2rem; position: relative;">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200" alt="Online learning" style="width: 100%; border-radius: 24px; box-shadow: var(--shadow);" loading="lazy">
+      <div class="stat-highlight" style="position: relative; margin-top: -3rem; background: rgba(10,31,68,0.95);">
+        <div class="stat-item">
+          <div class="stat-number" data-target="2000" data-suffix="+">0+</div>
+          <div class="stat-label">Students enrolled</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="50" data-suffix="+">0+</div>
+          <div class="stat-label">Courses</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="4.8" data-suffix="/5">0/5</div>
+          <div class="stat-label">Avg. rating</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">Project Overview</h2>
+        <div class="service-block">
+          <div class="service-text reveal-left">
+            <p><strong>Client:</strong> EduFirst, an online learning platform offering professional development courses in technology, business, and creative skills.</p>
+            <p><strong>Challenge:</strong> They needed a custom LMS that could handle course catalogs, student enrollment, progress tracking, and video hosting – all while being easy for instructors to manage.</p>
+            <p><strong>Solution:</strong> We built a full‑featured LMS using Django (Python) for the backend and Bootstrap for the frontend. Videos are hosted on AWS S3 and streamed via CloudFront for fast delivery. The system includes student dashboards, instructor portals, and payment integration.</p>
+          </div>
+          <div class="service-icon-large reveal-right">
+            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400" alt="Student studying" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Feature Tabs -->
+        <div style="margin-top: 3rem;">
+          <div class="tech-tabs">
+            <button class="tab-btn active" data-tab="tab1">📚 Course Catalog</button>
+            <button class="tab-btn" data-tab="tab2">🎥 Video Streaming</button>
+            <button class="tab-btn" data-tab="tab3">📊 Student Dashboard</button>
+          </div>
+          <div id="tab1" class="tech-content active">
+            <h3>Dynamic Course Catalog</h3>
+            <p>Students can browse courses by category, difficulty, or instructor. Each course page includes syllabus, preview videos, and reviews. We implemented search and filtering with Django Haystack.</p>
+          </div>
+          <div id="tab2" class="tech-content">
+            <h3>Video Hosting & Streaming</h3>
+            <p>All course videos are stored on AWS S3 and delivered via CloudFront CDN for low latency. We built a custom video player with progress tracking – students can resume where they left off.</p>
+          </div>
+          <div id="tab3" class="tech-content">
+            <h3>Student & Instructor Dashboards</h3>
+            <p>Students see their enrolled courses, progress, certificates, and recommendations. Instructors have tools to upload content, track student engagement, and communicate via announcements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="bg-light" style="padding: 4rem 0;">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">How We Built It</h2>
+        <div class="process-timeline">
+          <div class="timeline-step" data-step="1"><span>1</span><small>Content Strategy</small></div>
+          <div class="timeline-step" data-step="2"><span>2</span><small>DB Design</small></div>
+          <div class="timeline-step" data-step="3"><span>3</span><small>Development</small></div>
+          <div class="timeline-step" data-step="4"><span>4</span><small>Instructor Onboarding</small></div>
+          <div class="timeline-step" data-step="5"><span>5</span><small>Launch</small></div>
+        </div>
+        <div id="step1" class="step-description active">
+          <h3>Content Strategy & Planning</h3>
+          <p>We worked with EduFirst to define course categories, user roles, and content structure. We also planned the video upload workflow and DRM requirements.</p>
+        </div>
+        <div id="step2" class="step-description">
+          <h3>Database Design</h3>
+          <p>Designed PostgreSQL schema for users, courses, lessons, enrollments, and progress tracking. Ensured scalability for future growth.</p>
+        </div>
+        <div id="step3" class="step-description">
+          <h3>Agile Development</h3>
+          <p>Built the Django backend with REST API, then developed frontend templates. Integrated AWS S3 and CloudFront. Implemented payment gateway (Razorpay).</p>
+        </div>
+        <div id="step4" class="step-description">
+          <h3>Instructor Onboarding</h3>
+          <p>We trained 10 instructors on how to upload courses, create quizzes, and interact with students. Gathered feedback for improvements.</p>
+        </div>
+        <div id="step5" class="step-description">
+          <h3>Soft Launch & Iteration</h3>
+          <p>Launched with 20 courses, monitored performance, fixed bugs, and added features based on early user feedback. Full marketing launch after one month.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">Technologies Used</h2>
+        <div class="features-grid" style="grid-template-columns: repeat(4,1fr);">
+          <div class="feature-item"><i class="fab fa-python"></i><h3>Django</h3><p>Backend</p></div>
+          <div class="feature-item"><i class="fas fa-database"></i><h3>PostgreSQL</h3><p>Database</p></div>
+          <div class="feature-item"><i class="fab fa-aws"></i><h3>AWS S3</h3><p>Video storage</p></div>
+          <div class="feature-item"><i class="fas fa-cloud"></i><h3>CloudFront</h3><p>CDN</p></div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem;">Plus Bootstrap, Razorpay, Celery for background tasks, Redis caching</p>
+      </div>
+    </section>
+
+    <!-- Sample Courses -->
+    <section class="container" style="margin: 4rem auto;">
+      <h2 class="reveal-fade" style="text-align: center;">Popular Courses on EduFirst</h2>
+      <div class="card-grid" style="grid-template-columns: repeat(3,1fr);">
+        <div class="course-card">
+          <div class="course-icon"><i class="fas fa-code"></i></div>
+          <h3>Python for Beginners</h3>
+          <p>Learn programming fundamentals with Python. 30 hours of video.</p>
+          <span class="enrollment-badge">850+ enrolled</span>
+        </div>
+        <div class="course-card">
+          <div class="course-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Digital Marketing</h3>
+          <p>SEO, social media, and analytics. 25 hours.</p>
+          <span class="enrollment-badge">620+ enrolled</span>
+        </div>
+        <div class="course-card">
+          <div class="course-icon"><i class="fas fa-paint-brush"></i></div>
+          <h3>UI/UX Design</h3>
+          <p>Master Figma and design thinking. 20 hours.</p>
+          <span class="enrollment-badge">490+ enrolled</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonials" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200');">
+      <div style="background: rgba(10,31,68,0.9); padding: 5rem 0;">
+        <div class="container">
+          <div class="testimonial-card" style="max-width:800px; margin:0 auto;">
+            <i class="fas fa-quote-left"></i>
+            <p>"Altivon built an LMS that perfectly matches our vision. The platform is intuitive for both students and instructors. We enrolled over 2000 students in the first quarter – a testament to its quality."</p>
+            <h4>Anand Iyer</h4><span>CTO, EduFirst</span>
+            <div><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Projects -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">More Projects</h2>
+        <div class="card-grid" style="grid-template-columns: repeat(3,1fr);">
+          <div class="service-card"><img src="../assets/images/web_designs/corporate_web_design.jpg" alt="BuildCorp"><div class="card-content"><h3>BuildCorp</h3><p>Corporate website</p><a href="buildcorp.html" class="card-link">View <i class="fas fa-chevron-right"></i></a></div></div>
+          <div class="service-card"><img src="../assets/images/web_designs/ecommerce_web_design.jpg" alt="UrbanCart"><div class="card-content"><h3>UrbanCart</h3><p>E‑commerce platform</p><a href="urbancart.html" class="card-link">View <i class="fas fa-chevron-right"></i></a></div></div>
+          <div class="service-card"><img src="../assets/images/web_designs/real-estate_web_design.jpg" alt="EstateIn"><div class="card-content"><h3>EstateIn</h3><p>Real estate platform</p><a href="estatein.html" class="card-link">View <i class="fas fa-chevron-right"></i></a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-content"><h2>Ready to build your own learning platform?</h2><p>Let's create an engaging online education experience.</p><a href="../contact.html" class="btn btn-primary btn-large">Start Your Project</a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <h3>Altivon Holdings</h3>
+        <p>Empowering Businesses Through Scalable Digital Solutions.</p>
+        <div class="social-placeholder">
+          <a href="https://www.linkedin.com/company/altivon-holding/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.github.com/altivonholdings" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services.html#webdev">Web Development</a></li>
+          <li><a href="../services.html#ecommerce">E‑Commerce</a></li>
+          <li><a href="../services.html#strategy">Digital Strategy</a></li>
+          <li><a href="../services.html#maintenance">Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p>
+        <p><i class="fas fa-globe"></i> <a href="https://altivonholdings.github.io">altivonholdings.github.io</a></p>
+        <p><i class="fas fa-map-pin"></i> Remote / India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Altivon Holdings. All rights reserved.</p>
+        <p class="footer-tagline">Empowering Businesses Through Scalable Digital Solutions.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+  <script src="../js/main.js"></script>
+  <script>
+    // Same interactive JS as before
+    (function() {
+      const steps = document.querySelectorAll('.timeline-step');
+      const descriptions = document.querySelectorAll('.step-description');
+      steps.forEach(step => {
+        step.addEventListener('click', function() {
+          const stepNum = this.getAttribute('data-step');
+          descriptions.forEach(desc => desc.classList.remove('active'));
+          document.getElementById('step' + stepNum).classList.add('active');
+        });
+      });
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tech-content');
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const tabId = this.getAttribute('data-tab');
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+      const statNumbers = document.querySelectorAll('.stat-highlight .stat-number');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const suffix = el.getAttribute('data-suffix') || '';
+            let count = 0;
+            const update = () => {
+              if (count < target) {
+                count += Math.ceil(target / 50);
+                el.innerText = count + suffix;
+                requestAnimationFrame(update);
+              } else {
+                el.innerText = target + suffix;
+              }
+            };
+            update();
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      statNumbers.forEach(num => observer.observe(num));
+    })();
+  </script>
+</body>
+</html>

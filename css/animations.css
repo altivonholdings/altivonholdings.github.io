@@ -1,0 +1,34 @@
+/* ===== ANIMATIONS.CSS ===== */
+/* Scroll reveal, hover effects, transitions */
+
+/* Scroll Reveal – initial hidden state */
+.reveal-fade,
+.reveal-left,
+.reveal-right,
+.reveal-up {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-left { transform: translateX(-30px); }
+.reveal-right { transform: translateX(30px); }
+.reveal-up { transform: translateY(30px); }
+
+/* Active state (revealed) */
+.reveal-fade.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed,
+.reveal-up.revealed {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Disable reveal transforms on mobile for better layout */
+@media (max-width: 768px) {
+  .reveal-left,
+  .reveal-right,
+  .reveal-up {
+    transform: none;
+  }
+}
+
+/* Additional hover animations are in components.css */

@@ -1,0 +1,402 @@
+/* ===== PAGES.CSS ===== */
+/* Page‑specific styles: Home, About, Services, Contact, Blog, Privacy */
+
+/* ---------- Home Page (Hero, Why Choose, CTA) ---------- */
+.hero {
+  padding: 5rem 0 4rem;
+  background: linear-gradient(145deg, var(--white), var(--grey-light));
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.hero-sub {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.hero-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  font-size: 4rem;
+  color: var(--teal);
+  opacity: 0.7;
+}
+
+/* Why Choose Us (Features) */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+  text-align: center;
+}
+.feature-item i {
+  font-size: 3rem;
+  color: var(--navy);
+  margin-bottom: 1.2rem;
+}
+.feature-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 5rem 0;
+}
+.cta-content h2,
+.cta-content p {
+  color: var(--white);
+}
+.cta-content .btn-primary {
+  background: var(--white);
+  color: var(--navy);
+  border: none;
+}
+.cta-content .btn-primary:hover {
+  background: var(--grey-light);
+}
+
+/* ---------- About Page ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.vision-section {
+  padding: 4rem 0;
+}
+.vision-text h2 {
+  margin-bottom: 1rem;
+}
+.vision-text .lead {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+.vision-image img {
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* Founder Card */
+.founder-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  margin: 3rem 0;
+}
+.founder-icon img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--teal);
+}
+.founder-info h2 {
+  margin-bottom: 1rem;
+}
+.founder-info .lead {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.external-link {
+  color: var(--teal);
+  font-weight: 500;
+}
+.external-link i {
+  font-size: 0.9rem;
+  margin-left: 0.3rem;
+}
+
+/* Values Section */
+.values {
+  padding: 4rem 0;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+.values-grid i {
+  font-size: 2.5rem;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .founder-card { grid-template-columns: 1fr; text-align: center; }
+  .values-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Services Page (Detailed Blocks) ---------- */
+.service-detail {
+  padding: 4rem 0;
+}
+.service-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.service-icon-large {
+  font-size: 5rem;
+  color: var(--silver);
+  text-align: center;
+}
+.service-icon-large img {
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.reverse .service-text { order: 2; }
+.reverse .service-icon-large { order: 1; }
+@media (max-width: 768px) {
+  .service-block { grid-template-columns: 1fr; }
+  .reverse .service-text { order: 1; }
+  .reverse .service-icon-large { order: 2; }
+}
+
+/* ---------- Contact Page ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  padding: 4rem 0;
+}
+.contact-info .info-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--grey-mid);
+  margin-bottom: 2rem;
+}
+.contact-info .info-card h3 {
+  margin-bottom: 1.2rem;
+}
+.contact-info .info-card p {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.contact-info .info-card i {
+  color: var(--teal);
+  width: 20px;
+  text-align: center;
+}
+.map-placeholder {
+  margin-top: 1rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.direct-email {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--grey-mid);
+}
+#thankyou-message {
+  background: #d4edda;
+  padding: 1rem;
+  border-radius: 10px;
+  color: #0a4e2e;
+  margin-top: 1.2rem;
+  display: none;
+}
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+.page-header.contact-header {
+  background-image: linear-gradient(rgba(10,31,68,0.85), rgba(10,31,68,0.85)), url('../assets/images/contact-header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.page-header.contact-header h1,
+.page-header.contact-header p {
+  color: white;
+}
+
+.contact-illustration {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.contact-illustration img {
+  max-width: 100%;
+  max-height: 180px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.support-icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-right: 0.8rem;
+  vertical-align: middle;
+}
+.support-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- Blog Page ---------- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  padding: 3rem 0;
+}
+.blog-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid var(--grey-mid);
+}
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+.blog-content {
+  padding: 1.8rem;
+}
+.blog-meta {
+  color: var(--teal);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.blog-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+.read-more {
+  font-weight: 600;
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.8rem;
+}
+.read-more i {
+  transition: transform 0.2s;
+}
+.read-more:hover i {
+  transform: translateX(5px);
+}
+@media (max-width: 992px) {
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .blog-grid { grid-template-columns: 1fr; }
+}
+.blog-post-header {
+  background: var(--grey-light);
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+.blog-post-meta {
+  color: var(--teal);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.blog-post-title {
+  font-size: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+}
+.blog-post-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 24px;
+  margin: 2rem 0;
+  box-shadow: var(--shadow);
+}
+.blog-post-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+.blog-post-content h2 {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+}
+.blog-post-content h3 {
+  font-size: 1.4rem;
+  margin: 1.5rem 0 1rem;
+}
+.blog-post-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+.blog-post-content ul,
+.blog-post-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.blog-post-content li {
+  margin-bottom: 0.5rem;
+  color: var(--text-grey);
+}
+.blog-post-content blockquote {
+  border-left: 4px solid var(--teal);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--navy);
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .blog-post-title { font-size: 2rem; }
+  .blog-post-content { padding: 1.5rem; }
+}
+
+/* ---------- Privacy Policy Page ---------- */
+.privacy-content {
+  padding: 3rem 0 5rem;
+}
+.legal-text h2 {
+  font-size: 1.6rem;
+  margin-top: 2.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--navy);
+}
+.legal-text p {
+  margin-bottom: 1.2rem;
+  color: var(--text-grey);
+}
+.policy-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--grey-mid);
+  font-style: italic;
+}

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4X0M6RM0F6');
+  </script>
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School ERP Demo – Altivon Holdings</title>
+  <meta name="description" content="Interactive School Management System pricing. Select features, see instant cost & timeline – custom ERP for educational institutes.">
+  <link rel="icon" type="image/jpeg" href="/assets/images/logo.jpg">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ===== MODERN REDESIGN ===== */
+    :root {
+      --gradient-start: #0A1F44;
+      --gradient-end: #1e4a6f;
+      --accent: #2b9c9c;
+      --card-bg: rgba(255,255,255,0.9);
+      --shadow-lg: 0 20px 40px -12px rgba(0,20,40,0.25);
+    }
+
+    /* Hero / Header Area */
+    .demo-header {
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: white;
+      padding: 4rem 0 3rem;
+      margin-bottom: 2rem;
+      border-radius: 0 0 3rem 3rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .demo-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .header-content h1 {
+      color: white;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .header-content p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+    .header-illustration {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      gap: 1.5rem;
+      font-size: 2rem;
+    }
+    .header-illustration i {
+      color: white;
+      opacity: 0.8;
+      transition: transform 0.2s;
+    }
+    .header-illustration i:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    /* Trust badges */
+    .trust-badges {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .badge {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Feature grid – card redesign */
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .module-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      border-radius: 2rem;
+      padding: 2rem 1.8rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 15px 30px -12px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .module-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 40px -16px rgba(10,31,68,0.2);
+    }
+    .module-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--navy);
+      border-bottom: 2px solid rgba(43,156,156,0.2);
+      padding-bottom: 1rem;
+    }
+    .module-title i {
+      background: linear-gradient(145deg, var(--accent), #1e7e7e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.2rem;
+    }
+
+    /* Feature card – glass clickable */
+    .feature-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(255,255,255,0.6);
+      transition: all 0.2s;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+    }
+    .feature-card.selected {
+      background: linear-gradient(145deg, #e6f7e6, #d0f0d0);
+      border-color: var(--accent);
+      box-shadow: 0 8px 20px -8px rgba(43,156,156,0.4);
+    }
+    .feature-card input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+    }
+    .feature-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .feature-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.2rem;
+    }
+    .feature-price-time {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+    .feature-price {
+      background: rgba(10,31,68,0.1);
+      color: var(--navy);
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: 1px solid rgba(10,31,68,0.1);
+    }
+    .feature-time {
+      background: white;
+      color: #475569;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid #e2e8f0;
+    }
+    .feature-desc {
+      font-size: 0.95rem;
+      color: #334155;
+      line-height: 1.6;
+      margin: 0.5rem 0 0;
+    }
+
+    /* Floating total bar */
+    .total-bar {
+      background: white;
+      border-radius: 3rem;
+      padding: 1.8rem 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2.5rem 0 1.5rem;
+      box-shadow: 0 25px 40px -18px rgba(10,31,68,0.3);
+      border: 1px solid rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      bottom: 1.5rem;
+      z-index: 10;
+    }
+    .total-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .total-label {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .total-price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .total-price small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #64748b;
+    }
+    .total-time {
+      font-size: 1.2rem;
+      background: #f1f5f9;
+      padding: 0.6rem 1.8rem;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      margin-top: 1rem;
+    }
+    .btn-outline-modern {
+      background: transparent;
+      border: 2px solid var(--navy);
+      color: var(--navy);
+      border-radius: 60px;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-outline-modern:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .demo-header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-content h1 {
+        font-size: 2.2rem;
+      }
+      .total-bar {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+        text-align: center;
+      }
+      .action-buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header (static, same as site) -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="/">
+          <img src="/assets/images/logo.jpg" alt="Altivon Holdings Logo" class="logo-img" width="48" height="48">
+          <span class="logo-text">ALTIVON</span>
+          <span class="logo-sub">HOLDINGS</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/templates/index.html">Templates & Designs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- New Hero / Demo Header -->
+    <div class="demo-header">
+      <div class="container">
+        <div class="header-content">
+          <h1> School ERP <br>Build Your Perfect System</h1>
+          <p>Click features to add. See instant pricing and timeline. Tailored for your institute.</p>
+          <div class="trust-badges">
+            <span class="badge"><i class="fas fa-shield-alt"></i> ISO 27001 Ready</span>
+            <span class="badge"><i class="fas fa-lock"></i> 256bit Encryption</span>
+            <span class="badge"><i class="fas fa-school"></i> 50+ Schools Trust</span>
+          </div>
+        </div>
+        <div class="header-illustration">
+          <i class="fas fa-user-graduate"></i>
+          <i class="fas fa-chart-line"></i>
+          <i class="fas fa-mobile-alt"></i>
+          <i class="fas fa-cloud-upload-alt"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Feature Grid injected by JavaScript -->
+      <div id="featureGrid" class="module-grid"></div>
+
+      <!-- Floating Total Bar -->
+      <div class="total-bar" id="totalSection">
+        <div class="total-info">
+          <div class="total-label"><i class="fas fa-calculator" style="color: var(--accent);"></i> Estimated investment</div>
+          <div class="total-price" id="totalPrice">0 <small>+5% GST</small></div>
+        </div>
+        <div class="total-time" id="totalTime"><i class="far fa-clock"></i> <span>0 days</span></div>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn-outline-modern" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+        <button class="btn btn-primary" id="inquireBtn"><i class="fas fa-paper-plane"></i> Continue to Quote</button>
+      </div>
+
+      <hr style="margin: 3rem 0; border-color: #e2e8f0;">
+
+      <div class="disclaimer" style="display: flex; gap: 2rem; flex-wrap: wrap; color: #475569;">
+        <span><i class="fas fa-check-circle" style="color: #22c55e;"></i> Indicative pricing – final quote after consultation</span>
+        <span><i class="fas fa-clock"></i> Typical delivery: 4–12 weeks</span>
+        <span><i class="fas fa-file-signature"></i> No obligation proposal</span>
+      </div>
+    </div>
+
+    <div class="back-link" style="text-align: center; margin: 3rem 0;">
+      <a href="/services.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Services</a>
+    </div>
+  </main>
+
+  <!-- Footer (static, same as site) -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <h3>Altivon Holdings</h3>
+        <p><strong>Website Development Company in India</strong> – Empowering Businesses Through Scalable Digital Solutions.</p>
+        <div class="social-placeholder">
+          <a href="https://www.linkedin.com/company/altivon-holding/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.github.com/altivonholdings" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services.html#webdev">Web Development</a></li>
+          <li><a href="/services.html#ecommerce">ECommerce</a></li>
+          <li><a href="/services.html#strategy">Digital Strategy</a></li>
+          <li><a href="/services.html#maintenance">Maintenance</a></li>
+          <li><a href="/custom/erp/index.html">School ERP</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p>
+        <p><i class="fas fa-globe"></i> <a href="https://altivonholdings.github.io">altivonholdings.github.io</a></p>
+        <p><i class="fas fa-map-pin"></i> Lucknow, Uttar Pradesh, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Altivon Holdings. All rights reserved. | Website Development Company in India</p>
+        <p class="footer-tagline">Empowering Businesses Through Scalable Digital Solutions.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Main JS -->
+  <script src="/js/main.js"></script>
+  <script src="/js/chat.js"></script>
+
+  <!-- ERP Calculator Script (full functionality preserved) -->
+  <script>
+    (function() {
+      // Enhanced modules with detailed descriptions (30-40 words)
+      const modules = [
+        { name: "Student Management", icon: "fa-user-graduate", features: [
+          { name: "Online Admission & Enrollment", price: 12000, time: 5, desc: "Complete online admission workflow with customizable forms, document upload (photos, birth certificates, etc.), automated merit list generation, and email/SMS notifications to parents. Reduces manual data entry by 80%." },
+          { name: "Student Profile & History", price: 8000, time: 3, desc: "Centralized digital profiles storing personal details, parent/guardian information, medical records, previous academic history, and co-curricular achievements. Accessible to teachers and admin with role-based permissions." },
+          { name: "ID Card Generation", price: 4000, time: 2, desc: "Bulk ID card printing with QR codes, student photo, and barcode. Customizable templates, automatic data merging, and easy reprinting. Enhances security and simplifies identification." }
+        ]},
+        { name: "Academic Structure", icon: "fa-layer-group", features: [
+          { name: "Multi-Campus & Sessions", price: 10000, time: 4, desc: "Manage multiple branches or campuses under one login. Create separate academic sessions (2025-26, 2026-27) with independent data. Ideal for educational groups and franchises." },
+          { name: "Classes, Sections & Subjects", price: 7000, time: 3, desc: "Define unlimited classes, sections, and subjects. Assign class teachers and subject teachers. Supports complex subject combinations and credit systems for higher education." },
+          { name: "Timetable Builder", price: 15000, time: 6, desc: "Drag-and-drop interface to create timetables. Automatic teacher conflict detection, room allocation, and period management. Generates individual teacher and class schedules instantly." }
+        ]},
+        { name: "Attendance Management", icon: "fa-calendar-check", features: [
+          { name: "Daily Attendance (Class/Subject wise)", price: 10000, time: 4, desc: "Mark attendance quickly via roll numbers or student names. Track present, absent, leave, and holiday. Supports subject-wise attendance for semester systems. Real-time updates to parents." },
+          { name: "Biometric / Face Recognition Integration", price: 18000, time: 7, desc: "Integrate with biometric devices or face recognition systems. Automatic attendance marking, reduced proxy, and seamless hardware connectivity. Works with popular devices." },
+          { name: "Attendance Reports & Alerts", price: 5000, time: 2, desc: "Generate monthly attendance reports, identify students with less than 75% attendance, and send automated alerts to parents via SMS/email. Helps improve student accountability." }
+        ]},
+        { name: "Exam & Results", icon: "fa-pen", features: [
+          { name: "Exam Scheduling & Admit Cards", price: 12000, time: 5, desc: "Plan exam timetables, allocate rooms and invigilators. Generate admit cards with QR codes and student details. Prevents scheduling conflicts and streamlines exam management." },
+          { name: "Online Marks Entry & Grading", price: 14000, time: 5, desc: "Teachers can enter marks online with validation rules. Supports grade calculation (A+, B, etc.), best of five, and compartment handling. Real-time result processing." },
+          { name: "Report Card & Merit List", price: 10000, time: 4, desc: "Generate professional PDF report cards with subject-wise marks, grades, and teacher comments. Create merit lists and result analytics by class or subject. Fully customizable templates." }
+        ]},
+        { name: "Fees & Accounts", icon: "fa-coins", features: [
+          { name: "Fee Structure & Concessions", price: 15000, time: 6, desc: "Define multiple fee heads (tuition, library, transport, etc.) and assign them to classes. Set up concessions for siblings, staff wards, or scholarships. Handles RTE reimbursements." },
+          { name: "Online Payment Gateway", price: 20000, time: 8, desc: "Integrate Razorpay, Paytm, or other gateways for online fee collection. Parents can pay via credit card, UPI, net banking. Automatic receipt generation and reconciliation." },
+          { name: "Dues Tracking & Reminders", price: 8000, time: 3, desc: "Track defaulters with real-time due calculations. Send automated SMS/email reminders before and after due dates. Generate defaulters list for follow-up." }
+        ]},
+        { name: "HR & Payroll", icon: "fa-users", features: [
+          { name: "Staff Profile & Documents", price: 8000, time: 4, desc: "Maintain digital profiles for teaching and non-teaching staff. Store personal details, bank accounts, contracts, and documents (appointment letters, ID proofs)." },
+          { name: "Staff Attendance & Leave", price: 7000, time: 3, desc: "Track staff attendance via biometric or manual entry. Manage leave applications, leave balance, and duty rosters. Notify admin when substitutes are needed." },
+          { name: "Payroll & Salary Slips", price: 20000, time: 8, desc: "Automatic salary calculation based on attendance and deductions (PF, ESI, TDS). Generate salary slips and payroll reports. Supports Excel export for bank uploads." }
+        ]},
+        { name: "Communication", icon: "fa-bell", features: [
+          { name: "Bulk SMS & Email", price: 12000, time: 4, desc: "Send notifications, circulars, and alerts to parents and staff via SMS and email. Pre-built templates and group selection (class-wise, bus route, etc.)." },
+          { name: "In-App Messaging", price: 6000, time: 3, desc: "Secure messaging between parents, teachers, and admin. Group chats for class, parent-teacher conferences, and one-on-one communication. Message history and read receipts." },
+          { name: "Notice Board", price: 5000, time: 2, desc: "Digital notice board for publishing announcements, homework, and events. Attach PDFs and images. Target specific audiences (e.g., only Class 10). Mobile app integration." }
+        ]},
+        { name: "Parent & Student Portal", icon: "fa-mobile-alt", features: [
+          { name: "Mobile App (Parent View)", price: 25000, time: 10, desc: "White-label mobile app for parents to view attendance, fees, exam results, homework, and notices. Push notifications for important updates. Available for iOS and Android." },
+          { name: "Online Homework & Submissions", price: 12000, time: 5, desc: "Teachers can post homework with due dates, attachments, and instructions. Students submit work online. Parents can track submissions and grades." },
+          { name: "Live Bus Tracking", price: 18000, time: 6, desc: "GPS integration for school buses. Parents can see live location of the bus, estimated arrival time, and route history. Enhances safety and reduces anxiety." }
+        ]},
+        { name: "Library Management", icon: "fa-book", features: [
+          { name: "Book Catalog & Barcode", price: 8000, time: 4, desc: "Catalog books with ISBN, title, author, publisher, and rack number. Generate barcode labels for easy check-in/out. Search books by any field." },
+          { name: "Issue/Return & Fines", price: 7000, time: 3, desc: "Quick issue and return using barcode scanner. Automatic fine calculation for late returns. Send reminders for due dates. Track book availability in real-time." },
+          { name: "Online Library Search", price: 5000, time: 3, desc: "Allow students and staff to search the library catalog online. View book availability, location, and reserve books. Accessible via student portal." }
+        ]},
+        { name: "Transport Management", icon: "fa-bus", features: [
+          { name: "Route & Stop Management", price: 8000, time: 4, desc: "Define bus routes, stops, and trip times. Assign students to specific stops. Generate route maps and student lists for drivers. Optimize routes for fuel efficiency." },
+          { name: "Vehicle & Driver Tracking", price: 10000, time: 5, desc: "Maintain vehicle records (registration, insurance, maintenance). Track driver details, licenses, and duty logs. Monitor fuel consumption and maintenance schedules." }
+        ]},
+        { name: "Inventory", icon: "fa-boxes", features: [
+          { name: "Stock In/Out", price: 7000, time: 3, desc: "Track stationery, sports equipment, furniture, and other assets. Record stock inward, outward, and current balance. Generate stock reports by category." },
+          { name: "Low Stock Alerts", price: 4000, time: 2, desc: "Set minimum stock levels and get alerts when stock falls below threshold. Helps in timely reordering and prevents shortages." }
+        ]},
+        { name: "Admin Dashboards & Reports", icon: "fa-chart-pie", features: [
+          { name: "Role-based Dashboards", price: 15000, time: 6, desc: "Custom dashboards for admin, principal, teachers, accountants, and clerks. Each role sees relevant data: fee collection graphs, attendance trends, exam performance." },
+          { name: "Analytics & Graphs", price: 12000, time: 5, desc: "Visual reports on fee collection, attendance percentages, gender ratio, class strength, and exam results. Drill-down capabilities for deeper insights." },
+          { name: "Custom Reports (TC, Birthdays etc.)", price: 8000, time: 4, desc: "Generate any custom report: Transfer Certificates, birthdate lists, staff directory, student strength report, etc. Export to PDF or Excel." }
+        ]}
+      ];
+
+      // Load selections from localStorage
+      function loadSelections() {
+        const saved = localStorage.getItem('erpSelectedFeatures');
+        return saved ? JSON.parse(saved) : {};
+      }
+
+      function saveSelections(selections) {
+        localStorage.setItem('erpSelectedFeatures', JSON.stringify(selections));
+      }
+
+      // Render all feature cards
+      function renderFeatures() {
+        const grid = document.getElementById('featureGrid');
+        const selections = loadSelections();
+        let html = '';
+
+        modules.forEach((module, modIndex) => {
+          html += `<div class="module-card">`;
+          html += `<div class="module-title"><i class="fas ${module.icon}"></i> ${module.name}</div>`;
+
+          module.features.forEach((feature, featIndex) => {
+            const featureId = `mod_${modIndex}_feat_${featIndex}`;
+            const isChecked = selections[featureId] || false;
+            html += `
+              <div class="feature-card ${isChecked ? 'selected' : ''}" data-feature-id="${featureId}">
+                <input type="checkbox" id="${featureId}" data-module="${modIndex}" data-feat="${featIndex}" ${isChecked ? 'checked' : ''}>
+                <div class="feature-header">
+                  <span class="feature-name">${feature.name}</span>
+                  <div class="feature-price-time">
+                    <span class="feature-price">${feature.price.toLocaleString()}</span>
+                    <span class="feature-time"><i class="far fa-clock"></i> ${feature.time} days</span>
+                  </div>
+                </div>
+                <div class="feature-desc">${feature.desc}</div>
+              </div>
+            `;
+          });
+
+          html += `</div>`;
+        });
+
+        grid.innerHTML = html;
+
+        // Attach click event to each feature card (toggle checkbox and class)
+        document.querySelectorAll('.feature-card').forEach(card => {
+          card.addEventListener('click', function(e) {
+            if (e.target.tagName === 'INPUT' && e.target.type === 'checkbox') return;
+
+            const checkbox = this.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            this.classList.toggle('selected', checkbox.checked);
+
+            const featureId = checkbox.id;
+            const selections = loadSelections();
+            selections[featureId] = checkbox.checked;
+            saveSelections(selections);
+
+            updateTotals();
+          });
+        });
+
+        document.querySelectorAll('.feature-card input[type="checkbox"]').forEach(cb => {
+          cb.addEventListener('change', function(e) {
+            const card = this.closest('.feature-card');
+            card.classList.toggle('selected', this.checked);
+
+            const featureId = this.id;
+            const selections = loadSelections();
+            selections[featureId] = this.checked;
+            saveSelections(selections);
+
+            updateTotals();
+          });
+        });
+
+        updateTotals();
+      }
+
+      // Update total price and time
+      function updateTotals() {
+        const selections = loadSelections();
+        let totalPrice = 0;
+        let totalTime = 0;
+
+        modules.forEach((module, modIndex) => {
+          module.features.forEach((feature, featIndex) => {
+            const featureId = `mod_${modIndex}_feat_${featIndex}`;
+            if (selections[featureId]) {
+              totalPrice += feature.price;
+              totalTime += feature.time;
+            }
+          });
+        });
+
+        document.getElementById('totalPrice').innerHTML = `${totalPrice.toLocaleString()} <small>+ 5% GST</small>`;
+        document.getElementById('totalTime').innerHTML = `<i class="far fa-clock"></i> ${totalTime} days implementation`;
+      }
+
+      // Reset selections
+      document.getElementById('resetBtn').addEventListener('click', function() {
+        localStorage.removeItem('erpSelectedFeatures');
+        renderFeatures();
+      });
+
+      // Inquire: store data and redirect
+      document.getElementById('inquireBtn').addEventListener('click', function() {
+        const selections = loadSelections();
+        const selectedFeatures = [];
+        modules.forEach((module, modIndex) => {
+          module.features.forEach((feature, featIndex) => {
+            const featureId = `mod_${modIndex}_feat_${featIndex}`;
+            if (selections[featureId]) {
+              selectedFeatures.push({
+                module: module.name,
+                feature: feature.name,
+                price: feature.price,
+                time: feature.time
+              });
+            }
+          });
+        });
+
+        if (selectedFeatures.length === 0) {
+          alert('Please select at least one feature to proceed.');
+          return;
+        }
+
+        const totalPrice = selectedFeatures.reduce((sum, f) => sum + f.price, 0);
+        const totalTime = selectedFeatures.reduce((sum, f) => sum + f.time, 0);
+
+        localStorage.setItem('erpQuoteFeatures', JSON.stringify(selectedFeatures));
+        localStorage.setItem('erpQuoteTotalPrice', totalPrice);
+        localStorage.setItem('erpQuoteTotalTime', totalTime);
+
+        window.location.href = '/contact.html?source=erp';
+      });
+
+      // Initial render
+      renderFeatures();
+    })();
+  </script>
+</body>
+</html>

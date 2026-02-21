@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Enhanced Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4X0M6RM0F6', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+  </script>
+  
+  <!-- AdSense Setup -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Real Estate | Find Your Dream Home</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts (Inter + Cormorant Garamond) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="watermark">🏠 Template by Altivon Holdings</div>
+
+  <!-- Top bar with contact -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <span><i class="fas fa-phone-alt"></i> +1 (800) 555‑REAL</span>
+      <span><i class="fas fa-envelope"></i> hello@premierestates.com</span>
+      <span><i class="fas fa-map-marker-alt"></i> 123 Luxury Lane, Beverly Hills, CA</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">PREMIER <span>ESTATES</span></a>
+      <nav class="nav">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#agents">Agents</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#contact" class="btn btn-primary">Schedule a tour</a>
+      <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero with search and parallax -->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <h1>Where <span class="highlight">luxury</span> meets location</h1>
+        <p>Discover exquisite properties in the world's most sought-after neighborhoods.</p>
+        <form class="search-form" onsubmit="event.preventDefault(); alert('Search demo');">
+          <div class="search-group">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Enter city, address, or ZIP">
+          </div>
+          <div class="search-group">
+            <i class="fas fa-home"></i>
+            <select>
+              <option>Property type</option>
+              <option>House</option>
+              <option>Apartment</option>
+              <option>Villa</option>
+              <option>Estate</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Luxury listings</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">Sold this year</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">25</span>
+            <span class="stat-label">Expert agents</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Listings with filter tabs -->
+    <section class="featured" id="listings">
+      <div class="container">
+        <h2 class="section-title">Featured properties</h2>
+        <div class="featured-tabs">
+          <button class="tab-btn active" data-filter="all">All</button>
+          <button class="tab-btn" data-filter="house">Houses</button>
+          <button class="tab-btn" data-filter="apartment">Apartments</button>
+          <button class="tab-btn" data-filter="villa">Villas</button>
+        </div>
+        <div class="listing-grid" id="listing-grid">
+          <!-- House 1 -->
+          <div class="listing-card" data-category="house">
+            <div class="listing-badge">For Sale</div>
+            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&auto=format" alt="Property">
+            <div class="listing-content">
+              <h3>Modern Hillside Estate</h3>
+              <p class="location"><i class="fas fa-map-marker-alt"></i> Beverly Hills, CA</p>
+              <p class="price">$4,250,000</p>
+              <div class="specs">
+                <span><i class="fas fa-bed"></i> 5 beds</span>
+                <span><i class="fas fa-bath"></i> 6 baths</span>
+                <span><i class="fas fa-ruler-combined"></i> 5,200 sqft</span>
+              </div>
+              <a href="#" class="btn-outline-small">View details →</a>
+            </div>
+          </div>
+          <!-- Apartment 1 -->
+          <div class="listing-card" data-category="apartment">
+            <div class="listing-badge">For Sale</div>
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&auto=format" alt="Property">
+            <div class="listing-content">
+              <h3>Penthouse at The Plaza</h3>
+              <p class="location"><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+              <p class="price">$8,950,000</p>
+              <div class="specs">
+                <span><i class="fas fa-bed"></i> 4 beds</span>
+                <span><i class="fas fa-bath"></i> 4.5 baths</span>
+                <span><i class="fas fa-ruler-combined"></i> 3,800 sqft</span>
+              </div>
+              <a href="#" class="btn-outline-small">View details →</a>
+            </div>
+          </div>
+          <!-- Villa 1 -->
+          <div class="listing-card" data-category="villa">
+            <div class="listing-badge">For Sale</div>
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&auto=format" alt="Property">
+            <div class="listing-content">
+              <h3>Oceanfront Villa</h3>
+              <p class="location"><i class="fas fa-map-marker-alt"></i> Malibu, CA</p>
+              <p class="price">$12,500,000</p>
+              <div class="specs">
+                <span><i class="fas fa-bed"></i> 6 beds</span>
+                <span><i class="fas fa-bath"></i> 7 baths</span>
+                <span><i class="fas fa-ruler-combined"></i> 6,800 sqft</span>
+              </div>
+              <a href="#" class="btn-outline-small">View details →</a>
+            </div>
+          </div>
+          <!-- House 2 -->
+          <div class="listing-card" data-category="house">
+            <div class="listing-badge">For Sale</div>
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format" alt="Property">
+            <div class="listing-content">
+              <h3>Tuscan‑Style Villa</h3>
+              <p class="location"><i class="fas fa-map-marker-alt"></i> Sonoma, CA</p>
+              <p class="price">$3,800,000</p>
+              <div class="specs">
+                <span><i class="fas fa-bed"></i> 4 beds</span>
+                <span><i class="fas fa-bath"></i> 3.5 baths</span>
+                <span><i class="fas fa-ruler-combined"></i> 3,200 sqft</span>
+              </div>
+              <a href="#" class="btn-outline-small">View details →</a>
+            </div>
+          </div>
+        </div>
+        <div class="view-all">
+          <a href="#" class="btn btn-outline">Browse all listings →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose us (with icons) -->
+    <section class="why-us">
+      <div class="container">
+        <h2 class="section-title">Why work with us</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <i class="fas fa-medal"></i>
+            <h3>25+ years of excellence</h3>
+            <p>Decades of experience in luxury real estate.</p>
+          </div>
+          <div class="why-card">
+            <i class="fas fa-handshake"></i>
+            <h3>Personalized service</h3>
+            <p>Dedicated agents who understand your needs.</p>
+          </div>
+          <div class="why-card">
+            <i class="fas fa-globe"></i>
+            <h3>Global network</h3>
+            <p>Access to off‑market properties worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agents carousel -->
+    <section class="agents" id="agents">
+      <div class="container">
+        <h2 class="section-title">Meet our top agents</h2>
+        <div class="agents-slider">
+          <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
+          <div class="agents-track">
+            <div class="agent-card">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format" alt="Agent">
+              <h3>Michael Chen</h3>
+              <p class="agent-title">Senior Luxury Specialist</p>
+              <p class="agent-stats">45 properties sold</p>
+              <div class="agent-contact">
+                <a href="#"><i class="fas fa-phone"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="agent-card">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&auto=format" alt="Agent">
+              <h3>Sarah Johnson</h3>
+              <p class="agent-title">Waterfront Expert</p>
+              <p class="agent-stats">38 properties sold</p>
+              <div class="agent-contact">
+                <a href="#"><i class="fas fa-phone"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="agent-card">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format" alt="Agent">
+              <h3>David Kim</h3>
+              <p class="agent-title">Commercial & Residential</p>
+              <p class="agent-stats">52 properties sold</p>
+              <div class="agent-contact">
+                <a href="#"><i class="fas fa-phone"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="agent-card">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format" alt="Agent">
+              <h3>Emily Rodriguez</h3>
+              <p class="agent-title">First‑time Buyer Specialist</p>
+              <p class="agent-stats">30 properties sold</p>
+              <div class="agent-contact">
+                <a href="#"><i class="fas fa-phone"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title">Our services</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-home"></i>
+            <h3>Home buying</h3>
+            <p>Expert guidance to find your dream home.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-tag"></i>
+            <h3>Selling</h3>
+            <p>Maximize your property's value.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Market analysis</h3>
+            <p>Data‑driven insights for smart decisions.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-key"></i>
+            <h3>Rental management</h3>
+            <p>Full‑service property management.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">What our clients say</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <i class="fas fa-quote-left"></i>
+            <p>“Premier Estates helped us find our forever home. Their attention to detail and market knowledge is unmatched.”</p>
+            <div class="client">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format" alt="Client">
+              <div>
+                <h4>Robert Thompson</h4>
+                <span>Homeowner</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <i class="fas fa-quote-left"></i>
+            <p>“Sold our penthouse in record time for above asking price. Highly professional team.”</p>
+            <div class="client">
+              <img src="https://images.unsplash.com/photo-1494790108777-466d4a8943d3?w=100&auto=format" alt="Client">
+              <div>
+                <h4>Linda Park</h4>
+                <span>Seller</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mortgage calculator -->
+    <section class="calculator">
+      <div class="container">
+        <div class="calc-box">
+          <h2>Estimate your mortgage</h2>
+          <div class="calc-form">
+            <div class="form-group">
+              <label>Home price ($)</label>
+              <input type="range" id="price-range" min="100000" max="5000000" step="50000" value="1000000">
+              <span id="price-display">$1,000,000</span>
+            </div>
+            <div class="form-group">
+              <label>Down payment (%)</label>
+              <input type="range" id="down-range" min="0" max="50" step="1" value="20">
+              <span id="down-display">20%</span>
+            </div>
+            <div class="form-group">
+              <label>Interest rate (%)</label>
+              <input type="range" id="rate-range" min="2" max="10" step="0.1" value="5.5">
+              <span id="rate-display">5.5%</span>
+            </div>
+            <div class="form-group">
+              <label>Loan term (years)</label>
+              <select id="term">
+                <option value="15">15 years</option>
+                <option value="30" selected>30 years</option>
+              </select>
+            </div>
+          </div>
+          <div class="calc-result">
+            <p>Monthly payment: <span id="monthly-payment">$5,368</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Ready to find your dream home?</h2>
+          <p>Schedule a private tour with one of our agents.</p>
+          <a href="#" class="btn btn-primary btn-large">Contact us today</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>PREMIER <span>ESTATES</span></h3>
+          <p>Luxury real estate, globally.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#">Listings</a></li>
+            <li><a href="#">Agents</a></li>
+            <li><a href="#">Neighborhoods</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Premier Estates. Template by Altivon Holdings.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

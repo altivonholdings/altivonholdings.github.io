@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics, AdSense (same as above) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator – Professional Zone | Altivon Holdings</title>
+  <meta name="description" content="Free online invoice generator for Indian businesses. Create GST invoices instantly, print or save as PDF.">
+  <link rel="canonical" href="https://altivonholdings.github.io/professional-zone/invoice-generator.html">
+  <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .invoice-tool {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      background: white;
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin: 3rem 0;
+    }
+    .invoice-form .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .invoice-form label {
+      font-weight: 600;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .invoice-form input, .invoice-form textarea {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--grey-mid);
+      border-radius: 12px;
+      font-size: 1rem;
+    }
+    .item-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+      align-items: center;
+    }
+    .item-row input {
+      flex: 1;
+    }
+    .item-row .item-qty { max-width: 80px; }
+    .item-row .item-price { max-width: 120px; }
+    .remove-item {
+      background: none;
+      border: none;
+      color: #c00;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    .add-item {
+      background: var(--grey-light);
+      border: 1px dashed var(--teal);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 1rem 0;
+      display: inline-block;
+    }
+    .invoice-preview {
+      background: #f8fafc;
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid var(--grey-mid);
+    }
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--navy);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .preview-header h2 {
+      margin: 0;
+      color: var(--navy);
+    }
+    .invoice-details p {
+      margin: 0.3rem 0;
+    }
+    .invoice-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    .invoice-table th {
+      background: var(--navy);
+      color: white;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    .invoice-table td {
+      padding: 0.5rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .total-row {
+      font-weight: bold;
+      background: #e2e8f0;
+    }
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+    @media (max-width: 768px) {
+      .invoice-tool { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">(same as index.html, or use dynamic loading)</header>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1><i class="fas fa-file-invoice"></i> Invoice Generator</h1>
+        <p>Create professional GST invoices – print or save as PDF</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="invoice-tool">
+        <!-- Left: Form -->
+        <div class="invoice-form">
+          <h3>Invoice Details</h3>
+          <div class="form-group">
+            <label>Invoice Number</label>
+            <input type="text" id="invNo" value="INV-2026-001" placeholder="e.g. INV-001">
+          </div>
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="invDate" value="2026-02-22">
+          </div>
+          <div class="form-group">
+            <label>Bill To (Client Name)</label>
+            <input type="text" id="clientName" value="ABC Enterprises">
+          </div>
+          <div class="form-group">
+            <label>Client Address / GST</label>
+            <textarea id="clientAddress" rows="2">123 Business Park, Mumbai - 400001</textarea>
+          </div>
+
+          <h4>Items</h4>
+          <div id="items-container">
+            <!-- dynamic rows -->
+          </div>
+          <button class="add-item" id="addItemBtn"><i class="fas fa-plus"></i> Add Item</button>
+
+          <div class="form-group">
+            <label>Notes / Terms</label>
+            <textarea id="notes" rows="2">Thank you for your business!</textarea>
+          </div>
+        </div>
+
+        <!-- Right: Live Preview -->
+        <div class="invoice-preview" id="invoicePreview">
+          <div class="preview-header">
+            <h2>INVOICE</h2>
+            <div>
+              <strong id="previewInvNo">INV-2026-001</strong><br>
+              <span id="previewDate">22 Feb 2026</span>
+            </div>
+          </div>
+          <div class="invoice-details">
+            <p><strong>Bill To:</strong> <span id="previewClient">ABC Enterprises</span></p>
+            <p><strong>Address:</strong> <span id="previewAddress">123 Business Park, Mumbai - 400001</span></p>
+          </div>
+          <table class="invoice-table" id="previewTable">
+            <thead>
+              <tr><th>Description</th><th>Qty</th><th>Unit Price</th><th>Total</th></tr>
+            </thead>
+            <tbody id="previewBody"></tbody>
+            <tfoot>
+              <tr class="total-row"><td colspan="3" style="text-align:right;">Subtotal</td><td id="subtotal">₹0.00</td></tr>
+              <tr class="total-row"><td colspan="3" style="text-align:right;">GST (18%)</td><td id="gst">₹0.00</td></tr>
+              <tr class="total-row"><td colspan="3" style="text-align:right;">Grand Total</td><td id="grandTotal">₹0.00</td></tr>
+            </tfoot>
+          </table>
+          <div id="previewNotes" style="margin-top:1rem; font-style:italic;">Thank you for your business!</div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn btn-primary" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+        <button class="btn btn-secondary" id="downloadPDF">Save as PDF (coming soon)</button>
+      </div>
+      <p style="text-align:center; margin: 2rem 0;"><a href="index.html">← Back to Professional Zone</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">(same as index.html)</footer>
+  <button class="back-to-top">↑</button>
+
+  <script>
+    // Invoice Generator Logic
+    let items = [
+      { desc: 'Web Design', qty: 1, price: 15000 },
+      { desc: 'Hosting (1 year)', qty: 1, price: 5000 }
+    ];
+
+    function renderItems() {
+      const container = document.getElementById('items-container');
+      container.innerHTML = '';
+      items.forEach((item, index) => {
+        const row = document.createElement('div');
+        row.className = 'item-row';
+        row.innerHTML = `
+          <input type="text" class="item-desc" value="${item.desc}" placeholder="Description" data-index="${index}">
+          <input type="number" class="item-qty" value="${item.qty}" min="0" step="1" data-index="${index}">
+          <input type="number" class="item-price" value="${item.price}" min="0" step="0.01" data-index="${index}">
+          <button class="remove-item" data-index="${index}"><i class="fas fa-trash"></i></button>
+        `;
+        container.appendChild(row);
+      });
+
+      // Attach event listeners to inputs and remove buttons
+      document.querySelectorAll('.item-desc, .item-qty, .item-price').forEach(input => {
+        input.addEventListener('input', updateFromInput);
+      });
+      document.querySelectorAll('.remove-item').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const idx = e.currentTarget.getAttribute('data-index');
+          items.splice(idx, 1);
+          renderItems();
+          updatePreview();
+        });
+      });
+    }
+
+    function updateFromInput(e) {
+      const idx = e.target.getAttribute('data-index');
+      const field = e.target.classList.contains('item-desc') ? 'desc' : (e.target.classList.contains('item-qty') ? 'qty' : 'price');
+      let val = e.target.value;
+      if (field === 'qty' || field === 'price') val = parseFloat(val) || 0;
+      items[idx][field] = val;
+      updatePreview();
+    }
+
+    function updatePreview() {
+      // Update header fields
+      document.getElementById('previewInvNo').innerText = document.getElementById('invNo').value;
+      const dateStr = document.getElementById('invDate').value;
+      if (dateStr) {
+        const d = new Date(dateStr);
+        document.getElementById('previewDate').innerText = d.toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
+      }
+      document.getElementById('previewClient').innerText = document.getElementById('clientName').value;
+      document.getElementById('previewAddress').innerText = document.getElementById('clientAddress').value;
+      document.getElementById('previewNotes').innerText = document.getElementById('notes').value;
+
+      // Build table body
+      let tbody = '';
+      let subtotal = 0;
+      items.forEach(item => {
+        const total = (item.qty || 0) * (item.price || 0);
+        subtotal += total;
+        tbody += `<tr><td>${item.desc}</td><td>${item.qty}</td><td>₹${(item.price || 0).toFixed(2)}</td><td>₹${total.toFixed(2)}</td></tr>`;
+      });
+      document.getElementById('previewBody').innerHTML = tbody;
+
+      const gst = subtotal * 0.18;
+      const grand = subtotal + gst;
+      document.getElementById('subtotal').innerText = `₹${subtotal.toFixed(2)}`;
+      document.getElementById('gst').innerText = `₹${gst.toFixed(2)}`;
+      document.getElementById('grandTotal').innerText = `₹${grand.toFixed(2)}`;
+    }
+
+    // Add item
+    document.getElementById('addItemBtn').addEventListener('click', () => {
+      items.push({ desc: '', qty: 1, price: 0 });
+      renderItems();
+      updatePreview();
+    });
+
+    // Listen to all input changes on the left
+    document.querySelectorAll('#invNo, #invDate, #clientName, #clientAddress, #notes').forEach(el => {
+      el.addEventListener('input', updatePreview);
+    });
+
+    // Initial render
+    renderItems();
+    updatePreview();
+
+    // PDF download placeholder
+    document.getElementById('downloadPDF').addEventListener('click', () => {
+      alert('PDF generation will be added soon. You can use Print → Save as PDF.');
+    });
+  </script>
+  <script src="../js/main.js"></script>
+  <script src="../js/chat.js"></script>
+</body>
+</html>
