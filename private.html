@@ -341,91 +341,98 @@
   </button>
 
   <script src="js/main.js"></script>
-  <script>
-    // Improved server status check using a health endpoint
-    (function() {
-      const statusIndicator = document.getElementById('statusIndicator');
-      const statusMessage = document.getElementById('statusMessage');
-      const loader = document.getElementById('loader');
-      const linkContainer = document.getElementById('linkContainer');
-      const offlineMessage = document.getElementById('offlineMessage');
-      const portalLink = document.getElementById('portalLink');
+<script>
+  (function() {
+    const statusIndicator = document.getElementById('statusIndicator');
+    const statusMessage = document.getElementById('statusMessage');
+    const loader = document.getElementById('loader');
+    const linkContainer = document.getElementById('linkContainer');
+    const offlineMessage = document.getElementById('offlineMessage');
+    const portalLink = document.getElementById('portalLink');
 
-      // Health endpoint path – adjust if your app uses a different path
-      const HEALTH_PATH = '/health';  // e.g., '/api/health' or '/health'
+    const HEALTH_PATH = '/health'; // adjust if needed
 
-      function setOnline(tunnelUrl) {
-        statusIndicator.classList.add('online');
-        statusIndicator.classList.remove('offline');
-        statusMessage.innerHTML = '<i class="fas fa-check-circle" style="color:#34d399;"></i> <span>Server is operational</span>';
-        portalLink.href = tunnelUrl;
-        linkContainer.classList.remove('hidden');
-        offlineMessage.classList.add('hidden');
-        loader.classList.add('hidden');
-      }
+    function setOnline(tunnelUrl) {
+      statusIndicator.classList.add('online');
+      statusIndicator.classList.remove('offline');
+      statusMessage.innerHTML = '<i class="fas fa-check-circle" style="color:#34d399;"></i> <span>Server is operational</span>';
+      portalLink.href = tunnelUrl;
+      linkContainer.classList.remove('hidden');
+      offlineMessage.classList.add('hidden');
+      loader.classList.add('hidden');
+    }
 
-      function setOffline() {
-        statusIndicator.classList.add('offline');
-        statusIndicator.classList.remove('online');
-        statusMessage.innerHTML = '<i class="fas fa-exclamation-triangle" style="color:#f87171;"></i> <span>Server unreachable</span>';
-        linkContainer.classList.add('hidden');
-        offlineMessage.classList.remove('hidden');
-        loader.classList.add('hidden');
-      }
+    function setOffline() {
+      statusIndicator.classList.add('offline');
+      statusIndicator.classList.remove('online');
+      statusMessage.innerHTML = '<i class="fas fa-exclamation-triangle" style="color:#f87171;"></i> <span>Server unreachable</span>';
+      linkContainer.classList.add('hidden');
+      offlineMessage.classList.remove('hidden');
+      loader.classList.add('hidden');
+    }
 
-      function setError(msg) {
-        statusIndicator.classList.add('offline');
-        statusMessage.innerHTML = '<i class="fas fa-times-circle" style="color:#f87171;"></i> <span>Configuration error</span>';
-        loader.classList.add('hidden');
-        linkContainer.classList.add('hidden');
-        offlineMessage.classList.remove('hidden');
-        document.querySelector('#offlineMessage p').innerText = msg || 'Could not retrieve tunnel URL. The server might not be started.';
-      }
+    function setError(msg) {
+      statusIndicator.classList.add('offline');
+      statusMessage.innerHTML = '<i class="fas fa-times-circle" style="color:#f87171;"></i> <span>Configuration error</span>';
+      loader.classList.add('hidden');
+      linkContainer.classList.add('hidden');
+      offlineMessage.classList.remove('hidden');
+      document.querySelector('#offlineMessage p').innerText = msg || 'Could not retrieve tunnel URL. The server might not be started.';
+    }
 
-      async function checkHealth(baseUrl) {
+    // Try CORS fetch; if it fails due to CORS, fallback to no-cors (opaque)
+    async function checkHealthWithFallback(baseUrl) {
+      const cleanBase = baseUrl.replace(/\/$/, '');
+      const healthUrl = cleanBase + HEALTH_PATH;
+
+      // First attempt: CORS mode
+      try {
+        const response = await fetch(healthUrl, {
+          method: 'GET',
+          mode: 'cors',
+          cache: 'no-cache',
+        });
+        // If we reach here, CORS succeeded and we can read status
+        return response.ok;
+      } catch (corsError) {
+        // CORS error – likely due to missing CORS headers. Fallback to no-cors.
+        console.warn('CORS fetch failed, falling back to no-cors', corsError);
         try {
-          // Remove trailing slash if present
-          const cleanBase = baseUrl.replace(/\/$/, '');
-          const healthUrl = cleanBase + HEALTH_PATH;
-          const response = await fetch(healthUrl, {
-            method: 'GET',
-            mode: 'cors',        // We need to read status
-            cache: 'no-cache',
-            headers: { 'Cache-Control': 'no-cache' }
-          });
-          // If we get any 2xx status, consider online
-          return response.ok;
-        } catch (error) {
-          // Network error, CORS error, or non-2xx – offline
+          // no-cors fetch cannot read response, but it will throw if network unreachable
+          await fetch(healthUrl, { method: 'GET', mode: 'no-cors' });
+          // If we reach here, the request succeeded (opaque) – assume online.
+          return true;
+        } catch (noCorsError) {
+          // Both attempts failed – offline
           return false;
         }
       }
+    }
 
-      async function main() {
-        try {
-          // Fetch the tunnel base URL from url.txt
-          const response = await fetch('url.txt?t=' + Date.now());
-          if (!response.ok) throw new Error('url.txt not found');
-          const tunnelUrl = (await response.text()).trim();
-          if (!tunnelUrl.startsWith('http')) throw new Error('Invalid URL');
+    async function main() {
+      try {
+        const response = await fetch('url.txt?t=' + Date.now());
+        if (!response.ok) throw new Error('url.txt not found');
+        const tunnelUrl = (await response.text()).trim();
+        if (!tunnelUrl.startsWith('http')) throw new Error('Invalid URL');
 
-          statusMessage.innerHTML = '<i class="fas fa-sync-alt fa-spin" style="color:var(--teal);"></i> <span>Contacting server...</span>';
+        statusMessage.innerHTML = '<i class="fas fa-sync-alt fa-spin" style="color:var(--teal);"></i> <span>Contacting server...</span>';
 
-          const isOnline = await checkHealth(tunnelUrl);
-          if (isOnline) {
-            setOnline(tunnelUrl);
-          } else {
-            setOffline();
-          }
-        } catch (error) {
-          console.warn('Status check error:', error);
-          setError('Could not retrieve tunnel URL. The server might not be started.');
+        const isOnline = await checkHealthWithFallback(tunnelUrl);
+        if (isOnline) {
+          setOnline(tunnelUrl);
+        } else {
+          setOffline();
         }
+      } catch (error) {
+        console.warn('Status check error:', error);
+        setError('Could not retrieve tunnel URL. The server might not be started.');
       }
+    }
 
-      main();
-    })();
-  </script>
-  <!-- Note: This script assumes your application has a /health endpoint that returns 200 OK -->
+    main();
+  })();
+</script>
+<!-- For best accuracy, enable CORS on your server (Access-Control-Allow-Origin: *) -->
 </body>
 </html>
