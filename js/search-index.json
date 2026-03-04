@@ -13,7 +13,7 @@
     "excerpt": "Full‑service digital agency: e‑commerce, real estate, education, construction websites. SEO‑optimized, custom development. View our portfolio of 50+ projects.",
     "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
     "type": "services",
-    "content": "Website Development & E-Commerce Solutions | Altivon Holdings Our digital services, engineered for results From code to conversion — we cover the full spectrum. Website Development Custom, responsive websites built with semantic HTML5, modern CSS, and lightweight JavaScript. We focus on core web vitals, SEO architecture, and conversion‑centric design. Whether you need a corporate business website or a complex web application, our full‑stack expertise (Python, SQL) delivers. Discuss your project E‑Commerce Solutions Scalable e‑commerce website development with secure payment gateways, inventory sync, and mobile‑optimized checkout. We build on reliable stacks (Shopify, WooCommerce, or headless) tailored to your product volume. SEO‑friendly product schemas and fast catalog browsing included. Start selling online Business & Digital Strategy We align technology with business goals. From MVP planning to digital transformation, we help startups and enterprises define their online roadmap. Our digital solutions company approach combines UX research, competitor analysis, and conversion funnel optimization. Build your strategy Industry‑Specific Website Design Ready‑to‑scale solutions for real estate, construction, education, logistics, and rental . Each industry vertical includes tailored features: property filters, project galleries, LMS integration, fleet management dashboards. Fully responsive and branded. Explore industry solutions Website Maintenance & Optimization Ongoing security patches, performance audits, SEO updates, and content refreshes. We keep your digital asset fast, secure, and up‑to‑date. Monthly reports and 24/7 monitoring available. Maintenance plans Website Templates Ready to use, fully responsive designs – pick yours and customise Business Pro Corporate website with services, team, and contact – navy & teal. Preview Template E‑Commerce Sleek Minimalist online store with product grid and cart. Preview Template Portfolio Dark Dark‑mode creative portfolio with masonry grid. Preview Template Startup Landing Bold SaaS landing page with pricing and email signup. Preview Template Real Estate Property listings, agent profiles, and mortgage calculator. Preview Template Construction Project gallery, services, and quote form in orange & grey. Preview Template Browse All Templates (10) Recent Projects Explore our handcrafted websites – each built with precision. All Corporate E‑commerce Real Estate Education Construction BuildCorp Corporate website with investor portal View Details UrbanCart Scalable e‑commerce platform View Details EstateIn Property listing with virtual tours View Details EduFirst LMS & course catalog View Details BuildCorp Construction Project showcase & timeline View Details CreativeAce Digital agency website View Details Need a custom combination? We also build hybrid solutions – contact our team. Get a quote"
+    "content": "Website Development & E-Commerce Solutions | Altivon Holdings Our digital services, engineered for results From code to conversion — we cover the full spectrum. Website Development Custom, responsive websites built with semantic HTML5, modern CSS, and lightweight JavaScript. We focus on core web vitals, SEO architecture, and conversion‑centric design. Whether you need a corporate business website or a complex web application, our full‑stack expertise (Python, SQL) delivers. Discuss your project E‑Commerce Solutions Scalable e‑commerce website development with secure payment gateways, inventory sync, and mobile‑optimized checkout. We build on reliable stacks (Shopify, WooCommerce, or headless) tailored to your product volume. SEO‑friendly product schemas and fast catalog browsing included. Start selling online Business & Digital Strategy We align technology with business goals. From MVP planning to digital transformation, we help startups and enterprises define their online roadmap. Our digital solutions company approach combines UX research, competitor analysis, and conversion funnel optimization. Build your strategy Industry‑Specific Website Design Ready‑to‑scale solutions for real estate, construction, education, logistics, and rental . Each industry vertical includes tailored features: property filters, project galleries, LMS integration, fleet management dashboards. Fully responsive and branded. Explore industry solutions Website Maintenance & Optimization Ongoing security patches, performance audits, SEO updates, and content refreshes. We keep your digital asset fast, secure, and up‑to‑date. Monthly reports and 24/7 monitoring available. Maintenance plans Custom Software Development Tailor‑made web applications, ERP systems, CRMs, and automation tools built for your unique business processes. We handle everything from requirement analysis to deployment and maintenance. School Management System (ERP) Interactive demo – select features and see instant pricing. Perfect for educational institutes. Try School ERP Demo Custom CRM System Build your perfect sales tool – lead management, pipeline tracking, and reporting. Try CRM Demo Waterpark Management System Complete solution for ticketing, rentals, F&B, staff, and safety – all in one platform. Try WMS Demo Browse All Custom Software More custom solutions available – contact us for a consultation. Website Templates Ready to use, fully responsive designs – pick yours and customise Business Pro Corporate website with services, team, and contact – navy & teal. Preview Template E‑Commerce Sleek Minimalist online store with product grid and cart. Preview Template Portfolio Dark Dark‑mode creative portfolio with masonry grid. Preview Template Startup Landing Bold SaaS landing page with pricing and email signup. Preview Template Real Estate Property listings, agent profiles, and mortgage calculator. Preview Template Construction Project gallery, services, and quote form in orange & grey. Preview Template"
   },
   {
     "title": "About Altivon Holdings | Digital Infrastructure & Business Technology",
@@ -26,10 +26,10 @@
   {
     "title": "Contact Altivon Holdings | Start Your Website Project Today",
     "url": "https://altivonholdings.github.io/contact.html",
-    "excerpt": "Contact Altivon Holdings for website development, e‑commerce, and digital strategy. Use our Formspree contact form or email directly. Free quote within 24h.",
+    "excerpt": "Contact Altivon Holdings for website development, e‑commerce, and digital strategy. Use our contact form or email directly. Free quote within 24h.",
     "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
     "type": "contact",
-    "content": "Contact Altivon Holdings | Start Your Website Project Today Start a conversation Tell us about your project, or just say hello. Send us a message Full name * Email address * Phone (optional) Service interested in -- select -- E-Commerce Development Corporate Website Real Estate Construction Education Digital Agency Maintenance / Optimization Other Message * Send message ✓ Thank you! We'll reply within 24h. Or email directly: altivonholdings@gmail.com Why contact us? Get a free quote and timeline estimate Discuss your project with a developer (not a salesperson) Learn how we can improve your SEO & conversion altivonholdings@gmail.com altivonholdings.github.io Response within 24h (business days)"
+    "content": "Contact Altivon Holdings | Start Your Website Project Today Start a conversation Tell us about your project, or just say hello. Send us a message Full name * Email address * Phone (optional) Service interested in -- select -- E-Commerce Development Corporate Website Real Estate Construction Education Digital Agency Maintenance / Optimization School ERP (Custom) Custom CRM Waterpark Management Hospital Management Hotel Management Inventory & Warehouse Fleet Management Point of Sale (POS) Other Message * Send message ✓ Thank you! We'll reply within 24h. Or email directly: altivonholdings@gmail.com Why contact us? Get a free quote and timeline estimate Discuss your project with a developer (not a salesperson) Learn how we can improve your SEO & conversion altivonholdings@gmail.com altivonholdings.github.io Response within 24h (business days)"
   },
   {
     "title": "Blog – Web Development & Digital Strategy Insights | Altivon Holdings",
@@ -54,6 +54,14 @@
     "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
     "type": "page",
     "content": ""
+  },
+  {
+    "title": "Altivon AI – Advanced Web Dev Assistant",
+    "url": "https://altivonholdings.github.io/ai-chat.html",
+    "excerpt": "Chat with Altivon AI, your personal assistant for website development, e-commerce, digital strategy, and more.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Altivon AI – Advanced Web Dev Assistant Altivon AI Your advanced dev assistant Dark New chat 💻 What services do you offer? 💰 How much does a website cost? 🛒 Do you build e‑commerce sites? ⚙️ What technologies do you use? ⏱️ How long does a project take? 🔐 Do you handle maintenance?"
   },
   {
     "title": "Why Every Business Needs a Website (Not Just a Social Page) | Altivon Holdings",
@@ -133,7 +141,7 @@
     "excerpt": "",
     "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
     "type": "page",
-    "content": "Search – Altivon Holdings Search Search Loading search index..."
+    "content": "Search – Altivon Holdings Search Search All Blog Portfolio Templates Services Other Pages Loading search index..."
   },
   {
     "title": "Website Templates | Altivon Holdings",
@@ -270,5 +278,109 @@
     "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200",
     "type": "portfolio",
     "content": "CreativeAce Digital Agency Website | Altivon Holdings Portfolio CreativeAce Digital Agency A portfolio that wins clients 0 new clients Won in 2 months 0 case studies Showcased 0% Traffic increase Project Overview Client: CreativeAce, a digital marketing agency specializing in branding, social media, and content marketing. Challenge: Their old website was outdated and didn't reflect their creative capabilities. They needed a portfolio site that would impress potential clients, showcase case studies, and generate leads. Solution: We designed a clean, minimalist website with a focus on typography and whitespace. The site features a case studies section with detailed project breakdowns, a services page, and a simple contact form. We built it with HTML, CSS, JavaScript, and integrated Netlify CMS for easy content updates. 📁 Case Studies ✍️ Blog / Insights 📞 Contact Form Detailed Case Studies Each case study includes the challenge, strategy, execution, and results. We added before/after metrics, client testimonials, and high‑quality images. The layout is designed to tell a compelling story. Blog & Insights The agency wanted to share their expertise. We built a blog section with categories, author bios, and social sharing. It's powered by Netlify CMS, so the team can write posts in a familiar interface. Smart Contact Form The contact form asks project type, budget, and timeline. Submissions go to the sales team and are also stored in a simple CRM (Airtable integration). We added reCAPTCHA to prevent spam. Our Creative Process 1 Mood Boards 2 Design Iterations 3 Frontend Build 4 CMS Integration 5 Launch Mood Boards & Inspiration We created multiple mood boards to capture the agency's desired aesthetic – minimal, professional, with subtle creative touches. The client chose a clean, monochrome palette with accent colors. Design Iterations We presented three design directions. After feedback, we refined the chosen design, focusing on typography (Inter font) and spacing. We also designed custom icons for services. Frontend Development We coded the site with semantic HTML5, modern CSS (Flexbox/Grid), and vanilla JavaScript for interactions like smooth scroll and mobile menu. The site is fully responsive. Netlify CMS Integration We set up Netlify CMS so the agency could update case studies and blog posts without touching code. The CMS is configured with custom fields for case studies (client name, results, etc.). Launch & Performance Tuning Deployed on Netlify with continuous deployment from GitHub. We optimized images, added meta tags, and submitted sitemap to Google. Within two months, the site helped win three new clients. Technologies Used HTML5 Semantic markup CSS3 Modern styling JavaScript Interactivity Netlify CMS Content management Plus Netlify hosting, Git version control, Airtable integration Featured Case Studies Branding Luxe Cosmetics Rebrand Increased brand awareness by 150% through a complete visual identity overhaul. Social Media FitLife Campai"
+  },
+  {
+    "title": "CBSE Results 2025",
+    "url": "https://altivonholdings.github.io/data/login_page.html",
+    "excerpt": "",
+    "image": "https://altivonholdings.github.io/Images/cbseResult.jpg",
+    "type": "page",
+    "content": "CBSE Results 2025 https://cbseresults.nic.in Examination Results 2025 CBSE 12th Result Login Senior School Certificate Examination (Class XII) Results 2025 Enter Your Roll Number : Enter School No. : Enter Admit Card ID. : (as given on your admit card) Enter Security Pin (case sensitive) Security Pin : Disclaimer : Neither NIC nor CBSE is responsible for any inadvertent error that may have crept in the results being published on NET. The results published on net are for Immediate information to the examinees. These cannot be treated as original mark sheets. Original mark sheets have been issued by the Board separately. } This site is designed, developed and hosted by National Informatics Centre, Ministry of Electronics & Information Technology, Government of India."
+  },
+  {
+    "title": "Length Required",
+    "url": "https://altivonholdings.github.io/data/result.html",
+    "excerpt": "",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Length Required Length Required HTTP Error 411. The request must be chunked or have a content length."
+  },
+  {
+    "title": "Custom Software Solutions – Altivon Holdings",
+    "url": "https://altivonholdings.github.io/custom/index.html",
+    "excerpt": "Explore our range of custom software: ERP, CRM, Waterpark, Hospital, Hotel, Inventory, Fleet, and POS systems. Tailored to your business needs.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Custom Software Solutions – Altivon Holdings Custom Software Solutions Tailored to your industry, built to scale. Explore our portfolio of specialised systems. Each solution is fully customisable – click “Interactive Demo” to configure features and get an instant estimate, or “Learn More” to discuss your requirements. School ERP Complete management system for educational institutes: admissions, attendance, exams, fees, and parent communication. Student & Staff Management Online Fee Collection Exam & Report Cards Interactive Demo Learn More Custom CRM Sales pipeline, lead management, and customer engagement tools designed for your sales team. Lead & Contact Management Sales Forecasting Email Integration Interactive Demo Learn More Waterpark Management All-in-one solution for ticketing, rentals, F&B, staff, and safety at aquatic centres. Online Ticketing & POS Locker & Tube Rentals Ride Maintenance Interactive Demo Learn More Hospital Management Digitize patient records, appointments, billing, and pharmacy – compliant with healthcare standards. Patient Registration & EHR Appointment Scheduling Pharmacy & Lab Integration Interactive Demo Learn More Hotel Management Property management, booking engine, housekeeping, and billing for hotels and resorts. Online Booking & Channel Manager Front Desk & Check-in Housekeeping & Maintenance Interactive Demo Learn More Inventory & Warehouse Real-time stock tracking, order management, barcode scanning, and warehouse optimization. Multi‑warehouse Support Barcode / RFID Integration Low‑stock Alerts Interactive Demo Learn More Fleet Management GPS tracking, maintenance scheduling, driver logs, and fuel efficiency monitoring. Real‑time GPS Tracking Maintenance Alerts Driver Performance Interactive Demo Learn More Point of Sale (POS) Modern POS for retail, restaurants, and services – offline mode, inventory sync, and analytics. Touch‑screen Interface Offline Sales Mode Integrated Payments Interactive Demo Learn More Need something else? We build tailor‑made software for any industry – describe your requirements and we’ll craft a solution. Start a Conversation"
+  },
+  {
+    "title": "School ERP Demo – Altivon Holdings",
+    "url": "https://altivonholdings.github.io/custom/erp/index.html",
+    "excerpt": "Interactive School Management System pricing. Select features, see instant cost & timeline – custom ERP for educational institutes.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "School ERP Demo – Altivon Holdings \u001a School ERP Build Your Perfect System Click features to add. See instant pricing and timeline. Tailored for your institute. ISO 27001 Ready 256\u001abit Encryption 50+ Schools Trust Estimated investment \u001a0 +5% GST 0 days Reset Continue to Quote Indicative pricing – final quote after consultation Typical delivery: 4–12 weeks No obligation proposal Back to Services"
+  },
+  {
+    "title": "Custom CRM Demo – Altivon Holdings",
+    "url": "https://altivonholdings.github.io/custom/crm/index.html",
+    "excerpt": "Interactive CRM pricing. Select features, see instant cost & timeline – custom CRM for your business.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Custom CRM Demo – Altivon Holdings \u001a Custom CRM Build Your Perfect Sales System Click features to add. See instant pricing and timeline. Tailored for your business. ISO 27001 Ready 256\u001abit Encryption 100+ Sales Teams Trust Estimated investment \u001a0 +5% GST 0 days Reset Continue to Quote Indicative pricing – final quote after consultation Typical delivery: 6–16 weeks No obligation proposal Back to Services"
+  },
+  {
+    "title": "Waterpark Management Software – Altivon Holdings",
+    "url": "https://altivonholdings.github.io/custom/wms/index.html",
+    "excerpt": "Interactive Waterpark Management System pricing. Select features, see instant cost & timeline – custom software for water parks, resorts, and aquatic centers.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Waterpark Management Software – Altivon Holdings 🏊 Waterpark Management All-in-One Software Click features to add. See instant pricing and timeline. Built for water parks, resorts, and aquatic centers. ISO 27001 Ready 256‑bit Encryption 30+ Parks Trust Us Estimated investment ₹0 +5% GST 0 days Reset Continue to Quote Indicative pricing – final quote after consultation Typical delivery: 8–20 weeks No obligation proposal Back to Services"
+  },
+  {
+    "title": "Hospital Management System – Interactive Demo | Altivon Holdings",
+    "url": "https://altivonholdings.github.io/custom/hospital/index.html",
+    "excerpt": "Configure your custom Hospital Management System: EHR, appointments, pharmacy, billing, OT management. Instant price estimate.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Hospital Management System – Interactive Demo | Altivon Holdings 🏥 Hospital Management Complete Digital Ecosystem Click features to add. See instant pricing and timeline. Built for hospitals, clinics, and healthcare networks. HIPAA Ready 256‑bit Encryption 25+ Healthcare Providers Estimated investment ₹0 +5% GST 0 days Reset Continue to Quote Indicative pricing – final quote after consultation Typical delivery: 10–24 weeks No obligation proposal Back to Services"
+  },
+  {
+    "title": "Hotel Management System – Interactive Demo | Altivon Holdings",
+    "url": "https://altivonholdings.github.io/custom/hotel/index.html",
+    "excerpt": "Configure your custom Hotel Management System: PMS, booking engine, housekeeping, POS, channel manager. Instant price estimate.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Hotel Management System – Interactive Demo | Altivon Holdings 🏨 Hotel Management Complete Property Solution Click features to add. See instant pricing and timeline. Built for hotels, resorts, and serviced apartments. PCI DSS Ready 256‑bit Encryption 50+ Properties Estimated investment ₹0 +5% GST 0 days Reset Continue to Quote Indicative pricing – final quote after consultation Typical delivery: 8–18 weeks No obligation proposal Back to Services"
+  },
+  {
+    "title": "Inventory & Warehouse Management – Interactive Demo | Altivon Holdings",
+    "url": "https://altivonholdings.github.io/custom/inventory/index.html",
+    "excerpt": "Configure your custom Inventory & Warehouse Management System: stock tracking, barcode, multi‑warehouse, order management. Instant price estimate.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Inventory & Warehouse Management – Interactive Demo | Altivon Holdings 📦 Inventory & Warehouse Complete Stock Management Click features to add. See instant pricing and timeline. Built for warehouses, distributors, and retailers. ERP‑Ready 256‑bit Encryption 100+ Businesses Estimated investment ₹0 +5% GST 0 days Reset Continue to Quote Indicative pricing – final quote after consultation Typical delivery: 6–16 weeks No obligation proposal Back to Services"
+  },
+  {
+    "title": "Point of Sale (POS) System – Interactive Demo | Altivon Holdings",
+    "url": "https://altivonholdings.github.io/custom/pos/index.html",
+    "excerpt": "Configure your custom POS System: billing, inventory, customer management, kitchen display, loyalty. Instant price estimate.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Point of Sale (POS) System – Interactive Demo | Altivon Holdings 🛒 Point of Sale (POS) Complete Billing & Store Management Click features to add. See instant pricing and timeline. Built for retail, restaurants, and service businesses. PCI‑DSS Ready 256‑bit Encryption 500+ Outlets Estimated investment ₹0 +5% GST 0 days Reset Continue to Quote Indicative pricing – final quote after consultation Typical delivery: 6–14 weeks No obligation proposal Back to Services"
+  },
+  {
+    "title": "Fleet Management – Interactive Demo | Altivon Holdings",
+    "url": "https://altivonholdings.github.io/custom/fleet/index.html",
+    "excerpt": "Configure your custom Fleet Management System: GPS tracking, maintenance, fuel management, driver logs. Instant price estimate.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Fleet Management – Interactive Demo | Altivon Holdings 🚛 Fleet Management Complete Vehicle & Driver Control Click features to add. See instant pricing and timeline. Built for logistics, transport, and service fleets. GPS Ready 256‑bit Encryption 200+ Fleets Estimated investment ₹0 +5% GST 0 days Reset Continue to Quote Indicative pricing – final quote after consultation Typical delivery: 8–18 weeks No obligation proposal Back to Services"
+  },
+  {
+    "title": "Professional Zone – Official & Legal Tools | Altivon Holdings",
+    "url": "https://altivonholdings.github.io/professional-zone/index.html",
+    "excerpt": "Free professional tools: invoice generator, GST calculator, legal templates, business documents, and compliance checklists. Built for Indian businesses.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Professional Zone – Official & Legal Tools | Altivon Holdings ⚖️ Professional Zone Official & legal tools – invoices, contracts, compliance, and more All-in-one business toolkit Free, ready-to-use documents and generators for Indian entrepreneurs Invoice Generator Create professional GST invoices in seconds. Download as PDF. Live Open Tool GST Calculator Calculate CGST, SGST, IGST for any amount. Ready for 2026 rates. Coming Soon Rental Agreement Generate rent agreements as per Indian Rent Control Acts. Coming Soon NDA Template Mutual & one-way non-disclosure agreements (India-specific). Coming Soon Business Plan Builder Structured template with executive summary, financials, and pitch. Coming Soon Registration Guide Step-by-step for Pvt Ltd, LLP, OPC – with MoA & AoA drafts. PDF Guide Download Simple Contract Generator Service agreements, freelance contracts, vendor agreements. Coming Soon Startup Compliance Checklist GST, MSME, PF/ESI, trademarks – what you need and when. Checklist Download More tools added regularly. Have a request? Contact us . Need a custom business document? We can build tailored generators for your specific industry. Discuss your requirement"
+  },
+  {
+    "title": "Invoice Generator – Professional Zone | Altivon Holdings",
+    "url": "https://altivonholdings.github.io/professional-zone/invoice-generator.html",
+    "excerpt": "Free online invoice generator for Indian businesses. Create GST invoices instantly, print or save as PDF.",
+    "image": "https://altivonholdings.github.io/assets/images/logo.jpg",
+    "type": "page",
+    "content": "Invoice Generator – Professional Zone | Altivon Holdings Invoice Generator Create professional GST invoices – print or save as PDF Invoice Details Invoice Number Date Bill To (Client Name) Client Address / GST 123 Business Park, Mumbai - 400001 Items Add Item Notes / Terms Thank you for your business! INVOICE INV-2026-001 22 Feb 2026 Bill To: ABC Enterprises Address: 123 Business Park, Mumbai - 400001 Description Qty Unit Price Total Subtotal ₹0.00 GST (18%) ₹0.00 Grand Total ₹0.00 Thank you for your business! Print Save as PDF (coming soon) ← Back to Professional Zone ↑"
   }
 ]

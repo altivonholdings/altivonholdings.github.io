@@ -2,6 +2,7 @@
 """
 Advanced search index builder for Altivon Holdings.
 Extracts title, description, text content, and a representative image from each HTML file.
+Handles files with non-UTF-8 encodings gracefully.
 """
 
 import os
@@ -81,8 +82,20 @@ def build_index():
             if not should_include(filepath):
                 continue
 
-            with open(filepath, "r", encoding="utf-8") as f:
-                soup = BeautifulSoup(f, "html.parser")
+            # Read file with fallback encoding for non-UTF-8 content
+            try:
+                with open(filepath, 'rb') as f:
+                    raw = f.read()
+                # Try UTF-8 first, fallback to cp1252 (Windows) with replacement
+                try:
+                    html = raw.decode('utf-8')
+                except UnicodeDecodeError:
+                    html = raw.decode('cp1252', errors='replace')
+            except Exception as e:
+                print(f"⚠️ Skipping {filepath}: could not read file ({e})")
+                continue
+
+            soup = BeautifulSoup(html, "html.parser")
 
             # Title
             title_tag = soup.find("title")

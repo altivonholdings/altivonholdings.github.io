@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Server Status</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; background: #f4f6f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; max-width: 500px; }
+        .spinner { border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 20px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .online { color: #27ae60; }
+        .offline { color: #e74c3c; }
+        .btn { display: inline-block; background: #3498db; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; margin-top: 20px; }
+        .btn:hover { background: #2980b9; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🔐 Private Server Access</h1>
+        <div id="status">Checking server status...</div>
+        <div id="spinner" class="spinner"></div>
+        <div id="link" style="display: none;"></div>
+    </div>
+
+    <script>
+        async function checkServer(url) {
+            try {
+                // Attempt a fetch with a 5-second timeout and 'no-cors' to avoid CORS issues
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+                await fetch(url, { mode: 'no-cors', signal: controller.signal });
+                clearTimeout(timeoutId);
+                return true;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        async function main() {
+            try {
+                // Fetch the url.txt from the same GitHub Pages repo
+                const response = await fetch('url.txt');
+                if (!response.ok) throw new Error('url.txt not found');
+                const tunnelUrl = (await response.text()).trim();
+
+                document.getElementById('status').innerText = 'Contacting server...';
+
+                const isOnline = await checkServer(tunnelUrl);
+
+                if (isOnline) {
+                    document.getElementById('status').innerHTML = '<span class="online">✅ Server is online</span>';
+                    document.getElementById('link').innerHTML = `<a href="${tunnelUrl}" target="_blank" class="btn">👉 Visit Application</a>`;
+                    document.getElementById('link').style.display = 'block';
+                    document.getElementById('spinner').style.display = 'none';
+                } else {
+                    document.getElementById('status').innerHTML = '<span class="offline">❌ Server is offline (or not responding)</span>';
+                    document.getElementById('spinner').style.display = 'none';
+                }
+            } catch (error) {
+                document.getElementById('status').innerHTML = '<span class="offline">❌ Could not retrieve tunnel URL. Is the server started?</span>';
+                document.getElementById('spinner').style.display = 'none';
+            }
+        }
+
+        main();
+    </script>
+</body>
+</html>
