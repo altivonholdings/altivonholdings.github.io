@@ -342,7 +342,7 @@
 
   <script src="js/main.js"></script>
   <script>
-    // Server status check (same as before, but adapted to use site's styles)
+    // Improved server status check using a health endpoint
     (function() {
       const statusIndicator = document.getElementById('statusIndicator');
       const statusMessage = document.getElementById('statusMessage');
@@ -351,17 +351,8 @@
       const offlineMessage = document.getElementById('offlineMessage');
       const portalLink = document.getElementById('portalLink');
 
-      async function checkServer(url) {
-        try {
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 6000);
-          await fetch(url, { mode: 'no-cors', signal: controller.signal });
-          clearTimeout(timeoutId);
-          return true;
-        } catch {
-          return false;
-        }
-      }
+      // Health endpoint path – adjust if your app uses a different path
+      const HEALTH_PATH = '/health';  // e.g., '/api/health' or '/health'
 
       function setOnline(tunnelUrl) {
         statusIndicator.classList.add('online');
@@ -382,17 +373,37 @@
         loader.classList.add('hidden');
       }
 
-      function setError() {
+      function setError(msg) {
         statusIndicator.classList.add('offline');
         statusMessage.innerHTML = '<i class="fas fa-times-circle" style="color:#f87171;"></i> <span>Configuration error</span>';
         loader.classList.add('hidden');
         linkContainer.classList.add('hidden');
         offlineMessage.classList.remove('hidden');
-        document.querySelector('#offlineMessage p').innerText = 'Could not retrieve tunnel URL. The server might not be started.';
+        document.querySelector('#offlineMessage p').innerText = msg || 'Could not retrieve tunnel URL. The server might not be started.';
+      }
+
+      async function checkHealth(baseUrl) {
+        try {
+          // Remove trailing slash if present
+          const cleanBase = baseUrl.replace(/\/$/, '');
+          const healthUrl = cleanBase + HEALTH_PATH;
+          const response = await fetch(healthUrl, {
+            method: 'GET',
+            mode: 'cors',        // We need to read status
+            cache: 'no-cache',
+            headers: { 'Cache-Control': 'no-cache' }
+          });
+          // If we get any 2xx status, consider online
+          return response.ok;
+        } catch (error) {
+          // Network error, CORS error, or non-2xx – offline
+          return false;
+        }
       }
 
       async function main() {
         try {
+          // Fetch the tunnel base URL from url.txt
           const response = await fetch('url.txt?t=' + Date.now());
           if (!response.ok) throw new Error('url.txt not found');
           const tunnelUrl = (await response.text()).trim();
@@ -400,17 +411,21 @@
 
           statusMessage.innerHTML = '<i class="fas fa-sync-alt fa-spin" style="color:var(--teal);"></i> <span>Contacting server...</span>';
 
-          const isOnline = await checkServer(tunnelUrl);
-          if (isOnline) setOnline(tunnelUrl);
-          else setOffline();
+          const isOnline = await checkHealth(tunnelUrl);
+          if (isOnline) {
+            setOnline(tunnelUrl);
+          } else {
+            setOffline();
+          }
         } catch (error) {
-          console.warn(error);
-          setError();
+          console.warn('Status check error:', error);
+          setError('Could not retrieve tunnel URL. The server might not be started.');
         }
       }
 
       main();
     })();
   </script>
+  <!-- Note: This script assumes your application has a /health endpoint that returns 200 OK -->
 </body>
 </html>
