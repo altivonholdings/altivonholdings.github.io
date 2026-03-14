@@ -1,7 +1,0 @@
-Flask==2.3.3
-Flask-SQLAlchemy==3.1.1
-pandas==2.0.3
-plotly==5.17.0
-python-dotenv==1.0.0
-openai==1.3.0  # if using OpenRouter (optional)
-requests==2.31.0
