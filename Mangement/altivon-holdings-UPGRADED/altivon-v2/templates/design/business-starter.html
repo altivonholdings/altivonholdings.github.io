@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>VineVista – Simple Business Starter</title>
+<link rel="stylesheet" href="utils/demo-base.css">
+    <link rel="stylesheet" href="css/business-starter.css">"/>
+    <link rel="stylesheet" href="utils/demo-bar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#fff;--dk:#111;--accent:#7c3aed;--lt:#f5f3ff;--mu:#6b7280;--border:#e5e7eb}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 50px;border-bottom:1px solid var(--border);position:sticky;top:46px;z-index:100;background:#fff}
+.logo{font-size:20px;font-weight:800;color:var(--dk)}.logo span{color:var(--accent)}
+.nav a{margin-left:18px;font-size:14px;color:var(--mu);text-decoration:none}
+.cta-nav{background:var(--accent);color:#fff;padding:9px 20px;border-radius:7px;font-size:13px;font-weight:700;text-decoration:none;margin-left:14px}
+.hero{padding:90px 50px;text-align:center;background:linear-gradient(180deg,var(--lt),#fff 70%);position:relative}
+.h-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;color:var(--accent);margin-bottom:22px}
+.hero h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:800;line-height:1.15;margin-bottom:18px}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:1.05rem;color:var(--mu);max-width:520px;margin:0 auto 32px;line-height:1.75}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:52px}
+.b1{background:var(--accent);color:#fff;padding:13px 28px;border-radius:9px;font-weight:700;font-size:15px;text-decoration:none}
+.b2{background:#fff;color:var(--dk);padding:13px 28px;border-radius:9px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--border)}
+.rating-bar{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--border);padding:12px 20px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.stars{color:#fbbf24;font-size:16px;letter-spacing:2px}
+.rating-text{font-size:13px;font-weight:600;color:var(--dk)}
+.rating-sub{font-size:12px;color:var(--mu)}
+.features{padding:80px 50px;background:#fff}
+.sec-h{text-align:center;margin-bottom:48px}
+.sl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+.st{font-size:2rem;font-weight:800;color:var(--dk)}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fc{border:1px solid var(--border);border-radius:14px;padding:28px;transition:.3s}
+.fc:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 40px rgba(124,58,237,.08)}
+.fc-ic{width:50px;height:50px;border-radius:12px;background:var(--lt);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.fc-ic i{font-size:22px;color:var(--accent)}
+.fc h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.fc p{font-size:13px;color:var(--mu);line-height:1.65}
+.cta{padding:80px 50px;background:linear-gradient(135deg,var(--accent),#9333ea);text-align:center}
+.cta h2{font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:12px}
+.cta p{color:rgba(255,255,255,.8);font-size:15px;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-btn{background:#fff;color:var(--accent);padding:14px 32px;border-radius:9px;font-weight:700;font-size:15px;text-decoration:none}
+</style>
+    <!-- Enhanced Mobile Support -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head><body>
+<nav class="nav">
+  <div class="logo">Vine<span>Vista</span></div>
+  <div><a href="#">About</a><a href="#">Services</a><a href="#">Portfolio</a><a href="#" class="cta-nav">Contact Us</a></div>
+</nav>
+<section class="hero">
+  <div class="h-badge"><i class="fa fa-circle" style="color:#22c55e;font-size:8px"></i> Open for New Projects</div>
+  <h1>A Beautiful Website<br>for Your <span>Business</span></h1>
+  <p>Fast-loading, mobile-ready, and professionally designed. Get online in 7 days and start attracting more customers.</p>
+  <div class="btns">
+    <a href="#" class="b1"><i class="fa fa-rocket"></i> Get Started Today</a>
+    <a href="#" class="b2"><i class="fa fa-images"></i> See Portfolio</a>
+  </div>
+  <div class="rating-bar">
+    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div><div class="rating-text">4.9 / 5.0 Rating</div><div class="rating-sub">From 280+ happy clients</div></div>
+  </div>
+</section>
+<section class="features">
+  <div class="sec-h"><div class="sl">Why Choose Us</div><div class="st">Everything You Need to Succeed Online</div></div>
+  <div class="fgrid">
+    <div class="fc"><div class="fc-ic"><i class="fa fa-mobile-screen-button"></i></div><h3>Mobile Responsive</h3><p>Your site looks perfect on all screen sizes — phones, tablets, and desktops.</p></div>
+    <div class="fc"><div class="fc-ic"><i class="fa fa-gauge-high"></i></div><h3>Lightning Fast</h3><p>Optimised code and modern hosting ensure your site loads in under 2 seconds.</p></div>
+    <div class="fc"><div class="fc-ic"><i class="fa fa-magnifying-glass-chart"></i></div><h3>SEO Optimised</h3><p>Proper structure, meta tags, and schema markup to rank on Google from day one.</p></div>
+    <div class="fc"><div class="fc-ic"><i class="fa fa-shield-halved"></i></div><h3>SSL Secured</h3><p>Free SSL certificate — your visitors see a secure, trusted site.</p></div>
+    <div class="fc"><div class="fc-ic"><i class="fa fa-headset"></i></div><h3>3-Month Support</h3><p>Free bug fixes, minor updates, and WhatsApp support for 3 months post-launch.</p></div>
+    <div class="fc"><div class="fc-ic"><i class="fa fa-palette"></i></div><h3>Custom Branding</h3><p>Your logo, brand colours, and fonts applied throughout — 100% yours.</p></div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Ready to Go Online?</h2>
+  <p>Starting from &#8377;3,999. Zero technical knowledge needed. We handle everything.</p>
+  <a href="#" class="cta-btn"><i class="fa fa-arrow-right"></i> Get a Free Quote</a>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({
+            title: 'VineVista – Simple Business Starter',
+            backHref: 'index.html',
+            orderHref: 'contact.html?design=business-starter'
+        });</script>
+    <script src="js/business-starter.js"></script>
+</body></html>

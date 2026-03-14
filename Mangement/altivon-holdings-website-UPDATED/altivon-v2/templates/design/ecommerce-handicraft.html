@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Handicraft Store – Demo | Altivon</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,600;0,700;1,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#fdf6ee;--terra:#c1440e;--sand:#e8d5b7;--dk:#2c1a0e;--mu:#8b6f47;--gr:#5c7a3e}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'Karla',sans-serif}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 60px;border-bottom:1px solid var(--sand)}
+.logo{font-family:'Crimson Pro',serif;font-size:26px;font-weight:700;font-style:italic;color:var(--terra)}
+.nav a{margin-left:20px;font-size:13px;color:var(--mu);text-decoration:none}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:78vh}
+.hl{background:var(--terra);padding:60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hl::after{content:'🌿';position:absolute;font-size:220px;right:-40px;bottom:-40px;opacity:.08;pointer-events:none}
+.hl-lbl{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:14px}
+.hl h1{font-family:'Crimson Pro',serif;font-size:3.4rem;font-weight:700;font-style:italic;color:#fff;line-height:1.08;margin-bottom:20px}
+.hl p{font-size:14px;color:rgba(255,255,255,.78);line-height:1.75;margin-bottom:28px;max-width:380px}
+.btn-lt{background:#fff;color:var(--terra);padding:12px 26px;font-size:13px;font-weight:700;letter-spacing:.5px;text-decoration:none;display:inline-block;transition:.2s}
+.btn-lt:hover{background:var(--sand)}
+.hr{padding:40px;background:var(--sand);display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:center}
+.cc{background:#fff;border-radius:4px;overflow:hidden;cursor:pointer;transition:.3s}
+.cc:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.1)}
+.cc-img{height:140px;display:flex;align-items:center;justify-content:center;font-size:52px;background:var(--bg)}
+.cc-info{padding:14px}
+.cc-origin{font-size:10px;color:var(--gr);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.cc-name{font-family:'Crimson Pro',serif;font-size:17px;font-weight:700;margin-bottom:4px}
+.cc-price{font-size:14px;font-weight:700;color:var(--terra)}
+.products{padding:70px 60px;background:#fff}
+.ph{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:36px}
+.ph h2{font-family:'Crimson Pro',serif;font-size:2rem;font-weight:700}
+.ph a{font-size:13px;color:var(--mu);border-bottom:1px solid var(--mu);text-decoration:none}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.pc-img{background:var(--bg);height:220px;display:flex;align-items:center;justify-content:center;font-size:64px;margin-bottom:12px;border-radius:4px;transition:.2s}
+.pc-img:hover{background:var(--sand)}
+.pc-origin{font-size:10px;color:var(--gr);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px}
+.pc-name{font-family:'Crimson Pro',serif;font-size:17px;font-weight:700;margin-bottom:4px}
+.pc-price{font-size:14px;color:var(--terra);font-weight:700}
+.story{padding:70px 60px;background:linear-gradient(135deg,#fdf6ee,var(--sand));display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story-img{height:360px;background:var(--terra);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:100px;opacity:.6}
+.story-text h2{font-family:'Crimson Pro',serif;font-size:2rem;font-style:italic;font-weight:700;margin-bottom:16px}
+.story-text p{font-size:14px;color:var(--mu);line-height:1.8;margin-bottom:12px}
+.abs{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.ab{font-size:12px;font-weight:700;color:var(--gr);border:1.5px solid var(--gr);padding:5px 14px;border-radius:20px}
+</style></head><body>
+<nav class="nav">
+  <div class="logo">Kaarigar</div>
+  <div><a href="#">Collections</a><a href="#">Artisans</a><a href="#">Our Story</a><a href="#" style="margin-left:16px;font-weight:700;color:var(--terra)">🛒 Cart</a></div>
+</nav>
+<section class="hero">
+  <div class="hl">
+    <div class="hl-lbl">Handmade · Authentic · Heritage</div>
+    <h1>Crafts That<br>Tell a Story</h1>
+    <p>Handpicked artisan products from master craftspeople across rural India. Each piece carries centuries of skill and tradition.</p>
+    <a href="#" class="btn-lt">Shop Collection →</a>
+  </div>
+  <div class="hr">
+    <div class="cc"><div class="cc-img">🏺</div><div class="cc-info"><div class="cc-origin">Varanasi</div><div class="cc-name">Terracotta Vase</div><div class="cc-price">₹450</div></div></div>
+    <div class="cc"><div class="cc-img">🧣</div><div class="cc-info"><div class="cc-origin">Chandauli</div><div class="cc-name">Silk Stole</div><div class="cc-price">₹1,200</div></div></div>
+    <div class="cc"><div class="cc-img">🪆</div><div class="cc-info"><div class="cc-origin">Mirzapur</div><div class="cc-name">Wooden Doll Set</div><div class="cc-price">₹680</div></div></div>
+    <div class="cc"><div class="cc-img">🪬</div><div class="cc-info"><div class="cc-origin">Sonbhadra</div><div class="cc-name">Stone Pendant</div><div class="cc-price">₹380</div></div></div>
+  </div>
+</section>
+<section class="products">
+  <div class="ph"><h2>New Arrivals</h2><a href="#">See All →</a></div>
+  <div class="pgrid">
+    <div><div class="pc-img">🧶</div><div class="pc-origin">Kutch, Gujarat</div><div class="pc-name">Embroidered Cushion Cover</div><div class="pc-price">₹899</div></div>
+    <div><div class="pc-img">🎨</div><div class="pc-origin">Rajasthan</div><div class="pc-name">Miniature Painting</div><div class="pc-price">₹2,200</div></div>
+    <div><div class="pc-img">🪘</div><div class="pc-origin">Madhya Pradesh</div><div class="pc-name">Hand-Beaten Brass Bowl</div><div class="pc-price">₹1,450</div></div>
+    <div><div class="pc-img">👘</div><div class="pc-origin">Varanasi</div><div class="pc-name">Banarasi Dupatta</div><div class="pc-price">₹3,800</div></div>
+  </div>
+</section>
+<section class="story">
+  <div class="story-img">🏡</div>
+  <div class="story-text">
+    <h2>Supporting 2,000+ Artisans Directly</h2>
+    <p>Every purchase goes directly to the artisan's family. No middlemen. Fair prices. Real impact.</p>
+    <p>We partner with rural craft clusters across UP, Rajasthan, Gujarat and beyond.</p>
+    <div class="abs"><span class="ab">✅ Direct from Artisan</span><span class="ab">🌱 Eco-Friendly</span><span class="ab">🤝 Fair Trade</span></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Handicraft Store – ₹9,999",backHref:"../ecommerce-handicraft.html",orderHref:"../../contact/index.html?tpl=ecommerce-handicraft"});</script>
+</body></html>

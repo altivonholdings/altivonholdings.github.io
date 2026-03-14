@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Lead Generation – Demo | Altivon</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#fff;--pr:#1d4ed8;--ac:#f97316;--lt:#eff6ff;--tx:#0f172a;--mu:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--tx);font-family:'Montserrat',sans-serif}
+.hero{background:linear-gradient(135deg,#0f172a,#1e3a8a);min-height:90vh;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;padding:80px 60px}
+.htag{display:inline-flex;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.3);padding:5px 14px;border-radius:4px;font-size:11px;font-weight:700;color:#fb923c;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-size:clamp(2.2rem,4vw,3.4rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:18px}
+.hero h1 span{color:var(--ac)}
+.hero p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:28px}
+.benefits{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.benefit{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.85);font-weight:600}
+.bcheck{width:22px;height:22px;background:rgba(249,115,22,.2);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--ac);font-size:14px;flex-shrink:0}
+.social-proof{display:flex;align-items:center;gap:14px;margin-top:8px}
+.sa{display:flex;margin-right:-6px}
+.sa-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--pr),#06b6d4);border:2px solid #1e3a8a;margin-right:-8px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.sp-text{font-size:13px;color:rgba(255,255,255,.7)}
+.sp-text strong{color:#fff}
+.lead-form{background:#fff;border-radius:16px;padding:36px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.lf-title{font-size:18px;font-weight:800;color:var(--tx);margin-bottom:6px}
+.lf-sub{font-size:13px;color:var(--mu);margin-bottom:22px}
+.lform{display:flex;flex-direction:column;gap:14px}
+.lform input,.lform select{width:100%;padding:13px 16px;border:1.5px solid #e2e8f0;border-radius:9px;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--tx);outline:none;transition:.2s}
+.lform input:focus,.lform select:focus{border-color:var(--pr)}
+.lform button{background:var(--ac);color:#fff;padding:15px;border-radius:9px;font-weight:800;font-size:15px;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;transition:.2s;letter-spacing:.5px}
+.lform button:hover{background:#ea6b00}
+.lf-note{font-size:11px;color:var(--mu);text-align:center;margin-top:6px}
+.logos{padding:50px 60px;text-align:center;background:var(--lt);border-top:1px solid #e0e7ff}
+.logos p{font-size:12px;color:var(--mu);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px}
+.logo-row{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.logo-item{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:10px 24px;font-size:13px;font-weight:700;color:var(--mu)}
+.features{padding:70px 60px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fc{text-align:center;padding:28px}
+.fc-ic{font-size:44px;margin-bottom:16px}
+.fc h3{font-size:17px;font-weight:800;margin-bottom:8px}
+.fc p{font-size:13px;color:var(--mu);line-height:1.6}
+</style></head><body>
+<section class="hero">
+  <div>
+    <div class="htag">🎯 Limited Time Offer</div>
+    <h1>Get 3x More Leads<br>for Your <span>Business</span></h1>
+    <p>Our proven digital marketing system has generated over ₹12 Cr in revenue for 200+ Indian businesses. Start your free trial today.</p>
+    <div class="benefits">
+      <div class="benefit"><div class="bcheck">✓</div>Automated lead capture and follow-up</div>
+      <div class="benefit"><div class="bcheck">✓</div>Google & Facebook ad campaign management</div>
+      <div class="benefit"><div class="bcheck">✓</div>Real-time analytics dashboard</div>
+      <div class="benefit"><div class="bcheck">✓</div>Dedicated account manager assigned</div>
+    </div>
+    <div class="social-proof">
+      <div class="sa"><div class="sa-av">👨</div><div class="sa-av">👩</div><div class="sa-av">🧑</div><div class="sa-av">👴</div></div>
+      <div class="sp-text"><strong>200+ businesses</strong> already growing with us</div>
+    </div>
+  </div>
+  <div class="lead-form">
+    <div class="lf-title">Get Your Free Strategy Call</div>
+    <div class="lf-sub">Our expert will analyse your business and suggest a custom plan — no obligation.</div>
+    <div class="lform">
+      <input type="text" placeholder="Your Full Name *"/>
+      <input type="tel" placeholder="Mobile Number *"/>
+      <input type="email" placeholder="Business Email *"/>
+      <select><option>Your Industry</option><option>E-Commerce</option><option>Restaurant</option><option>Real Estate</option><option>Healthcare</option><option>Education</option></select>
+      <input type="text" placeholder="Monthly Marketing Budget (₹)"/>
+      <button>🚀 Get My Free Strategy Call →</button>
+    </div>
+    <div class="lf-note">🔒 Your information is 100% secure. We never spam.</div>
+  </div>
+</section>
+<section class="logos">
+  <p>Trusted by businesses across India</p>
+  <div class="logo-row">
+    <div class="logo-item">RetailPlus</div><div class="logo-item">FoodMax</div><div class="logo-item">BuildRight</div><div class="logo-item">HealthFirst</div><div class="logo-item">EduStar</div>
+  </div>
+</section>
+<section class="features">
+  <div class="fc"><div class="fc-ic">📊</div><h3>Data-Driven Campaigns</h3><p>Every decision backed by real analytics. No guesswork — just results you can measure.</p></div>
+  <div class="fc"><div class="fc-ic">🤖</div><h3>AI Lead Scoring</h3><p>Our AI ranks your leads by conversion probability so your team talks to the hottest prospects first.</p></div>
+  <div class="fc"><div class="fc-ic">📱</div><h3>WhatsApp Automation</h3><p>Automated follow-ups via WhatsApp keep prospects warm and double conversion rates.</p></div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Lead Gen Landing – ₹6,999",backHref:"../landing-leadgen.html",orderHref:"../../contact/index.html?tpl=landing-leadgen"});</script>
+</body></html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>School Website – Demo | Altivon</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#fff;--navy:#1e3a5f;--gold:#f59e0b;--lt:#eff6ff;--tx:#1e293b;--mu:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif}
+.topbar{background:var(--navy);color:rgba(255,255,255,.8);font-size:12px;text-align:center;padding:7px;font-weight:600}
+.nav{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;border-bottom:3px solid var(--gold);box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-ic{width:44px;height:44px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px}
+.logo-text{line-height:1.2}
+.logo-name{font-size:18px;font-weight:900;color:var(--navy)}
+.logo-tagline{font-size:10px;color:var(--mu);letter-spacing:.5px}
+.nav-links a{margin-left:20px;font-size:13px;font-weight:700;color:var(--tx);text-decoration:none}
+.adm-btn{background:var(--navy);color:#fff;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:800;text-decoration:none;margin-left:16px}
+.hero{background:linear-gradient(135deg,var(--navy),#2563eb);padding:70px 48px;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;background:rgba(245,158,11,.2);border:1px solid rgba(245,158,11,.4);padding:5px 14px;border-radius:20px;font-size:11px;font-weight:800;color:var(--gold);margin-bottom:16px}
+.hero h1{font-size:2.8rem;font-weight:900;color:#fff;line-height:1.15;margin-bottom:16px}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:14px;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:26px}
+.btns{display:flex;gap:12px}
+.ba{background:var(--gold);color:#000;padding:12px 24px;border-radius:9px;font-weight:800;font-size:14px;text-decoration:none}
+.bv{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.3);color:#fff;padding:12px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none}
+.hstats{display:flex;gap:24px;margin-top:28px}
+.hs-n{font-size:1.8rem;font-weight:900;color:#fff}.hs-l{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px}
+.hcard{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:28px}
+.hcard h3{font-weight:800;color:#fff;margin-bottom:16px;font-size:15px}
+.aform{display:flex;flex-direction:column;gap:12px}
+.aform input,.aform select{width:100%;padding:11px 14px;border:1.5px solid rgba(255,255,255,.2);border-radius:9px;background:rgba(255,255,255,.1);color:#fff;font-family:'Nunito',sans-serif;font-size:13px;outline:none}
+.aform input::placeholder{color:rgba(255,255,255,.5)}
+.aform button{background:var(--gold);color:#000;padding:13px;border-radius:9px;font-weight:900;font-size:14px;border:none;cursor:pointer;font-family:'Nunito',sans-serif}
+.programs{padding:60px 48px}
+.sh{text-align:center;margin-bottom:36px}
+.sl{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.st{font-size:2rem;font-weight:900;color:var(--navy)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pc{background:var(--lt);border:1.5px solid rgba(30,58,95,.1);border-radius:14px;padding:22px;text-align:center;transition:.3s}
+.pc:hover{border-color:var(--navy);background:#fff;transform:translateY(-4px);box-shadow:0 8px 28px rgba(30,58,95,.1)}
+.pc-ic{font-size:36px;margin-bottom:12px}
+.pc-name{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.pc-grade{font-size:12px;color:var(--mu)}
+.news{padding:60px 48px;background:var(--lt)}
+.ngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.nc{background:#fff;border-radius:14px;padding:22px;box-shadow:0 2px 16px rgba(0,0,0,.04)}
+.nc-date{font-size:11px;color:var(--mu);margin-bottom:8px;font-weight:600}
+.nc h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.3}
+.nc p{font-size:13px;color:var(--mu);line-height:1.5}
+</style></head><body>
+<div class="topbar">📞 +91 98765 43210 &nbsp;|&nbsp; ✉️ info@brightfutureschool.edu.in &nbsp;|&nbsp; 📍 Chandauli, Uttar Pradesh</div>
+<nav class="nav">
+  <div class="logo"><div class="logo-ic">🎓</div><div class="logo-text"><div class="logo-name">Bright Future School</div><div class="logo-tagline">Excellence in Education Since 1998</div></div></div>
+  <div><a href="#">About</a><a href="#">Academics</a><a href="#">Admissions</a><a href="#">Gallery</a><a href="#" class="adm-btn">Apply Now</a></div>
+</nav>
+<section class="hero">
+  <div>
+    <div class="hero-badge">🏆 Best School Award 2024 – Chandauli</div>
+    <h1>Shaping Minds.<br><span>Building Futures.</span></h1>
+    <p>A CBSE-affiliated school providing holistic education with modern facilities, experienced faculty, and a nurturing environment for children of classes Nursery to XII.</p>
+    <div class="btns"><a href="#" class="ba">Apply for Admission</a><a href="#" class="bv">Virtual Tour</a></div>
+    <div class="hstats">
+      <div><div class="hs-n">2,400+</div><div class="hs-l">Students</div></div>
+      <div><div class="hs-n">98%</div><div class="hs-l">Board Results</div></div>
+      <div><div class="hs-n">85+</div><div class="hs-l">Faculty Members</div></div>
+    </div>
+  </div>
+  <div class="hcard">
+    <h3>📋 Admission Enquiry</h3>
+    <div class="aform">
+      <input type="text" placeholder="Parent / Guardian Name"/>
+      <input type="tel" placeholder="Mobile Number"/>
+      <select><option value="">Select Class for Admission</option><option>Nursery / LKG / UKG</option><option>Class I – V</option><option>Class VI – VIII</option><option>Class IX – XII</option></select>
+      <input type="text" placeholder="Student Name"/>
+      <button>Send Enquiry →</button>
+    </div>
+  </div>
+</section>
+<section class="programs">
+  <div class="sh"><div class="sl">Academics</div><div class="st">Our Programs</div></div>
+  <div class="pgrid">
+    <div class="pc"><div class="pc-ic">🌱</div><div class="pc-name">Pre-Primary</div><div class="pc-grade">Nursery – UKG</div></div>
+    <div class="pc"><div class="pc-ic">📖</div><div class="pc-name">Primary School</div><div class="pc-grade">Class I – V</div></div>
+    <div class="pc"><div class="pc-ic">🔬</div><div class="pc-name">Middle School</div><div class="pc-grade">Class VI – VIII</div></div>
+    <div class="pc"><div class="pc-ic">🎓</div><div class="pc-name">Senior Secondary</div><div class="pc-grade">Class IX – XII</div></div>
+  </div>
+</section>
+<section class="news">
+  <div class="sh"><div class="sl">Latest Updates</div><div class="st">School News & Events</div></div>
+  <div class="ngrid">
+    <div class="nc"><div class="nc-date">📅 March 15, 2025</div><h3>Annual Day Celebration – Register Now</h3><p>Our grand Annual Day event is on March 28. Parents are invited to attend the cultural programme.</p></div>
+    <div class="nc"><div class="nc-date">📅 March 10, 2025</div><h3>Class XII Board Results – 100% Pass Rate</h3><p>We are proud to announce that all our Class XII students cleared the CBSE boards this year.</p></div>
+    <div class="nc"><div class="nc-date">📅 March 5, 2025</div><h3>New Science Lab Inauguration</h3><p>Our state-of-the-art science laboratory was inaugurated by the District Collector.</p></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"School Website – ₹8,999",backHref:"../education-school.html",orderHref:"../../contact/index.html?tpl=education-school"});</script>
+</body></html>

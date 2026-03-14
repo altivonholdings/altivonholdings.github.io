@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Startup App – Demo | Altivon</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#04050a;--pu:#7c3aed;--pk:#e879f9;--gr:#10b981;--tx:#e2d9f3;--mu:#5a4e72}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--tx);font-family:'Bricolage Grotesque',sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 60px;border-bottom:1px solid rgba(255,255,255,.06)}
+.logo{font-size:20px;font-weight:800;color:#fff}
+.logo span{background:linear-gradient(135deg,var(--pu),var(--pk));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav a{margin-left:22px;font-size:13px;color:var(--mu);text-decoration:none}
+.dl-btn{background:linear-gradient(135deg,var(--pu),var(--pk));color:#fff;padding:9px 20px;border-radius:25px;font-size:13px;font-weight:700;text-decoration:none;margin-left:16px}
+.hero{padding:90px 60px;text-align:center;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(124,58,237,.12),transparent 60%)}
+.app-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.3);padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;color:#c4b5fd;margin-bottom:24px}
+.hero h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:800;line-height:1.05;margin-bottom:18px;color:#fff;letter-spacing:-.03em}
+.hero h1 span{background:linear-gradient(135deg,var(--pu),var(--pk));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.05rem;color:var(--mu);max-width:520px;margin:0 auto 32px;line-height:1.7}
+.store-btns{display:flex;gap:14px;justify-content:center;margin-bottom:60px}
+.sb{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:12px 24px;border-radius:12px;text-decoration:none;color:#fff;transition:.3s;font-size:14px;font-weight:600}
+.sb:hover{background:rgba(124,58,237,.15);border-color:rgba(124,58,237,.4)}
+.app-preview{max-width:320px;margin:0 auto 60px;background:linear-gradient(160deg,rgba(124,58,237,.15),rgba(232,121,249,.1));border:1px solid rgba(124,58,237,.2);border-radius:32px;padding:32px;text-align:center;font-size:80px}
+.stats{display:flex;gap:48px;justify-content:center;padding:36px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.st-n{font-size:2rem;font-weight:800;color:#fff;text-align:center}
+.st-l{font-size:12px;color:var(--mu);text-align:center;margin-top:3px}
+.features{padding:80px 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.feat-phone{height:480px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);border-radius:32px;display:flex;align-items:center;justify-content:center;font-size:120px}
+.feat-list{display:flex;flex-direction:column;gap:24px}
+.fi{display:flex;gap:16px;align-items:flex-start;padding:18px;border:1px solid rgba(255,255,255,.06);border-radius:14px;transition:.3s;cursor:pointer}
+.fi:hover{border-color:rgba(124,58,237,.3);background:rgba(124,58,237,.06)}
+.fi-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--pu),var(--pk));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.fi h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:5px}
+.fi p{font-size:13px;color:var(--mu);line-height:1.5}
+</style></head><body>
+<nav class="nav">
+  <div class="logo"><span>PayMate</span></div>
+  <div><a href="#">Features</a><a href="#">Pricing</a><a href="#">Security</a><a href="#" class="dl-btn">Download App</a></div>
+</nav>
+<section class="hero">
+  <div class="app-badge">📱 Available on iOS & Android</div>
+  <h1>Send Money in<br><span>Seconds, Not Minutes</span></h1>
+  <p>The fastest, safest way to send and receive money. Split bills, pay merchants, and manage your finances — all in one app.</p>
+  <div class="store-btns">
+    <a href="#" class="sb">🍎 App Store</a>
+    <a href="#" class="sb">🤖 Google Play</a>
+  </div>
+  <div class="app-preview">💳</div>
+  <div class="stats">
+    <div><div class="st-n">5M+</div><div class="st-l">Downloads</div></div>
+    <div><div class="st-n">₹2,000 Cr</div><div class="st-l">Transactions/Month</div></div>
+    <div><div class="st-n">4.9★</div><div class="st-l">App Store Rating</div></div>
+  </div>
+</section>
+<section class="features">
+  <div class="feat-phone">💸</div>
+  <div class="feat-list">
+    <div class="fi"><div class="fi-icon">⚡</div><div><h3>Instant Transfers</h3><p>Send money to any UPI ID, bank account, or phone number in under 2 seconds.</p></div></div>
+    <div class="fi"><div class="fi-icon">🔒</div><div><h3>Bank-Grade Security</h3><p>256-bit encryption, biometric lock, and RBI-compliant two-factor authentication.</p></div></div>
+    <div class="fi"><div class="fi-icon">📊</div><div><h3>Smart Spending Insights</h3><p>AI-categorised expenses help you understand where your money is going.</p></div></div>
+    <div class="fi"><div class="fi-icon">🪙</div><div><h3>Cashback & Rewards</h3><p>Earn up to 2% cashback on every transaction, redeemable as cash or vouchers.</p></div></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Startup App – ₹9,999",backHref:"../startup-app.html",orderHref:"../../contact/index.html?tpl=startup-app"});</script>
+</body></html>

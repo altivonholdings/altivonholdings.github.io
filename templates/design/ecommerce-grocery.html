@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>FreshBazaar – Online Grocery Store</title>
+<link rel="stylesheet" href="utils/demo-base.css">
+    <link rel="stylesheet" href="css/ecommerce-grocery.css">"/>
+    <link rel="stylesheet" href="utils/demo-bar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#f0fdf4;--dk:#14532d;--green:#16a34a;--lt:#dcfce7;--orange:#f97316;--mu:#6b7280;--card:#fff}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'Nunito',sans-serif;overflow-x:hidden}
+.nav{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 50px;box-shadow:0 2px 10px rgba(22,163,74,.08);position:sticky;top:46px;z-index:100}
+.logo{font-size:22px;font-weight:900;color:var(--green)}.logo span{color:var(--orange)}
+.loc-pill{display:flex;align-items:center;gap:8px;background:var(--lt);border:1px solid rgba(22,163,74,.2);padding:8px 16px;border-radius:8px;font-size:13px;font-weight:700;color:var(--dk);cursor:pointer}
+.nav-right{display:flex;gap:14px;align-items:center}
+.wa-btn{background:#25D366;color:#fff;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:7px}
+.cart-btn{background:var(--green);color:#fff;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:7px}
+.hero{background:linear-gradient(135deg,#14532d,#16a34a);padding:60px 50px;display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:5px 14px;border-radius:20px;font-size:11px;font-weight:800;color:#fff;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:14px}
+.hero h1 span{color:#fbbf24}
+.hero p{font-size:14px;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:24px}
+.search-bar{background:#fff;border-radius:10px;padding:5px 5px 5px 16px;display:flex;align-items:center;gap:8px;margin-bottom:20px}
+.sb-in{flex:1;border:none;outline:none;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:var(--dk)}
+.sb-btn{background:var(--green);color:#fff;padding:10px 20px;border-radius:7px;font-weight:800;font-size:14px;border:none;cursor:pointer}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,.15);color:#fff;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;border:1px solid rgba(255,255,255,.2)}
+.hero-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:24px}
+.hc-t{font-size:14px;font-weight:800;color:#fff;margin-bottom:16px}
+.hci{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.hci:last-child{border-bottom:none}
+.hci-ic{width:44px;height:44px;background:rgba(255,255,255,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hci-ic i{font-size:20px;color:#fff}
+.hci-name{font-size:13px;font-weight:700;color:#fff}
+.hci-sub{font-size:11px;color:rgba(255,255,255,.65);margin-top:1px}
+.categories{padding:50px 50px 0;background:#fff}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.sh h2{font-size:1.4rem;font-weight:900;color:var(--dk)}
+.see-all{font-size:13px;font-weight:700;color:var(--green);text-decoration:none}
+.cgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.cc{background:var(--lt);border-radius:14px;padding:20px 14px;text-align:center;cursor:pointer;transition:.2s;border:2px solid transparent}
+.cc:hover{border-color:var(--green)}
+.cc i{font-size:28px;color:var(--green);margin-bottom:8px;display:block}
+.cc span{font-size:13px;font-weight:800;color:var(--dk)}
+.products{padding:40px 50px 60px;background:var(--bg)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pc{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--lt);transition:.3s;cursor:pointer}
+.pc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(22,163,74,.12)}
+.pc-img{height:160px;display:flex;align-items:center;justify-content:center;background:var(--lt)}
+.pc-img i{font-size:64px;color:var(--green);opacity:.5}
+.pc-body{padding:14px}
+.pc-name{font-weight:800;font-size:13px;margin-bottom:3px;line-height:1.3}
+.pc-unit{font-size:11px;color:var(--mu);margin-bottom:8px}
+.pc-price{display:flex;align-items:center;gap:8px}
+.pc-sp{font-size:1.1rem;font-weight:900;color:var(--dk)}
+.pc-off{font-size:11px;font-weight:800;color:var(--green);background:var(--lt);padding:2px 7px;border-radius:5px}
+.pc-btn{width:100%;background:var(--green);color:#fff;border:none;padding:9px;border-radius:8px;font-weight:800;font-size:13px;cursor:pointer;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}
+</style>
+    <!-- Enhanced Mobile Support -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head><body>
+<nav class="nav">
+  <div class="logo">Fresh<span>Bazaar</span></div>
+  <div class="loc-pill"><i class="fa fa-map-marker-alt" style="color:var(--green)"></i> Varanasi, UP <i class="fa fa-chevron-down" style="font-size:10px;color:var(--mu)"></i></div>
+  <div class="nav-right">
+    <a href="#" class="wa-btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp Order</a>
+    <a href="#" class="cart-btn"><i class="fa fa-shopping-basket"></i> Cart (6)</a>
+  </div>
+</nav>
+<section class="hero">
+  <div>
+    <div class="badge"><i class="fa fa-leaf"></i> Fresh Daily Delivery &middot; 2-hr Slots</div>
+    <h1>Fresh Groceries at Your<br>Door in <span>2 Hours</span></h1>
+    <p>Farm-fresh vegetables, fruits, dairy, and daily essentials delivered same-day. WhatsApp ordering available for your regular orders.</p>
+    <div class="search-bar">
+      <i class="fa fa-search" style="color:#ccc;font-size:15px"></i>
+      <input class="sb-in" type="text" placeholder="Search vegetables, fruits, dairy..."/>
+      <button class="sb-btn"><i class="fa fa-arrow-right"></i></button>
+    </div>
+    <div class="chips">
+      <span class="chip">Vegetables</span><span class="chip">Fruits</span><span class="chip">Dairy</span><span class="chip">Pulses</span><span class="chip">Spices</span>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hc-t"><i class="fa fa-star" style="color:#fbbf24"></i> Why Families Love Us</div>
+    <div class="hci"><div class="hci-ic"><i class="fa fa-seedling"></i></div><div><div class="hci-name">Directly from Farms</div><div class="hci-sub">Partnered with 80+ local farmers</div></div></div>
+    <div class="hci"><div class="hci-ic"><i class="fa fa-clock"></i></div><div><div class="hci-name">2-Hour Delivery</div><div class="hci-sub">Fresh before your meal time</div></div></div>
+    <div class="hci"><div class="hci-ic"><i class="fa fa-rotate-left"></i></div><div><div class="hci-name">Easy Returns</div><div class="hci-sub">Not fresh? Full refund, no questions</div></div></div>
+  </div>
+</section>
+<section class="categories">
+  <div class="sh"><h2>Shop by Category</h2><a href="#" class="see-all">All Categories</a></div>
+  <div class="cgrid">
+    <div class="cc"><i class="fa fa-carrot"></i><span>Veggies</span></div>
+    <div class="cc"><i class="fa fa-apple-whole"></i><span>Fruits</span></div>
+    <div class="cc"><i class="fa fa-droplet"></i><span>Dairy</span></div>
+    <div class="cc"><i class="fa fa-wheat-awn"></i><span>Grains</span></div>
+    <div class="cc"><i class="fa fa-pepper-hot"></i><span>Spices</span></div>
+    <div class="cc"><i class="fa fa-soap"></i><span>Household</span></div>
+  </div>
+</section>
+<section class="products">
+  <div class="sh"><h2>Today's Fresh Picks</h2><a href="#" class="see-all">See All</a></div>
+  <div class="pgrid">
+    <div class="pc"><div class="pc-img"><i class="fa fa-carrot"></i></div><div class="pc-body"><div class="pc-name">Farm Fresh Tomatoes</div><div class="pc-unit">1 kg &middot; Local Farm</div><div class="pc-price"><span class="pc-sp">&#8377;40</span><span class="pc-off">20% off</span></div><button class="pc-btn"><i class="fa fa-plus"></i> Add</button></div></div>
+    <div class="pc"><div class="pc-img"><i class="fa fa-apple-whole"></i></div><div class="pc-body"><div class="pc-name">Kashmiri Red Apples</div><div class="pc-unit">1 kg &middot; Premium Grade</div><div class="pc-price"><span class="pc-sp">&#8377;180</span><span class="pc-off">10% off</span></div><button class="pc-btn"><i class="fa fa-plus"></i> Add</button></div></div>
+    <div class="pc"><div class="pc-img"><i class="fa fa-droplet"></i></div><div class="pc-body"><div class="pc-name">Full Cream Milk</div><div class="pc-unit">500 ml &middot; Amul</div><div class="pc-price"><span class="pc-sp">&#8377;30</span></div><button class="pc-btn"><i class="fa fa-plus"></i> Add</button></div></div>
+    <div class="pc"><div class="pc-img"><i class="fa fa-pepper-hot"></i></div><div class="pc-body"><div class="pc-name">Basmati Rice Aged</div><div class="pc-unit">5 kg &middot; Daawat</div><div class="pc-price"><span class="pc-sp">&#8377;499</span><span class="pc-off">15% off</span></div><button class="pc-btn"><i class="fa fa-plus"></i> Add</button></div></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({
+            title: 'FreshBazaar – Online Grocery Store',
+            backHref: 'index.html',
+            orderHref: 'contact.html?design=ecommerce-grocery'
+        });</script>
+    <script src="js/ecommerce-grocery.js"></script>
+</body></html>

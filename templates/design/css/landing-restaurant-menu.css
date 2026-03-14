@@ -1,0 +1,101 @@
+
+:root{--bg:#fef9f0;--dk:#1a0d00;--saffron:#f59e0b;--green:#16a34a;--mu:#7a6040;--lt:#fef3dc}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'Poppins',sans-serif;overflow-x:hidden}
+.nav{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 50px;box-shadow:0 2px 12px rgba(245,158,11,.1)}
+.logo{font-size:22px;font-weight:800;color:var(--saffron)}
+.logo span{color:var(--green)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.table-no{font-size:13px;font-weight:700;color:var(--mu)}
+.call-btn{background:var(--green);color:#fff;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none}
+.hero{background:linear-gradient(135deg,#1a0d00,#3d1e00);padding:50px;text-align:center;position:relative;overflow:hidden}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(245,158,11,.04) 0,rgba(245,158,11,.04) 1px,transparent 0,transparent 50%);background-size:24px 24px}
+.hero-inner{position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;color:var(--saffron);letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:#fff;margin-bottom:12px}
+.hero h1 span{color:var(--saffron)}
+.hero p{color:rgba(255,255,255,.65);font-size:14px;margin-bottom:28px}
+.filter-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:0}
+.ftab{padding:8px 20px;border-radius:20px;font-size:13px;font-weight:700;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);cursor:pointer;transition:.2s}
+.ftab.active,.ftab:hover{background:var(--saffron);border-color:var(--saffron);color:#000}
+.menu{padding:40px 50px 60px}
+.menu-cat{margin-bottom:48px}
+.cat-hd{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.cat-line{flex:1;height:1px;background:var(--lt)}
+.cat-title{font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--saffron);white-space:nowrap}
+.mgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.mi{background:#fff;border-radius:12px;padding:18px;display:flex;gap:16px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:.2s;cursor:pointer}
+.mi:hover{box-shadow:0 8px 24px rgba(245,158,11,.15);transform:translateY(-2px)}
+.mi-img{width:70px;height:70px;border-radius:10px;background:var(--lt);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mi-img i{font-size:30px;color:var(--saffron)}
+.mi-body{flex:1}
+.mi-tags{display:flex;gap:6px;margin-bottom:5px}
+.mi-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px}
+.veg{background:rgba(22,163,74,.1);color:var(--green)}
+.best{background:rgba(245,158,11,.15);color:var(--saffron)}
+.spicy{background:rgba(239,68,68,.1);color:#ef4444}
+.mi-name{font-weight:700;font-size:14px;margin-bottom:3px}
+.mi-desc{font-size:12px;color:var(--mu);line-height:1.5}
+.mi-footer{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.mi-price{font-size:15px;font-weight:800;color:var(--dk)}
+.add-btn{background:var(--green);color:#fff;padding:5px 14px;border-radius:6px;font-size:12px;font-weight:700;border:none;cursor:pointer}
+
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+    .container, .nav-container, .hero-container, .features-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .hero h1, .hero-title {
+        font-size: clamp(1.8rem, 5vw, 3rem) !important;
+    }
+    
+    .features-grid, .stats {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .btn-primary, .btn-secondary, .nav-cta {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-buttons, .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .feature-card, .stat-item {
+        text-align: center;
+    }
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Print Styles */
+@media print {
+    .navbar, .demo-bar, .cta-section {
+        display: none;
+    }
+}

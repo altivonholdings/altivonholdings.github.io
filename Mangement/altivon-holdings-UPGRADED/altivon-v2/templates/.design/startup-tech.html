@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>NexGen – Developer Platform</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+<style>:root{--bg:#04070f;--c1:#0ea5e9;--c2:#7c3aed;--accent:#10ffb0;--text:#c8d8f0;--muted:#546080}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 60px;border-bottom:1px solid rgba(255,255,255,.05)}
+.logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;background:linear-gradient(90deg,var(--c1),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links a{margin-left:28px;font-size:14px;color:var(--muted);text-decoration:none}
+.nav-cta{background:linear-gradient(135deg,var(--c1),var(--c2));padding:9px 22px;border-radius:8px;font-size:14px;font-weight:700;color:#fff;text-decoration:none;margin-left:20px}
+.hero{min-height:88vh;display:flex;align-items:center;padding:0 60px;background:radial-gradient(ellipse 60% 50% at 60% 50%,rgba(124,58,237,.12),transparent)}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.2);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;color:var(--c1);letter-spacing:1px;text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;line-height:1.05;margin-bottom:18px}
+.hero h1 span{background:linear-gradient(90deg,var(--c1),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.05rem;color:var(--muted);max-width:500px;line-height:1.7;margin-bottom:32px}
+.btns{display:flex;gap:14px}
+.btn-glow{padding:13px 28px;border-radius:10px;font-weight:700;font-size:15px;background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;box-shadow:0 0 30px rgba(14,165,233,.25);text-decoration:none;transition:.3s}
+.btn-ghost{padding:13px 28px;border-radius:10px;font-size:15px;border:1px solid rgba(255,255,255,.1);color:#fff;text-decoration:none;transition:.2s}
+.stats{display:flex;gap:48px;margin-top:60px;padding-top:28px;border-top:1px solid rgba(255,255,255,.06)}
+.stat-n{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#fff}
+.stat-l{font-size:13px;color:var(--muted)}
+.features{padding:80px 60px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:28px;transition:.3s}
+.fc:hover{background:rgba(14,165,233,.05);border-color:rgba(14,165,233,.2);transform:translateY(-4px)}
+.fc-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--c1),var(--c2));display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.fc-icon i{font-size:18px;color:#fff}
+.fc h3{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:8px}
+.fc p{font-size:13px;color:var(--muted);line-height:1.65}</style></head><body>
+<nav class="nav"><div class="logo">NexGen</div>
+<div class="nav-links"><a href="#">Product</a><a href="#">Pricing</a><a href="#">Docs</a><a href="#">Blog</a><a href="#" class="nav-cta">Start Free <i class="fa fa-arrow-right"></i></a></div></nav>
+<section class="hero"><div>
+<div class="hero-tag"><i class="fa fa-rocket"></i> Now in Public Beta</div>
+<h1>Build <span>Faster,</span><br>Ship Smarter</h1>
+<p>The developer-first platform that cuts your deployment time by 80%. From code to production in under 2 minutes, no DevOps needed.</p>
+<div class="btns"><a href="#" class="btn-glow"><i class="fa fa-play"></i> Get Started Free</a><a href="#" class="btn-ghost"><i class="fa fa-book"></i> View Docs</a></div>
+<div class="stats">
+<div><div class="stat-n">50K+</div><div class="stat-l">Developers</div></div>
+<div><div class="stat-n">99.9%</div><div class="stat-l">Uptime</div></div>
+<div><div class="stat-n">2.4s</div><div class="stat-l">Avg Deploy</div></div>
+</div>
+</div></section>
+<section class="features">
+<div class="fc"><div class="fc-icon"><i class="fa fa-bolt"></i></div><h3>Instant Deploy</h3><p>Push to git and go live automatically. Zero config needed, zero downtime deploys.</p></div>
+<div class="fc"><div class="fc-icon"><i class="fa fa-shield-halved"></i></div><h3>Enterprise Security</h3><p>SOC 2 compliant. End-to-end encryption, RBAC and audit logs included.</p></div>
+<div class="fc"><div class="fc-icon"><i class="fa fa-chart-line"></i></div><h3>Real-time Analytics</h3><p>Monitor performance, errors, and users from one unified dashboard.</p></div>
+<div class="fc"><div class="fc-icon"><i class="fa fa-globe"></i></div><h3>Global CDN</h3><p>200+ edge locations. Lightning fast delivery everywhere in the world.</p></div>
+<div class="fc"><div class="fc-icon"><i class="fa fa-arrows-up-down"></i></div><h3>Auto Scaling</h3><p>Handle traffic spikes. Scale up or down automatically with zero intervention.</p></div>
+<div class="fc"><div class="fc-icon"><i class="fa fa-code"></i></div><h3>Dev Tools</h3><p>CLI, REST API, webhooks, GitHub Actions, and native integrations.</p></div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Tech Startup – NexGen Platform",backHref:"../startup-tech.html",orderHref:"../../contact/index.html?tpl=startup-tech"});</script>
+</body></html>

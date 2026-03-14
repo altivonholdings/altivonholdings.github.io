@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>PureGlow Serum – Product Launch Landing</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>:root{--bg:#fdf9f4;--dk:#1a0e08;--gold:#c4893a;--blush:#f9e8e0;--mu:#8a7060;--border:#ede5da}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'Inter',sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 60px;border-bottom:1px solid var(--border);background:#fff;position:sticky;top:46px;z-index:100}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:3px;text-transform:uppercase}
+.nav a{margin-left:20px;font-size:12px;font-weight:500;color:var(--mu);text-decoration:none;letter-spacing:.5px;text-transform:uppercase}
+.buy-nav{background:var(--dk);color:#fff;padding:9px 22px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;margin-left:14px}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;align-items:center;padding:0 60px;gap:80px;background:linear-gradient(135deg,var(--blush),var(--bg))}
+.h-badge{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:600;line-height:1.1;margin-bottom:16px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{font-size:14px;font-weight:300;color:var(--mu);line-height:1.85;margin-bottom:24px;max-width:420px}
+.benefits{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.benefit{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500}
+.benefit i{color:var(--gold);width:16px}
+.price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
+.price-main{font-size:2rem;font-weight:800;color:var(--dk)}
+.price-old{font-size:1.1rem;color:var(--mu);text-decoration:line-through}
+.price-save{font-size:12px;font-weight:700;color:#fff;background:#22c55e;padding:3px 10px;border-radius:4px}
+.buy-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--dk);color:#fff;padding:15px 40px;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:.3s;margin-bottom:12px}
+.buy-btn:hover{background:var(--gold)}
+.trust-row{display:flex;gap:14px;flex-wrap:wrap}
+.tbadge{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:var(--mu)}
+.tbadge i{color:var(--gold)}
+.product-visual{position:relative;height:500px;display:flex;align-items:center;justify-content:center}
+.product-circle{width:380px;height:380px;border-radius:50%;background:radial-gradient(ellipse,var(--gold) 0%,rgba(196,137,58,.15) 60%,transparent 80%);display:flex;align-items:center;justify-content:center;position:relative}
+.product-circle i{font-size:120px;color:rgba(196,137,58,.25);position:relative;z-index:1}
+.float-badge{position:absolute;background:#fff;border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.fb1{top:60px;right:20px}
+.fb2{bottom:80px;left:10px}
+.fb-ic{font-size:18px;color:var(--gold)}
+.ingredients{padding:80px 60px;background:#fff}
+.sh{text-align:center;margin-bottom:48px}
+.sl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
+.st{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--dk)}
+.igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.ic{text-align:center;padding:24px 16px;border:1px solid var(--border);border-radius:4px;transition:.3s}
+.ic:hover{border-color:var(--gold);background:var(--blush)}
+.ic i{font-size:32px;color:var(--gold);margin-bottom:12px;display:block}
+.ic-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;margin-bottom:5px}
+.ic-desc{font-size:12px;color:var(--mu);line-height:1.6;font-weight:300}</style></head><body>
+<nav class="nav">
+  <div class="logo">PureGlow</div>
+  <div><a href="#">Ingredients</a><a href="#">Results</a><a href="#">Reviews</a><a href="#" class="buy-nav">Shop Now</a></div>
+</nav>
+<section class="hero">
+  <div>
+    <div class="h-badge"><i class="fa fa-leaf"></i> &nbsp; New Formula &middot; Clinically Tested &middot; India-Made</div>
+    <h1>Your Skin's<br>New <em>Secret</em><br>Ritual</h1>
+    <p>PureGlow Vitamin C + Hyaluronic Acid Serum delivers 10x more hydration and visibly brightens skin in 14 days. No toxins, no fillers, no compromises.</p>
+    <div class="benefits">
+      <div class="benefit"><i class="fa fa-check"></i> Reduces dark spots in 14 days</div>
+      <div class="benefit"><i class="fa fa-check"></i> Dermatologist tested &amp; approved</div>
+      <div class="benefit"><i class="fa fa-check"></i> Vegan, cruelty-free, fragrance-free</div>
+      <div class="benefit"><i class="fa fa-check"></i> Suitable for all skin types</div>
+    </div>
+    <div class="price-row">
+      <div class="price-main">&#8377;849</div>
+      <div class="price-old">&#8377;1,299</div>
+      <div class="price-save">Save 35%</div>
+    </div>
+    <a href="#" class="buy-btn"><i class="fa fa-bag-shopping"></i> Add to Cart — Free Delivery</a>
+    <div class="trust-row">
+      <div class="tbadge"><i class="fa fa-star"></i> 4.9/5 (2,400 Reviews)</div>
+      <div class="tbadge"><i class="fa fa-rotate-left"></i> 30-Day Returns</div>
+      <div class="tbadge"><i class="fa fa-shield-halved"></i> Authentic</div>
+    </div>
+  </div>
+  <div>
+    <div class="product-visual">
+      <div class="product-circle"><i class="fa fa-droplet"></i></div>
+      <div class="float-badge fb1"><i class="fa fa-certificate fb-ic"></i><div><div style="font-size:11px;font-weight:700">Dermatologist</div><div style="font-size:10px;color:var(--mu)">Tested &amp; Approved</div></div></div>
+      <div class="float-badge fb2"><i class="fa fa-star fb-ic"></i><div><div style="font-size:11px;font-weight:700">4.9/5 Stars</div><div style="font-size:10px;color:var(--mu)">2,400+ Reviews</div></div></div>
+    </div>
+  </div>
+</section>
+<section class="ingredients">
+  <div class="sh"><div class="sl">What's Inside</div><div class="st">Key Ingredients</div></div>
+  <div class="igrid">
+    <div class="ic"><i class="fa fa-sun"></i><div class="ic-name">Vitamin C 15%</div><div class="ic-desc">Brightens skin, fades dark spots, and boosts collagen production.</div></div>
+    <div class="ic"><i class="fa fa-droplet"></i><div class="ic-name">Hyaluronic Acid</div><div class="ic-desc">Deep hydration that plumps fine lines and locks in moisture for 72 hours.</div></div>
+    <div class="ic"><i class="fa fa-leaf"></i><div class="ic-name">Niacinamide</div><div class="ic-desc">Minimises pores, controls oil, and strengthens the skin barrier.</div></div>
+    <div class="ic"><i class="fa fa-seedling"></i><div class="ic-name">Green Tea Extract</div><div class="ic-desc">Powerful antioxidants that fight pollution damage and calm irritation.</div></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Product Launch – PureGlow Serum",backHref:"../landing-product.html",orderHref:"../../contact/index.html?tpl=landing-product"});</script>
+</body></html>

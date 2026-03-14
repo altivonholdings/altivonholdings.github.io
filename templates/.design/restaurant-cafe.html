@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Brewed Awakenings – Specialty Cafe</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+
+<style>
+:root{--bg:#fdf8f0;--dk:#1c1208;--br:#6b3c1f;--cr:#d4956a;--lt:#f5ece0;--mu:#8a7055}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'Lato',sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 60px;background:#fff;border-bottom:1px solid var(--lt)}
+.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--br)}
+.logo span{font-style:italic;color:var(--cr)}
+.nav a{margin-left:22px;font-size:13px;color:var(--mu);text-decoration:none;letter-spacing:.3px}
+.order-btn{background:var(--br);color:#fff;padding:9px 22px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;margin-left:14px}
+.hero{display:grid;grid-template-columns:55% 45%;min-height:82vh}
+.hero-left{background:linear-gradient(160deg,#2c1810,#4a2518);display:flex;flex-direction:column;justify-content:flex-end;padding:60px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;top:0;right:0;bottom:0;left:0;background:url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=900&q=70') center/cover;opacity:.3}
+.hero-left-content{position:relative;z-index:1}
+.h-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--cr);margin-bottom:14px}
+.hero-left h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:20px}
+.hero-left h1 em{font-style:italic;color:var(--cr)}
+.hero-left p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:28px;max-width:400px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.b1{background:var(--cr);color:#fff;padding:12px 26px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.5px}
+.b2{border:1px solid rgba(255,255,255,.3);color:#fff;padding:12px 26px;font-size:13px;text-decoration:none}
+.hero-right{background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:60px 50px}
+.h-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--cr);font-weight:700;margin-bottom:20px}
+.menu-list{display:flex;flex-direction:column;gap:0}
+.ml-item{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--lt)}
+.ml-item:last-child{border-bottom:none}
+.ml-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:3px}
+.ml-desc{font-size:12px;color:var(--mu)}
+.ml-price{font-size:15px;font-weight:700;color:var(--br);white-space:nowrap;margin-left:16px}
+.hours{margin-top:28px;padding:20px;background:var(--lt);border-radius:8px}
+.hours h4{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--br);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.hours p{font-size:13px;color:var(--mu);line-height:1.7}
+.specials{padding:80px 60px;background:#fff}
+.sec-hd{margin-bottom:40px}
+.sl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--cr);font-weight:700;margin-bottom:8px}
+.st{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--dk)}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sc{border:1px solid var(--lt);border-radius:4px;overflow:hidden;transition:.3s;cursor:pointer}
+.sc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(107,60,31,.1)}
+.sc-img{height:180px;background:var(--lt);display:flex;align-items:center;justify-content:center}
+.sc-img i{font-size:56px;color:var(--br);opacity:.4}
+.sc-body{padding:20px}
+.sc-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cr);margin-bottom:8px}
+.sc-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:6px}
+.sc-desc{font-size:13px;color:var(--mu);line-height:1.6}
+.sc-price{font-size:14px;font-weight:700;color:var(--br);margin-top:12px}
+</style></head><body>
+
+<nav class="nav">
+  <div class="logo">Brewed <span>Awakenings</span></div>
+  <div><a href="#">Menu</a><a href="#">Our Story</a><a href="#">Catering</a><a href="#">Find Us</a><a href="#" class="order-btn">Pre-Order</a></div>
+</nav>
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-bg"></div>
+    <div class="hero-left-content">
+      <div class="h-tag">Specialty Coffee &middot; Artisan Bakes &middot; Mumbai</div>
+      <h1>Where Every<br>Morning Tastes<br><em>Extraordinary</em></h1>
+      <p>Ethically sourced single-origin coffees, handcrafted pastries baked daily, and a space designed for conversations that matter.</p>
+      <div class="btns">
+        <a href="#" class="b1"><i class="fa fa-coffee"></i> View Full Menu</a>
+        <a href="#" class="b2"><i class="fa fa-shopping-bag"></i> Pre-Order Pickup</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="h-label"><i class="fa fa-star"></i> Today's Highlights</div>
+    <div class="menu-list">
+      <div class="ml-item"><div><div class="ml-name">Cold Brew Reserve</div><div class="ml-desc">18-hour steep, Ethiopian Yirgacheffe</div></div><div class="ml-price">&#8377;280</div></div>
+      <div class="ml-item"><div><div class="ml-name">Almond Croissant</div><div class="ml-desc">Freshly baked, frangipane filled</div></div><div class="ml-price">&#8377;180</div></div>
+      <div class="ml-item"><div><div class="ml-name">Avocado Toast</div><div class="ml-desc">Sourdough, cherry tomatoes, microgreens</div></div><div class="ml-price">&#8377;320</div></div>
+      <div class="ml-item"><div><div class="ml-name">Signature Latte</div><div class="ml-desc">House blend, steamed oat milk, caramel</div></div><div class="ml-price">&#8377;220</div></div>
+    </div>
+    <div class="hours">
+      <h4><i class="fa fa-clock"></i> Opening Hours</h4>
+      <p>Mon–Fri: 7:00 AM – 9:00 PM<br>Sat–Sun: 8:00 AM – 10:00 PM</p>
+    </div>
+  </div>
+</section>
+<section class="specials">
+  <div class="sec-hd"><div class="sl">Our Craft</div><div class="st">Why Coffee Lovers Choose Us</div></div>
+  <div class="sgrid">
+    <div class="sc"><div class="sc-img"><i class="fa fa-seedling"></i></div><div class="sc-body"><div class="sc-tag">Sourcing</div><div class="sc-name">Direct Trade Beans</div><div class="sc-desc">We visit our partner farms in Coorg and Chikmagalur to hand-select the finest lot each harvest.</div></div></div>
+    <div class="sc"><div class="sc-img"><i class="fa fa-fire"></i></div><div class="sc-body"><div class="sc-tag">Roasting</div><div class="sc-name">In-House Micro Roastery</div><div class="sc-desc">All beans roasted on-site in small batches to preserve freshness and terroir character.</div></div></div>
+    <div class="sc"><div class="sc-img"><i class="fa fa-medal"></i></div><div class="sc-body"><div class="sc-tag">Baristas</div><div class="sc-name">Award-Winning Team</div><div class="sc-desc">Our baristas train monthly with SCA-certified coaches and compete at the India Barista Championship.</div></div></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Cafe & Bakery – Brewed Awakenings",backHref:"../restaurant-cafe.html",orderHref:"../../contact/index.html?tpl=restaurant-cafe"});</script>
+</body></html>

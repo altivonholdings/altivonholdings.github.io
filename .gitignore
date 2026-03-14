@@ -1,4 +1,8 @@
-/data
-/Fetcher*
-data/
-Fetcher*/
+/Mangement
+Mangement/
+
+/Fetcher_clients
+Fetcher_clients/
+
+/old_website
+old_website/

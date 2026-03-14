@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Real Estate Pro – Demo | Altivon</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&family=Satoshi:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#050a15;--bl:#1a56db;--cy:#06b6d4;--gd:#f5a623;--tx:#cdd8f0;--mu:#4a6280}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 60px;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(5,10,21,.9);backdrop-filter:blur(20px);position:sticky;top:44px;z-index:100}
+.logo{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.5px}
+.logo span{color:var(--cy)}
+.nav a{margin-left:20px;font-size:13px;color:var(--mu);text-decoration:none}
+.nav-cta{background:linear-gradient(135deg,var(--bl),var(--cy));color:#fff;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;margin-left:14px}
+.hero{min-height:88vh;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(26,86,219,.15),transparent 60%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 60px 60px}
+.hero-badge{display:inline-flex;background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);padding:6px 18px;border-radius:20px;font-size:11px;font-weight:700;color:var(--cy);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:900;line-height:1.05;margin-bottom:18px;color:#fff;letter-spacing:-.03em}
+.hero h1 span{background:linear-gradient(90deg,var(--bl),var(--cy));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:15px;color:var(--mu);max-width:520px;line-height:1.7;margin-bottom:32px}
+.search-bar{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 24px;display:flex;gap:14px;align-items:center;max-width:700px;width:100%;margin-bottom:24px;flex-wrap:wrap}
+.sb-field{flex:1;min-width:140px}
+.sb-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mu);margin-bottom:5px}
+.sb-input{background:transparent;border:none;color:#fff;font-size:14px;outline:none;font-weight:500;width:100%}
+.sb-div{width:1px;height:36px;background:rgba(255,255,255,.1)}
+.sb-btn{background:linear-gradient(135deg,var(--bl),var(--cy));color:#fff;padding:12px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+.stats{display:flex;gap:48px;justify-content:center;padding:28px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);margin-top:10px;width:100%;max-width:700px}
+.st-n{font-size:2rem;font-weight:900;color:#fff;text-align:center}
+.st-l{font-size:11px;color:var(--mu);text-align:center;margin-top:3px}
+.properties{padding:70px 60px}
+.ph{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:36px}
+.ph h2{font-size:1.8rem;font-weight:800;color:#fff}
+.ph a{font-size:13px;color:var(--cy);text-decoration:none;font-weight:600}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;transition:.3s;cursor:pointer}
+.pc:hover{border-color:rgba(26,86,219,.5);box-shadow:0 12px 40px rgba(26,86,219,.15);transform:translateY(-4px)}
+.pc-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:64px;background:rgba(255,255,255,.02);position:relative}
+.pc-tag{position:absolute;top:12px;left:12px;font-size:10px;font-weight:700;padding:3px 10px;border-radius:4px;letter-spacing:.5px;text-transform:uppercase}
+.for-sale{background:rgba(26,86,219,.2);color:var(--cy)}
+.for-rent{background:rgba(245,166,35,.2);color:var(--gd)}
+.pc-info{padding:18px}
+.pc-price{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:5px}
+.pc-name{font-size:14px;font-weight:700;margin-bottom:3px}
+.pc-loc{font-size:12px;color:var(--mu);margin-bottom:12px}
+.pc-specs{display:flex;gap:14px;font-size:12px;color:var(--mu);border-top:1px solid rgba(255,255,255,.06);padding-top:12px}
+</style></head><body>
+<nav class="nav">
+  <div class="logo">PropVault<span>.</span></div>
+  <div><a href="#">Buy</a><a href="#">Rent</a><a href="#">Projects</a><a href="#">Agents</a><a href="#" class="nav-cta">Post Property Free</a></div>
+</nav>
+<section class="hero">
+  <div class="hero-badge">🏘️ 12,000+ Properties Listed</div>
+  <h1>Discover Your <span>Dream<br>Property</span> in India</h1>
+  <p>The most advanced property search platform. Buy, rent, or invest — all in one place with verified listings and AI-powered recommendations.</p>
+  <div class="search-bar">
+    <div class="sb-field"><div class="sb-label">Location</div><input class="sb-input" type="text" placeholder="City, area or project..."/></div>
+    <div class="sb-div"></div>
+    <div class="sb-field"><div class="sb-label">Type</div><select class="sb-input" style="background:transparent;color:#fff;-webkit-appearance:none"><option>All Types</option><option>Apartment</option><option>Villa</option><option>Plot</option></select></div>
+    <div class="sb-div"></div>
+    <div class="sb-field"><div class="sb-label">Budget</div><input class="sb-input" type="text" placeholder="₹ Any Budget"/></div>
+    <a href="#" class="sb-btn">🔍 Search</a>
+  </div>
+  <div class="stats">
+    <div><div class="st-n">12K+</div><div class="st-l">Listings</div></div>
+    <div><div class="st-n">8,500</div><div class="st-l">Happy Buyers</div></div>
+    <div><div class="st-n">₹2,400 Cr</div><div class="st-l">Property Value</div></div>
+  </div>
+</section>
+<section class="properties">
+  <div class="ph"><h2>Featured Properties</h2><a href="#">View All →</a></div>
+  <div class="pgrid">
+    <div class="pc"><div class="pc-img">🏠<span class="pc-tag for-sale">For Sale</span></div><div class="pc-info"><div class="pc-price">₹72 Lakh</div><div class="pc-name">3 BHK Premium Flat</div><div class="pc-loc">📍 Lanka, Varanasi</div><div class="pc-specs"><span>🛏️ 3 BHK</span><span>📐 1,380 sqft</span><span>🏊 Pool</span></div></div></div>
+    <div class="pc"><div class="pc-img">🏢<span class="pc-tag for-rent">For Rent</span></div><div class="pc-info"><div class="pc-price">₹22,000/mo</div><div class="pc-name">2 BHK Furnished Flat</div><div class="pc-loc">📍 Assi Ghat, Varanasi</div><div class="pc-specs"><span>🛏️ 2 BHK</span><span>📐 950 sqft</span><span>🅿️ Parking</span></div></div></div>
+    <div class="pc"><div class="pc-img">🏡<span class="pc-tag for-sale">For Sale</span></div><div class="pc-info"><div class="pc-price">₹1.8 Cr</div><div class="pc-name">Independent Bungalow</div><div class="pc-loc">📍 Chandauli District</div><div class="pc-specs"><span>🛏️ 4 BHK</span><span>📐 3,200 sqft</span><span>🌿 Garden</span></div></div></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Real Estate Pro – ₹13,999",backHref:"../realestate-pro.html",orderHref:"../../contact/index.html?tpl=realestate-pro"});</script>
+</body></html>

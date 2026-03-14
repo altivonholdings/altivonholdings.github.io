@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ZestZip – Fast Food Delivery Platform</title>
+<link rel="stylesheet" href="utils/demo-base.css">
+    <link rel="stylesheet" href="css/restaurant-delivery.css">"/>
+    <link rel="stylesheet" href="utils/demo-bar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+
+<style>
+:root{--bg:#ff4500;--dk:#1a0a00;--lt:#fff8f4;--orange:#ff6b35;--text:#fff;--card:#fff;--mu:#8a6550}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--lt);color:var(--dk);font-family:'Nunito',sans-serif;overflow-x:hidden}
+.nav{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 50px;box-shadow:0 2px 20px rgba(255,69,0,.08);position:sticky;top:46px;z-index:100}
+.logo{font-size:24px;font-weight:900;color:var(--bg)}
+.logo span{color:var(--dk)}
+.loc{display:flex;align-items:center;gap:8px;background:#fff8f4;border:1.5px solid rgba(255,69,0,.15);padding:8px 16px;border-radius:8px;font-size:13px;font-weight:700;color:var(--dk);cursor:pointer}
+.nav-right{display:flex;align-items:center;gap:14px}
+.track{font-size:13px;font-weight:700;color:var(--bg);text-decoration:none}
+.cart-btn{background:var(--bg);color:#fff;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:7px}
+.hero{background:linear-gradient(135deg,var(--bg),#cc3700);padding:60px 50px;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:20px;font-size:11px;font-weight:800;color:#fff;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
+.hero h1 span{color:#ffd700}
+.hero p{font-size:15px;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:28px}
+.search-box{background:#fff;border-radius:12px;padding:6px 6px 6px 16px;display:flex;align-items:center;gap:8px;margin-bottom:22px}
+.sb-in{flex:1;border:none;outline:none;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:var(--dk)}
+.sb-btn{background:var(--bg);color:#fff;padding:11px 22px;border-radius:9px;font-weight:800;font-size:14px;border:none;cursor:pointer;white-space:nowrap}
+.pills{display:flex;gap:10px;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,.15);color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;border:1px solid rgba(255,255,255,.2)}
+.pill:hover{background:rgba(255,255,255,.25)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.hs{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:20px;text-align:center}
+.hs-n{font-size:1.8rem;font-weight:900;color:#fff}
+.hs-l{font-size:11px;color:rgba(255,255,255,.7);font-weight:700;margin-top:3px;letter-spacing:.5px}
+.cats{padding:50px 50px 0}
+.sec-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.sec-h h2{font-size:1.5rem;font-weight:900}
+.see-all{font-size:13px;font-weight:700;color:var(--bg);text-decoration:none}
+.cgrid{display:flex;gap:16px;overflow-x:auto;padding-bottom:8px}
+.cgrid::-webkit-scrollbar{display:none}
+.cc{background:#fff;border-radius:14px;padding:20px 24px;text-align:center;flex-shrink:0;width:120px;cursor:pointer;border:2px solid transparent;transition:.2s;box-shadow:0 2px 12px rgba(255,69,0,.07)}
+.cc:hover,.cc.active{border-color:var(--bg)}
+.cc i{font-size:32px;color:var(--bg);margin-bottom:8px;display:block}
+.cc span{font-size:13px;font-weight:800;display:block}
+.rest{padding:40px 50px 60px}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rc{background:#fff;border-radius:14px;overflow:hidden;transition:.3s;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.rc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(255,69,0,.12)}
+.rc-img{height:160px;background:linear-gradient(135deg,#ffe8d8,#ffd4b8);display:flex;align-items:center;justify-content:center;position:relative}
+.rc-img i{font-size:64px;color:var(--bg);opacity:.5}
+.rc-badge{position:absolute;top:10px;left:10px;background:var(--bg);color:#fff;font-size:10px;font-weight:800;padding:3px 10px;border-radius:5px;letter-spacing:.5px;text-transform:uppercase}
+.rc-offer{position:absolute;top:10px;right:10px;background:#22c55e;color:#fff;font-size:10px;font-weight:800;padding:3px 10px;border-radius:5px}
+.rc-body{padding:16px}
+.rc-name{font-size:16px;font-weight:800;margin-bottom:4px}
+.rc-meta{font-size:12px;color:var(--mu);margin-bottom:10px}
+.rc-footer{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:700;padding-top:10px;border-top:1px solid #f5ece0}
+.rc-rating{color:var(--bg);display:flex;align-items:center;gap:4px}
+.rc-time{color:var(--mu)}
+</style>
+    <!-- Enhanced Mobile Support -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head><body>
+
+<nav class="nav">
+  <div class="logo">Zest<span>Zip</span></div>
+  <div class="loc"><i class="fa fa-map-marker-alt" style="color:#ff4500"></i> Varanasi, UP</div>
+  <div class="nav-right">
+    <a href="#" class="track"><i class="fa fa-truck"></i> Track Order</a>
+    <a href="#" class="cart-btn"><i class="fa fa-shopping-cart"></i> Cart (3)</a>
+  </div>
+</nav>
+<section class="hero">
+  <div>
+    <div class="hero-badge"><i class="fa fa-bolt"></i> 30-Min Delivery Guaranteed</div>
+    <h1>Hungry? Food<br>at Your Door in<br><span>30 Minutes</span></h1>
+    <p>500+ restaurants, 50,000+ dishes, real-time tracking. Order from your favourite local restaurants and cloud kitchens.</p>
+    <div class="search-box">
+      <i class="fa fa-search" style="color:#ccc;font-size:16px"></i>
+      <input class="sb-in" type="text" placeholder="Search restaurants, dishes, cuisines..."/>
+      <button class="sb-btn"><i class="fa fa-arrow-right"></i> Find Food</button>
+    </div>
+    <div class="pills">
+      <span class="pill"><i class="fa fa-fire"></i> Biryani</span>
+      <span class="pill">Pizza</span>
+      <span class="pill">Thali</span>
+      <span class="pill">Burger</span>
+      <span class="pill">Chinese</span>
+    </div>
+  </div>
+  <div>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-n">500+</div><div class="hs-l">Restaurants</div></div>
+      <div class="hs"><div class="hs-n">30 min</div><div class="hs-l">Avg Delivery</div></div>
+      <div class="hs"><div class="hs-n">2.8L+</div><div class="hs-l">Orders Delivered</div></div>
+      <div class="hs"><div class="hs-n">4.8 <i class="fa fa-star" style="font-size:14px;color:#fbbf24"></i></div><div class="hs-l">App Rating</div></div>
+      <div class="hs"><div class="hs-n">Free</div><div class="hs-l">First Delivery</div></div>
+      <div class="hs"><div class="hs-n">24/7</div><div class="hs-l">Support</div></div>
+    </div>
+  </div>
+</section>
+<section class="cats">
+  <div class="sec-h"><h2>What's Craving?</h2><a href="#" class="see-all">See All <i class="fa fa-arrow-right"></i></a></div>
+  <div class="cgrid">
+    <div class="cc active"><i class="fa fa-utensils"></i><span>All</span></div>
+    <div class="cc"><i class="fa fa-pepper-hot"></i><span>Biryani</span></div>
+    <div class="cc"><i class="fa fa-pizza-slice"></i><span>Pizza</span></div>
+    <div class="cc"><i class="fa fa-hamburger"></i><span>Burgers</span></div>
+    <div class="cc"><i class="fa fa-leaf"></i><span>Healthy</span></div>
+    <div class="cc"><i class="fa fa-ice-cream"></i><span>Desserts</span></div>
+    <div class="cc"><i class="fa fa-mug-hot"></i><span>Beverages</span></div>
+  </div>
+</section>
+<section class="rest">
+  <div class="sec-h"><h2>Top Restaurants Near You</h2><a href="#" class="see-all">View All <i class="fa fa-arrow-right"></i></a></div>
+  <div class="rgrid">
+    <div class="rc"><div class="rc-img"><i class="fa fa-pepper-hot"></i><span class="rc-badge">Top Rated</span><span class="rc-offer">30% Off</span></div><div class="rc-body"><div class="rc-name">Spice Garden</div><div class="rc-meta">North Indian &middot; Mughlai &middot; 1.2 km away</div><div class="rc-footer"><span class="rc-rating"><i class="fa fa-star"></i> 4.7 (2.3k)</span><span class="rc-time"><i class="fa fa-clock"></i> 25 min</span></div></div></div>
+    <div class="rc"><div class="rc-img"><i class="fa fa-pizza-slice"></i><span class="rc-badge">New</span></div><div class="rc-body"><div class="rc-name">Pizza Republic</div><div class="rc-meta">Italian &middot; Continental &middot; 0.8 km away</div><div class="rc-footer"><span class="rc-rating"><i class="fa fa-star"></i> 4.5 (980)</span><span class="rc-time"><i class="fa fa-clock"></i> 30 min</span></div></div></div>
+    <div class="rc"><div class="rc-img"><i class="fa fa-bowl-food"></i><span class="rc-offer">Free Delivery</span></div><div class="rc-body"><div class="rc-name">Thali Express</div><div class="rc-meta">Pure Veg &middot; Rajasthani &middot; 2.1 km away</div><div class="rc-footer"><span class="rc-rating"><i class="fa fa-star"></i> 4.9 (4.1k)</span><span class="rc-time"><i class="fa fa-clock"></i> 20 min</span></div></div></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({
+            title: 'ZestZip – Fast Food Delivery Platform',
+            backHref: 'index.html',
+            orderHref: 'contact.html?design=restaurant-delivery'
+        });</script>
+    <script src="js/restaurant-delivery.js"></script>
+</body></html>

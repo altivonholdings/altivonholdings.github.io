@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="mb-4">Dashboard Overview</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Total Businesses</h5>
+                <p class="card-text display-6">{{ total_businesses }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Categories</h5>
+                <p class="card-text display-6">{{ total_categories }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Locations</h5>
+                <p class="card-text display-6">{{ total_locations }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Avg Rating</h5>
+                <p class="card-text display-6">{{ avg_rating }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-3">
+            <div class="card-header">Phone Availability</div>
+            <div class="card-body">
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ (businesses_with_phone / total_businesses * 100) if total_businesses else 0 }}%">
+                        {{ businesses_with_phone }} with phone
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: {{ ((total_businesses - businesses_with_phone) / total_businesses * 100) if total_businesses else 0 }}%">
+                        {{ total_businesses - businesses_with_phone }} without phone
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card mb-3">
+            <div class="card-header">Website Availability</div>
+            <div class="card-body">
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ (businesses_with_website / total_businesses * 100) if total_businesses else 0 }}%">
+                        {{ businesses_with_website }} with website
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: {{ ((total_businesses - businesses_with_website) / total_businesses * 100) if total_businesses else 0 }}%">
+                        {{ total_businesses - businesses_with_website }} without website
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Quick Actions</div>
+            <div class="card-body">
+                <a href="/charts" class="btn btn-primary">View All Charts</a>
+                <a href="/analysis" class="btn btn-secondary">Detailed Analysis</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

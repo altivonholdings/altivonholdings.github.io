@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Rohan Travels – Personal Travel Blog</title>
+<link rel="stylesheet" href="utils/demo-base.css">
+    <link rel="stylesheet" href="css/blog-personal.css">"/>
+    <link rel="stylesheet" href="utils/demo-bar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>:root{--bg:#fafaf8;--dk:#1a1a1a;--teal:#0d9488;--lt:#f0fdf9;--mu:#6b7280;--border:#e5e7eb}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'Lato',sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 60px;border-bottom:1px solid var(--border);background:#fff;position:sticky;top:46px;z-index:100}
+.logo{font-family:'Merriweather',serif;font-size:20px;font-weight:700;color:var(--dk)}.logo em{font-style:italic;color:var(--teal)}
+.nav a{margin-left:20px;font-size:13px;color:var(--mu);text-decoration:none}
+.follow{background:var(--teal);color:#fff;padding:8px 20px;border-radius:7px;font-size:13px;font-weight:700;text-decoration:none;margin-left:14px}
+.hero{background:linear-gradient(160deg,#0f3a36,#0d9488);padding:80px 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;color:#fff;margin-bottom:16px}
+.hero h1{font-family:'Merriweather',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;line-height:1.2;margin-bottom:14px}
+.hero h1 em{font-style:italic;color:#a7f3d0}
+.hero p{color:rgba(255,255,255,.8);font-size:14px;line-height:1.8;margin-bottom:24px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.bw{background:#fff;color:var(--teal);padding:11px 24px;border-radius:7px;font-weight:700;font-size:14px;text-decoration:none}
+.bt{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;padding:11px 24px;border-radius:7px;font-size:14px;text-decoration:none}
+.stats-row{display:flex;gap:32px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);flex-wrap:wrap}
+.sr{text-align:center}
+.sr-n{font-family:'Merriweather',serif;font-size:1.6rem;font-weight:700;color:#fff}
+.sr-l{font-size:11px;color:rgba(255,255,255,.65);margin-top:3px}
+.hero-right{display:flex;flex-direction:column;gap:14px}
+.dest-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:.2s}
+.dest-card:hover{background:rgba(255,255,255,.18)}
+.dc-ic{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dc-ic i{font-size:20px;color:#fff}
+.dc-name{font-weight:700;font-size:14px;color:#fff}
+.dc-meta{font-size:12px;color:rgba(255,255,255,.65);margin-top:2px}
+.posts{padding:60px 60px 80px}
+.ph{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px}
+.ph h2{font-family:'Merriweather',serif;font-size:1.6rem;font-weight:700}
+.see-all{font-size:13px;color:var(--teal);text-decoration:none;font-weight:700}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pc{border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:.3s;cursor:pointer}
+.pc:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.08);border-color:var(--teal)}
+.pc-img{height:180px;background:var(--lt);display:flex;align-items:center;justify-content:center}
+.pc-img i{font-size:60px;color:var(--teal);opacity:.3}
+.pc-body{padding:18px}
+.pc-cat{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+.pc-title{font-family:'Merriweather',serif;font-size:17px;font-weight:700;line-height:1.35;margin-bottom:7px}
+.pc-meta{font-size:12px;color:var(--mu);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.pc-excerpt{font-size:13px;color:var(--mu);line-height:1.7;font-weight:300}</style>
+    <!-- Enhanced Mobile Support -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head><body>
+<nav class="nav"><div class="logo">Rohan <em>Travels</em></div>
+<div><a href="#">Destinations</a><a href="#">Stories</a><a href="#">Tips</a><a href="#">About</a><a href="#" class="follow"><i class="fa fa-rss"></i> Follow</a></div></nav>
+<section class="hero">
+<div>
+<div class="badge"><i class="fa fa-plane"></i> Exploring India &amp; Beyond</div>
+<h1>Every Journey is a<br><em>Story</em> Worth Telling</h1>
+<p>Real travel stories, honest tips, and hidden gems from across India and the world. 6 years, 40 countries, millions of words written.</p>
+<div class="btns"><a href="#" class="bw"><i class="fa fa-map-location-dot"></i> Explore Destinations</a><a href="#" class="bt"><i class="fa fa-envelope"></i> Get Travel Tips</a></div>
+<div class="stats-row">
+<div class="sr"><div class="sr-n">40+</div><div class="sr-l">Countries</div></div>
+<div class="sr"><div class="sr-n">280+</div><div class="sr-l">Stories</div></div>
+<div class="sr"><div class="sr-n">1.2L</div><div class="sr-l">Monthly Readers</div></div>
+</div>
+</div>
+<div class="hero-right">
+<div class="dest-card"><div class="dc-ic"><i class="fa fa-mountain-sun"></i></div><div><div class="dc-name">Himalayas Series</div><div class="dc-meta">14 articles &middot; Ladakh to Sikkim</div></div></div>
+<div class="dest-card"><div class="dc-ic"><i class="fa fa-water"></i></div><div><div class="dc-name">Coastal India</div><div class="dc-meta">12 articles &middot; Goa to Andaman</div></div></div>
+<div class="dest-card"><div class="dc-ic"><i class="fa fa-mosque"></i></div><div><div class="dc-name">Heritage India</div><div class="dc-meta">18 articles &middot; Varanasi to Hampi</div></div></div>
+<div class="dest-card"><div class="dc-ic"><i class="fa fa-globe-asia"></i></div><div><div class="dc-name">Southeast Asia</div><div class="dc-meta">22 articles &middot; Vietnam to Bali</div></div></div>
+</div>
+</section>
+<section class="posts"><div class="ph"><h2>Recent Stories</h2><a href="#" class="see-all">All Stories <i class="fa fa-arrow-right"></i></a></div>
+<div class="pgrid">
+<div class="pc"><div class="pc-img"><i class="fa fa-gopuram"></i></div><div class="pc-body"><div class="pc-cat">Heritage &middot; Varanasi</div><div class="pc-title">48 Hours in Varanasi: A Guide Beyond the Ghats</div><div class="pc-meta"><i class="fa fa-clock"></i> 12 min read &nbsp;&middot;&nbsp; Jan 10, 2025</div><div class="pc-excerpt">Most visitors see only the ghats. I spent 48 hours exploring the lanes, the weavers, the sweets — and found the soul of this ancient city.</div></div></div>
+<div class="pc"><div class="pc-img"><i class="fa fa-mountain"></i></div><div class="pc-body"><div class="pc-cat">Adventure &middot; Ladakh</div><div class="pc-title">Solo Motorbike Ride from Manali to Leh: Complete Guide</div><div class="pc-meta"><i class="fa fa-clock"></i> 18 min read &nbsp;&middot;&nbsp; Dec 22, 2024</div><div class="pc-excerpt">5 days, 490 km, 5 high-altitude passes, and one life-changing experience. Everything you need to know to plan this epic ride.</div></div></div>
+<div class="pc"><div class="pc-img"><i class="fa fa-umbrella-beach"></i></div><div class="pc-body"><div class="pc-cat">Beach &middot; Goa</div><div class="pc-title">Beyond Baga: Goa's Secret Beaches in South Goa</div><div class="pc-meta"><i class="fa fa-clock"></i> 8 min read &nbsp;&middot;&nbsp; Dec 10, 2024</div><div class="pc-excerpt">If you still think Goa is just Baga and Calangute, you haven't truly explored. Here are 7 beaches locals love but tourists rarely find.</div></div></div>
+</div></section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({
+            title: 'Rohan Travels – Personal Travel Blog',
+            backHref: 'index.html',
+            orderHref: 'contact.html?design=blog-personal'
+        });</script>
+    <script src="js/blog-personal.js"></script>
+</body></html>

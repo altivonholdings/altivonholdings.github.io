@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>FlowCRM – Sales CRM SaaS</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>:root{--bg:#fff;--dk:#0f172a;--blue:#2563eb;--lt:#eff6ff;--mu:#64748b;--border:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'Inter',sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 60px;border-bottom:1px solid var(--border);position:sticky;top:46px;z-index:100;background:#fff}
+.logo{font-size:20px;font-weight:800;color:var(--dk)}.logo span{color:var(--blue)}
+.nav-links a{margin-left:22px;font-size:14px;color:var(--mu);text-decoration:none;font-weight:500}
+.nav-cta{background:var(--blue);color:#fff;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;margin-left:16px}
+.hero{padding:90px 60px 70px;background:linear-gradient(180deg,var(--lt),#fff 70%);text-align:center;position:relative}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.18);padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;color:var(--blue);margin-bottom:20px}
+.hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:800;color:var(--dk);line-height:1.12;margin-bottom:16px}
+.hero h1 span{color:var(--blue)}
+.hero p{font-size:1.05rem;color:var(--mu);max-width:560px;margin:0 auto 32px;line-height:1.75}
+.btns{display:flex;gap:14px;justify-content:center;margin-bottom:48px;flex-wrap:wrap}
+.b1{background:var(--blue);color:#fff;padding:13px 28px;border-radius:9px;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 4px 16px rgba(37,99,235,.3)}
+.b2{background:#fff;color:var(--dk);padding:13px 28px;border-radius:9px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--border)}
+.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.hs{text-align:center}
+.hs-n{font-size:1.8rem;font-weight:800;color:var(--dk)}
+.hs-l{font-size:13px;color:var(--mu);margin-top:3px}
+.features{padding:80px 60px;background:#fff}
+.sec-h{text-align:center;margin-bottom:52px}
+.sl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:8px}
+.st{font-size:2rem;font-weight:800;color:var(--dk)}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fc{border:1.5px solid var(--border);border-radius:16px;padding:32px;transition:.3s}
+.fc:hover{border-color:var(--blue);box-shadow:0 8px 32px rgba(37,99,235,.08);transform:translateY(-4px)}
+.fc-ic{width:52px;height:52px;background:var(--lt);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.fc-ic i{font-size:22px;color:var(--blue)}
+.fc h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.fc p{font-size:13px;color:var(--mu);line-height:1.65}
+.pricing{padding:80px 60px;background:var(--lt)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto}
+.pc{background:#fff;border-radius:16px;padding:32px;border:1.5px solid var(--border)}
+.pc.popular{border-color:var(--blue);position:relative}
+.popular-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:700;padding:4px 16px;border-radius:20px}
+.pc-name{font-size:14px;font-weight:700;color:var(--mu);margin-bottom:8px}
+.pc-price{font-size:2.5rem;font-weight:800;color:var(--dk);margin-bottom:4px}
+.pc-price span{font-size:14px;font-weight:400;color:var(--mu)}
+.pc-desc{font-size:13px;color:var(--mu);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.pc-features{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.pf{font-size:13px;color:var(--dk);display:flex;align-items:center;gap:8px}
+.pf i{color:var(--blue);width:14px}
+.pc-btn{width:100%;padding:12px;border-radius:9px;font-weight:700;font-size:14px;cursor:pointer;border:none}
+.pc-btn-main{background:var(--blue);color:#fff}
+.pc-btn-out{background:#fff;color:var(--blue);border:1.5px solid var(--blue)!important}</style></head><body>
+<nav class="nav"><div class="logo">Flow<span>CRM</span></div>
+<div class="nav-links"><a href="#">Features</a><a href="#">Pricing</a><a href="#">Integrations</a><a href="#">Case Studies</a><a href="#" class="nav-cta">Start Free Trial</a></div></nav>
+<section class="hero">
+  <div class="badge"><i class="fa fa-circle" style="color:#22c55e;font-size:8px"></i> Loved by 12,000+ Sales Teams</div>
+  <h1>Close More Deals with<br><span>Smarter CRM</span></h1>
+  <p>FlowCRM automates your sales pipeline, tracks every lead, and gives your team AI-powered insights to close 40% more deals.</p>
+  <div class="btns">
+    <a href="#" class="b1"><i class="fa fa-rocket"></i> Start 14-Day Free Trial</a>
+    <a href="#" class="b2"><i class="fa fa-play-circle"></i> Watch 2-Min Demo</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hs"><div class="hs-n">12,000+</div><div class="hs-l">Active Teams</div></div>
+    <div class="hs"><div class="hs-n">40%</div><div class="hs-l">More Deals Closed</div></div>
+    <div class="hs"><div class="hs-n">&#8377;480 Cr</div><div class="hs-l">Revenue Tracked</div></div>
+    <div class="hs"><div class="hs-n">4.9 <i class="fa fa-star" style="color:#fbbf24;font-size:14px"></i></div><div class="hs-l">G2 Rating</div></div>
+  </div>
+</section>
+<section class="features">
+  <div class="sec-h"><div class="sl">Core Features</div><div class="st">Everything Your Sales Team Needs</div></div>
+  <div class="fgrid">
+    <div class="fc"><div class="fc-ic"><i class="fa fa-diagram-project"></i></div><h3>Visual Pipeline</h3><p>Drag-and-drop deal management. See your entire pipeline at a glance and never miss a follow-up.</p></div>
+    <div class="fc"><div class="fc-ic"><i class="fa fa-robot"></i></div><h3>AI Lead Scoring</h3><p>Automatically score and prioritise leads based on engagement, fit, and buying signals.</p></div>
+    <div class="fc"><div class="fc-ic"><i class="fa fa-envelope-open-text"></i></div><h3>Email Sequences</h3><p>Send personalised drip campaigns triggered by lead behaviour and pipeline stage.</p></div>
+    <div class="fc"><div class="fc-ic"><i class="fa fa-chart-bar"></i></div><h3>Sales Analytics</h3><p>Real-time dashboards with win rates, cycle length, revenue forecasting, and rep performance.</p></div>
+    <div class="fc"><div class="fc-ic"><i class="fa fa-phone-volume"></i></div><h3>Call Tracking</h3><p>Log calls, record notes, and get AI-generated call summaries automatically synced to deals.</p></div>
+    <div class="fc"><div class="fc-ic"><i class="fa fa-plug"></i></div><h3>200+ Integrations</h3><p>Connect with WhatsApp, Gmail, Slack, Razorpay, Zoho Books, and 200+ other tools.</p></div>
+  </div>
+</section>
+<section class="pricing">
+  <div class="sec-h"><div class="sl">Pricing</div><div class="st">Simple, Transparent Pricing</div></div>
+  <div class="pgrid">
+    <div class="pc"><div class="pc-name">Starter</div><div class="pc-price">&#8377;999<span>/mo</span></div><div class="pc-desc">For small teams getting started with CRM</div><div class="pc-features"><div class="pf"><i class="fa fa-check"></i> Up to 5 users</div><div class="pf"><i class="fa fa-check"></i> 1,000 contacts</div><div class="pf"><i class="fa fa-check"></i> Basic pipeline</div></div><button class="pc-btn pc-btn-out">Get Started</button></div>
+    <div class="pc popular"><div class="popular-tag">Most Popular</div><div class="pc-name">Growth</div><div class="pc-price">&#8377;2,999<span>/mo</span></div><div class="pc-desc">For growing teams that need automation</div><div class="pc-features"><div class="pf"><i class="fa fa-check"></i> Up to 25 users</div><div class="pf"><i class="fa fa-check"></i> Unlimited contacts</div><div class="pf"><i class="fa fa-check"></i> AI lead scoring</div><div class="pf"><i class="fa fa-check"></i> Email sequences</div></div><button class="pc-btn pc-btn-main">Start Free Trial</button></div>
+    <div class="pc"><div class="pc-name">Enterprise</div><div class="pc-price">Custom</div><div class="pc-desc">For large sales teams and complex needs</div><div class="pc-features"><div class="pf"><i class="fa fa-check"></i> Unlimited users</div><div class="pf"><i class="fa fa-check"></i> Dedicated support</div><div class="pf"><i class="fa fa-check"></i> Custom integrations</div></div><button class="pc-btn pc-btn-out">Contact Sales</button></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"SaaS – FlowCRM",backHref:"../startup-saas.html",orderHref:"../../contact/index.html?tpl=startup-saas"});</script>
+</body></html>

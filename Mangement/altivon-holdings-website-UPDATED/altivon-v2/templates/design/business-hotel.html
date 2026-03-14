@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Business Hotel – Demo</title><link rel="stylesheet" href="utils/demo-base.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0e0b08;--gold:#c9a84c;--cream:#f0e6d4;--dark:#1a1511;--muted:#8a7d6a}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--cream);font-family:'Jost',sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:24px 60px;border-bottom:1px solid rgba(201,168,76,.15)}
+.logo{font-family:'Cormorant',serif;font-size:22px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+.nav-links a{margin-left:28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.book-btn{border:1px solid var(--gold);color:var(--gold);padding:9px 22px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;text-decoration:none;transition:.3s}
+.book-btn:hover{background:var(--gold);color:#000}
+.hero{height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at center,rgba(201,168,76,.08),transparent 70%);position:relative}
+.hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(201,168,76,.03) 60px,rgba(201,168,76,.03) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(201,168,76,.03) 60px,rgba(201,168,76,.03) 61px)}
+.hero-inner{position:relative}
+.hotel-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.hero h1{font-family:'Cormorant',serif;font-size:clamp(3.5rem,7vw,6rem);font-weight:700;line-height:1;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{font-size:14px;color:var(--muted);max-width:420px;margin:0 auto 32px;line-height:1.8;letter-spacing:.3px}
+.btns{display:flex;gap:16px;justify-content:center}
+.bk{background:var(--gold);color:#000;padding:12px 28px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s}
+.bk:hover{background:#d4b15e}
+.bo{border:1px solid rgba(201,168,76,.3);color:var(--cream);padding:12px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s}
+.rooms{padding:80px 60px;text-align:center}
+.rl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.rt{font-family:'Cormorant',serif;font-size:2.4rem;font-weight:700;margin-bottom:48px}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rc{border:1px solid rgba(201,168,76,.12);overflow:hidden;transition:.3s}
+.rc:hover{border-color:rgba(201,168,76,.3);transform:translateY(-4px)}
+.rc-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:64px;background:rgba(201,168,76,.05)}
+.rc-info{padding:22px}
+.rc-type{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.rc-name{font-family:'Cormorant',serif;font-size:20px;font-weight:700;margin-bottom:8px}
+.rc-features{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.rf{font-size:11px;color:var(--muted)}
+.rc-price{display:flex;align-items:baseline;gap:4px;justify-content:space-between;align-items:center}
+.rp{font-family:'Cormorant',serif;font-size:22px;font-weight:700;color:var(--gold)}
+.rp-note{font-size:11px;color:var(--muted)}
+.rb{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.3);padding:7px 16px;text-decoration:none}
+</style></head><body>
+<nav class="nav"><div class="logo">Grand Majestic</div>
+<div><a href="#">Rooms</a><a href="#">Dining</a><a href="#">Spa</a><a href="#">Events</a><a href="#" class="book-btn">Book Now</a></div></nav>
+<section class="hero">
+<div class="hotel-inner">
+<div class="hotel-tag">5-Star Luxury · Est. 1978</div>
+<h1>Luxury Beyond<br><em>Expectations</em></h1>
+<p>An iconic retreat where world-class service meets timeless elegance. Every stay is a story worth telling.</p>
+<div class="btns"><a href="#" class="bk">Reserve a Room</a><a href="#" class="bo">Explore Amenities</a></div>
+</div>
+</section>
+<section class="rooms">
+<div class="rl">Accommodations</div><div class="rt">Our Rooms & Suites</div>
+<div class="rgrid">
+<div class="rc"><div class="rc-img">🛏️</div><div class="rc-info"><div class="rc-type">Standard</div><div class="rc-name">Deluxe King Room</div><div class="rc-features"><span class="rf">👁️ City View</span><span class="rf">🛁 Bathtub</span><span class="rf">📶 Free WiFi</span></div><div class="rc-price"><div><span class="rp">₹8,500</span><span class="rp-note">/night</span></div><a href="#" class="rb">Book</a></div></div></div>
+<div class="rc"><div class="rc-img">🏨</div><div class="rc-info"><div class="rc-type">Premium</div><div class="rc-name">Executive Suite</div><div class="rc-features"><span class="rf">🌅 Sunrise View</span><span class="rf">🛁 Jacuzzi</span><span class="rf">🍸 Minibar</span></div><div class="rc-price"><div><span class="rp">₹14,500</span><span class="rp-note">/night</span></div><a href="#" class="rb">Book</a></div></div></div>
+<div class="rc"><div class="rc-img">✨</div><div class="rc-info"><div class="rc-type">Signature</div><div class="rc-name">Presidential Suite</div><div class="rc-features"><span class="rf">🌇 Panoramic View</span><span class="rf">🍽️ Butler</span><span class="rf">🎭 Private Terrace</span></div><div class="rc-price"><div><span class="rp">₹38,000</span><span class="rp-note">/night</span></div><a href="#" class="rb">Book</a></div></div></div>
+</div></section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Business Hotel – ₹12,999",backHref:"../business-hotel.html",orderHref:"../../contact/index.html?tpl=business-hotel"});</script>
+</body></html>
