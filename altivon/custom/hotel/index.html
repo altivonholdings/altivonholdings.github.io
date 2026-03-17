@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4X0M6RM0F6');
+  </script>
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Management System – Interactive Demo | Altivon Holdings</title>
+  <meta name="description" content="Configure your custom Hotel Management System: PMS, booking engine, housekeeping, POS, channel manager. Instant price estimate.">
+  <link rel="icon" type="image/jpeg" href="/assets/images/logo.jpg">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ===== MODERN REDESIGN (same as hospital) ===== */
+    :root {
+      --gradient-start: #0A1F44;
+      --gradient-end: #1e4a6f;
+      --accent: #2b9c9c;
+      --card-bg: rgba(255,255,255,0.9);
+      --shadow-lg: 0 20px 40px -12px rgba(0,20,40,0.25);
+    }
+
+    .demo-header {
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: white;
+      padding: 4rem 0 3rem;
+      margin-bottom: 2rem;
+      border-radius: 0 0 3rem 3rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .demo-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .header-content h1 {
+      color: white;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .header-content p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+    .header-illustration {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      gap: 1.5rem;
+      font-size: 2rem;
+    }
+    .header-illustration i {
+      color: white;
+      opacity: 0.8;
+      transition: transform 0.2s;
+    }
+    .header-illustration i:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    .trust-badges {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .badge {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .module-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      border-radius: 2rem;
+      padding: 2rem 1.8rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 15px 30px -12px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .module-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 40px -16px rgba(10,31,68,0.2);
+    }
+    .module-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--navy);
+      border-bottom: 2px solid rgba(43,156,156,0.2);
+      padding-bottom: 1rem;
+    }
+    .module-title i {
+      background: linear-gradient(145deg, var(--accent), #1e7e7e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.2rem;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(255,255,255,0.6);
+      transition: all 0.2s;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+    }
+    .feature-card.selected {
+      background: linear-gradient(145deg, #e6f7e6, #d0f0d0);
+      border-color: var(--accent);
+      box-shadow: 0 8px 20px -8px rgba(43,156,156,0.4);
+    }
+    .feature-card input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+    }
+    .feature-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .feature-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.2rem;
+    }
+    .feature-price-time {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+    .feature-price {
+      background: rgba(10,31,68,0.1);
+      color: var(--navy);
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: 1px solid rgba(10,31,68,0.1);
+    }
+    .feature-time {
+      background: white;
+      color: #475569;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid #e2e8f0;
+    }
+    .feature-desc {
+      font-size: 0.95rem;
+      color: #334155;
+      line-height: 1.6;
+      margin: 0.5rem 0 0;
+    }
+
+    .total-bar {
+      background: white;
+      border-radius: 3rem;
+      padding: 1.8rem 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2.5rem 0 1.5rem;
+      box-shadow: 0 25px 40px -18px rgba(10,31,68,0.3);
+      border: 1px solid rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      bottom: 1.5rem;
+      z-index: 10;
+    }
+    .total-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .total-label {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .total-price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .total-price small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #64748b;
+    }
+    .total-time {
+      font-size: 1.2rem;
+      background: #f1f5f9;
+      padding: 0.6rem 1.8rem;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      margin-top: 1rem;
+    }
+    .btn-outline-modern {
+      background: transparent;
+      border: 2px solid var(--navy);
+      color: var(--navy);
+      border-radius: 60px;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-outline-modern:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .demo-header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-content h1 {
+        font-size: 2.2rem;
+      }
+      .total-bar {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+        text-align: center;
+      }
+      .action-buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="/">
+          <img src="/assets/images/logo.jpg" alt="Altivon Holdings Logo" class="logo-img" width="48" height="48">
+          <span class="logo-text">ALTIVON</span>
+          <span class="logo-sub">HOLDINGS</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/templates/index.html">Templates & Designs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <div class="demo-header">
+      <div class="container">
+        <div class="header-content">
+          <h1>🏨 Hotel Management <br>Complete Property Solution</h1>
+          <p>Click features to add. See instant pricing and timeline. Built for hotels, resorts, and serviced apartments.</p>
+          <div class="trust-badges">
+            <span class="badge"><i class="fas fa-shield-alt"></i> PCI DSS Ready</span>
+            <span class="badge"><i class="fas fa-lock"></i> 256‑bit Encryption</span>
+            <span class="badge"><i class="fas fa-concierge-bell"></i> 50+ Properties</span>
+          </div>
+        </div>
+        <div class="header-illustration">
+          <i class="fas fa-hotel"></i>
+          <i class="fas fa-calendar-alt"></i>
+          <i class="fas fa-utensils"></i>
+          <i class="fas fa-chart-line"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Feature Grid injected by JS -->
+      <div id="featureGrid" class="module-grid"></div>
+
+      <!-- Floating Total Bar -->
+      <div class="total-bar" id="totalSection">
+        <div class="total-info">
+          <div class="total-label"><i class="fas fa-calculator" style="color: var(--accent);"></i> Estimated investment</div>
+          <div class="total-price" id="totalPrice">₹0 <small>+5% GST</small></div>
+        </div>
+        <div class="total-time" id="totalTime"><i class="far fa-clock"></i> <span>0 days</span></div>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn-outline-modern" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+        <button class="btn btn-primary" id="inquireBtn"><i class="fas fa-paper-plane"></i> Continue to Quote</button>
+      </div>
+
+      <hr style="margin: 3rem 0; border-color: #e2e8f0;">
+
+      <div class="disclaimer" style="display: flex; gap: 2rem; flex-wrap: wrap; color: #475569;">
+        <span><i class="fas fa-check-circle" style="color: #22c55e;"></i> Indicative pricing – final quote after consultation</span>
+        <span><i class="fas fa-clock"></i> Typical delivery: 8–18 weeks</span>
+        <span><i class="fas fa-file-signature"></i> No obligation proposal</span>
+      </div>
+    </div>
+
+    <div class="back-link" style="text-align: center; margin: 3rem 0;">
+      <a href="/services.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Services</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <h3>Altivon Holdings</h3>
+        <p><strong>Website Development Company in India</strong> – Empowering Businesses Through Scalable Digital Solutions.</p>
+        <div class="social-placeholder">
+          <a href="https://www.linkedin.com/company/altivon-holding/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.github.com/altivonholdings" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services.html#webdev">Web Development</a></li>
+          <li><a href="/services.html#ecommerce">E‑Commerce</a></li>
+          <li><a href="/services.html#strategy">Digital Strategy</a></li>
+          <li><a href="/services.html#maintenance">Maintenance</a></li>
+          <li><a href="/custom/erp/index.html">School ERP</a></li>
+          <li><a href="/custom/crm/index.html">Custom CRM</a></li>
+          <li><a href="/custom/wms/index.html">Waterpark</a></li>
+          <li><a href="/custom/hospital/index.html">Hospital</a></li>
+          <li><a href="/custom/hotel/index.html">Hotel</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p>
+        <p><i class="fas fa-globe"></i> <a href="https://altivonholdings.github.io">altivonholdings.github.io</a></p>
+        <p><i class="fas fa-map-pin"></i> Lucknow, Uttar Pradesh, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Altivon Holdings. All rights reserved. | Website Development Company in India</p>
+        <p class="footer-tagline">Empowering Businesses Through Scalable Digital Solutions.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Main JS -->
+  <script src="/js/main.js"></script>
+  <script src="/js/chat.js"></script>
+
+  <!-- Hotel Calculator Script -->
+  <script>
+    (function() {
+      // Comprehensive Hotel Management Modules
+      const modules = [
+        { name: "Property Management (PMS)", icon: "fa-hotel", features: [
+          { name: "Front Desk & Check-in/out", price: 22000, time: 9, desc: "Quick check-in/out, room assignment, guest history, and folio management. Supports walk‑ins and reservations." },
+          { name: "Room Management & Housekeeping", price: 18000, time: 7, desc: "Real‑time room status (clean, dirty, out‑of‑order). Housekeeping task assignment and tracking." },
+          { name: "Multi‑property Support", price: 30000, time: 12, desc: "Manage multiple hotels, resorts, or villas from a single dashboard. Centralized or per‑property configuration." }
+        ]},
+        { name: "Booking Engine & Channel Manager", icon: "fa-calendar-alt", features: [
+          { name: "Online Booking Engine", price: 25000, time: 10, desc: "Mobile‑friendly widget for direct bookings. Real‑time availability, rates, and promotions. No commission." },
+          { name: "Channel Manager", price: 35000, time: 14, desc: "Sync room availability and rates across OTAs (Booking.com, Expedia, Agoda). Prevents overbooking." },
+          { name: "Booking Widget for Website", price: 15000, time: 6, desc: "Embeddable booking form with payment integration. Customizable to match brand." }
+        ]},
+        { name: "Front Desk & Operations", icon: "fa-concierge-bell", features: [
+          { name: "Guest Profile & History", price: 15000, time: 6, desc: "Centralized guest database with preferences, special requests, and stay history. Enables personalized service." },
+          { name: "Folio & Billing", price: 20000, time: 8, desc: "Split bills, charge to room, tax calculations, and settlement. Integration with POS for restaurant charges." },
+          { name: "Group Reservations", price: 18000, time: 7, desc: "Handle tour groups, weddings, and corporate blocks. Master account and individual folios." }
+        ]},
+        { name: "Housekeeping Management", icon: "fa-broom", features: [
+          { name: "Housekeeping Task Board", price: 15000, time: 6, desc: "Digital task list for room cleaning, public areas, and deep cleaning. Real‑time updates." },
+          { name: "Inventory & Linen Tracking", price: 12000, time: 5, desc: "Track linen, towels, and amenities. Low‑stock alerts and consumption reports." }
+        ]},
+        { name: "Restaurant & POS", icon: "fa-utensils", features: [
+          { name: "Restaurant POS", price: 20000, time: 8, desc: "Table management, order taking, and kitchen display. Charge to room or settle directly." },
+          { name: "Bar & Mini‑bar Integration", price: 15000, time: 6, desc: "Track mini‑bar consumption and auto‑post to guest folio. Inventory control." }
+        ]},
+        { name: "Banquet & Event Management", icon: "fa-calendar-plus", features: [
+          { name: "Event Booking & Planning", price: 20000, time: 8, desc: "Manage banquets, conferences, and weddings. Room setup, catering, and equipment." },
+          { name: "Catering & Menu Management", price: 18000, time: 7, desc: "Create event menus, calculate per‑plate cost, and manage dietary requirements." }
+        ]},
+        { name: "Guest Services & Engagement", icon: "fa-smile", features: [
+          { name: "Guest Messaging", price: 15000, time: 6, desc: "Two‑way messaging for requests, complaints, and information. Integrates with WhatsApp." },
+          { name: "Loyalty & Membership", price: 20000, time: 8, desc: "Points program, tier benefits, and reward redemption. Track member stays and spending." }
+        ]},
+        { name: "Maintenance & Engineering", icon: "fa-tools", features: [
+          { name: "Preventive Maintenance", price: 18000, time: 7, desc: "Schedule routine checks for HVAC, elevators, and equipment. Work order management." },
+          { name: "Issue Reporting", price: 12000, time: 5, desc: "Staff can report maintenance issues via mobile app. Track resolution time." }
+        ]},
+        { name: "Finance & Accounting", icon: "fa-file-invoice-dollar", features: [
+          { name: "Accounts Receivable/Payable", price: 25000, time: 10, desc: "Invoice generation, payment tracking, and supplier management. Integration with Tally/SAP." },
+          { name: "Revenue Management", price: 30000, time: 12, desc: "Dynamic pricing, yield management, and competitor rate analysis. Optimize RevPAR." }
+        ]},
+        { name: "Staff Management", icon: "fa-users", features: [
+          { name: "Employee Scheduling", price: 18000, time: 7, desc: "Create shift rosters, track attendance, and manage leave. Integration with biometric devices." },
+          { name: "Payroll Integration", price: 20000, time: 8, desc: "Calculate wages, tips, and deductions. Generate payslips and tax reports." }
+        ]},
+        { name: "Reporting & Analytics", icon: "fa-chart-pie", features: [
+          { name: "Operational Dashboards", price: 20000, time: 8, desc: "Real‑time KPIs: occupancy, ADR, RevPAR, GOPPAR. Custom views for managers." },
+          { name: "Financial Reports", price: 18000, time: 7, desc: "Profit & loss, balance sheet, and cash flow statements." }
+        ]},
+        { name: "Mobile & Guest App", icon: "fa-mobile-alt", features: [
+          { name: "Guest Mobile App", price: 40000, time: 16, desc: "White‑label app for booking, check‑in, room service, and concierge. Push notifications." },
+          { name: "Staff Mobile App", price: 30000, time: 12, desc: "Mobile access for housekeeping, maintenance, and front desk. Receive alerts and update status." }
+        ]}
+      ];
+
+      // Load selections from localStorage
+      function loadSelections() {
+        const saved = localStorage.getItem('hotelSelectedFeatures');
+        return saved ? JSON.parse(saved) : {};
+      }
+
+      function saveSelections(selections) {
+        localStorage.setItem('hotelSelectedFeatures', JSON.stringify(selections));
+      }
+
+      function renderFeatures() {
+        const grid = document.getElementById('featureGrid');
+        const selections = loadSelections();
+        let html = '';
+
+        modules.forEach((module, modIndex) => {
+          html += `<div class="module-card">`;
+          html += `<div class="module-title"><i class="fas ${module.icon}"></i> ${module.name}</div>`;
+
+          module.features.forEach((feature, featIndex) => {
+            const featureId = `hotel_mod_${modIndex}_feat_${featIndex}`;
+            const isChecked = selections[featureId] || false;
+            html += `
+              <div class="feature-card ${isChecked ? 'selected' : ''}" data-feature-id="${featureId}">
+                <input type="checkbox" id="${featureId}" data-module="${modIndex}" data-feat="${featIndex}" ${isChecked ? 'checked' : ''}>
+                <div class="feature-header">
+                  <span class="feature-name">${feature.name}</span>
+                  <div class="feature-price-time">
+                    <span class="feature-price">₹${feature.price.toLocaleString()}</span>
+                    <span class="feature-time"><i class="far fa-clock"></i> ${feature.time} days</span>
+                  </div>
+                </div>
+                <div class="feature-desc">${feature.desc}</div>
+              </div>
+            `;
+          });
+
+          html += `</div>`;
+        });
+
+        grid.innerHTML = html;
+
+        // Attach click events
+        document.querySelectorAll('.feature-card').forEach(card => {
+          card.addEventListener('click', function(e) {
+            if (e.target.tagName === 'INPUT' && e.target.type === 'checkbox') return;
+            const checkbox = this.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            this.classList.toggle('selected', checkbox.checked);
+            const featureId = checkbox.id;
+            const selections = loadSelections();
+            selections[featureId] = checkbox.checked;
+            saveSelections(selections);
+            updateTotals();
+          });
+        });
+
+        document.querySelectorAll('.feature-card input[type="checkbox"]').forEach(cb => {
+          cb.addEventListener('change', function() {
+            const card = this.closest('.feature-card');
+            card.classList.toggle('selected', this.checked);
+            const featureId = this.id;
+            const selections = loadSelections();
+            selections[featureId] = this.checked;
+            saveSelections(selections);
+            updateTotals();
+          });
+        });
+
+        updateTotals();
+      }
+
+      function updateTotals() {
+        const selections = loadSelections();
+        let totalPrice = 0;
+        let totalTime = 0;
+
+        modules.forEach((module, modIndex) => {
+          module.features.forEach((feature, featIndex) => {
+            const featureId = `hotel_mod_${modIndex}_feat_${featIndex}`;
+            if (selections[featureId]) {
+              totalPrice += feature.price;
+              totalTime += feature.time;
+            }
+          });
+        });
+
+        document.getElementById('totalPrice').innerHTML = `₹${totalPrice.toLocaleString()} <small>+ 5% GST</small>`;
+        document.getElementById('totalTime').innerHTML = `<i class="far fa-clock"></i> ${totalTime} days implementation`;
+      }
+
+      document.getElementById('resetBtn').addEventListener('click', function() {
+        localStorage.removeItem('hotelSelectedFeatures');
+        renderFeatures();
+      });
+
+      document.getElementById('inquireBtn').addEventListener('click', function() {
+        const selections = loadSelections();
+        const selectedFeatures = [];
+        modules.forEach((module, modIndex) => {
+          module.features.forEach((feature, featIndex) => {
+            const featureId = `hotel_mod_${modIndex}_feat_${featIndex}`;
+            if (selections[featureId]) {
+              selectedFeatures.push({
+                module: module.name,
+                feature: feature.name,
+                price: feature.price,
+                time: feature.time
+              });
+            }
+          });
+        });
+
+        if (selectedFeatures.length === 0) {
+          alert('Please select at least one feature to proceed.');
+          return;
+        }
+
+        const totalPrice = selectedFeatures.reduce((sum, f) => sum + f.price, 0);
+        const totalTime = selectedFeatures.reduce((sum, f) => sum + f.time, 0);
+
+        localStorage.setItem('hotelQuoteFeatures', JSON.stringify(selectedFeatures));
+        localStorage.setItem('hotelQuoteTotalPrice', totalPrice);
+        localStorage.setItem('hotelQuoteTotalTime', totalTime);
+
+        window.location.href = '/contact.html?source=hotel';
+      });
+
+      renderFeatures();
+    })();
+  </script>
+</body>
+</html>
