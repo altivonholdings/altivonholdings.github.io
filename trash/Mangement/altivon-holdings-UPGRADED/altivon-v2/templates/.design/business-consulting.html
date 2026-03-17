@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ApexStrategy – Business Consulting</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+<style>
+:root{--bg:#020c1f;--navy:#0a1628;--blue:#1e40af;--cyan:#38bdf8;--gold:#f59e0b;--text:#d1d9e6;--muted:#687591}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:'Manrope',sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 60px;border-bottom:1px solid rgba(255,255,255,.06)}
+.logo{font-size:19px;font-weight:800;color:#fff;letter-spacing:-.3px}.logo span{color:var(--gold)}
+.nav-links a{margin-left:24px;font-size:13px;color:var(--muted);text-decoration:none}
+.consult-btn{background:var(--gold);color:#000;padding:9px 22px;border-radius:7px;font-size:13px;font-weight:700;text-decoration:none;margin-left:16px}
+.hero{padding:80px 60px;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 30% 50%,rgba(30,64,175,.12),transparent)}
+.htag{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;position:relative}
+.hero h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1;margin-bottom:18px;position:relative;color:#fff}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:28px;position:relative}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;position:relative}
+.hs{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px 20px}
+.hs-n{font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:3px}
+.hs-l{font-size:12px;color:var(--muted)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;position:relative}
+.bc{background:linear-gradient(135deg,var(--blue),#1d4ed8);color:#fff;padding:12px 24px;border-radius:9px;font-weight:700;font-size:13px;text-decoration:none}
+.bg{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;padding:12px 24px;border-radius:9px;font-weight:600;font-size:13px;text-decoration:none}
+.hero-card{background:var(--navy);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:32px}
+.hc-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.hc-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.hc-item:last-child{border-bottom:none}
+.hc-dot{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hc-dot i{font-size:16px;color:#fff}
+.hc-name{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
+.hc-desc{font-size:12px;color:var(--muted)}
+.services{padding:70px 60px;background:var(--navy)}
+.sl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.st{font-size:2rem;font-weight:800;color:#fff;margin-bottom:36px}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:28px;transition:.3s}
+.sc:hover{border-color:rgba(245,158,11,.3);transform:translateY(-4px)}
+.sc-ic{width:48px;height:48px;border-radius:12px;background:rgba(245,158,11,.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.sc-ic i{font-size:20px;color:var(--gold)}
+.sc h3{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px}
+.sc p{font-size:13px;color:var(--muted);line-height:1.65}
+</style></head><body>
+
+<nav class="nav">
+  <div class="logo">Apex<span>Strategy</span></div>
+  <div class="nav-links"><a href="#">Services</a><a href="#">Case Studies</a><a href="#">Team</a><a href="#" class="consult-btn">Free Consultation</a></div>
+</nav>
+<section class="hero">
+  <div>
+    <div class="htag"><i class="fa fa-trophy"></i> Top-Rated Consulting Firm</div>
+    <h1>Transform Your<br>Business with <span>Expert</span><br>Strategy</h1>
+    <p>From market entry to operational excellence — we deliver measurable results for ambitious businesses across India and Southeast Asia.</p>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-n">&#8377;480 Cr</div><div class="hs-l">Revenue Generated for Clients</div></div>
+      <div class="hs"><div class="hs-n">340+</div><div class="hs-l">Projects Delivered</div></div>
+      <div class="hs"><div class="hs-n">94%</div><div class="hs-l">Client Retention Rate</div></div>
+      <div class="hs"><div class="hs-n">18 Yrs</div><div class="hs-l">Domain Expertise</div></div>
+    </div>
+    <div class="btns">
+      <a href="#" class="bc"><i class="fa fa-calendar"></i> Get Free Consultation</a>
+      <a href="#" class="bg"><i class="fa fa-folder"></i> View Case Studies</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hc-title"><i class="fa fa-list-check" style="color:var(--gold)"></i> Our Core Services</div>
+    <div class="hc-item"><div class="hc-dot"><i class="fa fa-chart-bar"></i></div><div><div class="hc-name">Business Strategy</div><div class="hc-desc">Market analysis, positioning, and growth roadmaps</div></div></div>
+    <div class="hc-item"><div class="hc-dot"><i class="fa fa-coins"></i></div><div><div class="hc-name">Financial Advisory</div><div class="hc-desc">Fundraising, M&amp;A support, and investor relations</div></div></div>
+    <div class="hc-item"><div class="hc-dot"><i class="fa fa-gears"></i></div><div><div class="hc-name">Operations Optimisation</div><div class="hc-desc">Process redesign and cost reduction initiatives</div></div></div>
+    <div class="hc-item"><div class="hc-dot"><i class="fa fa-rocket"></i></div><div><div class="hc-name">Digital Transformation</div><div class="hc-desc">Tech adoption and digital business model design</div></div></div>
+  </div>
+</section>
+<section class="services">
+  <div class="sl">What We Do</div><div class="st">Specialised Solutions</div>
+  <div class="sgrid">
+    <div class="sc"><div class="sc-ic"><i class="fa fa-globe"></i></div><h3>Market Expansion</h3><p>Enter new markets with confidence. We map competition, customer segments, and entry barriers.</p></div>
+    <div class="sc"><div class="sc-ic"><i class="fa fa-rotate"></i></div><h3>Business Restructuring</h3><p>Restructure operations, cut inefficiencies, and build leaner, more profitable organisations.</p></div>
+    <div class="sc"><div class="sc-ic"><i class="fa fa-handshake"></i></div><h3>M&amp;A Advisory</h3><p>Due diligence, valuation, and deal structuring for acquisitions, mergers, and exits.</p></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Business Consulting – ApexStrategy",backHref:"../business-consulting.html",orderHref:"../../contact/index.html?tpl=business-consulting"});</script>
+</body></html>

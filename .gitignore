@@ -1,11 +1,4 @@
-/Mangement
-Mangement/
-
-/Fetcher_clients
-Fetcher_clients/
-
-/old_website
-old_website/
-
-trash/
-/trash
+/data
+/Fetcher*
+data/
+Fetcher*/

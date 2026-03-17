@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="description" content="Browse 33+ premium website templates by Altivon Holdings. Choose from business, ecommerce, restaurant, education, healthcare, portfolio and more. Fully customized for your brand."/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Website Templates – Altivon Holdings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../_shared.css"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<style>
+/* ===== HEADER ===== */
+#hdr{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(5,8,15,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}.logo-icon{width:38px;height:38px;border-radius:9px;background:var(--grad-main);display:flex;align-items:center;justify-content:center;font-family:'Clash Display',sans-serif;font-weight:700;font-size:18px;color:#fff}.logo-name{font-family:'Clash Display',sans-serif;font-weight:600;font-size:17px;color:#fff}.logo-name em{color:var(--orange);font-style:normal}
+.main-nav{display:flex;gap:4px}.nav-link{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--muted);transition:.2s}.nav-link:hover,.nav-link.active{color:#fff;background:var(--surface2)}
+.hdr-actions{display:flex;align-items:center;gap:12px}.lang-btn{padding:7px 15px;border-radius:20px;border:1px solid var(--border2);background:var(--surface2);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}.burger span{width:22px;height:2px;background:#fff;border-radius:2px}
+@media(max-width:900px){.main-nav{display:none;position:fixed;top:72px;left:0;right:0;flex-direction:column;background:rgba(5,8,15,.97);padding:16px;border-bottom:1px solid var(--border)}.main-nav.open{display:flex}.hdr-actions .btn{display:none}.burger{display:flex}#hdr{padding:0 20px}}
+
+/* ===== HERO ===== */
+.page-hero{padding:140px 0 90px;background:var(--ink);position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.hero-bg-glow{position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:700px;background:radial-gradient(ellipse,rgba(37,99,235,.18) 0%,transparent 65%);pointer-events:none}
+.hero-bg-glow2{position:absolute;bottom:-100px;right:-80px;width:600px;height:500px;background:radial-gradient(ellipse,rgba(249,115,22,.1) 0%,transparent 65%);pointer-events:none}
+.hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-inner{text-align:center;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:20px;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.25);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange2);margin-bottom:24px}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--orange);animation:pulse-dot 1.5s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hero-title{color:#fff;margin:0 0 20px;max-width:800px;margin-left:auto;margin-right:auto}
+.hero-title .accent{background:var(--grad-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-subtitle{font-size:1.1rem;color:var(--muted);max-width:560px;margin:0 auto 36px;line-height:1.8}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:52px}
+.hero-stats{display:inline-flex;border:1px solid var(--border2);border-radius:16px;overflow:hidden;background:var(--surface2);backdrop-filter:blur(12px)}
+.h-stat{padding:16px 32px;text-align:center;border-right:1px solid var(--border)}
+.h-stat:last-child{border-right:none}
+.h-stat-num{font-family:'Clash Display',sans-serif;font-size:1.7rem;font-weight:700;color:#fff;display:block;line-height:1.1}
+.h-stat-label{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:4px;display:block}
+@media(max-width:600px){.hero-stats{flex-direction:column;width:100%;max-width:280px;margin-left:auto;margin-right:auto}.h-stat{border-right:none;border-bottom:1px solid var(--border)}.h-stat:last-child{border-bottom:none}}
+
+/* ===== FEATURE STRIP ===== */
+.feature-strip{padding:52px 0;background:var(--ink);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.fstrip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.fstrip-item{display:flex;align-items:flex-start;gap:14px}
+.fstrip-icon{font-size:1.5rem;line-height:1;flex-shrink:0;margin-top:2px}
+.fstrip-title{font-weight:700;color:#fff;margin-bottom:4px;font-size:14px}
+.fstrip-text{font-size:13px;color:var(--muted);line-height:1.55}
+@media(max-width:900px){.fstrip-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.fstrip-grid{grid-template-columns:1fr}}
+
+/* ===== CONTROLS BAR ===== */
+.controls-bar{padding:28px 0 22px;background:var(--ink2);border-bottom:1px solid var(--border);position:sticky;top:72px;z-index:99}
+.search-wrap{position:relative;max-width:480px;margin-bottom:18px}
+.search-input{width:100%;padding:11px 16px 11px 44px;background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:12px;color:var(--text);font-family:'Bricolage Grotesque',sans-serif;font-size:14px;outline:none;transition:.25s}
+.search-input:focus{border-color:var(--blue2);background:rgba(37,99,235,.06);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.search-input::placeholder{color:var(--muted)}
+.search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:15px;pointer-events:none;opacity:.5}
+.filter-row{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.filter-count{font-size:13px;color:var(--muted);margin-left:auto;white-space:nowrap;font-weight:600}
+.ftab{padding:7px 16px;border-radius:30px;font-size:13px;font-weight:600;background:var(--surface2);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all .2s;font-family:inherit;display:flex;align-items:center;gap:5px}
+.ftab:hover{border-color:var(--border2);color:var(--text)}
+.ftab.active{background:rgba(37,99,235,.15);border-color:var(--blue2);color:#93c5fd}
+.ftab .cnt{font-size:10px;font-weight:700;padding:1px 5px;border-radius:8px;background:rgba(255,255,255,.1)}
+.ftab.active .cnt{background:rgba(37,99,235,.3)}
+
+/* ===== TEMPLATE SECTION ===== */
+.tpl-section{padding:40px 0 80px;background:var(--ink2)}
+.sort-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px}
+.sort-label{font-size:13px;color:var(--muted)}
+.sort-btns{display:flex;gap:5px}
+.srt{padding:6px 13px;border-radius:8px;font-size:12px;font-weight:600;background:var(--surface2);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:.2s;font-family:inherit}
+.srt:hover,.srt.active{background:rgba(255,255,255,.07);border-color:var(--border2);color:var(--text)}
+.view-toggle{display:flex;gap:4px}
+.vtgl{padding:7px 10px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:.2s;font-size:15px;font-family:inherit}
+.vtgl.active,.vtgl:hover{background:rgba(255,255,255,.08);color:#fff;border-color:var(--border2)}
+
+/* ===== CARD GRID ===== */
+.tpl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tpl-grid.list-view{grid-template-columns:1fr}
+
+/* Card */
+.tpl-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .38s cubic-bezier(.25,.46,.45,.94);position:relative}
+.tpl-card:hover{border-color:rgba(249,115,22,.4);transform:translateY(-8px);box-shadow:0 28px 70px rgba(0,0,0,.6),0 0 0 1px rgba(249,115,22,.07)}
+
+/* Thumb */
+.tpl-thumb{position:relative;height:210px;overflow:hidden;background:var(--ink3)}
+.tpl-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+.tpl-card:hover .tpl-thumb img{transform:scale(1.08)}
+.tpl-thumb-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,15,.6) 0%,transparent 55%)}
+.tpl-overlay-btns{position:absolute;inset:0;background:rgba(5,8,15,.75);display:flex;align-items:center;justify-content:center;gap:10px;opacity:0;transition:all .3s;backdrop-filter:blur(4px)}
+.tpl-card:hover .tpl-overlay-btns{opacity:1}
+
+/* Badges */
+.tpl-badge{position:absolute;top:12px;left:12px;z-index:3;padding:4px 11px;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:.5px}
+.tpl-badge.hot{background:linear-gradient(135deg,#ef4444,#f97316);color:#fff;box-shadow:0 2px 10px rgba(249,115,22,.45)}
+.tpl-badge.new{background:linear-gradient(135deg,#22c55e,#15803d);color:#fff;box-shadow:0 2px 10px rgba(34,197,94,.4)}
+.tpl-badge.free{background:linear-gradient(135deg,#2563eb,#06b6d4);color:#fff;box-shadow:0 2px 10px rgba(37,99,235,.45)}
+.tpl-price-pill{position:absolute;top:12px;right:12px;z-index:3;padding:4px 12px;border-radius:8px;font-size:12px;font-weight:700;background:rgba(5,8,15,.82);border:1px solid rgba(34,197,94,.3);color:var(--green);backdrop-filter:blur(8px)}
+
+/* Body */
+.tpl-body{padding:20px}
+.tpl-cat-row{margin-bottom:10px}
+.tpl-category{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);padding:3px 10px;background:rgba(249,115,22,.1);border-radius:20px;border:1px solid rgba(249,115,22,.2)}
+.tpl-name{font-family:'Clash Display',sans-serif;font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.25}
+.tpl-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px}
+.tpl-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.tpl-tags{display:flex;gap:5px;flex-wrap:wrap}
+.tpl-tag{padding:3px 9px;border-radius:8px;font-size:11px;font-weight:600;background:var(--surface2);border:1px solid var(--border);color:var(--muted)}
+
+/* List view */
+.tpl-grid.list-view .tpl-card .tpl-inner-wrap{display:flex}
+.tpl-grid.list-view .tpl-thumb{height:165px;width:260px;flex-shrink:0;border-radius:0}
+.tpl-grid.list-view .tpl-body{display:flex;flex-direction:column;justify-content:center;flex:1;padding:20px 24px}
+@media(max-width:650px){.tpl-grid.list-view .tpl-card .tpl-inner-wrap{flex-direction:column}.tpl-grid.list-view .tpl-thumb{width:100%;height:180px}}
+
+/* Empty */
+.empty-state{grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--muted)}
+.empty-state h3{font-family:'Clash Display',sans-serif;font-size:1.4rem;color:#fff;margin-bottom:10px}
+
+/* ===== CTA ===== */
+.cta-box{background:linear-gradient(135deg,rgba(37,99,235,.12),rgba(6,182,212,.06),rgba(249,115,22,.06));border:1px solid rgba(37,99,235,.2);border-radius:28px;padding:60px 48px;text-align:center;margin-top:60px;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(37,99,235,.12) 0%,transparent 70%);pointer-events:none}
+.cta-box h2{color:#fff;margin-bottom:12px;position:relative}
+.cta-box p{color:var(--muted);margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* ===== FOOTER ===== */
+footer{background:var(--ink2);border-top:1px solid var(--border);padding:48px 0 24px}
+.footer-mini{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-mini p{font-size:13px;color:var(--muted)}
+.footer-mini-links{display:flex;gap:20px}.footer-mini-links a{font-size:13px;color:var(--muted);transition:.2s}.footer-mini-links a:hover{color:var(--orange2)}
+
+/* ===== ANIMATIONS ===== */
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.fade-up.in{opacity:1;transform:translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1100px){.tpl-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.tpl-grid{grid-template-columns:1fr}.controls-bar{position:static}.container{padding:0 20px}.cta-box{padding:36px 24px}.h-stat{padding:14px 20px}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <a href="../index.html" class="logo">
+    <div class="logo-icon">A</div>
+    <span class="logo-name">Altivon <em>Holdings</em></span>
+  </a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="../services/index.html" class="nav-link">Services</a>
+    <a href="index.html" class="nav-link active">Templates</a>
+    <a href="../products/index.html" class="nav-link">Products</a>
+    <a href="../pricing/index.html" class="nav-link">Pricing</a>
+    <a href="../docs/index.html" class="nav-link">Docs</a>
+    <a href="../about/index.html" class="nav-link">About</a>
+    <a href="../contact/index.html" class="nav-link">Contact</a>
+  </nav>
+  <div class="hdr-actions">
+    <button class="lang-btn" id="langBtn"> हिंदी</button>
+    <a href="../contact/index.html" class="btn btn-orange btn-sm">Get Quote</a>
+  </div>
+  <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-bg-glow2"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-eyebrow"> Premium Ready-Made Templates</div>
+      <h1 class="display h1 hero-title fade-up">
+        Your Business Deserves a<br/>
+        <span class="accent">Stunning Website</span>
+      </h1>
+      <p class="hero-subtitle fade-up">
+        Pick from 33 professionally designed website templates.
+        We customize any template to match your brand — fully done in 7–16 days.
+      </p>
+      <div class="hero-actions fade-up">
+        <a href="../contact/index.html" class="btn btn-orange btn-lg">Customize a Template →</a>
+        <a href="https://wa.me/916393741885" target="_blank" class="btn btn-wa btn-lg"> WhatsApp Us</a>
+        <a href="../services/index.html" class="btn btn-ghost btn-lg">Build from Scratch</a>
+      </div>
+      <div class="hero-stats fade-up">
+        <div class="h-stat">
+          <span class="h-stat-num">33+</span>
+          <span class="h-stat-label">Templates</span>
+        </div>
+        <div class="h-stat">
+          <span class="h-stat-num">7–16</span>
+          <span class="h-stat-label">Day Delivery</span>
+        </div>
+        <div class="h-stat">
+          <span class="h-stat-num">100%</span>
+          <span class="h-stat-label">Responsive</span>
+        </div>
+        <div class="h-stat">
+          <span class="h-stat-num">3 mo</span>
+          <span class="h-stat-label">Free Support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE STRIP -->
+<div class="feature-strip">
+  <div class="container">
+    <div class="fstrip-grid">
+      <div class="fstrip-item fade-up">
+        <div class="fstrip-icon"></div>
+        <div><div class="fstrip-title">Your Brand, Our Template</div><div class="fstrip-text">Logo, colors, fonts & all content replaced with yours.</div></div>
+      </div>
+      <div class="fstrip-item fade-up">
+        <div class="fstrip-icon"></div>
+        <div><div class="fstrip-title">Mobile-First Design</div><div class="fstrip-text">Every template tested on phones, tablets, and desktops.</div></div>
+      </div>
+      <div class="fstrip-item fade-up">
+        <div class="fstrip-icon"></div>
+        <div><div class="fstrip-title">SEO Ready</div><div class="fstrip-text">Proper meta, headings & schema to rank on Google.</div></div>
+      </div>
+      <div class="fstrip-item fade-up">
+        <div class="fstrip-icon">️</div>
+        <div><div class="fstrip-title">3 Months Free Support</div><div class="fstrip-text">We fix bugs and answer questions for 3 months post-launch.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTROLS BAR -->
+<div class="controls-bar">
+  <div class="container">
+    <div class="search-wrap">
+      <span class="search-icon"></span>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search templates… e.g. restaurant, portfolio, shop"/>
+    </div>
+    <div class="filter-row">
+      <button class="ftab active" data-cat="all" onclick="filterTpl('all',this)">All <span class="cnt">33</span></button>
+      <button class="ftab" data-cat="business" onclick="filterTpl('business',this)">Business <span class="cnt">6</span></button>
+      <button class="ftab" data-cat="ecommerce" onclick="filterTpl('ecommerce',this)">E-Commerce <span class="cnt">5</span></button>
+      <button class="ftab" data-cat="restaurant" onclick="filterTpl('restaurant',this)">Restaurant <span class="cnt">4</span></button>
+      <button class="ftab" data-cat="education" onclick="filterTpl('education',this)">Education <span class="cnt">3</span></button>
+      <button class="ftab" data-cat="healthcare" onclick="filterTpl('healthcare',this)">Healthcare <span class="cnt">3</span></button>
+      <button class="ftab" data-cat="portfolio" onclick="filterTpl('portfolio',this)">Portfolio <span class="cnt">2</span></button>
+      <button class="ftab" data-cat="startup" onclick="filterTpl('startup',this)">Startup <span class="cnt">3</span></button>
+      <button class="ftab" data-cat="realestate" onclick="filterTpl('realestate',this)">Real Estate <span class="cnt">2</span></button>
+      <button class="ftab" data-cat="blog" onclick="filterTpl('blog',this)">Blog <span class="cnt">2</span></button>
+      <button class="ftab" data-cat="landing" onclick="filterTpl('landing',this)">Landing <span class="cnt">4</span></button>
+      <span class="filter-count" id="filterCount">Showing 33 templates</span>
+    </div>
+  </div>
+</div>
+
+<!-- TEMPLATE SECTION -->
+<section class="tpl-section">
+  <div class="container">
+
+    <div class="sort-row fade-up">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <span class="sort-label">Sort by:</span>
+        <div class="sort-btns">
+          <button class="srt active" onclick="sortTpl('default',this)">Featured</button>
+          <button class="srt" onclick="sortTpl('price-asc',this)">Price ↑</button>
+          <button class="srt" onclick="sortTpl('price-desc',this)">Price ↓</button>
+          <button class="srt" onclick="sortTpl('name',this)">A–Z</button>
+        </div>
+      </div>
+      <div class="view-toggle">
+        <button class="vtgl active" id="gridViewBtn" onclick="setView('grid')" title="Grid view">⊞</button>
+        <button class="vtgl" id="listViewBtn" onclick="setView('list')" title="List view"></button>
+      </div>
+    </div>
+
+    <div class="tpl-grid" id="tplGrid"></div>
+
+    <div class="cta-box fade-up">
+      <h2 class="display h2">Don't see what you need?</h2>
+      <p>We design fully custom websites from scratch — tailored exactly to your vision and industry.</p>
+      <div class="cta-actions">
+        <a href="../contact/index.html" class="btn btn-primary">Request Custom Design →</a>
+        <a href="https://wa.me/916393741885" target="_blank" class="btn btn-wa"> WhatsApp Now</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-mini">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">A</div>
+        <span class="logo-name">Altivon <em>Holdings</em></span>
+      </a>
+      <div class="footer-mini-links">
+        <a href="../services/index.html">Services</a>
+        <a href="../products/index.html">Products</a>
+        <a href="../pricing/index.html">Pricing</a>
+        <a href="../contact/index.html">Contact</a>
+      </div>
+      <p>© 2025 Altivon Holdings · altivonholdings@gmail.com · +91 63937 41885</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const TEMPLATES = [
+  // Business (6)
+  {id:'business-corporate',  cat:'business',  badge:'hot',  name:'Corporate Pro',         desc:'Clean, multi-page site for corporate businesses and agencies.',            img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80', price:'₹15,000', priceNum:15000, tags:['5 Pages','CMS']},
+  {id:'business-consulting', cat:'business',  badge:'',     name:'Consulting Firm',        desc:'Trust-building design for consulting, legal and financial firms.',          img:'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80', price:'₹15,000', priceNum:15000, tags:['Blog','Contact']},
+  {id:'business-local',      cat:'business',  badge:'new',  name:'Local Business Plus',    desc:'Perfect for shops, clinics and services targeting local customers.',         img:'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&q=80', price:'₹12,000', priceNum:12000, tags:['WhatsApp','Maps']},
+  {id:'business-starter',    cat:'business',  badge:'free', name:'Business Starter',       desc:'Simple, effective one-page website to establish your presence fast.',        img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80', price:'Free',    priceNum:0,     tags:['1 Page','Fast']},
+  {id:'business-transport',  cat:'business',  badge:'',     name:'Transport & Logistics',  desc:'Fleet management and logistics company website with service areas.',          img:'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=700&q=80', price:'₹18,000', priceNum:18000, tags:['Fleet','Routes']},
+  {id:'business-hotel',      cat:'business',  badge:'',     name:'Hotel & Hospitality',    desc:'Hotel website with room gallery, amenities and booking inquiry.',            img:'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80', price:'₹22,000', priceNum:22000, tags:['Gallery','Booking']},
+  // E-Commerce (5)
+  {id:'ecommerce-shopmax',    cat:'ecommerce', badge:'hot',  name:'ShopMax',               desc:'Full-featured online store with cart, checkout and product management.',     img:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80', price:'₹25,000', priceNum:25000, tags:['Cart','Payments']},
+  {id:'ecommerce-fashion',    cat:'ecommerce', badge:'',     name:'Fashion Store',          desc:'Elegant fashion and apparel store with lookbook and size guide.',            img:'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&q=80', price:'₹22,000', priceNum:22000, tags:['Gallery','Filters']},
+  {id:'ecommerce-grocery',    cat:'ecommerce', badge:'new',  name:'Grocery & Kirana',       desc:'Online grocery store with category management and WhatsApp ordering.',       img:'https://images.unsplash.com/photo-1542838132-92c53300491e?w=700&q=80', price:'₹20,000', priceNum:20000, tags:['WhatsApp','Local']},
+  {id:'ecommerce-handicraft', cat:'ecommerce', badge:'',     name:'Handicraft Store',       desc:'Showcase and sell handmade products with story-driven design.',              img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80', price:'₹18,000', priceNum:18000, tags:['Gallery','Story']},
+  {id:'ecommerce-electronics',cat:'ecommerce', badge:'new',  name:'Electronics Store',      desc:'Modern electronics store with comparison feature and specs display.',        img:'https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=700&q=80', price:'₹28,000', priceNum:28000, tags:['Compare','Cart']},
+  // Restaurant (4)
+  {id:'restaurant-royal',    cat:'restaurant',badge:'hot',  name:'Restaurant Royal',       desc:'Premium restaurant with interactive menu, gallery and table reservations.',   img:'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700&q=80', price:'₹18,000', priceNum:18000, tags:['Menu','Order']},
+  {id:'restaurant-cafe',     cat:'restaurant',badge:'',     name:'Cafe & Bakery',          desc:'Warm, cozy design for cafes and bakeries with online pre-orders.',           img:'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=700&q=80', price:'₹15,000', priceNum:15000, tags:['Menu','Gallery']},
+  {id:'restaurant-delivery', cat:'restaurant',badge:'new',  name:'Food Delivery',          desc:'Complete food ordering website with area-based delivery management.',         img:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=700&q=80', price:'₹28,000', priceNum:28000, tags:['Delivery','Zones']},
+  {id:'landing-restaurant-menu',cat:'restaurant',badge:'', name:'Digital Menu',           desc:'QR-based digital menu landing page for dine-in restaurants.',                img:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80', price:'₹8,000',  priceNum:8000,  tags:['QR Code','Menu']},
+  // Education (3)
+  {id:'education-academy',   cat:'education', badge:'hot',  name:'Academy Plus',           desc:'Coaching center website with course listing, fee and enrollment form.',       img:'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&q=80', price:'₹18,000', priceNum:18000, tags:['Courses','Enroll']},
+  {id:'education-school',    cat:'education', badge:'',     name:'School Website',         desc:'Complete school website with gallery, faculty, notices and admissions.',      img:'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=80', price:'₹22,000', priceNum:22000, tags:['CMS','Notices']},
+  {id:'education-elearning', cat:'education', badge:'new',  name:'E-Learning Portal',      desc:'Online learning platform with video lessons and student progress tracking.',   img:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&q=80', price:'₹35,000', priceNum:35000, tags:['Videos','Portal']},
+  // Healthcare (3)
+  {id:'healthcare-clinic',   cat:'healthcare',badge:'hot',  name:'Clinic & Doctor',        desc:'Doctor or clinic website with appointment booking and patient info.',          img:'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=700&q=80', price:'₹18,000', priceNum:18000, tags:['Appointments','SEO']},
+  {id:'healthcare-pharmacy', cat:'healthcare',badge:'',     name:'Pharmacy Store',         desc:'Online pharmacy catalog with prescription upload and home delivery.',          img:'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=700&q=80', price:'₹20,000', priceNum:20000, tags:['Catalog','Orders']},
+  {id:'healthcare-wellness', cat:'healthcare',badge:'new',  name:'Wellness & Yoga',        desc:'Calming design for yoga studios, gyms and wellness coaches.',                 img:'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=700&q=80', price:'₹15,000', priceNum:15000, tags:['Classes','Booking']},
+  // Portfolio (2)
+  {id:'portfolio-creative',  cat:'portfolio', badge:'',     name:'Creative Portfolio',     desc:'Bold portfolio for designers, photographers and creative professionals.',      img:'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80', price:'₹10,000', priceNum:10000, tags:['Gallery','Clean']},
+  {id:'portfolio-freelancer',cat:'portfolio', badge:'',     name:'Freelancer Profile',     desc:'Clean personal website for freelancers and developers to win clients.',        img:'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&q=80', price:'₹8,000',  priceNum:8000,  tags:['Skills','Contact']},
+  // Startup (3)
+  {id:'startup-saas',        cat:'startup',   badge:'hot',  name:'SaaS Landing',           desc:'High-converting SaaS product landing page with pricing and demo.',           img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80', price:'₹20,000', priceNum:20000, tags:['Pricing','CTA']},
+  {id:'startup-app',         cat:'startup',   badge:'new',  name:'App Launch',             desc:'Mobile app launch page with feature showcase and download links.',            img:'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&q=80', price:'₹15,000', priceNum:15000, tags:['Waitlist','Download']},
+  {id:'startup-tech',        cat:'startup',   badge:'',     name:'Tech Startup',           desc:'Modern, animated startup website that wows investors and customers.',          img:'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80', price:'₹25,000', priceNum:25000, tags:['Team','Blog']},
+  // Real Estate (2)
+  {id:'realestate-pro',      cat:'realestate',badge:'hot',  name:'Real Estate Pro',        desc:'Property listing website with search, filters and contact agent.',             img:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80', price:'₹25,000', priceNum:25000, tags:['Listings','Search']},
+  {id:'realestate-agency',   cat:'realestate',badge:'',     name:'Property Agency',        desc:'Agency website showcasing properties, team and customer reviews.',            img:'https://images.unsplash.com/photo-1565402170291-8491f14678db?w=700&q=80', price:'₹20,000', priceNum:20000, tags:['Gallery','Team']},
+  // Blog (2)
+  {id:'blog-magazine',       cat:'blog',      badge:'',     name:'News & Magazine',        desc:'Content-heavy news and magazine layout with categories and newsletter.',       img:'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=700&q=80', price:'₹15,000', priceNum:15000, tags:['CMS','Newsletter']},
+  {id:'blog-personal',       cat:'blog',      badge:'new',  name:'Personal Blog',          desc:'Minimal, beautiful personal blog with dark/light mode and SEO.',              img:'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=700&q=80', price:'₹8,000',  priceNum:8000,  tags:['CMS','SEO']},
+  // Landing (4)
+  {id:'landing-leadgen',     cat:'landing',   badge:'hot',  name:'Lead Gen Pro',           desc:'High-converting lead generation page with form and WhatsApp CTA.',            img:'https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80', price:'₹10,000', priceNum:10000, tags:['Leads','WhatsApp']},
+  {id:'landing-event',       cat:'landing',   badge:'',     name:'Event Landing',          desc:'Event or webinar registration page with countdown timer and RSVP.',           img:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80', price:'₹8,000',  priceNum:8000,  tags:['Timer','Register']},
+  {id:'landing-product',     cat:'landing',   badge:'new',  name:'Product Launch',         desc:'Compelling product reveal page with waitlist, countdown and pre-order.',       img:'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=700&q=80', price:'₹10,000', priceNum:10000, tags:['Waitlist','Hype']},
+];
+
+let activeFilter = 'all';
+let activeSort   = 'default';
+let searchQuery  = '';
+let viewMode     = 'grid';
+
+function filterTpl(cat, btn) {
+  activeFilter = cat;
+  document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGrid();
+}
+
+function sortTpl(mode, btn) {
+  activeSort = mode;
+  document.querySelectorAll('.srt').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGrid();
+}
+
+function setView(mode) {
+  viewMode = mode;
+  const grid = document.getElementById('tplGrid');
+  document.getElementById('gridViewBtn').classList.toggle('active', mode==='grid');
+  document.getElementById('listViewBtn').classList.toggle('active', mode==='list');
+  grid.classList.toggle('list-view', mode==='list');
+}
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQuery = e.target.value.toLowerCase().trim();
+  renderGrid();
+});
+
+function renderGrid() {
+  let list = [...TEMPLATES];
+
+  if (activeFilter !== 'all') list = list.filter(t => t.cat === activeFilter);
+  if (searchQuery) {
+    list = list.filter(t =>
+      t.name.toLowerCase().includes(searchQuery) ||
+      t.desc.toLowerCase().includes(searchQuery) ||
+      t.cat.toLowerCase().includes(searchQuery) ||
+      t.tags.some(g => g.toLowerCase().includes(searchQuery))
+    );
+  }
+
+  if (activeSort === 'price-asc')  list.sort((a,b) => a.priceNum - b.priceNum);
+  if (activeSort === 'price-desc') list.sort((a,b) => b.priceNum - a.priceNum);
+  if (activeSort === 'name')       list.sort((a,b) => a.name.localeCompare(b.name));
+
+  const grid  = document.getElementById('tplGrid');
+  const count = document.getElementById('filterCount');
+  count.textContent = `Showing ${list.length} template${list.length !== 1 ? 's' : ''}`;
+
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty-state"><h3>No templates found</h3><p>Try a different keyword or browse all categories above.</p></div>`;
+    return;
+  }
+
+  const badgeLabel = {hot:' Hot', new:' New', free:'Free'};
+
+  grid.innerHTML = list.map(t => `
+    <div class="tpl-card fade-up">
+      <div class="tpl-inner-wrap">
+        <div class="tpl-thumb">
+          ${t.badge ? `<span class="tpl-badge ${t.badge}">${badgeLabel[t.badge]||t.badge}</span>` : ''}
+          <span class="tpl-price-pill">${t.price}</span>
+          <img src="${t.img}" alt="${t.name}" loading="lazy"/>
+          <div class="tpl-thumb-shade"></div>
+          <div class="tpl-overlay-btns">
+            <a href="${t.id}.html" class="btn btn-primary btn-sm">Details →</a>
+            <a href="design/${t.id}.html" class="btn btn-ghost btn-sm">️ Preview</a>
+          </div>
+        </div>
+        <div class="tpl-body">
+          <div class="tpl-cat-row">
+            <span class="tpl-category">${t.cat.charAt(0).toUpperCase()+t.cat.slice(1)}</span>
+          </div>
+          <div class="tpl-name">${t.name}</div>
+          <p class="tpl-desc">${t.desc}</p>
+          <div class="tpl-footer">
+            <div class="tpl-tags">${t.tags.map(g=>`<span class="tpl-tag">${g}</span>`).join('')}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  if (viewMode === 'list') grid.classList.add('list-view');
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((x, i) => {
+      if (x.isIntersecting) { setTimeout(() => x.target.classList.add('in'), i*45); obs.unobserve(x.target); }
+    });
+  }, { threshold: 0.04 });
+  document.querySelectorAll('.fade-up:not(.in)').forEach(el => obs.observe(el));
+}
+
+renderGrid();
+
+// Header shadow on scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('hdr').style.boxShadow = window.scrollY > 20 ? '0 4px 30px rgba(0,0,0,.6)' : 'none';
+});
+
+// Initial fade-up
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((x, i) => {
+    if (x.isIntersecting) { setTimeout(() => x.target.classList.add('in'), i*65); obs.unobserve(x.target); }
+  });
+}, { threshold: 0.06 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+<script src="../shared-footer.js"></script>
+</body>
+</html>

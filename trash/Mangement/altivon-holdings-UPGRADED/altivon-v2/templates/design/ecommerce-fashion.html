@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Velour – Premium Fashion Store</title>
+<link rel="stylesheet" href="utils/demo-base.css">
+    <link rel="stylesheet" href="css/ecommerce-fashion.css">"/>
+    <link rel="stylesheet" href="utils/demo-bar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#faf8f5;--dk:#111;--blush:#e8c4c0;--sage:#7c9a80;--muted:#888;--lt:#f0ede8}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 60px;border-bottom:1px solid rgba(0,0,0,.06);background:#fff}
+.logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.subnav{display:flex;justify-content:center;gap:36px;padding:12px 60px;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;background:#fff}
+.subnav a{text-decoration:none;color:#555;letter-spacing:.5px}
+.nav-icons{display:flex;gap:18px;font-size:17px;color:#555;cursor:pointer}
+.hero{display:grid;grid-template-columns:55% 45%;min-height:82vh}
+.hero-left{background:#1a1a1a;display:flex;align-items:flex-end;padding:60px;position:relative;overflow:hidden}
+.h-bg{position:absolute;inset:0;background:linear-gradient(160deg,#2a1a12,#1a1a1a);display:flex;align-items:center;justify-content:center}
+.h-bg i{font-size:200px;color:rgba(232,196,192,.05)}
+.hero-left-content{position:relative;z-index:1}
+.season{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px}
+.hero-left h1{font-family:'Cormorant Garamond',serif;font-size:3.6rem;font-weight:700;color:#fff;line-height:1.1;margin-bottom:22px}
+.hero-left h1 em{color:var(--blush);font-style:italic}
+.btn-fashion{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:var(--blush);color:#111;font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:.2s}
+.hero-right{padding:60px;display:flex;flex-direction:column;justify-content:center;background:var(--bg)}
+.promo{display:inline-block;background:var(--sage);color:#fff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;margin-bottom:18px}
+.hero-right h2{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;margin-bottom:14px;line-height:1.2}
+.hero-right p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:24px}
+.col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.col-item{background:var(--lt);height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:.3s;border:1px solid transparent}
+.col-item:hover{border-color:var(--blush)}
+.col-item i{font-size:48px;color:#999;margin-bottom:10px}
+.col-lbl{text-align:center;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-top:4px}
+.col-price{text-align:center;font-size:12px;color:var(--muted)}
+.products{padding:70px 60px}
+.sec-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:36px}
+.sec-header h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700}
+.see-all{font-size:13px;color:var(--muted);border-bottom:1px solid var(--muted);text-decoration:none}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.pc{cursor:pointer}
+.pc-img{background:var(--lt);height:280px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;transition:.2s;position:relative;overflow:hidden}
+.pc-img i{font-size:72px;color:#bbb;transition:.2s}
+.pc:hover .pc-img{background:var(--blush)}
+.badge{position:absolute;top:10px;left:10px;background:#111;color:#fff;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px}
+.pc-name{font-size:13px;font-weight:500;margin-bottom:4px}
+.pc-price{font-size:13px;color:var(--muted)}
+.pc-price s{margin-right:6px}
+.pc-price strong{color:var(--dk)}
+</style>
+    <!-- Enhanced Mobile Support -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head><body>
+<nav class="nav">
+  <div></div>
+  <div class="logo">Velour</div>
+  <div class="nav-icons"><i class="fa fa-magnifying-glass"></i><i class="fa fa-heart"></i><i class="fa fa-bag-shopping"></i></div>
+</nav>
+<div class="subnav"><a href="#">New Arrivals</a><a href="#">Women</a><a href="#">Men</a><a href="#">Accessories</a><a href="#">Sale</a></div>
+<section class="hero">
+  <div class="hero-left">
+    <div class="h-bg"><i class="fa fa-vest"></i></div>
+    <div class="hero-left-content">
+      <div class="season">SS 2025 Collection</div>
+      <h1>Define<br>Your <em>Style</em></h1>
+      <a href="#" class="btn-fashion"><i class="fa fa-arrow-right"></i> Explore Collection</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="promo">Up to 40% Off</div>
+    <h2>Summer Essentials Are Here</h2>
+    <p>Lightweight fabrics, bold colors, silhouettes that flow. Discover our curated summer edit — ethically sourced from Indian weavers.</p>
+    <div class="col-grid">
+      <div class="col-item"><i class="fa fa-shirt"></i><div class="col-lbl">Tops</div><div class="col-price">From &#8377;499</div></div>
+      <div class="col-item"><i class="fa fa-person-dress"></i><div class="col-lbl">Dresses</div><div class="col-price">From &#8377;799</div></div>
+      <div class="col-item"><i class="fa fa-shoe-prints"></i><div class="col-lbl">Footwear</div><div class="col-price">From &#8377;999</div></div>
+    </div>
+  </div>
+</section>
+<section class="products">
+  <div class="sec-header"><h2>New Arrivals</h2><a href="#" class="see-all">See All</a></div>
+  <div class="pgrid">
+    <div class="pc"><div class="pc-img"><i class="fa fa-hat-cowboy"></i><span class="badge">New</span></div><div class="pc-name">Woven Sun Hat</div><div class="pc-price"><s>&#8377;899</s><strong>&#8377;649</strong></div></div>
+    <div class="pc"><div class="pc-img"><i class="fa fa-bag-shopping"></i></div><div class="pc-name">Linen Tote Bag</div><div class="pc-price"><strong>&#8377;1,199</strong></div></div>
+    <div class="pc"><div class="pc-img"><i class="fa fa-glasses"></i><span class="badge">Hot</span></div><div class="pc-name">Oval Sunglasses</div><div class="pc-price"><s>&#8377;1,499</s><strong>&#8377;999</strong></div></div>
+    <div class="pc"><div class="pc-img"><i class="fa fa-person-dress"></i></div><div class="pc-name">Floral Midi Dress</div><div class="pc-price"><strong>&#8377;2,299</strong></div></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({
+            title: 'Velour – Premium Fashion Store',
+            backHref: 'index.html',
+            orderHref: 'contact.html?design=ecommerce-fashion'
+        });</script>
+    <script src="js/ecommerce-fashion.js"></script>
+</body></html>

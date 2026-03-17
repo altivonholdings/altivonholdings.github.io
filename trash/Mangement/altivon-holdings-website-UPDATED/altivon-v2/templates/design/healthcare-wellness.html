@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Wellness Center – Demo | Altivon</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#faf7f4;--sage:#7a9e7e;--terr:#c17f5e;--dk:#2c2416;--lt:#f0ede6;--mu:#8a7d6e}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'Josefin Sans',sans-serif}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 60px;border-bottom:1px solid var(--lt)}
+.logo{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:var(--sage)}
+.nav a{margin-left:24px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mu);text-decoration:none}
+.book-btn{border:1px solid var(--sage);color:var(--sage);padding:9px 22px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;text-decoration:none;transition:.3s;margin-left:16px}
+.book-btn:hover{background:var(--sage);color:#fff}
+.hero{height:88vh;background:linear-gradient(160deg,#e8f0e4 0%,#faf7f4 50%,#f0e8e0 100%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'✿ ✿ ✿';font-size:60px;position:absolute;top:40px;left:50%;transform:translateX(-50%);opacity:.06;letter-spacing:40px}
+.hero-inner{position:relative}
+.hero-lbl{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--sage);margin-bottom:18px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5rem);font-style:italic;color:var(--dk);line-height:1.08;margin-bottom:20px}
+.hero h1 span{color:var(--sage)}
+.hero p{font-size:14px;color:var(--mu);max-width:440px;margin:0 auto 32px;line-height:1.85;letter-spacing:.3px}
+.btns{display:flex;gap:16px;justify-content:center}
+.bs{background:var(--sage);color:#fff;padding:12px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s}
+.bs:hover{background:#698c6d}
+.bo{border:1px solid rgba(122,158,126,.35);color:var(--dk);padding:12px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s}
+.services{padding:80px 60px;text-align:center}
+.sl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--terr);margin-bottom:12px}
+.st{font-family:'Playfair Display',serif;font-size:2.2rem;font-style:italic;margin-bottom:48px}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.sc{border:1px solid var(--lt);border-radius:2px;padding:32px 24px;text-align:center;transition:.3s;cursor:pointer}
+.sc:hover{border-color:var(--sage);background:linear-gradient(160deg,#e8f0e4,var(--bg));transform:translateY(-4px)}
+.sc-ic{font-size:44px;margin-bottom:16px}
+.sc h3{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;margin-bottom:10px;color:var(--dk)}
+.sc p{font-size:13px;color:var(--mu);line-height:1.7}
+.sc-price{font-size:14px;font-weight:600;color:var(--terr);margin-top:14px}
+.testimonials{padding:80px 60px;background:var(--lt)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.tc{background:var(--bg);padding:28px;border-radius:2px}
+.tc-stars{color:var(--terr);font-size:14px;margin-bottom:12px}
+.tc p{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;color:var(--dk);line-height:1.7;margin-bottom:16px}
+.tc-author{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--mu)}
+</style></head><body>
+<nav class="nav">
+  <div class="logo">Serenity</div>
+  <div><a href="#">Services</a><a href="#">About</a><a href="#">Pricing</a><a href="#" class="book-btn">Book Session</a></div>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-lbl">Holistic Wellness Center</div>
+    <h1>Heal. <span>Restore.</span><br>Flourish.</h1>
+    <p>A sanctuary of calm in a busy world. Experience personalised yoga, meditation, ayurvedic therapies, and nutrition coaching designed for your unique journey.</p>
+    <div class="btns"><a href="#" class="bs">Book a Session</a><a href="#" class="bo">Explore Services</a></div>
+  </div>
+</section>
+<section class="services">
+  <div class="sl">What We Offer</div>
+  <div class="st">Our Healing Practices</div>
+  <div class="sgrid">
+    <div class="sc"><div class="sc-ic">🧘</div><h3>Yoga & Meditation</h3><p>Daily group and private sessions for all levels. From beginner Hatha to advanced Vinyasa flow.</p><div class="sc-price">From ₹500/session</div></div>
+    <div class="sc"><div class="sc-ic">💆</div><h3>Ayurvedic Massage</h3><p>Traditional Abhyanga, Shirodhara, and Panchakarma treatments by certified therapists.</p><div class="sc-price">From ₹1,200/session</div></div>
+    <div class="sc"><div class="sc-ic">🌿</div><h3>Nutrition Coaching</h3><p>Personalised diet plans, gut health programs, and mindful eating workshops.</p><div class="sc-price">From ₹800/session</div></div>
+    <div class="sc"><div class="sc-ic">🛁</div><h3>Hydrotherapy</h3><p>Therapeutic water treatments to detox, relieve stress, and improve circulation.</p><div class="sc-price">From ₹1,500/session</div></div>
+    <div class="sc"><div class="sc-ic">🎵</div><h3>Sound Healing</h3><p>Tibetan singing bowl sessions and breathwork to restore inner harmony.</p><div class="sc-price">From ₹700/session</div></div>
+    <div class="sc"><div class="sc-ic">🌸</div><h3>Aromatherapy</h3><p>Essential oil-based treatments for stress relief, sleep improvement, and mood balance.</p><div class="sc-price">From ₹900/session</div></div>
+  </div>
+</section>
+<section class="testimonials">
+  <div style="text-align:center;margin-bottom:40px"><div class="sl">Client Stories</div><div class="st">Transformations</div></div>
+  <div class="tgrid">
+    <div class="tc"><div class="tc-stars">★★★★★</div><p>"Three months of yoga and Ayurvedic treatment at Serenity completely transformed my relationship with stress. I sleep better, feel calmer, and have more energy."</p><div class="tc-author">– Priya M., Varanasi</div></div>
+    <div class="tc"><div class="tc-stars">★★★★★</div><p>"The nutrition coaching alone was worth every rupee. I lost 8 kg in two months and didn't feel deprived once. The approach is compassionate and science-backed."</p><div class="tc-author">– Rahul S., Chandauli</div></div>
+    <div class="tc"><div class="tc-stars">★★★★★</div><p>"I was skeptical about sound healing, but after two sessions my anxiety reduced dramatically. The instructors are genuinely skilled and caring."</p><div class="tc-author">– Anjali K., Mirzapur</div></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Wellness Center – ₹8,999",backHref:"../healthcare-wellness.html",orderHref:"../../contact/index.html?tpl=healthcare-wellness"});</script>
+</body></html>

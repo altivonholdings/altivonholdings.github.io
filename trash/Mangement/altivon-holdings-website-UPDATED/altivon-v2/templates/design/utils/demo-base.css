@@ -1,0 +1,46 @@
+/* Altivon Design Demo Pages – Shared Base Utilities */
+/* Each design page imports this for common reset + demo chrome */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* Demo top bar – shown on every design preview page */
+.demo-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+  height: 44px;
+  background: #1a1a2e;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+  font-family: system-ui, sans-serif;
+  font-size: 12px; font-weight: 600;
+  color: rgba(255,255,255,.7);
+  letter-spacing: .3px;
+}
+.demo-bar .demo-left { display: flex; align-items: center; gap: 10px; }
+.demo-bar .demo-badge {
+  background: linear-gradient(135deg,#f97316,#fbbf24);
+  color: #000; padding: 2px 10px; border-radius: 20px;
+  font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+}
+.demo-bar .demo-right { display: flex; gap: 10px; align-items: center; }
+.demo-bar a.demo-btn {
+  padding: 5px 14px; border-radius: 6px; font-size: 12px; font-weight: 700;
+  cursor: pointer; transition: .2s; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.demo-bar a.demo-back {
+  background: rgba(255,255,255,.06); color: rgba(255,255,255,.8);
+  border: 1px solid rgba(255,255,255,.1);
+}
+.demo-bar a.demo-back:hover { background: rgba(255,255,255,.12); }
+.demo-bar a.demo-order {
+  background: linear-gradient(135deg,#2563eb,#06b6d4);
+  color: #fff; border: none;
+}
+.demo-bar a.demo-order:hover { opacity: .88; transform: translateY(-1px); }
+
+/* Offset body for demo bar */
+body { padding-top: 44px; }

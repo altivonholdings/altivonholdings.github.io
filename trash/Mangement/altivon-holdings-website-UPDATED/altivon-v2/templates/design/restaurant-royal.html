@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Royal Restaurant – Demo | Altivon</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cinzel:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#06040a;--gold:#c9a84c;--cream:#f0e6cf;--dk:#110d1a;--mu:#6a5a42}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--cream);font-family:'Jost',sans-serif}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 60px;border-bottom:1px solid rgba(201,168,76,.12)}
+.logo{font-family:'Cinzel',sans-serif;font-size:20px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+.nav a{margin-left:24px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(240,230,207,.45);text-decoration:none;transition:.2s}
+.nav a:hover{color:var(--cream)}
+.reserve{border:1px solid var(--gold);color:var(--gold);padding:9px 22px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;text-decoration:none;transition:.3s;margin-left:14px}
+.reserve:hover{background:var(--gold);color:#000}
+.hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(201,168,76,.07),transparent 70%);position:relative;padding:60px}
+.hero::before{content:'◆ ◇ ◆';position:absolute;top:40px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:20px;color:rgba(201,168,76,.25)}
+.hero::after{content:'◆ ◇ ◆';position:absolute;bottom:40px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:20px;color:rgba(201,168,76,.25)}
+.era{font-family:'Cinzel',sans-serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.hero h1{font-family:'IM Fell English',serif;font-size:clamp(3rem,7vw,6rem);font-style:italic;line-height:1;margin-bottom:10px}
+.hero h2{font-family:'Cinzel',sans-serif;font-size:clamp(.8rem,2vw,1rem);letter-spacing:8px;text-transform:uppercase;color:rgba(240,230,207,.45);margin-bottom:28px}
+.divider{display:flex;align-items:center;gap:14px;color:rgba(201,168,76,.3);font-size:10px;letter-spacing:8px;margin:0 auto 28px;width:fit-content}
+.divider::before,.divider::after{content:'';width:60px;height:1px;background:rgba(201,168,76,.25)}
+.hero p{font-size:14px;color:rgba(240,230,207,.6);max-width:440px;line-height:1.9;font-style:italic;margin-bottom:36px}
+.btns{display:flex;gap:20px;justify-content:center}
+.brv{background:var(--gold);color:#000;padding:14px 36px;font-family:'Cinzel',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:.2s}
+.brv:hover{background:#d4b15e}
+.bm{border:1px solid rgba(201,168,76,.3);color:rgba(240,230,207,.7);padding:14px 36px;font-family:'Cinzel',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:.2s}
+.bm:hover{border-color:var(--gold);color:var(--cream)}
+.menu{padding:80px 60px;text-align:center;border-top:1px solid rgba(201,168,76,.08)}
+.m-era{font-family:'Cinzel',sans-serif;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.m-title{font-family:'IM Fell English',serif;font-size:2.4rem;font-style:italic;margin-bottom:50px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:800px;margin:0 auto;border:1px solid rgba(201,168,76,.08)}
+.mi{padding:28px 32px;border-bottom:1px solid rgba(201,168,76,.08);border-right:1px solid rgba(201,168,76,.08);text-align:left;transition:.2s;cursor:pointer}
+.mi:hover{background:rgba(201,168,76,.04)}
+.mi:nth-child(even){border-right:none}
+.mi:nth-last-child(-n+2){border-bottom:none}
+.mi-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px}
+.mi-name{font-family:'IM Fell English',serif;font-size:17px;font-style:italic}
+.mi-dots{flex:1;border-bottom:1px dotted rgba(201,168,76,.2);margin:0 10px;margin-bottom:3px}
+.mi-price{font-family:'Cinzel',sans-serif;font-size:14px;font-weight:600;color:var(--gold)}
+.mi-desc{font-size:12px;color:var(--mu);line-height:1.6;font-style:italic}
+</style></head><body>
+<nav class="nav">
+  <div class="logo">Le Maharaja</div>
+  <div><a href="#">Menu</a><a href="#">Wine List</a><a href="#">Private Dining</a><a href="#">About</a><a href="#" class="reserve">Reservations</a></div>
+</nav>
+<section class="hero">
+  <div class="era">Established MDCCCXCVIII · Fine Dining</div>
+  <h1>An Evening of<br>Timeless Flavours</h1>
+  <h2>Royal Indian Cuisine</h2>
+  <div class="divider">◆</div>
+  <p>Where ancient Mughal culinary traditions meet modern artistry. Each plate is a chapter from India's royal kitchens, reimagined for today.</p>
+  <div class="btns"><a href="#" class="brv">Reserve Your Table</a><a href="#" class="bm">Explore the Menu</a></div>
+</section>
+<section class="menu">
+  <div class="m-era">Tonight's Selection</div>
+  <div class="m-title">A La Carte Menu</div>
+  <div class="mgrid">
+    <div class="mi"><div class="mi-header"><span class="mi-name">Murgh Malai Tikka</span><span class="mi-dots"></span><span class="mi-price">₹680</span></div><div class="mi-desc">Tender chicken marinated in cream, cardamom and white pepper, slow-roasted in a clay oven.</div></div>
+    <div class="mi"><div class="mi-header"><span class="mi-name">Dum Pukht Biryani</span><span class="mi-dots"></span><span class="mi-price">₹950</span></div><div class="mi-desc">Aromatic aged basmati layered with slow-cooked lamb, saffron and attar of kewra.</div></div>
+    <div class="mi"><div class="mi-header"><span class="mi-name">Raan-e-Mughal</span><span class="mi-dots"></span><span class="mi-price">₹1,800</span></div><div class="mi-desc">Whole leg of lamb marinated for 24 hours in yoghurt, red chilli and garam masala, oven-roasted.</div></div>
+    <div class="mi"><div class="mi-header"><span class="mi-name">Shahi Paneer Kofta</span><span class="mi-dots"></span><span class="mi-price">₹680</span></div><div class="mi-desc">Cottage cheese dumplings in a rich cashew and rose-petal gravy, garnished with gold leaf.</div></div>
+    <div class="mi"><div class="mi-header"><span class="mi-name">Kulfi Falooda</span><span class="mi-dots"></span><span class="mi-price">₹380</span></div><div class="mi-desc">Home-made pistachio ice cream with rose syrup, sabja seeds and vermicelli.</div></div>
+    <div class="mi"><div class="mi-header"><span class="mi-name">Gulab Jamun Trilogy</span><span class="mi-dots"></span><span class="mi-price">₹320</span></div><div class="mi-desc">Three miniature gulab jamuns — classic, cardamom-rose, and saffron — with vanilla crème.</div></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Restaurant Royal – ₹10,999",backHref:"../restaurant-royal.html",orderHref:"../../contact/index.html?tpl=restaurant-royal"});</script>
+</body></html>

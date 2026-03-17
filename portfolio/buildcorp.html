@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Enhanced Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4X0M6RM0F6', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+  </script>
+  
+  <!-- AdSense Setup -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>BuildCorp Corporate Website | Altivon Holdings Portfolio</title>
+  <meta name="description" content="Case study: Custom corporate website for BuildCorp with investor portal, project gallery, and team profiles. 30% increase in investor inquiries. See how we delivered this high-impact project.">
+  <meta name="keywords" content="Corporate website development, investor portal, construction company website, custom web design, Python Flask">
+  <meta name="author" content="Altivon Holdings">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://altivonholdings.github.io/portfolio/buildcorp.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="BuildCorp Corporate Website | Altivon Holdings Portfolio">
+  <meta property="og:description" content="Modern corporate website with investor portal – built for a construction management firm. 30% increase in investor inquiries.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://altivonholdings.github.io/portfolio/buildcorp.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200">
+  <meta property="og:site_name" content="Altivon Holdings">
+  <meta property="og:locale" content="en_IN">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BuildCorp Corporate Website | Altivon Holdings">
+  <meta name="twitter:description" content="Corporate website with investor portal – 30% increase in inquiries.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200">
+  <meta name="twitter:site" content="@AltivonH">
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+  <link rel="apple-touch-icon" href="../assets/images/logo.jpg">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Interactive Styles (custom for this page) -->
+  <style>
+    .process-timeline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 3rem 0;
+      position: relative;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--navy) 100%);
+      z-index: 1;
+    }
+    .timeline-step {
+      background: white;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 2;
+      border: 3px solid var(--teal);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .timeline-step:hover {
+      transform: scale(1.1);
+      border-color: var(--navy);
+    }
+    .timeline-step span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .timeline-step small {
+      font-size: 0.7rem;
+      color: var(--text-grey);
+    }
+    .step-description {
+      flex: 0 0 100%;
+      margin-top: 2rem;
+      padding: 2rem;
+      background: var(--grey-light);
+      border-radius: 20px;
+      display: none;
+    }
+    .step-description.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tech-tabs {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .tab-btn {
+      padding: 0.8rem 2rem;
+      background: white;
+      border: 1px solid var(--grey-mid);
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+    .tech-content {
+      display: none;
+      padding: 2rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      margin-top: 1rem;
+    }
+    .tech-content.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    .tech-content ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      color: var(--text-grey);
+    }
+    .tech-content li {
+      margin-bottom: 0.5rem;
+    }
+    .stat-highlight {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      background: var(--navy);
+      color: white;
+      padding: 2rem;
+      border-radius: 30px;
+      margin: 3rem 0;
+    }
+    .stat-highlight .stat-item {
+      text-align: center;
+    }
+    .stat-highlight .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+    }
+    .stat-highlight .stat-label {
+      font-size: 1rem;
+      color: var(--silver);
+    }
+    @media (max-width: 768px) {
+      .process-timeline::before { display: none; }
+      .timeline-step { margin-bottom: 1rem; }
+    }
+  </style>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "BuildCorp Corporate Website",
+    "creator": {
+      "@type": "Organization",
+      "name": "Altivon Holdings",
+      "url": "https://altivonholdings.github.io"
+    },
+    "about": "Corporate website with investor portal for a construction management firm.",
+    "keywords": "corporate website, investor portal, construction",
+    "url": "https://altivonholdings.github.io/portfolio/buildcorp.html",
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c"
+  }
+  </script>
+</head>
+<body>
+  <!-- Sticky Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../assets/images/logo.jpg" alt="Altivon Holdings Logo" class="logo-img" width="48" height="48">
+          <span class="logo-text">ALTIVON</span>
+          <span class="logo-sub">HOLDINGS</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../templates/index.html">Templates & Design</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section with Project Title -->
+    <section class="page-header" style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: white;">
+      <div class="container">
+        <h1 style="color: white;">BuildCorp Corporate Website</h1>
+        <p style="color: var(--silver);">A modern digital presence for a construction management leader</p>
+      </div>
+    </section>
+
+    <!-- Hero Image with Overlay Stats -->
+    <div class="container" style="margin-top: 2rem; position: relative;">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200" alt="BuildCorp office and team" style="width: 100%; border-radius: 24px; box-shadow: var(--shadow);" loading="lazy">
+      <div class="stat-highlight" style="position: relative; margin-top: -3rem; background: rgba(10,31,68,0.95); backdrop-filter: blur(10px);">
+        <div class="stat-item">
+          <div class="stat-number" data-target="30" data-suffix="%">0%</div>
+          <div class="stat-label">Increase in investor inquiries</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="4" data-suffix=" weeks">0 weeks</div>
+          <div class="stat-label">Development time</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="100" data-suffix="%">0%</div>
+          <div class="stat-label">Client satisfaction</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Overview Section with Interactive Tabs -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">Project Overview</h2>
+        <div class="service-block">
+          <div class="service-text reveal-left">
+            <p><strong>Client:</strong> BuildCorp, a mid‑sized construction management firm with 15+ years of industry experience. They needed to move from a static brochure site to a dynamic corporate platform that could serve multiple stakeholders: potential clients, investors, and job seekers.</p>
+            <p><strong>The challenge:</strong> Their old site lacked a clear value proposition, didn't showcase their impressive project portfolio, and had no way to communicate with investors. They wanted a site that reflected their professionalism and scale.</p>
+            <p><strong>Our solution:</strong> We designed and developed a custom corporate website featuring an interactive project gallery, detailed team profiles, and a password‑protected investor portal with financial documents and performance dashboards. The site is built on a Python/Flask backend with a SQLite database, ensuring fast load times and easy content updates.</p>
+          </div>
+          <div class="service-icon-large reveal-right">
+            <img src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?w=400" alt="Construction planning" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Interactive Tabs for Key Features -->
+        <div style="margin-top: 3rem;">
+          <div class="tech-tabs">
+            <button class="tab-btn active" data-tab="tab1">🏗️ Project Gallery</button>
+            <button class="tab-btn" data-tab="tab2">🔒 Investor Portal</button>
+            <button class="tab-btn" data-tab="tab3">👥 Team Profiles</button>
+          </div>
+          <div id="tab1" class="tech-content active">
+            <h3>Interactive Project Gallery</h3>
+            <p>We built a filterable gallery where visitors can browse projects by type, location, or year. Each project includes high-res images, key metrics (budget, timeline), and downloadable case studies. The gallery uses lazy loading for optimal performance.</p>
+            <ul>
+              <li>Filter by commercial, residential, infrastructure</li>
+              <li>Lightbox with zoom and slideshow</li>
+              <li>Downloadable PDF fact sheets</li>
+            </ul>
+          </div>
+          <div id="tab2" class="tech-content">
+            <h3>Secure Investor Portal</h3>
+            <p>A password-protected area where investors can access quarterly reports, financial statements, and project updates. Built with Flask-Login and role-based access control.</p>
+            <ul>
+              <li>Multi-factor authentication option</li>
+              <li>Document version history</li>
+              <li>Automated email notifications for new reports</li>
+            </ul>
+          </div>
+          <div id="tab3" class="tech-content">
+            <h3>Team Profiles</h3>
+            <p>Each team member has a dedicated profile with bio, areas of expertise, and LinkedIn integration. The profiles are managed via a simple admin panel.</p>
+            <ul>
+              <li>Photo, title, contact info</li>
+              <li>Filter by department</li>
+              <li>Direct messaging from profile</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Process Timeline -->
+    <section class="bg-light" style="padding: 4rem 0;">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">Our Workflow in Action</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Click on each step to see how we delivered this project.</p>
+        <div class="process-timeline">
+          <div class="timeline-step" data-step="1">
+            <span>1</span>
+            <small>Discovery</small>
+          </div>
+          <div class="timeline-step" data-step="2">
+            <span>2</span>
+            <small>Wireframe</small>
+          </div>
+          <div class="timeline-step" data-step="3">
+            <span>3</span>
+            <small>Design</small>
+          </div>
+          <div class="timeline-step" data-step="4">
+            <span>4</span>
+            <small>Develop</small>
+          </div>
+          <div class="timeline-step" data-step="5">
+            <span>5</span>
+            <small>Launch</small>
+          </div>
+        </div>
+        <div id="step1" class="step-description active">
+          <h3>1. Discovery & Requirement Analysis</h3>
+          <p>We conducted stakeholder interviews with the CEO, marketing head, and investor relations manager. We analyzed competitors and gathered all content requirements. The key insight: investors wanted easy access to financial documents, and clients wanted to see past projects.</p>
+        </div>
+        <div id="step2" class="step-description">
+          <h3>2. Wireframing & UX Flow</h3>
+          <p>We created low-fidelity wireframes for three user types: clients, investors, and job seekers. After two rounds of feedback, we finalized the sitemap and user journeys. The investor portal was designed to be simple but secure.</p>
+        </div>
+        <div id="step3" class="step-description">
+          <h3>3. Visual Design</h3>
+          <p>We developed a modern corporate identity using navy blue and silver, with clean typography. The design emphasizes large project images and clear calls-to-action. We also designed custom icons for the investor portal.</p>
+        </div>
+        <div id="step4" class="step-description">
+          <h3>4. Development & Integration</h3>
+          <p>We built the frontend with semantic HTML5, CSS3, and vanilla JavaScript. The backend was developed in Python/Flask with a SQLite database. We integrated the investor portal with secure login and file storage on AWS S3.</p>
+        </div>
+        <div id="step5" class="step-description">
+          <h3>5. Testing & Launch</h3>
+          <p>We performed cross-browser testing, load testing, and security audits. After client approval, we deployed the site on a cloud server and trained the internal team to update content via a custom admin panel.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Showcase with Icons -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">Technologies Used</h2>
+        <div class="features-grid" style="grid-template-columns: repeat(4,1fr);">
+          <div class="feature-item reveal-up">
+            <i class="fab fa-python"></i>
+            <h3>Python/Flask</h3>
+            <p>Backend framework</p>
+          </div>
+          <div class="feature-item reveal-up">
+            <i class="fas fa-database"></i>
+            <h3>SQLite</h3>
+            <p>Lightweight database</p>
+          </div>
+          <div class="feature-item reveal-up">
+            <i class="fab fa-html5"></i>
+            <h3>HTML5</h3>
+            <p>Semantic markup</p>
+          </div>
+          <div class="feature-item reveal-up">
+            <i class="fab fa-css3-alt"></i>
+            <h3>CSS3</h3>
+            <p>Modern styling</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Testimonial with Video Placeholder -->
+    <section class="testimonials" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200'); background-size: cover; background-position: center;">
+      <div style="background: rgba(10,31,68,0.9); padding: 5rem 0;">
+        <div class="container">
+          <div class="testimonial-card" style="max-width: 800px; margin: 0 auto; background: white;">
+            <i class="fas fa-quote-left" style="font-size: 2rem;"></i>
+            <p style="font-size: 1.3rem;">"Altivon truly understood our vision. The investor portal alone has made our communication with stakeholders so much smoother. We've seen a 30% increase in investor inquiries within three months of launch."</p>
+            <h4>Ravi Sharma</h4>
+            <span>CEO, BuildCorp</span>
+            <div style="margin-top: 1.5rem;">
+              <i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i><i class="fas fa-star" style="color: gold;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Projects -->
+    <section class="service-detail">
+      <div class="container">
+        <h2 class="reveal-fade" style="text-align: center;">More Projects You Might Like</h2>
+        <div class="card-grid" style="grid-template-columns: repeat(3,1fr);">
+          <div class="service-card reveal-up">
+            <img src="../assets/images/web_designs/construction_web_design.jpg" alt="BuildCorp Construction" class="card-img" loading="lazy">
+            <div class="card-content">
+              <h3>BuildCorp Construction</h3>
+              <p>Dedicated site for construction projects.</p>
+              <a href="buildcorp-construction.html" class="card-link">View Project <i class="fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+          <div class="service-card reveal-up">
+            <img src="../assets/images/web_designs/real-estate_web_design.jpg" alt="EstateIn" class="card-img" loading="lazy">
+            <div class="card-content">
+              <h3>EstateIn</h3>
+              <p>Real estate platform with virtual tours.</p>
+              <a href="estatein.html" class="card-link">View Project <i class="fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+          <div class="service-card reveal-up">
+            <img src="../assets/images/web_designs/educational_institute_web_design.jpg" alt="EduFirst" class="card-img" loading="lazy">
+            <div class="card-content">
+              <h3>EduFirst</h3>
+              <p>LMS & course catalog.</p>
+              <a href="edufirst.html" class="card-link">View Project <i class="fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container cta-content reveal-up">
+        <h2>Ready to build your corporate website?</h2>
+        <p>Let's create a digital presence that impresses investors and clients alike.</p>
+        <a href="../contact.html" class="btn btn-primary btn-large">Start Your Project</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <h3>Altivon Holdings</h3>
+        <p>Empowering Businesses Through Scalable Digital Solutions.</p>
+        <div class="social-placeholder">
+          <a href="https://www.linkedin.com/company/altivon-holding/" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.github.com/altivonholdings" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services.html#webdev">Web Development</a></li>
+          <li><a href="../services.html#ecommerce">E‑Commerce</a></li>
+          <li><a href="../services.html#strategy">Digital Strategy</a></li>
+          <li><a href="../services.html#maintenance">Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:altivonholdings@gmail.com">altivonholdings@gmail.com</a></p>
+        <p><i class="fas fa-globe"></i> <a href="https://altivonholdings.github.io" target="_blank" rel="noopener noreferrer">altivonholdings.github.io</a></p>
+        <p><i class="fas fa-map-pin"></i> Remote / India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Altivon Holdings. All rights reserved.</p>
+        <p class="footer-tagline">Empowering Businesses Through Scalable Digital Solutions.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="../js/main.js"></script>
+  <!-- Interactive features for this page -->
+  <script>
+    (function() {
+      // Timeline steps
+      const steps = document.querySelectorAll('.timeline-step');
+      const descriptions = document.querySelectorAll('.step-description');
+      steps.forEach(step => {
+        step.addEventListener('click', function() {
+          const stepNum = this.getAttribute('data-step');
+          descriptions.forEach(desc => desc.classList.remove('active'));
+          document.getElementById('step' + stepNum).classList.add('active');
+        });
+      });
+
+      // Tabs
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tech-content');
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const tabId = this.getAttribute('data-tab');
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+
+      // Stats counter animation (simple)
+      const statNumbers = document.querySelectorAll('.stat-highlight .stat-number');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const suffix = el.getAttribute('data-suffix') || '';
+            let count = 0;
+            const update = () => {
+              if (count < target) {
+                count += Math.ceil(target / 50);
+                el.innerText = count + suffix;
+                requestAnimationFrame(update);
+              } else {
+                el.innerText = target + suffix;
+              }
+            };
+            update();
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      statNumbers.forEach(num => observer.observe(num));
+    })();
+  </script>
+</body>
+</html>

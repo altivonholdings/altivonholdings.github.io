@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mehra Electronics – Local Business</title>
+<link rel="stylesheet" href="utils/demo-base.css">
+    <link rel="stylesheet" href="css/business-local.css">"/>
+    <link rel="stylesheet" href="utils/demo-bar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#f8f9fa;--dk:#111827;--blue:#2563eb;--lt:#eff6ff;--mu:#6b7280;--border:#e5e7eb}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'Inter',sans-serif;overflow-x:hidden}
+.topbar{background:var(--blue);color:#fff;text-align:center;padding:8px;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:12px}
+.nav{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 50px;border-bottom:1px solid var(--border);position:sticky;top:46px;z-index:100}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-icon{width:42px;height:42px;border-radius:10px;background:var(--blue);display:flex;align-items:center;justify-content:center}
+.logo-icon i{font-size:20px;color:#fff}
+.logo-text{font-size:18px;font-weight:800;color:var(--dk)}
+.logo-text span{color:var(--blue)}
+.nav-links a{margin-left:20px;font-size:14px;color:var(--mu);text-decoration:none;font-weight:500}
+.wa-btn{background:#25D366;color:#fff;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:7px;margin-left:16px}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2563eb);padding:70px 50px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:18px}
+.hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:14px}
+.hero h1 span{color:#fbbf24}
+.hero p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.75;margin-bottom:24px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.bw{background:#fff;color:var(--blue);padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none}
+.bwa{background:#25D366;color:#fff;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none}
+.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:28px}
+.hc-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:18px}
+.hci{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.hci:last-child{border-bottom:none}
+.hci i{width:34px;height:34px;background:rgba(255,255,255,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--blue);background:#fff;flex-shrink:0}
+.hci-name{font-size:13px;font-weight:600;color:#fff}
+.hci-sub{font-size:11px;color:rgba(255,255,255,.55);margin-top:1px}
+.cats{padding:60px 50px;background:#fff}
+.sh{margin-bottom:36px}
+.sl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:6px}
+.st{font-size:1.8rem;font-weight:800;color:var(--dk)}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cc{background:var(--lt);border-radius:14px;padding:24px;text-align:center;cursor:pointer;transition:.3s;border:2px solid transparent}
+.cc:hover{border-color:var(--blue);background:#fff}
+.cc i{font-size:32px;color:var(--blue);margin-bottom:10px;display:block}
+.cc-name{font-weight:700;font-size:14px;margin-bottom:3px}
+.cc-count{font-size:12px;color:var(--mu)}
+.trust-bar{background:var(--dk);padding:28px 50px;display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.tb{text-align:center}
+.tb-n{font-size:1.6rem;font-weight:800;color:#fff}
+.tb-l{font-size:11px;color:#9ca3af;margin-top:3px;letter-spacing:.5px}
+</style>
+    <!-- Enhanced Mobile Support -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head><body>
+<div class="topbar"><i class="fa fa-map-marker-alt"></i> Chandauli, UP &nbsp;|&nbsp; <i class="fa fa-phone"></i> +91 98765 43210 &nbsp;|&nbsp; <i class="fa fa-clock"></i> Mon–Sat: 9AM–8PM</div>
+<nav class="nav">
+  <div class="logo-area"><div class="logo-icon"><i class="fa fa-bolt"></i></div><div class="logo-text">Mehra <span>Electronics</span></div></div>
+  <div class="nav-links"><a href="#">Products</a><a href="#">Repairs</a><a href="#">Brands</a><a href="#">About</a></div>
+  <a href="#" class="wa-btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+</nav>
+<section class="hero">
+  <div>
+    <div class="badge"><i class="fa fa-certificate"></i> Authorised Multi-Brand Dealer &middot; Est. 1998</div>
+    <h1>Chandauli's <span>Favourite</span><br>Electronics Store</h1>
+    <p>Trusted by 40,000+ families for TVs, phones, appliances and expert repair services. Visit us or WhatsApp for the best prices.</p>
+    <div class="btns">
+      <a href="#" class="bw"><i class="fa fa-mobile-screen"></i> Browse Products</a>
+      <a href="#" class="bwa"><i class="fa-brands fa-whatsapp"></i> Get Best Price</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hc-title"><i class="fa fa-star" style="color:#fbbf24"></i> Why Customers Choose Us</div>
+    <div class="hci"><i class="fa fa-tag"></i><div><div class="hci-name">Best Price Guarantee</div><div class="hci-sub">We match any local competitor's price</div></div></div>
+    <div class="hci"><i class="fa fa-tools"></i><div><div class="hci-name">In-House Service Centre</div><div class="hci-sub">All brands, same-day minor repairs</div></div></div>
+    <div class="hci"><i class="fa fa-truck"></i><div><div class="hci-name">Free Home Delivery</div><div class="hci-sub">Same-day delivery in Chandauli</div></div></div>
+    <div class="hci"><i class="fa fa-credit-card"></i><div><div class="hci-name">Easy EMI Available</div><div class="hci-sub">0% EMI on 6–12 months</div></div></div>
+  </div>
+</section>
+<section class="cats">
+  <div class="sh"><div class="sl">Shop by Category</div><div class="st">What We Sell</div></div>
+  <div class="cgrid">
+    <div class="cc"><i class="fa fa-tv"></i><div class="cc-name">Televisions</div><div class="cc-count">80+ Models</div></div>
+    <div class="cc"><i class="fa fa-mobile-screen"></i><div class="cc-name">Smartphones</div><div class="cc-count">120+ Phones</div></div>
+    <div class="cc"><i class="fa fa-blender"></i><div class="cc-name">Appliances</div><div class="cc-count">AC, Fridge, Wash</div></div>
+    <div class="cc"><i class="fa fa-laptop"></i><div class="cc-name">Computers</div><div class="cc-count">Laptop, Desktop</div></div>
+  </div>
+</section>
+<div class="trust-bar">
+  <div class="tb"><div class="tb-n">26+</div><div class="tb-l">Years in Business</div></div>
+  <div class="tb"><div class="tb-n">40K+</div><div class="tb-l">Happy Customers</div></div>
+  <div class="tb"><div class="tb-n">50+</div><div class="tb-l">Brands Available</div></div>
+  <div class="tb"><div class="tb-n">24hr</div><div class="tb-l">Service Turnaround</div></div>
+</div>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({
+            title: 'Mehra Electronics – Local Business',
+            backHref: 'index.html',
+            orderHref: 'contact.html?design=business-local'
+        });</script>
+    <script src="js/business-local.js"></script>
+</body></html>

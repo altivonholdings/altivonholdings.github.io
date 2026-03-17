@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Business Corporate – Demo</title><link rel="stylesheet" href="utils/demo-base.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#ffffff;--primary:#1a365d;--accent:#e53e3e;--gray:#f7f8fc;--text:#2d3748;--muted:#718096}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif}
+.nav{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:18px 60px;border-bottom:2px solid var(--gray);position:sticky;top:44px;z-index:100}
+.logo{font-size:20px;font-weight:800;color:var(--primary)}
+.logo span{color:var(--accent)}
+.nav-links a{margin-left:24px;font-size:14px;color:var(--muted);text-decoration:none;font-weight:500}
+.contact-btn{background:var(--primary);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;margin-left:16px}
+.hero{background:linear-gradient(135deg,var(--primary) 0%,#2a4a7f 100%);padding:80px 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-tag{display:inline-flex;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(2rem,3.5vw,3rem);font-weight:800;line-height:1.15;color:#fff;margin-bottom:16px}
+.hero h1 span{color:#ffd700}
+.hero p{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:28px}
+.hero-btns{display:flex;gap:12px}
+.bw{background:#fff;color:var(--primary);padding:12px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none}
+.bo{border:2px solid rgba(255,255,255,.4);color:#fff;padding:12px 24px;border-radius:9px;font-weight:600;font-size:14px;text-decoration:none}
+.hero-right{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:20px;text-align:center}
+.stat-n{font-size:2rem;font-weight:800;color:#fff}
+.stat-l{font-size:12px;color:rgba(255,255,255,.6);margin-top:4px}
+.values{padding:70px 60px;background:var(--gray)}
+.vh{text-align:center;margin-bottom:48px}
+.vl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.vt{font-size:2rem;font-weight:800;color:var(--primary)}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.vc{background:#fff;border-radius:14px;padding:28px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.vc-ic{font-size:40px;margin-bottom:14px}
+.vc h3{font-size:17px;font-weight:700;color:var(--primary);margin-bottom:10px}
+.vc p{font-size:13px;color:var(--muted);line-height:1.6}
+.team{padding:70px 60px}
+.th{text-align:center;margin-bottom:48px}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.tm{text-align:center}
+.tm-av{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--primary),#2a4a7f);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 14px}
+.tm-name{font-weight:700;font-size:14px}
+.tm-role{font-size:12px;color:var(--muted);margin-top:3px}
+</style></head><body>
+<nav class="nav"><div class="logo">Pinnacle<span>Corp</span></div>
+<div><a href="#">Services</a><a href="#">Industries</a><a href="#">About</a><a href="#">Careers</a><a href="#" class="contact-btn">Contact Us</a></div></nav>
+<section class="hero">
+<div><div class="hero-tag">🏢 Established 2006</div>
+<h1>Building <span>Tomorrow's</span><br>Businesses Today</h1>
+<p>Strategic consulting, technology solutions, and operational excellence for India's fastest-growing enterprises.</p>
+<div class="hero-btns"><a href="#" class="bw">Our Services</a><a href="#" class="bo">View Portfolio</a></div>
+</div>
+<div class="hero-right">
+<div class="stat-box"><div class="stat-n">500+</div><div class="stat-l">Enterprise Clients</div></div>
+<div class="stat-box"><div class="stat-n">19</div><div class="stat-l">Years Experience</div></div>
+<div class="stat-box"><div class="stat-n">₹2000 Cr</div><div class="stat-l">Revenue Impact</div></div>
+<div class="stat-box"><div class="stat-n">99%</div><div class="stat-l">Client Satisfaction</div></div>
+</div>
+</section>
+<section class="values">
+<div class="vh"><div class="vl">Our Principles</div><div class="vt">Why Businesses Choose Us</div></div>
+<div class="vgrid">
+<div class="vc"><div class="vc-ic">🎯</div><h3>Results-Driven</h3><p>Every engagement is measured against clear KPIs with transparent reporting.</p></div>
+<div class="vc"><div class="vc-ic">🤝</div><h3>Long-Term Partners</h3><p>We build decade-long relationships, not transactional engagements.</p></div>
+<div class="vc"><div class="vc-ic">🔐</div><h3>Confidential & Trusted</h3><p>Strict NDA protocols and ethical practices across all client work.</p></div>
+</div>
+</section>
+<section class="team">
+<div class="th"><div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px">Leadership</div><div style="font-size:2rem;font-weight:800;color:var(--primary)">Meet Our Team</div></div>
+<div class="tgrid">
+<div class="tm"><div class="tm-av">👨‍💼</div><div class="tm-name">Arun Sharma</div><div class="tm-role">CEO & Founder</div></div>
+<div class="tm"><div class="tm-av">👩‍💼</div><div class="tm-name">Priya Singh</div><div class="tm-role">Chief Strategy Officer</div></div>
+<div class="tm"><div class="tm-av">👨‍💻</div><div class="tm-name">Vikram Nair</div><div class="tm-role">Technology Head</div></div>
+<div class="tm"><div class="tm-av">👩‍🔬</div><div class="tm-name">Anita Patel</div><div class="tm-role">Operations Director</div></div>
+</div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Business Corporate – ₹9,999",backHref:"../business-corporate.html",orderHref:"../../contact/index.html?tpl=business-corporate"});</script>
+</body></html>

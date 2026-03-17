@@ -1,44 +1,38 @@
-# Altivon Holdings Website v2.0
+# Altivon Holdings – Professional Agency Website
 
-## Structure
-```
-altivon-v2/
-├── index.html              ← Homepage (EN/HI bilingual)
-├── favicon.svg             ← Site favicon
-├── _shared.css             ← Shared design system (used by main pages)
-├── services/index.html     ← Services page
-├── templates/
-│   ├── index.html          ← Templates gallery (33 templates, filterable)
-│   └── [33 template pages] ← Individual template detail pages
-├── products/
-│   ├── index.html          ← Products gallery (16 IT products)
-│   └── [16 product pages]  ← Individual product detail pages
-├── pricing/index.html      ← Pricing with toggle (monthly/annual)
-├── docs/index.html         ← Documentation & help center
-├── about/index.html        ← About us, team, reach
-└── contact/index.html      ← Contact form (Formspree) + Google Maps
-```
+Production‑ready, multi‑page static website built with **clean HTML5, modern CSS, and vanilla JavaScript**.  
+Designed for **corporate clients, startups, and enterprises** – fully responsive, SEO‑optimized, and scalable.
 
-## Deployment (2 minutes)
-1. Extract this zip
-2. Go to https://app.netlify.com/drop
-3. Drag the `altivon-v2` folder into the page
-4. Your site is live instantly — free!
+## 🚀 Key Features
 
-## Contact Info Configured
-- Phone: +91 63937 41885
+- Multi‑layer CSS architecture (`base`, `layout`, `components`, `animations`, `pages`)
+- Mobile‑first responsive design (4 breakpoints)
+- Sticky navigation, smooth scroll, back‑to‑top button
+- Scroll reveal animations (Intersection Observer)
+- Service cards with real project images (1:1.5 aspect ratio)
+- Stats counter, process workflow, testimonials
+- Filterable portfolio grid (corporate, e‑commerce, real estate, education, construction)
+- Premium contact page with Formspree integration + Google Map placeholder
+- Blog page (3 articles) for SEO authority
+- Full SEO: unique titles, meta descriptions, canonical tags, Open Graph, Twitter Cards
+- Structured data: Organization, Service, LocalBusiness, Founder
+
+## 📁 Project Structure
+
+See the tree above.
+
+## 🛠️ Setup & Deployment
+
+1. **Place your images** inside `assets/images/` – use the exact filenames as shown.
+2. **No build step** – just open `index.html` in a browser.
+3. **Deploy** to any static host (GitHub Pages, Netlify, Vercel).
+
+## 📬 Contact
+
 - Email: altivonholdings@gmail.com  
-- Address: Chandauli, UP 232104
-- WhatsApp: wa.me/916393741885
-- Formspree Form ID: mvzbzpyo
-- Google Maps: Altivon Holdings, Chandauli
+- Portfolio: https://anshuman365.github.io  
 
-## To Get a Custom Domain
-Buy `altivon.in` (~₹800/year) from GoDaddy or Hostinger,
-then connect it to your Netlify site in Settings → Domains.
+---
 
-## Tech
-- Pure HTML5, CSS3, Vanilla JS — no build tools needed
-- Google Fonts: Clash Display + Bricolage Grotesque
-- Images: Unsplash (free, no attribution needed for commercial use)
-- Forms: Formspree (free tier: 50 submissions/month)
+© 2026 Altivon Holdings. All rights reserved.  
+*Empowering Businesses Through Scalable Digital Solutions.*

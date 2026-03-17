@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="description" content="Altivon Holdings – Web development, mobile apps, custom software and IT products. Serving Chandauli, Varanasi, Mirzapur and worldwide."/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Services – Altivon Holdings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../_shared.css"/>
+<style>
+#hdr{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(5,8,15,.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:38px;height:38px;border-radius:9px;background:var(--grad-main);display:flex;align-items:center;justify-content:center;font-family:'Clash Display',sans-serif;font-weight:700;font-size:18px;color:#fff}
+.logo-name{font-family:'Clash Display',sans-serif;font-weight:600;font-size:17px;color:#fff}
+.logo-name em{color:var(--orange);font-style:normal}
+.main-nav{display:flex;gap:4px}
+.nav-link{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--muted);transition:.2s}
+.nav-link:hover,.nav-link.active{color:#fff;background:var(--surface2)}
+.hdr-actions{display:flex;align-items:center;gap:12px}
+.lang-btn{padding:7px 15px;border-radius:20px;border:1px solid var(--border2);background:var(--surface2);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:.25s}
+.lang-btn:hover{border-color:var(--orange);color:var(--orange)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:22px;height:2px;background:#fff;border-radius:2px}
+@media(max-width:900px){.main-nav{display:none;position:fixed;top:72px;left:0;right:0;flex-direction:column;background:rgba(5,8,15,.97);padding:16px;border-bottom:1px solid var(--border)}.main-nav.open{display:flex}.hdr-actions .btn{display:none}.burger{display:flex}#hdr{padding:0 20px}}
+
+/* PAGE HERO */
+.page-hero{padding:140px 0 80px;background:linear-gradient(135deg,var(--ink),var(--ink2));position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.page-hero::before{content:'';position:absolute;top:-200px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.15) 0%,transparent 70%)}
+.page-hero-inner{position:relative;z-index:1}
+.page-hero .h1{color:#fff;margin:12px 0 20px}
+.page-hero p{font-size:1.1rem;color:var(--muted);max-width:600px}
+
+/* SERVICE SECTION */
+.svc-full{padding:80px 0;border-bottom:1px solid var(--border)}
+.svc-full:last-of-type{border-bottom:none}
+.svc-full-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.svc-full-grid.reverse{direction:rtl}
+.svc-full-grid.reverse > *{direction:ltr}
+.svc-img{border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.svc-img img{width:100%;height:320px;object-fit:cover;display:block}
+.svc-content .label{margin-bottom:10px;display:block}
+.svc-content h2{color:#fff;margin-bottom:16px}
+.svc-content p{color:var(--muted);margin-bottom:24px;font-size:1rem;line-height:1.8}
+.feature-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.feature-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text)}
+.feature-list li::before{content:'→';color:var(--orange);font-weight:700;flex-shrink:0;margin-top:1px}
+.price-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.ppill{padding:8px 18px;border-radius:10px;font-size:13px;font-weight:700;background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.25);color:#93c5fd}
+.ppill.orange{background:rgba(249,115,22,.1);border-color:rgba(249,115,22,.3);color:var(--orange2)}
+.btn-group{display:flex;gap:12px;flex-wrap:wrap}
+
+/* PROCESS */
+.process{background:var(--ink2);padding:80px 0}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:48px}
+.process-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));z-index:0}
+.pstep{text-align:center;position:relative;z-index:1;padding:0 12px}
+.pstep-num{width:56px;height:56px;border-radius:50%;background:var(--grad-main);display:flex;align-items:center;justify-content:center;font-family:'Clash Display',sans-serif;font-weight:700;font-size:20px;color:#fff;margin:0 auto 16px;box-shadow:0 0 0 6px var(--ink2)}
+.pstep-title{font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;color:#fff;margin-bottom:6px}
+.pstep-desc{font-size:12px;color:var(--muted)}
+
+/* TECH STACK */
+.tech-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.tech-tag{padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;background:var(--surface2);border:1px solid var(--border);color:var(--text)}
+
+footer{background:var(--ink2);border-top:1px solid var(--border);padding:48px 0 24px}
+.footer-mini{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-mini p{font-size:13px;color:var(--muted)}
+.footer-mini-links{display:flex;gap:20px}
+.footer-mini-links a{font-size:13px;color:var(--muted);transition:.2s}
+.footer-mini-links a:hover{color:var(--orange2)}
+
+@media(max-width:900px){.svc-full-grid,.svc-full-grid.reverse{grid-template-columns:1fr;direction:ltr}.process-steps{grid-template-columns:1fr 1fr;gap:32px}.process-steps::before{display:none}}
+</style>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+</head>
+<body>
+<header id="hdr">
+  <a href="../index.html" class="logo">
+    <div class="logo-icon">A</div>
+    <span class="logo-name">Altivon <em>Holdings</em></span>
+  </a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="index.html" class="nav-link active">Services</a>
+    <a href="../templates/index.html" class="nav-link">Templates</a>
+    <a href="../products/index.html" class="nav-link">Products</a>
+    <a href="../pricing/index.html" class="nav-link">Pricing</a>
+    <a href="../docs/index.html" class="nav-link">Docs</a>
+    <a href="../about/index.html" class="nav-link">About</a>
+    <a href="../contact/index.html" class="nav-link">Contact</a>
+  </nav>
+  <div class="hdr-actions">
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">🇮🇳 हिंदी</button>
+    <a href="../contact/index.html" class="btn btn-orange btn-sm">Get Quote</a>
+  </div>
+  <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')"><span></span><span></span><span></span></button>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner fade-up">
+      <span class="label">Our Services</span>
+      <h1 class="display h1">Everything Your Business Needs to Go Digital</h1>
+      <p>From the first pixel to post-launch support — we handle it all. Serving Chandauli, Mirzapur, Varanasi, Sonbhadra, and the entire world.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WEB DEVELOPMENT -->
+<section class="svc-full" id="web" style="background:var(--ink)">
+  <div class="container">
+    <div class="svc-full-grid">
+      <div class="svc-img fade-up">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80" alt="Web Development"/>
+      </div>
+      <div class="svc-content fade-up">
+        <span class="label">Web Development</span>
+        <h2 class="display h2">Websites That Work as Hard as You Do</h2>
+        <p>We design and develop stunning, fast, SEO-optimized websites — from simple business landing pages to complex e-commerce platforms and custom web applications.</p>
+        <ul class="feature-list">
+          <li>Business Websites (informational, portfolio, multi-page)</li>
+          <li>E-Commerce Stores (WooCommerce, Shopify, custom)</li>
+          <li>Custom Web Applications (React, Next.js, Node.js)</li>
+          <li>WordPress CMS websites with admin panel</li>
+          <li>Landing Pages optimized for conversions</li>
+          <li>Website redesign & speed optimization</li>
+        </ul>
+        <div class="price-pills">
+          <span class="ppill">Business Site from ₹15,000</span>
+          <span class="ppill orange">E-Commerce from ₹25,000</span>
+        </div>
+        <div class="btn-group">
+          <a href="../templates/index.html" class="btn btn-primary">Browse Web Templates →</a>
+          <a href="../contact/index.html" class="btn btn-ghost">Get Quote</a>
+        </div>
+        <div class="tech-grid">
+          <span class="tech-tag">React</span><span class="tech-tag">Next.js</span><span class="tech-tag">WordPress</span><span class="tech-tag">Node.js</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">MySQL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE APPS -->
+<section class="svc-full" id="mobile" style="background:var(--ink2)">
+  <div class="container">
+    <div class="svc-full-grid reverse">
+      <div class="svc-img fade-up">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Mobile Apps"/>
+      </div>
+      <div class="svc-content fade-up">
+        <span class="label">Mobile App Development</span>
+        <h2 class="display h2">Apps Your Customers Will Love to Use</h2>
+        <p>From restaurant ordering apps to full enterprise mobile platforms — we build native and cross-platform mobile applications that are fast, beautiful, and reliable.</p>
+        <ul class="feature-list">
+          <li>Android App Development (native Kotlin/Java)</li>
+          <li>iOS App Development (native Swift)</li>
+          <li>Cross-Platform Apps (React Native, Flutter)</li>
+          <li>Food ordering, delivery & tracking apps</li>
+          <li>Business management & reporting apps</li>
+          <li>App Store publishing & ASO</li>
+        </ul>
+        <div class="price-pills">
+          <span class="ppill">Android from ₹35,000</span>
+          <span class="ppill orange">Cross-Platform from ₹50,000</span>
+        </div>
+        <div class="btn-group">
+          <a href="../contact/index.html" class="btn btn-primary">Discuss Your App →</a>
+          <a href="../pricing/index.html" class="btn btn-ghost">View Pricing</a>
+        </div>
+        <div class="tech-grid">
+          <span class="tech-tag">React Native</span><span class="tech-tag">Flutter</span><span class="tech-tag">Android</span><span class="tech-tag">iOS</span><span class="tech-tag">Firebase</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM SOFTWARE -->
+<section class="svc-full" id="software" style="background:var(--ink)">
+  <div class="container">
+    <div class="svc-full-grid">
+      <div class="svc-img fade-up">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Custom Software"/>
+      </div>
+      <div class="svc-content fade-up">
+        <span class="label">Custom Software</span>
+        <h2 class="display h2">Software Built for Your Exact Workflow</h2>
+        <p>Off-the-shelf software never quite fits. We build custom ERP, CRM, HRMS, inventory, billing, and management systems designed precisely for how your business operates.</p>
+        <ul class="feature-list">
+          <li>School / College Management ERP</li>
+          <li>Inventory & Stock Management System</li>
+          <li>CRM — Customer Relationship Management</li>
+          <li>HRMS — HR & Payroll Management</li>
+          <li>Clinic / Hospital Management System</li>
+          <li>Transport & Logistics Management</li>
+          <li>Hotel / POS / Booking Systems</li>
+        </ul>
+        <div class="price-pills">
+          <span class="ppill">Projects from ₹50,000</span>
+          <span class="ppill orange">15+ Ready Products Available</span>
+        </div>
+        <div class="btn-group">
+          <a href="../products/index.html" class="btn btn-primary">View All Products →</a>
+          <a href="../contact/index.html" class="btn btn-ghost">Custom Build</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIGITAL MARKETING -->
+<section class="svc-full" id="marketing" style="background:var(--ink2)">
+  <div class="container">
+    <div class="svc-full-grid reverse">
+      <div class="svc-img fade-up">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80" alt="Digital Marketing"/>
+      </div>
+      <div class="svc-content fade-up">
+        <span class="label">Digital Marketing</span>
+        <h2 class="display h2">Get Found. Get Customers. Grow.</h2>
+        <p>Building the website is just the start. We make sure the right people find it — through SEO, social media management, paid ads, and WhatsApp marketing.</p>
+        <ul class="feature-list">
+          <li>SEO — rank higher on Google searches</li>
+          <li>Google Ads (Search, Display, Local)</li>
+          <li>Facebook & Instagram Ads</li>
+          <li>Social Media Management (posting, engagement)</li>
+          <li>WhatsApp Marketing Campaigns</li>
+          <li>Local Business listing (Google My Business)</li>
+          <li>Monthly analytics & performance reports</li>
+        </ul>
+        <div class="price-pills">
+          <span class="ppill">Packages from ₹5,000/month</span>
+        </div>
+        <div class="btn-group">
+          <a href="../pricing/index.html" class="btn btn-primary">See Marketing Plans →</a>
+          <a href="../contact/index.html" class="btn btn-ghost">Free Audit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="container">
+    <div class="sh fade-up" style="text-align:center">
+      <span class="label">How We Work</span>
+      <h2 class="display h2" style="color:#fff">Our 5-Step Delivery Process</h2>
+      <p style="max-width:500px;margin:0 auto;color:var(--muted)">Every project follows the same proven process — so you always know what's happening.</p>
+    </div>
+    <div class="process-steps fade-up">
+      <div class="pstep"><div class="pstep-num">1</div><div class="pstep-title">Discovery</div><div class="pstep-desc">Free call to understand your goals, budget & timeline</div></div>
+      <div class="pstep"><div class="pstep-num">2</div><div class="pstep-title">Planning</div><div class="pstep-desc">Detailed proposal, wireframes & timeline shared</div></div>
+      <div class="pstep"><div class="pstep-num">3</div><div class="pstep-title">Design</div><div class="pstep-desc">UI/UX design with revisions until you love it</div></div>
+      <div class="pstep"><div class="pstep-num">4</div><div class="pstep-title">Build</div><div class="pstep-desc">Development sprints with weekly progress updates</div></div>
+      <div class="pstep"><div class="pstep-num">5</div><div class="pstep-title">Launch & Support</div><div class="pstep-desc">Deployment + 3 months free support included</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="background:linear-gradient(135deg,#1e3a8a,#0284c7);padding:72px 0;text-align:center">
+  <div class="container">
+    <h2 class="display h2" style="color:#fff;margin-bottom:14px">Not sure which service you need?</h2>
+    <p style="color:rgba(255,255,255,.75);font-size:1.05rem;margin-bottom:32px">Talk to us for free. We'll recommend exactly what your business needs.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="../contact/index.html" class="btn btn-orange btn-lg">Free Consultation →</a>
+      <a href="https://wa.me/916393741885" target="_blank" class="btn btn-wa btn-lg">💬 WhatsApp Now</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-mini">
+      <a href="../index.html" class="logo"><div class="logo-icon">A</div><span class="logo-name">Altivon <em>Holdings</em></span></a>
+      <div class="footer-mini-links">
+        <a href="../templates/index.html">Templates</a>
+        <a href="../products/index.html">Products</a>
+        <a href="../pricing/index.html">Pricing</a>
+        <a href="../about/index.html">About</a>
+        <a href="../contact/index.html">Contact</a>
+      </div>
+      <p>© 2024 Altivon Holdings</p>
+    </div>
+  </div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('in'),i*80);obs.unobserve(x.target);}}),{threshold:.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('hdr').style.boxShadow=window.scrollY>20?'0 4px 30px rgba(0,0,0,.6)':'none';});
+function toggleLang(){/* simplified - full translation on main page */const b=document.getElementById('langBtn');b.textContent=b.textContent.includes('हिंदी')?'🌐 English':'🇮🇳 हिंदी';}
+</script>
+<script src="../shared-footer.js"></script>
+</body>
+</html>

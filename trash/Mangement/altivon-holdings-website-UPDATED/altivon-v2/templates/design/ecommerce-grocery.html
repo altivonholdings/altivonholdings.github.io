@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Grocery Store – Demo</title><link rel="stylesheet" href="utils/demo-base.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#f0fdf4;--green:#16a34a;--light:#dcfce7;--orange:#ea580c;--text:#14532d;--muted:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif}
+.top-bar{background:var(--green);color:#fff;text-align:center;padding:8px;font-size:13px;font-weight:700}
+.nav{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.logo{font-size:22px;font-weight:900;color:var(--green)}
+.logo span{color:var(--orange)}
+.search{flex:1;max-width:380px;margin:0 24px;display:flex}
+.search input{flex:1;padding:9px 14px;border:2px solid var(--light);border-radius:8px 0 0 8px;font-size:13px;outline:none;font-family:'Nunito',sans-serif}
+.search button{background:var(--green);border:none;padding:9px 14px;border-radius:0 8px 8px 0;color:#fff;font-size:14px;cursor:pointer}
+.cart-area{display:flex;align-items:center;gap:10px}
+.cart-btn{background:var(--orange);color:#fff;padding:9px 18px;border-radius:25px;font-size:13px;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:6px}
+.hero{background:linear-gradient(135deg,var(--green),#22c55e);padding:50px 48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:2.4rem;font-weight:900;color:#fff;line-height:1.15;margin-bottom:14px}
+.hero h1 span{background:rgba(255,255,255,.2);padding:0 4px;border-radius:4px}
+.hero p{font-size:14px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:22px}
+.btns{display:flex;gap:12px}
+.bw{background:#fff;color:var(--green);padding:11px 22px;border-radius:25px;font-weight:800;font-size:14px;text-decoration:none}
+.bo{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.4);color:#fff;padding:11px 22px;border-radius:25px;font-weight:700;font-size:14px;text-decoration:none}
+.delivery-badges{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.db{background:rgba(255,255,255,.15);color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700}
+.hero-right{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cat-card{background:rgba(255,255,255,.15);border-radius:12px;padding:16px;text-align:center;cursor:pointer;transition:.2s}
+.cat-card:hover{background:rgba(255,255,255,.25)}
+.cat-ic{font-size:32px;margin-bottom:6px}
+.cat-name{font-size:12px;font-weight:800;color:#fff}
+.cat-count{font-size:11px;color:rgba(255,255,255,.7)}
+.categories{padding:40px 48px;background:#fff}
+.sec-title{font-size:1.6rem;font-weight:900;color:var(--text);margin-bottom:24px}
+.cat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:48px}
+.cat-btn{background:var(--light);border-radius:12px;padding:16px;text-align:center;cursor:pointer;transition:.3s;text-decoration:none;color:var(--text)}
+.cat-btn:hover{background:var(--green);color:#fff;transform:translateY(-3px)}
+.cat-btn-ic{font-size:30px;margin-bottom:6px}
+.cat-btn-name{font-size:12px;font-weight:800}
+.deals{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.deal-card{background:var(--bg);border:2px solid var(--light);border-radius:14px;overflow:hidden;transition:.3s}
+.deal-card:hover{border-color:var(--green);transform:translateY(-3px)}
+.deal-img{height:140px;display:flex;align-items:center;justify-content:center;font-size:56px;background:#fff}
+.deal-info{padding:14px}
+.deal-off{background:var(--orange);color:#fff;font-size:10px;font-weight:800;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:6px}
+.deal-name{font-size:13px;font-weight:800;margin-bottom:4px}
+.deal-price{color:var(--green);font-weight:900;font-size:15px}
+.deal-old{color:var(--muted);font-size:11px;text-decoration:line-through;margin-left:6px}
+.add-btn{margin-top:8px;background:var(--green);color:#fff;border:none;width:100%;padding:8px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif}
+</style></head><body>
+<div class="top-bar">🚴 Free delivery on orders above ₹299 · Delivery in 30 minutes!</div>
+<nav class="nav">
+<div class="logo">Fresh<span>Basket</span></div>
+<div class="search"><input placeholder="Search for vegetables, fruits..."/><button>🔍</button></div>
+<div class="cart-area"><a href="#" class="cart-btn">🛒 Cart · ₹487</a></div>
+</nav>
+<section class="hero">
+<div><h1>Fresh Groceries<br><span>Delivered Fast</span></h1>
+<p>Order from 5,000+ products — vegetables, fruits, dairy, and more. Delivered fresh to your door in 30 minutes.</p>
+<div class="btns"><a href="#" class="bw">Shop Now</a><a href="#" class="bo">Browse Offers</a></div>
+<div class="delivery-badges"><div class="db">⏱️ 30 Min Delivery</div><div class="db">🌿 100% Fresh</div><div class="db">💰 Best Prices</div></div>
+</div>
+<div class="hero-right">
+<div class="cat-card"><div class="cat-ic">🥬</div><div class="cat-name">Vegetables</div><div class="cat-count">200+ items</div></div>
+<div class="cat-card"><div class="cat-ic">🍎</div><div class="cat-name">Fruits</div><div class="cat-count">80+ items</div></div>
+<div class="cat-card"><div class="cat-ic">🥛</div><div class="cat-name">Dairy</div><div class="cat-count">60+ items</div></div>
+<div class="cat-card"><div class="cat-ic">🌾</div><div class="cat-name">Grains</div><div class="cat-count">120+ items</div></div>
+</div>
+</section>
+<section class="categories">
+<div class="sec-title">Shop by Category</div>
+<div class="cat-grid">
+<a href="#" class="cat-btn"><div class="cat-btn-ic">🥦</div><div class="cat-btn-name">Vegetables</div></a>
+<a href="#" class="cat-btn"><div class="cat-btn-ic">🍇</div><div class="cat-btn-name">Fruits</div></a>
+<a href="#" class="cat-btn"><div class="cat-btn-ic">🥩</div><div class="cat-btn-name">Meat & Fish</div></a>
+<a href="#" class="cat-btn"><div class="cat-btn-ic">🧀</div><div class="cat-btn-name">Dairy</div></a>
+<a href="#" class="cat-btn"><div class="cat-btn-ic">🍫</div><div class="cat-btn-name">Snacks</div></a>
+<a href="#" class="cat-btn"><div class="cat-btn-ic">🧴</div><div class="cat-btn-name">Personal Care</div></a>
+</div>
+<div class="sec-title">Today's Best Deals</div>
+<div class="deals">
+<div class="deal-card"><div class="deal-img">🍅</div><div class="deal-info"><div class="deal-off">30% OFF</div><div class="deal-name">Tomatoes (1 kg)</div><div class="deal-price">₹35<span class="deal-old">₹50</span></div><button class="add-btn">+ Add to Cart</button></div></div>
+<div class="deal-card"><div class="deal-img">🥛</div><div class="deal-info"><div class="deal-off">10% OFF</div><div class="deal-name">Amul Full Cream Milk 1L</div><div class="deal-price">₹63<span class="deal-old">₹70</span></div><button class="add-btn">+ Add to Cart</button></div></div>
+<div class="deal-card"><div class="deal-img">🍌</div><div class="deal-info"><div class="deal-off">25% OFF</div><div class="deal-name">Bananas (Dozen)</div><div class="deal-price">₹45<span class="deal-old">₹60</span></div><button class="add-btn">+ Add to Cart</button></div></div>
+<div class="deal-card"><div class="deal-img">🌾</div><div class="deal-info"><div class="deal-off">15% OFF</div><div class="deal-name">Basmati Rice (5 kg)</div><div class="deal-price">₹255<span class="deal-old">₹300</span></div><button class="add-btn">+ Add to Cart</button></div></div>
+</div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Grocery Store – ₹11,999",backHref:"../ecommerce-grocery.html",orderHref:"../../contact/index.html?tpl=ecommerce-grocery"});</script>
+</body></html>

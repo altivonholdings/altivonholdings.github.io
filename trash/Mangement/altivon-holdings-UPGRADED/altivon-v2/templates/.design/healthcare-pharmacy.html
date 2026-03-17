@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>PharmEasy Plus – Online Pharmacy</title>
+<link rel="stylesheet" href="utils/demo-base.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>:root{--bg:#f0fdf4;--dk:#14532d;--green:#16a34a;--lt:#dcfce7;--blue:#1e40af;--mu:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--dk);font-family:'Inter',sans-serif;overflow-x:hidden}
+.nav{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 50px;box-shadow:0 2px 8px rgba(22,163,74,.1);position:sticky;top:46px;z-index:100}
+.logo{font-size:20px;font-weight:800;color:var(--green)}.logo span{color:var(--blue)}
+.nav-search{flex:1;max-width:440px;margin:0 20px;display:flex}
+.nav-search input{flex:1;padding:9px 14px;border:1.5px solid rgba(22,163,74,.2);border-right:none;border-radius:8px 0 0 8px;font-size:13px;outline:none}
+.nav-search button{background:var(--green);color:#fff;padding:0 14px;border:none;border-radius:0 8px 8px 0;cursor:pointer}
+.nav-right{display:flex;gap:12px;align-items:center}
+.upload-btn{border:1.5px solid var(--green);color:var(--green);padding:8px 16px;border-radius:7px;font-size:12px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:6px}
+.cart-btn{background:var(--green);color:#fff;padding:9px 16px;border-radius:7px;font-size:13px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:6px}
+.hero{background:linear-gradient(135deg,#14532d,#16a34a);padding:60px 50px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;color:#fff;margin-bottom:16px}
+.hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:14px}
+.hero h1 span{color:#fbbf24}
+.hero p{font-size:14px;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:24px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.bw{background:#fff;color:var(--green);padding:12px 22px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none}
+.bt{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;padding:12px 22px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none}
+.hero-right{display:flex;flex-direction:column;gap:12px}
+.hi{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px}
+.hi-ic{width:44px;height:44px;background:rgba(255,255,255,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hi-ic i{font-size:20px;color:#fff}
+.hi-t{font-weight:700;font-size:14px;color:#fff}
+.hi-s{font-size:12px;color:rgba(255,255,255,.7);margin-top:2px}
+.cats{padding:50px 50px 0;background:#fff}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.sh h2{font-size:1.3rem;font-weight:800;color:var(--dk)}
+.see-all{font-size:13px;font-weight:700;color:var(--green);text-decoration:none}
+.cgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.cc{background:var(--lt);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:.2s;border:2px solid transparent}
+.cc:hover{border-color:var(--green)}
+.cc i{font-size:28px;color:var(--green);margin-bottom:8px;display:block}
+.cc span{font-size:12px;font-weight:700;color:var(--dk)}
+.products{padding:40px 50px 60px;background:var(--bg)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pc{background:#fff;border-radius:12px;border:1px solid #e5f5e8;transition:.3s;overflow:hidden;cursor:pointer}
+.pc:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(22,163,74,.12)}
+.pc-img{height:150px;display:flex;align-items:center;justify-content:center;background:var(--lt)}
+.pc-img i{font-size:52px;color:var(--green);opacity:.5}
+.pc-body{padding:14px}
+.pc-brand{font-size:11px;color:var(--mu);margin-bottom:3px}
+.pc-name{font-weight:700;font-size:13px;margin-bottom:8px;line-height:1.35}
+.pc-price{font-size:1.05rem;font-weight:800;color:var(--dk);margin-bottom:4px}
+.pc-off{font-size:11px;font-weight:700;color:var(--green)}
+.pc-btn{width:100%;background:var(--green);color:#fff;border:none;padding:8px;border-radius:7px;font-weight:700;font-size:13px;cursor:pointer;margin-top:8px}</style></head><body>
+<nav class="nav">
+  <div class="logo">PharmEasy <span>Plus</span></div>
+  <div class="nav-search"><input type="text" placeholder="Search medicines, health products..."/><button><i class="fa fa-search"></i></button></div>
+  <div class="nav-right">
+    <a href="#" class="upload-btn"><i class="fa fa-file-medical"></i> Upload Prescription</a>
+    <a href="#" class="cart-btn"><i class="fa fa-shopping-cart"></i> Cart (3)</a>
+  </div>
+</nav>
+<section class="hero">
+  <div>
+    <div class="badge"><i class="fa fa-truck-fast"></i> Free Delivery on All Orders</div>
+    <h1>Medicines &amp; Healthcare<br>at <span>Doorstep Prices</span></h1>
+    <p>Genuine medicines, health devices, and wellness products delivered in 2 hours. Upload prescription and let us do the rest.</p>
+    <div class="btns">
+      <a href="#" class="bw"><i class="fa fa-search"></i> Search Medicines</a>
+      <a href="#" class="bt"><i class="fa fa-file-medical"></i> Upload Prescription</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hi"><div class="hi-ic"><i class="fa fa-shield-halved"></i></div><div><div class="hi-t">100% Genuine Medicines</div><div class="hi-s">All products sourced from licensed distributors</div></div></div>
+    <div class="hi"><div class="hi-ic"><i class="fa fa-clock"></i></div><div><div class="hi-t">2-Hour Delivery</div><div class="hi-s">Urgent medicines delivered in under 2 hours</div></div></div>
+    <div class="hi"><div class="hi-ic"><i class="fa fa-tags"></i></div><div><div class="hi-t">Up to 35% Savings</div><div class="hi-s">Best price on generics and branded drugs</div></div></div>
+    <div class="hi"><div class="hi-ic"><i class="fa fa-user-doctor"></i></div><div><div class="hi-t">Free Doctor Consultation</div><div class="hi-s">Chat with certified doctors anytime</div></div></div>
+  </div>
+</section>
+<section class="cats">
+  <div class="sh"><h2>Shop by Category</h2><a href="#" class="see-all">All Categories <i class="fa fa-arrow-right"></i></a></div>
+  <div class="cgrid">
+    <div class="cc"><i class="fa fa-tablets"></i><span>Medicines</span></div>
+    <div class="cc"><i class="fa fa-heart-pulse"></i><span>Cardiac Care</span></div>
+    <div class="cc"><i class="fa fa-baby"></i><span>Baby Care</span></div>
+    <div class="cc"><i class="fa fa-dumbbell"></i><span>Vitamins</span></div>
+    <div class="cc"><i class="fa fa-eye"></i><span>Eye Care</span></div>
+  </div>
+</section>
+<section class="products">
+  <div class="sh"><h2>Top Sellers</h2><a href="#" class="see-all">View All <i class="fa fa-arrow-right"></i></a></div>
+  <div class="pgrid">
+    <div class="pc"><div class="pc-img"><i class="fa fa-tablets"></i></div><div class="pc-body"><div class="pc-brand">Sun Pharma</div><div class="pc-name">Vitamin D3 60K IU (4 Capsules)</div><div class="pc-price">&#8377;42</div><div class="pc-off">Save 28%</div><button class="pc-btn">Add to Cart</button></div></div>
+    <div class="pc"><div class="pc-img"><i class="fa fa-heart-pulse"></i></div><div class="pc-body"><div class="pc-brand">Omron</div><div class="pc-name">BP Monitor HEM-7121</div><div class="pc-price">&#8377;1,699</div><div class="pc-off">Save 15%</div><button class="pc-btn">Add to Cart</button></div></div>
+    <div class="pc"><div class="pc-img"><i class="fa fa-droplet"></i></div><div class="pc-body"><div class="pc-brand">Abbott</div><div class="pc-name">Freestyle Libre 2 Sensor</div><div class="pc-price">&#8377;4,199</div><div class="pc-off">Save 10%</div><button class="pc-btn">Add to Cart</button></div></div>
+    <div class="pc"><div class="pc-img"><i class="fa fa-dumbbell"></i></div><div class="pc-body"><div class="pc-brand">HealthKart</div><div class="pc-name">Multivitamin for Men (60 Tabs)</div><div class="pc-price">&#8377;299</div><div class="pc-off">Save 35%</div><button class="pc-btn">Add to Cart</button></div></div>
+  </div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Online Pharmacy – PharmEasy Plus",backHref:"../healthcare-pharmacy.html",orderHref:"../../contact/index.html?tpl=healthcare-pharmacy"});</script>
+</body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Restaurant Cafe – Demo</title><link rel="stylesheet" href="utils/demo-base.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0f0a05;--warm:#c8860a;--cream:#f5e6c8;--muted:#8a7a65}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--cream);font-family:'Lato',sans-serif;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 60px;border-bottom:1px solid rgba(200,134,10,.15)}
+.logo{font-family:'Playfair Display',serif;font-size:26px;color:var(--warm)}
+.nav-links a{margin-left:28px;font-size:13px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.reserve{border:1px solid var(--warm);color:var(--warm);padding:9px 22px;font-size:12px;letter-spacing:1px;text-transform:uppercase;font-weight:700;text-decoration:none;transition:.3s}
+.reserve:hover{background:var(--warm);color:#000}
+.hero{height:86vh;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at center,rgba(200,134,10,.07),transparent 70%)}
+.hero-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--warm);margin-bottom:18px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:800;line-height:1.05;margin-bottom:22px}
+.hero h1 em{color:var(--warm);font-style:italic}
+.hero p{font-size:1rem;color:var(--muted);max-width:440px;margin:0 auto 32px;line-height:1.8}
+.btns{display:flex;gap:16px;justify-content:center}
+.btn-warm{background:var(--warm);color:#000;padding:12px 28px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:.2s}
+.btn-warm:hover{background:#e09b1a}
+.btn-out{border:1px solid rgba(200,134,10,.3);color:var(--cream);padding:12px 28px;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:.2s}
+.menu{padding:80px 60px;text-align:center}
+.sec-lbl{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--warm);margin-bottom:10px}
+.sec-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;margin-bottom:44px}
+.dish-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:left}
+.dish{border:1px solid rgba(200,134,10,.1);border-radius:4px;overflow:hidden;transition:.3s}
+.dish:hover{border-color:rgba(200,134,10,.3);transform:translateY(-4px)}
+.dish-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:64px;background:rgba(200,134,10,.05)}
+.dish-info{padding:18px}
+.dish-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:6px}
+.dish-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.dish-price{color:var(--warm);font-weight:700;font-size:15px}
+</style></head><body>
+<nav class="nav"><div class="logo">Bella Vista</div><div><a href="#">Menu</a><a href="#">About</a><a href="#">Gallery</a><a href="#" class="reserve" style="margin-left:20px">Reserve Table</a></div></nav>
+<section class="hero">
+<div class="hero-tag">Est. 2019 · Fine Dining</div>
+<h1>Where Every Meal<br>Is a <em>Moment</em></h1>
+<p>Authentic Italian cuisine crafted with fresh local ingredients. An intimate dining experience.</p>
+<div class="btns"><a href="#" class="btn-warm">View Menu</a><a href="#" class="btn-out">Reserve Now</a></div>
+</section>
+<section class="menu">
+<div class="sec-lbl">Our Specialties</div>
+<div class="sec-title">Signature Dishes</div>
+<div class="dish-grid">
+<div class="dish"><div class="dish-img">🍝</div><div class="dish-info"><div class="dish-name">Truffle Pasta</div><div class="dish-desc">Handmade fettuccine with black truffle, parmesan, fresh herbs.</div><div class="dish-price">₹780</div></div></div>
+<div class="dish"><div class="dish-img">🍕</div><div class="dish-info"><div class="dish-name">Wood Fire Pizza</div><div class="dish-desc">Classic Margherita with San Marzano tomatoes, buffalo mozzarella.</div><div class="dish-price">₹650</div></div></div>
+<div class="dish"><div class="dish-img">🥩</div><div class="dish-info"><div class="dish-name">Pan Seared Lamb</div><div class="dish-desc">Tender rack of lamb with rosemary jus, roasted garlic mash.</div><div class="dish-price">₹1,200</div></div></div>
+</div>
+</section>
+<script src="utils/demo-bar.js"></script>
+<script>initDemoBar({title:"Restaurant Cafe – ₹7,999",backHref:"../restaurant-cafe.html",orderHref:"../../contact/index.html?tpl=restaurant-cafe"});</script>
+</body></html>
